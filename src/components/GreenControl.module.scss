@@ -64,13 +64,14 @@
   flex-direction: column;
   // align-items: flex-start;
   gap: 40px;
-  align-self: stretch;
+  // align-self: stretch;
   // border: dashed #78A0DB;
 }
 
 .logoWrap {
   width: 200px;
   height: auto;
+  align-items: center;
   // align-items: flex-start;
 }
 
