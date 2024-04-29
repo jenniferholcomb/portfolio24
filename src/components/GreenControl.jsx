@@ -6,11 +6,11 @@ import profileImage from "./../img/profilepic.png";
 function GreenControl() {
   return (
     <>
-      <div className={`${styles.greenStyle} ${styles.greenWrapper}`}>
+      <div className={`${styles.greenWrapper}`}>
         <div className={styles.upperWrap}>
           <div className={styles.logoWrap}>
-            <img src={logo} alt="Jennifer Holcomb logo" />
-          </div>
+            <img className={styles.logo} src={logo} alt="Jennifer Holcomb logo" />
+          </div> 
           <div className={styles.textWrap}>
             <div className={styles.linkWrap}>
               <h3 className={`${styles.links} ${styles.linksLineHeight}`}>projects</h3>
@@ -31,7 +31,7 @@ function GreenControl() {
                   id="pattern"
                   patternUnits="objectBoundingBox"
                   width="1"
-                  height="2">
+                  height="3">
                   <image
                     href={profileImage}
                     height={105}
@@ -42,7 +42,7 @@ function GreenControl() {
                 </pattern>
               </defs>
             <ellipse 
-              cx="166" 
+              cx="160" 
               cy="50" 
               rx="37" 
               ry="49" 
@@ -50,12 +50,12 @@ function GreenControl() {
               fill="none" 
               strokeWidth="1.5" />
             <ellipse 
-              cx="166" 
+              cx="160" 
               cy="50" 
               rx="32.75" 
               ry="44.5" 
               fill="url(#pattern)" />
-          </svg>
+          </svg> 
         </div>
       </div>
     </>
