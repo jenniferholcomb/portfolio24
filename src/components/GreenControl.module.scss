@@ -50,7 +50,7 @@
   flex-direction: column;
   flex: 1 0 0;
 
-  background: #003703;
+  background: #002502;
   padding: 52px 60px;
   gap: 20px;
   // border: dashed cyan;
@@ -77,6 +77,10 @@
 
 .logo {
   max-width: 100%;
+}
+
+.fallbackInfo {
+  background-image: url('./../img/LogoName.png');
 }
 
 .textWrap {
@@ -130,10 +134,30 @@
   align-items: center;
   min-width: 100%;
   // overflow: hidden;
-  border: dashed wheat;
+  // border: dashed wheat;
 }
 
-svg {
-  min-width: 100%;
+.bioImgWrap svg {
+  // min-width: 100%;
+  // height: auto;
+  transform-style: preserve-3d;
+  // background-color: #78A0DB;
 }
 
+.filledOval {
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  animation-name: rotate;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  from {
+      transform: rotateY(0deg);
+  }
+  to {
+      transform: rotateY(360deg);
+  }
+}

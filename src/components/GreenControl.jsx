@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./GreenControl.module.scss";
-import logo from "./../img/LogoName.png";
+import logo from "./../img/logoName3.svg";
 import profileImage from "./../img/profilepic.png";
 
 function GreenControl() {
@@ -9,7 +9,9 @@ function GreenControl() {
       <div className={`${styles.greenWrapper}`}>
         <div className={styles.upperWrap}>
           <div className={styles.logoWrap}>
-            <img className={styles.logo} src={logo} alt="Jennifer Holcomb logo" />
+            <object data={logo} type="image/svg+xml">
+              <span className={styles.fallbackInfo}>Your browser does not support SVG</span>
+            </object>
           </div> 
           <div className={styles.textWrap}>
             <div className={styles.linkWrap}>
@@ -22,9 +24,9 @@ function GreenControl() {
         </div>
         <div className={styles.bioImgWrap}>
           <svg 
-            viewBox="0 0 100 100" 
-            width="175"
-            height="195"
+            // viewBox="0 0 500 70" 
+            width="166px"
+            height="222px"
             xmlns="/#pattern" >
               <defs>
                 <pattern
@@ -34,32 +36,34 @@ function GreenControl() {
                   height="3">
                   <image
                     href={profileImage}
-                    height={105}
-                    x={-8}
-                    y={-7}
+                    height={222}
+                    x={-15}
+                    y={-12}
                     alt="profile picture"
                   />
                 </pattern>
               </defs>
             <ellipse 
-              cx="160" 
-              cy="50" 
-              rx="37" 
-              ry="49" 
+              cx="83" 
+              cy="110.5" 
+              rx="80" 
+              ry="108" 
               stroke="#F5EBDE" 
               fill="none" 
-              strokeWidth="1.5" />
+              strokeWidth="3" />
             <ellipse 
-              cx="160" 
-              cy="50" 
-              rx="32.75" 
-              ry="44.5" 
+              // className={styles.filledOval}
+              cx="83" 
+              cy="110.5" 
+              rx="72" 
+              ry="100" 
               fill="url(#pattern)" />
+           
           </svg> 
         </div>
       </div>
     </>
   );
 }
-
+   // fill="url(#pattern)"
 export default GreenControl;
