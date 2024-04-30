@@ -40,6 +40,7 @@
 //   }
 // }
 
+
 .greenWrapper {
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box;    
@@ -135,6 +136,22 @@
   min-width: 100%;
   // overflow: hidden;
   // border: dashed wheat;
+
+  // .filledOval {
+  //   // background-image: url('./../img/profilepic.png');
+  //   fill: url('./../img/profilepic.png');
+  // }
+
+  &:hover {
+    .filledOval {
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      animation-name: rotate;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      // animation-iteration-count: infinite;
+    }
+  }
 }
 
 .bioImgWrap svg {
@@ -144,20 +161,11 @@
   // background-color: #78A0DB;
 }
 
-.filledOval {
-  transform-style: preserve-3d;
-  transform-origin: center center;
-  animation-name: rotate;
-  animation-duration: 4s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
 @keyframes rotate {
   from {
       transform: rotateY(0deg);
   }
   to {
-      transform: rotateY(360deg);
+      transform: rotateY(90deg);
   }
 }

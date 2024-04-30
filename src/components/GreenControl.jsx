@@ -1,9 +1,12 @@
 import React from "react";
 import styles from "./GreenControl.module.scss";
+import Oval from "./Oval";
 import logo from "./../img/logoName3.svg";
-import profileImage from "./../img/profilepic.png";
 
 function GreenControl() {
+
+ 
+
   return (
     <>
       <div className={`${styles.greenWrapper}`}>
@@ -22,7 +25,8 @@ function GreenControl() {
             <p className={styles.bio}>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus.</p>
           </div>
         </div>
-        <div className={styles.bioImgWrap}>
+        <Oval />
+        {/* <div className={styles.bioImgWrap}>
           <svg 
             // viewBox="0 0 500 70" 
             width="166px"
@@ -35,7 +39,7 @@ function GreenControl() {
                   width="1"
                   height="3">
                   <image
-                    href={profileImage}
+                    href={imgArr[imgArrKey]}
                     height={222}
                     x={-15}
                     y={-12}
@@ -52,18 +56,17 @@ function GreenControl() {
               fill="none" 
               strokeWidth="3" />
             <ellipse 
-              // className={styles.filledOval}
+              className={styles.filledOval}
               cx="83" 
               cy="110.5" 
               rx="72" 
-              ry="100" 
+              ry="100"
               fill="url(#pattern)" />
-           
           </svg> 
-        </div>
+        </div> */}
       </div>
     </>
   );
 }
-   // fill="url(#pattern)"
+
 export default GreenControl;
