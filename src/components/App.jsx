@@ -1,4 +1,5 @@
 import React from "react";
+import { Canvas } from '@react-three/fiber'
 // import Header from "./Header";
 // import TicketControl from "./TicketControl";
 import GreenControl from "./GreenControl";
