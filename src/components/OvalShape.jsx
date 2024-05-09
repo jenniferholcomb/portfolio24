@@ -1,32 +1,61 @@
-import { useRef } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion-3d";
+import { useAnimate } from "framer-motion";
 import { useMemo } from 'react';
-import { Decal, Environment, Line, OrbitControls, useTexture } from '@react-three/drei';
+import { Decal, Line, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import styles from "./GreenControl.module.scss";
 import profileImg from "./../img/profilepic.png";
 import profileImg2 from "./../img/Isla1.png";
-import { degToRad } from "three/src/math/MathUtils";
+// import { degToRad } from "three/src/math/MathUtils";
 
 function getEllipseShape() {
-
   const shape = new THREE.Shape();
   const ellipseShape = shape.ellipse(0,0,2,3,0, Math.PI*2, false,0);
-
-  // var geometry = new THREE.ShapeBufferGeometry( path );
-  // var material = new THREE.MeshBasicMaterial( { color: 0x59d1c1} );
-  // var ellipse = new THREE.Mesh( geometry, material );
-  // scene.add(ellipse);
 
   return ellipseShape;
 }
 
-const OvalShape = (isHover) => {
+const duration = 0.5;
 
+const ovalVariants = {
+  load: {
+    rotateY: [ 0, -0.5, 0.5, -0.25, 0.1, 0 ],
+    scale: 1,
+    transition: {
+      ease: "easeInOut",
+      duration,
+      rotateY: {
+        delay: 3,
+        duration,
+        repeatDelay: 2,
+        repeat: 1
+      }
+    },
+  },
+  rest: {
+    rotateY: 0,
+    transition: {
+      duration: 0.85,
+      type: "spring",
+      damping: 6,
+      // ease: "easeIn"
+    }
+  },
+  hover: {
+    rotateY: -3.2,
+    transition: {
+      duration: 0.4,
+      type: "tween",
+      ease: "easeInOut"
+    }
+  }
+};
+
+const OvalShape = () => {
+  const [scope, animate] = useAnimate();
   const texture = useTexture(profileImg);
   const texture2 = useTexture(profileImg2);
-
-  const currTexture = useRef(texture);
 
   const points = useMemo(() => {
     const points = []
@@ -41,53 +70,29 @@ const OvalShape = (isHover) => {
     return points
   }, [])
 
-  // const lineMaterial = new THREE.LineBasicMaterial( {
-  //   color: '#cbdaef',
-  //   linewidth: 3,
-  //   linecap: 'square', //ignored by WebGLRenderer
-  //   linejoin:  'round' //ignored by WebGLRenderer
-  // } );
+  const [action, setAction] = useState(false);
+
+  useEffect(() => {
+    setTimeout(()=>{
+      setAction(true)
+     }, 7000)
+   }, [setAction])
 
   return (
     <>
-      {/* <OrbitControls /> */}
-      {/* <Environment preset="dawn" /> */}
-      <mesh>
-
+      <motion.mesh
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 3, ease: [0, 0.71, 0.2, 1.01] }}
+      >
         <Line points={points} color="#e5ddcc" lineWidth={2.5} linecap="square" />
         <motion.mesh
-          // initial={{ opacity: 0, scale: 0.5 }}
-          // animate={{ opacity: 1, scale: 1 }}
-          // transition={{ duration: 3 }}
-          whileHover={{           
-                rotateZ: 0,
-                rotateY: -3.2,
-                scale: 1,
-                transition: {
-                  rotateZ: { duration: 1.5, ease: "linear", repeat: Infinity }
-                }}}
-          // rotation={[Math.PI / 2, 0, degToRad(360)]}
-          // scale={1}
-          // animate={[isHover ? "hover" : ""]}
-          // variants={{
-          //   initial: {
-          //     x: [0, 0],
-          //     y: [0, 0],
-          //     scale: 1
-          //   },
-          //   hover: {
-          //     rotateZ: 0,
-          //     rotateY: 0.3,
-          //     scale: 1.3,
-          //     transition: {
-          //       rotateZ: { duration: 1.5, ease: "linear", repeat: Infinity }
-          //     }
-          //   }
-          // }}
+          variants={ovalVariants}
+          animate={action ? "rest" : "load"}
+          // onAnimationComplete={() => setCompleted()}
+          whileHover={"hover"}
         >
-
           <shapeGeometry args={[getEllipseShape(), 128]}/>
-          
           <meshNormalMaterial />
           <Decal 
             ref={Decal}
@@ -108,11 +113,67 @@ const OvalShape = (isHover) => {
             polygonOffsetFactor={-1} side={THREE.BackSide}/>
           </Decal>
         </motion.mesh>
-      </mesh>
+      </motion.mesh>
     </>
-
-
   )
 }
 
 export default OvalShape;
+
+ // initial={{ rotateY: 0 }}
+          // animate={{
+          //   rotateY: [ 0, -0.5, 0.5, 0 ],
+          //   ease: "easeIn",
+          //   repeatType: "reverse"
+          // }}
+          // transition={{
+          //   delay: 5,
+          //   repeat: 2,
+          //   duration: 1
+          // }}
+          // transition={{
+          //   rotateY: [ 0, -0.5, 0.5, 0 ],
+          //   times: [6, 6.5, 7, 7.5]
+          // }}
+          // initial={{ opacity: 0, rotateY: 0 }}
+          // animate={{ 
+          //   opacity: 1, 
+          //   rotateY: 0,
+            // transition: {
+
+            //   delay: 3,
+            //   type: "tween",
+            //   repeat: 2,
+            //   duration: 0.7
+            // }
+          // }}
+          // transition={{
+          //   rotateY: -1,
+          // }}
+          // transition={{ duration: 3 }}
+          // whileHover={{           
+          //       rotateZ: 0,
+          //       rotateY: -3.2,
+          //       scale: 1,
+          //       transition: {
+          //         rotateZ: { duration: 1.5, ease: "linear", repeat: Infinity }
+          //       }
+          //     }}
+          // rotation={[Math.PI / 2, 0, degToRad(360)]}
+          // scale={1}
+          // animate={[isHover ? "hover" : ""]}
+          // variants={{
+          //   initial: {
+          //     x: [0, 0],
+          //     y: [0, 0],
+          //     scale: 1
+          //   },
+          //   hover: {
+          //     rotateZ: 0,
+          //     rotateY: 0.3,
+          //     scale: 1.3,
+          //     transition: {
+          //       rotateZ: { duration: 1.5, ease: "linear", repeat: Infinity }
+          //     }
+          //   }
+          // }}

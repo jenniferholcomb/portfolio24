@@ -1,38 +1,22 @@
-import { Suspense, useState } from 'react';
+import React from 'react';
 import styles from "./GreenControl.module.scss";
 import { motion } from "framer-motion-3d";
 // import { useFrame } from '@react-three/fiber';
 import { Canvas } from '@react-three/fiber'
-import Oval from "./Oval";
 import logo from "./../img/logoName3.svg";
 import OvalShape from './OvalShape';
 
 function GreenControl() {
-  const [isHover, setIsHover] = useState(false);
+  // const [isHover, setIsHover] = useState(false);
   // const [currentKey, setCurrentKey] = useState(0);
-
-  const draw = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: (i) => {
-      const delay = 1 + i * 0.5;
-      return {
-        pathLength: 1,
-        opacity: 1,
-        transition: {
-          pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
-          opacity: { delay, duration: 0.01 }
-        }
-      };
-    }
-  };
 
   return (
     <>
       <motion.div className={`${styles.greenWrapper}`}
-              // initial={{ opacity: 0, scale: 0.5 }}
-              // animate={{ opacity: 1, scale: 1 }}
-              // transition={{ duration: 3 }} 
-              >
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 4 }} 
+      >
         <div className={styles.upperWrap}>
           <div className={styles.logoWrap}>
             <object data={logo} type="image/svg+xml">
@@ -62,29 +46,24 @@ function GreenControl() {
           // animate={{ opacity: 1, scale: 1 }}
           // transition={{ duration: 0.5 }}
           > */}
-        {/* <motion.div className='lower'> */}
-          {/* <div className="hidden"></div> */}
+
         <div className={styles.lowerWrapper}>
-
-        <div className={styles.bioImgWrap}>
-
-          <Canvas>
-            {/* // style={{width: 'auto', height: '20vh'}} */}
-          
-            <ambientLight intensity={1.5} />
-            <pointLight intensity={4} position={[5, 5, 0]} />
-            <OvalShape isHover={isHover} />
-          </Canvas>
+          <motion.div 
+            className={styles.bioImgWrap}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2, duration: 4 }}
+          >
+            <Canvas>
+              <ambientLight intensity={1.5} />
+              <pointLight intensity={4} position={[5, 5, 0]} />
+              <OvalShape />
+            </Canvas>
+          </motion.div>
         </div>
-        </div>
-    
-        </motion.div>
-      {/* </motion.div>  */}
+      </motion.div>
     </>
   );
 }
 
 export default GreenControl;
-
-{/* <Oval currentImg={currentKey}/> */}
-
