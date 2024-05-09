@@ -1,6 +1,6 @@
 import { Suspense, useState } from 'react';
 import styles from "./GreenControl.module.scss";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion-3d";
 // import { useFrame } from '@react-three/fiber';
 import { Canvas } from '@react-three/fiber'
 import Oval from "./Oval";
@@ -9,7 +9,7 @@ import OvalShape from './OvalShape';
 
 function GreenControl() {
   const [isHover, setIsHover] = useState(false);
-  const [currentKey, setCurrentKey] = useState(0);
+  // const [currentKey, setCurrentKey] = useState(0);
 
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -28,7 +28,11 @@ function GreenControl() {
 
   return (
     <>
-      <div className={`${styles.greenWrapper}`}>
+      <motion.div className={`${styles.greenWrapper}`}
+              // initial={{ opacity: 0, scale: 0.5 }}
+              // animate={{ opacity: 1, scale: 1 }}
+              // transition={{ duration: 3 }} 
+              >
         <div className={styles.upperWrap}>
           <div className={styles.logoWrap}>
             <object data={logo} type="image/svg+xml">
@@ -44,64 +48,38 @@ function GreenControl() {
             <p className={styles.bio}>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus.</p>
           </div>
         </div>
-        <Canvas camera={{ position: [0, 0, 5] }}>
-          <OvalShape />
-        </Canvas>
+          {/* <Suspense fallback={<Loading />}> */}
+        {/* <motion.span 
+          // initial={false}
+          // animate={[isHover ? "hover" : "rest"]}
+          // whileTap="press"
+          // variants={buttonVariants}
+          // onHoverStart={() => setIsHover(true)}
+          // onHoverEnd={() => setIsHover(false)}
+          // whileHover={{ scale: 4 }}
+          // onClick={() => setIsLiked(!isLiked)}
+          // initial={{ opacity: 0, scale: 0.5 }}
+          // animate={{ opacity: 1, scale: 1 }}
+          // transition={{ duration: 0.5 }}
+          > */}
+        {/* <motion.div className='lower'> */}
+          {/* <div className="hidden"></div> */}
+        <div className={styles.lowerWrapper}>
 
-        
-          {/* <div className={styles.bioImgWrap}>
-            <motion.svg 
-              // viewBox="0 0 500 70" 
-              width="166px"
-              height="222px"
-              viewBox="0 0 166 222"
-              initial="hidden"
-              animate="visible" 
-              // onMouseEnter={handleMouseEnter}
-              // onMouseLeave={handleMouseLeave} 
-            >
-              {/* <defs>
-                <pattern
-                  id="pattern"
-                  patternUnits="objectBoundingBox"
-                  width="1"
-                  height="3">
-                  <image
-                    href={imgArr[currentKey]}
-                    height={222}
-                    x={-15}
-                    y={-12}
-                    alt="profile picture"
-                  />
-                </pattern>
-              </defs> */}
-              {/* <motion.ellipse 
-                cx="83" 
-                cy="110.5" 
-                rx="80" 
-                ry="108" 
-                stroke="#F5EBDE" 
-                fill="none" 
-                strokeWidth="3" 
-                variants={draw}
-                custom={2} /> */}
+        <div className={styles.bioImgWrap}>
 
-                {/* <motion.ellipse 
-                  className={styles.filledOval}
-                  cx="83" 
-                  cy="110.5" 
-                  rx="70" 
-                  ry="98"
-                  fill="url(#pattern)"
-                  variants={draw}
-                  custom={4} /> */}
-            {/* </motion.svg> 
-          </div>
           <Canvas>
-                {/* <pointLight position={[10, 10, 10]} /> */}
-            {/* <Oval position={[1, 1, 1]} />
-          </Canvas>  */}
-      </div> 
+            {/* // style={{width: 'auto', height: '20vh'}} */}
+          
+            <ambientLight intensity={1.5} />
+            <pointLight intensity={4} position={[5, 5, 0]} />
+            <OvalShape isHover={isHover} />
+          </Canvas>
+        </div>
+        </div>
+    
+        </motion.div>
+      {/* </motion.div>  */}
     </>
   );
 }
@@ -109,3 +87,4 @@ function GreenControl() {
 export default GreenControl;
 
 {/* <Oval currentImg={currentKey}/> */}
+
