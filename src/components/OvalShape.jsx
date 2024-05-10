@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion-3d";
-import { useAnimate } from "framer-motion";
 import { useMemo } from 'react';
 import { Decal, Line, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
@@ -53,7 +52,7 @@ const ovalVariants = {
 };
 
 const OvalShape = () => {
-  const [scope, animate] = useAnimate();
+
   const texture = useTexture(profileImg);
   const texture2 = useTexture(profileImg2);
 

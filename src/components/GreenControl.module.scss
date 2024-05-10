@@ -1,24 +1,51 @@
-// .greenStyle {
-  
-// }
+.greenStyle {
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;    
+  box-sizing: border-box;  
 
-// @media screen and (min-width: 1250px) {
-//   .greenWrapper {
-//     height: 100vh;
-//     width: 50vw;
-//     flex: 1 0 0;
-//     border: dashed yellow;
-//   }
-// }
+  display: flex;
+  background: #002502;
 
-// @media screen and (min-width: 885px) and (max-width: 1250px) {
-//   .greenWrapper {
-//     height: 100vh;
-//     flex-direction: column;
-//     align-items: flex-start;
-//     flex: 1 1 0;
-//   }
-// }
+}
+
+@media screen and (min-width: 1100px) {
+  .greenWrapper {
+    align-items: flex-start;
+    flex-direction: column;
+    flex: 1 0 0;
+    padding: 52px 60px;
+    gap: 20px;
+    min-height: 100%;
+    max-width: 50%;
+    // border: dashed cyan;
+  }
+
+  .bioImgWrapJustify {
+    justify-self: flex-end;
+  }
+}
+
+@media screen and (min-width: 885px) and (max-width: 1100px) {
+  .greenWrapper {
+    // height: 100vh;
+    // flex-direction: column;
+    // align-items: flex-start;
+    // flex: 1 1 0;
+
+    align-items: flex-start;
+    flex-direction: column;
+    flex: 1 1 0;
+    padding: 52px 60px;
+    gap: 20px;
+    min-height: 100%;
+    max-width: 50%;
+    // border: dashed cyan;
+  }
+
+  .bioImgWrapJustify {
+    justify-self: center;
+  }
+}
 
 // @media screen and (min-width: 752px) and (max-width: 885px) {
 //   .greenWrapper {
@@ -39,25 +66,6 @@
 //     align-self: stretch;
 //   }
 // }
-
-
-.greenWrapper {
-  -webkit-box-sizing: border-box; 
-  -moz-box-sizing: border-box;    
-  box-sizing: border-box;   
-
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  flex: 1 0 0;
-
-  background: #002502;
-  padding: 52px 60px;
-  gap: 20px;
-  // border: dashed cyan;
-  min-height: 100%;
-  max-width: 50%;
-}
 
 .upperWrap {
   flex: 1 0 auto;
@@ -136,38 +144,21 @@
 
 .bioImgWrap {
   display: flex;
-
-  // min-height: 0;
-
-  justify-self: flex-end;
   align-self: flex-end;
   min-width: 0;
   width: 140px;
   height: 220px;
-  // max-height: 100%;
-  // overflow: hidden;
   // border: dashed wheat;
-
-  // .filledOval {
-  //   // background-image: url('./../img/profilepic.png');
-  //   fill: url('./../img/profilepic.png');
-  // }
-
-  // &:hover {
-  //   .filledOval {
-  //     transform-style: preserve-3d;
-  //     transform-origin: center center;
-  //     animation-name: rotate;
-  //     animation-duration: 1s;
-  //     animation-timing-function: linear;
-  //     // animation-iteration-count: infinite;
-  //   }
-  // }
 }
+
+
 
 .ovalCanvas {
   border: dashed wheat;
 }
+
+
+// svg and hover animation
 
 // .bioImgWrap svg {
 //   // min-width: 100%;
@@ -184,3 +175,19 @@
 //       transform: rotateY(90deg);
 //   }
 // }
+
+  // .filledOval {
+  //   // background-image: url('./../img/profilepic.png');
+  //   fill: url('./../img/profilepic.png');
+  // }
+
+  // &:hover {
+  //   .filledOval {
+  //     transform-style: preserve-3d;
+  //     transform-origin: center center;
+  //     animation-name: rotate;
+  //     animation-duration: 1s;
+  //     animation-timing-function: linear;
+  //     // animation-iteration-count: infinite;
+  //   }
+  // }
