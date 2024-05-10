@@ -1,38 +1,46 @@
-.tanStyle {
-  display: flex;
-  align-items: flex-start;
-  background: #e5ddcc;
-}
 
-.tanWrapper {
-  height: 100%;
-  width: 50%;
-  flex-direction: column;
-  flex: 1 0 0;
+// mobile/base
+.tanStyle {
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box;    
   box-sizing: border-box;    
+
+  display: flex;
+  background: #e5ddcc;
 }
 
-// @media screen and (min-width: 1250px) {
-//   .tanWrapper {
-//     height: 100%;
-//     width: 50%;
-//     flex-direction: column;ß
-//     flex: 1 0 0;
-//     -webkit-box-sizing: border-box; 
-//     -moz-box-sizing: border-box;    
-//     box-sizing: border-box;    
-//   }
-// }
 
-// @media screen and (min-width: 885px) and (max-width: 1250px) {
-//   .tanWrapper {
-//     height: 100vh;
-//     flex-direction: column;
-//     flex: 0 0 625px;
-//   }
-// }
+// mobile landscape
+@media all and (min-width: 480px) {
+
+}
+
+// tablet
+@media all and (min-width: 768px) {
+  .tanWrapper {
+    height: 100%;
+    width: 67%;
+    flex-direction: column;
+    flex: 1 0 0;
+  }
+}
+
+// desktop
+@media all and (min-width: 1024px) {
+  .tanWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 50%;
+    flex: 1 0 0;
+  }
+}
+
+// desktop wide
+@media all and (min-width: 1200px) {
+
+}
+
 
 // @media screen and (min-width: 752px) and (max-width: 884px) {
 //   .tanWrapper {

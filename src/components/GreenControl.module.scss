@@ -1,3 +1,6 @@
+// @media all and (prefers-color-scheme: dark) -- for future reference
+
+// mobile/base
 .greenStyle {
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box;    
@@ -5,67 +8,7 @@
 
   display: flex;
   background: #002502;
-
 }
-
-@media screen and (min-width: 1100px) {
-  .greenWrapper {
-    align-items: flex-start;
-    flex-direction: column;
-    flex: 1 0 0;
-    padding: 52px 60px;
-    gap: 20px;
-    min-height: 100%;
-    max-width: 50%;
-    // border: dashed cyan;
-  }
-
-  .bioImgWrapJustify {
-    justify-self: flex-end;
-  }
-}
-
-@media screen and (min-width: 885px) and (max-width: 1100px) {
-  .greenWrapper {
-    // height: 100vh;
-    // flex-direction: column;
-    // align-items: flex-start;
-    // flex: 1 1 0;
-
-    align-items: flex-start;
-    flex-direction: column;
-    flex: 1 1 0;
-    padding: 52px 60px;
-    gap: 20px;
-    min-height: 100%;
-    max-width: 50%;
-    // border: dashed cyan;
-  }
-
-  .bioImgWrapJustify {
-    justify-self: center;
-  }
-}
-
-// @media screen and (min-width: 752px) and (max-width: 885px) {
-//   .greenWrapper {
-//     height: 100vh;
-//     flex-direction: column;
-//     align-items: flex-start;
-//   }
-// }
-
-// @media screen and (max-width: 751px) {
-//   .greenWrapper {
-//     display: flex;
-//     height: 132px;
-//     padding-right: 15px;
-//     justify-content: center;
-//     align-items: center;
-//     gap: 376px;
-//     align-self: stretch;
-//   }
-// }
 
 .upperWrap {
   flex: 1 0 auto;
@@ -94,7 +37,6 @@
 
 .textWrap {
   display: flex;
-  padding: 0px 30px;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
@@ -134,6 +76,77 @@
   margin: 0;
 }
 
+// mobile landscape
+@media all and (min-width: 480px) {
+
+}
+
+// tablet
+@media all and (min-width: 768px) {
+  .greenWrapper {
+    align-items: flex-start;
+    flex-direction: column;
+    flex: 1 1 0;
+    padding: 52px 60px;
+    gap: 20px;
+    min-height: 100%;
+    max-width: 33%;
+    // border: dashed cyan;
+  }
+
+  .bioImgWrapJustify {
+    justify-self: center;
+  }
+}
+
+// desktop
+@media all and (min-width: 1024px) {
+  .greenWrapper {
+    align-items: flex-start;
+    flex-direction: column;
+    flex: 1 0 0;
+    padding: 52px 60px;
+    gap: 20px;
+    min-height: 100%;
+    max-width: 50%;
+    // border: dashed cyan;
+  }
+
+  .bioImgWrapJustify {
+    justify-self: flex-end;
+  }
+}
+
+// desktop wide
+@media all and (min-width: 1200px) {
+  .textWrap {
+    padding: 0px 30px;
+  }
+}
+
+
+// @media screen and (min-width: 752px) and (max-width: 885px) {
+//   .greenWrapper {
+//     height: 100vh;
+//     flex-direction: column;
+//     align-items: flex-start;
+//   }
+// }
+
+// @media screen and (max-width: 751px) {
+//   .greenWrapper {
+//     display: flex;
+//     height: 132px;
+//     padding-right: 15px;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 376px;
+//     align-self: stretch;
+//   }
+// }
+
+
+
 .lowerWrapper {
   display: grid;
   flex-direction: row;
@@ -146,7 +159,7 @@
   display: flex;
   align-self: flex-end;
   min-width: 0;
-  width: 140px;
+  width: 134px;
   height: 220px;
   // border: dashed wheat;
 }
