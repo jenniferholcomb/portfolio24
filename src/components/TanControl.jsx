@@ -4,9 +4,9 @@ import styles from "./TanControl.module.scss";
 function TanControl() {
   return (
     <>
-      <div className={`${styles.tanStyle} ${styles.tanWrapper} `}>
+      <div className={styles.tanWrapper}>
         <div className={styles.textWrapper}>
-          <h1>Testing Tan</h1>
+          {/* <h1>Testing Tan</h1> */}
         </div>
       </div>
     </>
