@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import styles from "./GreenControl.module.scss";
 import { motion } from "framer-motion-3d";
 import { Canvas } from '@react-three/fiber';
@@ -13,9 +13,6 @@ function GreenControl() {
   const [showMenu, setShowMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
-
-  const history = useNavigate();
-  console.log(history);
 
   function handleClick() {
     setShowMenu(!showMenu);
@@ -76,9 +73,14 @@ function GreenControl() {
                   <li>
                     <Link onClick={handleClick} to={"/about"} state={{ blurb: `${bio}` }}>About</Link>
                   </li>
-                  : null 
+                  : null
                 }
               </ul>
+              {
+                isDesktop ?
+                <Navigate to={"/"} /> 
+                 : null
+              }
               {/* <div className={styles.linkWrap}>
                 <h3 className={styles.links}>projects</h3>
                 <h3 className={styles.links}>graphic design</h3>
