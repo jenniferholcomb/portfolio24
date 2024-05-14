@@ -4,7 +4,7 @@ import styles from "./NavBar.module.scss";
 
 function NavBar() {
   const [showMenu, setShowMenu] = useState(false);
-  const [isDesktop, setIsDeskTop] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   function handleClick() {
     setShowMenu(!showMenu);
@@ -12,8 +12,8 @@ function NavBar() {
 
   function handleResize() {
     window.innerWidth < 480 ?
-      setIsDeskTop(true) 
-      : setIsDeskTop(false);
+      setIsMobile(true) 
+      : setIsMobile(false);
   }
 
   useEffect(() => {
@@ -34,9 +34,9 @@ function NavBar() {
       <div className={styles.navBar}>
         <div onClick={handleClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
           {
-            isDesktop ? 
+            isMobile ? 
             <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}`}></i>
-            : <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-circle-down"}`}></i>
+            : null 
           }
         </div>
         <div className={styles.navContainer} id={`${showMenu ? styles.menuActive : null}`} >

@@ -1,9 +1,57 @@
-.graphicDesignStyle {
-  width: 100vw;
-  height: 100vh;
-  font-size: 4em;
+// .graphicDesignStyle {
+//   width: 100vw;
+//   height: 100vh;
+//   font-size: 4em;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   color: white;
+// }
+
+// mobile/base
+.graphicDesignWrapper {
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;    
+  box-sizing: border-box;    
+
   display: flex;
+  font-size: 4em;
   justify-content: center;
   align-items: center;
-  color: white;
+  background: #e5ddcc;
+  // height: 100%;
+  // // width: 67%;
+  // flex-direction: column;
+  // align-items: flex-start;
+  // flex: 1 0 auto;
+  
+}
+
+
+// mobile landscape
+@media all and (min-width: 480px) {
+  .graphicDesignWrapper {
+    flex: 3 0px;
+  }
+
+}
+
+// tablet
+@media all and (min-width: 768px) {
+  // .tanWrapper {
+  //   max-width: 80%;
+  // }
+}
+
+// desktop
+@media all and (min-width: 1024px) {
+  .graphicDesignWrapper {
+    // max-width: 50%;
+    flex: 1 100%;
+  }
+}
+
+// desktop wide
+@media all and (min-width: 1200px) {
+
 }

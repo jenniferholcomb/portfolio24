@@ -5,7 +5,7 @@ import styles from "./PastWork.module.scss";
 function PastWork() {
   return (
     <>
-      <div className={styles.pastWorkStyle}>
+      <div className={styles.pastWorkWrapper}>
         Past Work
       </div>
     </>

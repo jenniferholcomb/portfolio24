@@ -5,7 +5,7 @@ import styles from "./GraphicDesign.module.scss";
 function GraphicDesign() {
   return (
     <>
-      <div className={styles.graphicDesignStyle}>
+      <div className={styles.graphicDesignWrapper}>
         Graphic Design
       </div>
     </>

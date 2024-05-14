@@ -5,7 +5,7 @@ import styles from "./Projects.module.scss";
 function Projects() {
   return (
     <>
-      <div className={styles.projectStyle}>
+      <div className={styles.projectsWrapper}>
         Projects
       </div>
     </>

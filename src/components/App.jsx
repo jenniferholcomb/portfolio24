@@ -14,16 +14,17 @@ import styles from "./App.module.scss";
 function App(){
   return ( 
     <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route exact path="/" Component={Projects} />
-        <Route exact path="/graphicdesign" Component={GraphicDesign} />
-        <Route exact path="/pastwork" Component={PastWork} />
-        <Route exact path="/about" Component={About} />
-      </Routes>
+      {/* <NavBar /> */}
       <div className={styles.bodyWrapper}>
         <GreenControl />
-        <TanControl />
+        <Routes>
+          <Route exact path="/" Component={Projects} />
+          <Route exact path="/graphicdesign" Component={GraphicDesign} />
+          <Route exact path="/pastwork" Component={PastWork} />
+          <Route exact path="/about" Component={About} />
+        </Routes>
+        
+        {/* <TanControl /> */}
       </div>
     </BrowserRouter>
     
