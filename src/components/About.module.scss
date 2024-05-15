@@ -15,9 +15,10 @@
   box-sizing: border-box;    
 
   display: flex;
-  font-size: 4em;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  // font-size: 4em;
+  justify-content: flex-start;
+  align-items: flex-start;
   background: #e5ddcc;
   // height: 100%;
   // // width: 67%;
@@ -43,15 +44,15 @@
   // }
 }
 
-// desktop
-@media all and (min-width: 1024px) {
-  .aboutWrapper {
-    // max-width: 50%;
-    flex: 1 100%;
-  }
-}
+// // desktop
+// @media all and (min-width: 1024px) {
+//   .aboutWrapper {
+//     // max-width: 50%;
+//     flex: 1 100%;
+//   }
+// }
 
-// desktop wide
-@media all and (min-width: 1200px) {
+// // desktop wide
+// @media all and (min-width: 1200px) {
 
-}
+// }
