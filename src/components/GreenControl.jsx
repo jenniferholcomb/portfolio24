@@ -13,12 +13,19 @@ function GreenControl() {
   const [showMenu, setShowMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [isAbout, setIsAbout] = useState(false);
 
-  function handleClick() {
+  const handleClick = () => {
     setShowMenu(!showMenu);
-  }
+    isAbout ? setIsAbout(false) : null;
+  };
 
-  function handleResize() {
+  const handleAboutClick = () => {
+    setIsAbout(!isAbout);
+    setShowMenu(!showMenu);
+  };
+
+  const handleResize = () => {
     window.innerWidth < 480 ?
       setIsMobile(true) 
       : setIsMobile(false);
@@ -26,7 +33,7 @@ function GreenControl() {
     window.innerWidth < 1024 ?
       setIsDesktop(false)
       : setIsDesktop(true);
-  }
+  };
 
   useEffect(() => {
     handleResize();
@@ -54,6 +61,11 @@ function GreenControl() {
             </object>
           </div> 
           {
+            !isDesktop && isAbout ?
+            <Navigate to={"/about"} state={{ blurb: `${bio}` }} />
+            : null
+          }
+          {
             isMobile ?
             <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}`}></i>
             :
@@ -71,23 +83,17 @@ function GreenControl() {
                 {
                   !isDesktop ?
                   <li>
-                    <Link onClick={handleClick} to={"/about"} state={{ blurb: `${bio}` }}>About</Link>
+                    <Link onClick={handleAboutClick} to={"/about"} state={{ blurb: `${bio}` }}>About</Link>
                   </li>
                   : null
                 }
               </ul>
-              {
-                isDesktop ?
-                <Navigate to={"/"} /> 
-                 : null
-              }
-              {/* <div className={styles.linkWrap}>
-                <h3 className={styles.links}>projects</h3>
-                <h3 className={styles.links}>graphic design</h3>
-                <h3 className={styles.links}>past work</h3>
-                <h3 className={`${styles.links} ${styles.aboutLink}`}>about</h3>
-              </div> */}
             </div>
+          }
+          {
+            isDesktop && isAbout ?
+            <Navigate to={"/"} /> 
+              : null
           }
         </div>
 
