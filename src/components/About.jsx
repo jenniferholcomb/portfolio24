@@ -1,12 +1,12 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 
+import useResize from "./hooks/useResize";
 import Bio from "./Bio";
 import styles from "./About.module.scss";
 
 function About() {
-  const location = useLocation();
-  
+  const [ isMobile, isDesktop ] = useResize();
+
   return (
     <>
       <div className={styles.aboutWrapper}>

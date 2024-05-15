@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import styles from "./GreenControl.module.scss";
 import { motion } from "framer-motion-3d";
 // import { Canvas } from '@react-three/fiber';
 
+import useResize from "./hooks/useResize";
 import Header from "./Header";
 import Bio from "./Bio";
 
 function GreenControl() {
+  const [isMobile, isDesktop] = useResize();
   const [showMenu, setShowMenu] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
   const [isAbout, setIsAbout] = useState(false);
 
   const handleRoute = (aboutSwitch) => {
@@ -20,35 +20,6 @@ function GreenControl() {
   const handleMenuClick = () => {
     setShowMenu(!showMenu);
   }
-
-  // const handleAboutClick = () => {
-  //   setIsAbout(!isAbout);
-  //   setShowMenu(!showMenu);
-  // };
-
-  const handleResize = () => {
-    window.innerWidth < 480 ?
-      setIsMobile(true) 
-      : setIsMobile(false);
-    
-    window.innerWidth < 1024 ?
-      setIsDesktop(false)
-      : setIsDesktop(true);
-  };
-
-  useEffect(() => {
-    handleResize();
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-
-    return _ => {
-      window.removeEventListener('resize', handleResize);
-    }
-  });
-
-  console.log(showMenu)
 
   return (
     <>
@@ -75,7 +46,7 @@ function GreenControl() {
               <div className={styles.textWrap}>
                 <ul className={styles.menuItems}>
                   <li>
-                    <Link onClick={handleRoute} to={"/"} state={{ mobile: {isMobile} }}>Projects</Link>
+                    <Link onClick={handleRoute} to={"/"}>Projects</Link>
                   </li>
                   <li>
                     <Link onClick={handleRoute} to={"/graphicdesign"}>Graphic Design</Link>
@@ -99,11 +70,6 @@ function GreenControl() {
               </div>
             </>
           }
-          {/* {
-            isDesktop && isAbout ?
-            <Navigate to={"/"} /> 
-              : null
-          } */}
         </div>
       </motion.div>
     </>
@@ -113,3 +79,10 @@ function GreenControl() {
 export default GreenControl;
 
 // Navigate to={"/about"} state={{ blurb: `${bio}` }} />
+// -- inside component --
+// import { useLocation } from "react-router-dom";
+
+// function Projects(size) {
+//   const location = useLocation();
+//   const { size } = location.state;
+// ...

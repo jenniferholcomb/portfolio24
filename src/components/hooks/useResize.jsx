@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const ResizeControl = () => {
+function useResize() {
   const [isMobile, setIsMobile] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -29,4 +29,4 @@ const ResizeControl = () => {
   return [isMobile, isDesktop];
 };
 
-export default ResizeControl;
+export default useResize;
