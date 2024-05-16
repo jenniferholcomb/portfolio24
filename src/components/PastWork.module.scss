@@ -15,16 +15,17 @@
   box-sizing: border-box;    
 
   display: flex;
-  font-size: 4em;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  // font-size: 4em;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 52px 20px;
   background: #e5ddcc;
   // height: 100%;
   // // width: 67%;
   // flex-direction: column;
   // align-items: flex-start;
-  // flex: 1 0 auto;
+  flex: 1 0 auto;
   
 }
 

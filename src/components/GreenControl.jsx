@@ -15,6 +15,7 @@ function GreenControl() {
 
   const handleRoute = (aboutSwitch) => {
     aboutSwitch === "about" ? setIsAbout(true) : setIsAbout(false);
+    isMobile ? setShowMenu(!showMenu) : null;
   };
 
   const handleMenuClick = () => {
@@ -39,7 +40,29 @@ function GreenControl() {
           }
           {
             isMobile ?
-            <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}`}></i>
+            <>
+              <div onClick={handleMenuClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
+                <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}`}></i>
+              </div>
+              
+              <div className={styles.navContainer} id={`${showMenu ? styles.menuActive : null}`} >
+                <ul className={styles.menuItems}>
+                    <li>
+                      <Link onClick={handleRoute} to={"/"}>Projects</Link>
+                    </li>
+                    <li>
+                      <Link onClick={handleRoute} to={"/graphicdesign"}>Graphic Design</Link>
+                    </li>
+                    <li>
+                      <Link onClick={handleRoute} to={"/pastwork"}>Past Work</Link>
+                    </li>
+                    <li>
+                      <Link onClick={() => handleRoute("about")} to={"/about"}>About</Link>
+                    </li>
+                </ul>
+                </div>
+              </>
+            
             :
             <>
               <Header />
