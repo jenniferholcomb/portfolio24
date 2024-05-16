@@ -1,10 +1,11 @@
 .headerWrap {
   width: 45%;
-  // flex: 1 0 0;
-  // height: auto;
-  align-items: center;
+  flex: 0 1 0;
+  height: auto;
+  align-self: center;
+  // justify-self: center;
   // align-items: flex-start;
-  border: dashed pink;
+  // border: dashed pink;
 }
 
 .fallbackInfo {

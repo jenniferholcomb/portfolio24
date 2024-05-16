@@ -1,5 +1,7 @@
 // @media all and (prefers-color-scheme: dark) -- for future reference
 
+// smallest iPhone 320 x 480, iPhone 12 390 x 844
+
 // mobile/base
 .greenWrapper {
   -webkit-box-sizing: border-box; 
@@ -11,9 +13,9 @@
   align-items: flex-start;
   flex-direction: column;
   flex: 1 1 0;
-  padding: 52px 20px;
+  padding: 30px 12px;
   min-height: 100%;
-  border: dashed cyan;
+  // border: dashed cyan;
 }
 
 .iconContainer {
@@ -63,11 +65,12 @@
   // transform: translate(-50%, -50%);
 
   list-style: none;
-  border: dashed black;
+  // border: dashed black;
 }
 
 .menuItems li {
   // margin: 0 6px 0 0;
+  line-height: 1.75em;
 }
 
 .menuItems li a {
@@ -89,7 +92,8 @@
   .greenWrapper {
     // max-width: 175px;
     flex: 1 0px;
-    min-width: 160px;
+    min-width: 150px;
+    gap: 14px;
   }
 
   .textWrap {
@@ -97,8 +101,14 @@
     flex-direction: column;
     align-items: flex-start;
     align-self: stretch;
+    // justify-content: center;
     // min-height: 100%;
     // border: dashed orange;
+  }
+
+  .menuItems li a {
+    font-size: .85em;
+  
   }
 }
 
