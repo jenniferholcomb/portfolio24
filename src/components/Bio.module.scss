@@ -12,14 +12,21 @@
   line-height: normal;
   letter-spacing: 1.5px;
   margin: 0;
+
+  border: dashed yellow;
 }
 
 .bioImgWrap {
   // justify-self: flex-end;
   min-width: 0;
-  width: 134px;
+  width: 155px;
   height: 220px;
-  // border: dashed wheat;
+  border: dashed wheat;
+  padding: 0;
+}
+
+.meshWrap {
+  border: dashed darkblue;
 }
 
 // desktop

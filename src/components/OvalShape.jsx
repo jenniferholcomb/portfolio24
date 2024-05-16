@@ -3,7 +3,7 @@ import { motion } from "framer-motion-3d";
 import { useMemo } from 'react';
 import { Decal, Line, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
-import styles from "./GreenControl.module.scss";
+import styles from "./Bio.module.scss";
 import profileImg from "./../img/profilepic.png";
 import profileImg2 from "./../img/Isla1.png";
 // import { degToRad } from "three/src/math/MathUtils";
@@ -20,7 +20,7 @@ const duration = 0.5;
 const ovalVariants = {
   load: {
     rotateY: [ 0, -0.5, 0.5, -0.25, 0.1, 0 ],
-    scale: 1,
+    // scale: 1,
     transition: {
       ease: "easeInOut",
       duration,
@@ -57,16 +57,16 @@ const OvalShape = () => {
   const texture2 = useTexture(profileImg2);
 
   const points = useMemo(() => {
-    const points = []
-    const curve = new THREE.EllipseCurve(0, 0, 2.3, 3.3, 0, 2 * Math.PI, false, 0).getPoints(128);
+    const points = [];
+    const curve = new THREE.EllipseCurve(0, 0, 2.6, 3.7, 0, 2 * Math.PI, false, 0).getPoints(128);
     const geometry = new THREE.BufferGeometry().setFromPoints(curve);
 
     let positions = geometry.attributes.position
     for (let i = 0; i < positions.count; i++) {
-      let p = new THREE.Vector3().fromBufferAttribute(positions, i)
-      points.push(p)
+      let p = new THREE.Vector3().fromBufferAttribute(positions, i);
+      points.push(p);
     }
-    return points
+    return points;
   }, [])
 
   const [action, setAction] = useState(false);
@@ -75,11 +75,13 @@ const OvalShape = () => {
     setTimeout(()=>{
       setAction(true)
      }, 7000)
-   }, [setAction])
+   }, [setAction]);
 
   return (
     <>
       <motion.mesh
+        position-x={0}
+        scale={1}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 3, ease: [0, 0.71, 0.2, 1.01] }}
@@ -87,6 +89,7 @@ const OvalShape = () => {
         <Line points={points} color="#e5ddcc" lineWidth={2.5} linecap="square" />
         <motion.mesh
           variants={ovalVariants}
+          scale={1.1}
           animate={action ? "rest" : "load"}
           // onAnimationComplete={() => setCompleted()}
           whileHover={"hover"}

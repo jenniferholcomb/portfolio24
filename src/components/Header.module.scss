@@ -1,9 +1,10 @@
 .headerWrap {
   width: 45%;
-  flex: 1 0 0;
-  height: auto;
+  // flex: 1 0 0;
+  // height: auto;
   align-items: center;
   // align-items: flex-start;
+  border: dashed pink;
 }
 
 .fallbackInfo {
@@ -35,7 +36,6 @@
 // desktop wide
 @media all and (min-width: 1200px) {
   .headerWrap {
-    width: 42%;
     max-width: 201px;
   }
 }

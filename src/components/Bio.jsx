@@ -1,5 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion-3d";
+import { MotionConfig } from "framer-motion";
+import { motion, MotionCanvas,  } from "framer-motion-3d";
 import { Canvas } from '@react-three/fiber';
 
 import OvalShape from "./OvalShape";
@@ -13,16 +14,17 @@ function Bio() {
     <>
       <p className={styles.bioStyle}>{bio}</p>
       <motion.div 
-        className={styles.bioImgWrap}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 4 }}
       >
-        <Canvas>
-          <ambientLight intensity={1.5} />
-          <pointLight intensity={4} position={[5, 5, 0]} />
-          <OvalShape />
-        </Canvas>
+        <div className={styles.bioImgWrap}>
+          <Canvas>
+            <ambientLight intensity={1.5} /> 
+            <pointLight intensity={4} position={[5, 5, 0]} />
+            <OvalShape />
+          </Canvas>
+        </div>
       </motion.div>
     </>
   );
