@@ -5,3 +5,37 @@
   align-items: center;
   // align-items: flex-start;
 }
+
+.fallbackInfo {
+  background-image: url('./../img/LogoName.png');
+}
+
+// mobile landscape
+@media all and (min-width: 480px) {
+  .headerWrap {
+    width: 100%;
+  }
+}
+
+// tablet
+@media all and (min-width: 768px) {
+  .headerWrap {
+    // width: 100%;
+    justify-self: center;
+  }
+}
+
+// desktop
+@media all and (min-width: 1024px) {
+  .headerWrap {
+    width: 42%;
+  }
+}
+
+// desktop wide
+@media all and (min-width: 1200px) {
+  .headerWrap {
+    width: 42%;
+    max-width: 201px;
+  }
+}

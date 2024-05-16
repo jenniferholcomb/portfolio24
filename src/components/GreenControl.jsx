@@ -29,69 +29,44 @@ function GreenControl() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 4 }} 
       >
-        <div className={styles.upperWrap}>
-          
+        {
+          isAbout ?
+            isDesktop ?
+            <Navigate to={"/"} /> 
+            : <Navigate to={"/about"} />
+          : null
+        }
+        {
+          isMobile ?
+            <div onClick={handleMenuClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
+              <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}`}></i>
+            </div>
+          :
+          <Header />
+        }
+        <div className={`${isMobile ? styles.navContainer : styles.textWrap}`} id={`${showMenu ? styles.menuActive : null}`} >
+          <ul className={styles.menuItems}>
+            <li>
+              <Link onClick={handleRoute} to={"/"}>Projects</Link>
+            </li>
+            <li>
+              <Link onClick={handleRoute} to={"/graphicdesign"}>Graphic Design</Link>
+            </li>
+            <li>
+              <Link onClick={handleRoute} to={"/pastwork"}>Past Work</Link>
+            </li>
+            {
+            !isDesktop ?
+              <li>
+                <Link onClick={() => handleRoute("about")} to={"/about"}>About</Link>
+              </li>
+              : null
+            }
+          </ul>
           {
-            isAbout ?
-              isDesktop ?
-              <Navigate to={"/"} /> 
-              : <Navigate to={"/about"} />
+            isDesktop ?
+            <Bio />
             : null
-          }
-          {
-            isMobile ?
-            <>
-              <div onClick={handleMenuClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
-                <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}`}></i>
-              </div>
-              
-              <div className={styles.navContainer} id={`${showMenu ? styles.menuActive : null}`} >
-                <ul className={styles.menuItems}>
-                    <li>
-                      <Link onClick={handleRoute} to={"/"}>Projects</Link>
-                    </li>
-                    <li>
-                      <Link onClick={handleRoute} to={"/graphicdesign"}>Graphic Design</Link>
-                    </li>
-                    <li>
-                      <Link onClick={handleRoute} to={"/pastwork"}>Past Work</Link>
-                    </li>
-                    <li>
-                      <Link onClick={() => handleRoute("about")} to={"/about"}>About</Link>
-                    </li>
-                </ul>
-                </div>
-              </>
-            
-            :
-            <>
-              <Header />
-              <div className={styles.textWrap}>
-                <ul className={styles.menuItems}>
-                  <li>
-                    <Link onClick={handleRoute} to={"/"}>Projects</Link>
-                  </li>
-                  <li>
-                    <Link onClick={handleRoute} to={"/graphicdesign"}>Graphic Design</Link>
-                  </li>
-                  <li>
-                    <Link onClick={handleRoute} to={"/pastwork"}>Past Work</Link>
-                  </li>
-                  {
-                    !isDesktop ?
-                    <li>
-                      <Link onClick={() => handleRoute("about")} to={"/about"}>About</Link>
-                    </li>
-                    : null
-                  }
-                </ul>
-                {
-                  isDesktop ?
-                  <Bio />
-                  : null
-                }
-              </div>
-            </>
           }
         </div>
       </motion.div>

@@ -1,0 +1,35 @@
+.bioStyle {
+  min-width: 215px;
+  max-width: 450px;
+  flex: 1 0 0;
+  gap: 10px;
+  color: #041328;
+  
+  font-family: Inconsolata;
+  font-size: .95em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  margin: 0;
+}
+
+.bioImgWrap {
+  // justify-self: flex-end;
+  min-width: 0;
+  width: 134px;
+  height: 220px;
+  // border: dashed wheat;
+}
+
+// desktop
+@media all and (min-width: 1024px) {
+  .bioStyle {
+    color: #cbdaef;
+    font-weight: 400;
+  }
+
+  // .bioImgWrapJustify {
+  //   justify-self: center;
+  // }
+}

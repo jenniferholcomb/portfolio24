@@ -3,7 +3,7 @@ import { motion } from "framer-motion-3d";
 import { Canvas } from '@react-three/fiber';
 
 import OvalShape from "./OvalShape";
-import styles from "./GreenControl.module.scss";
+import styles from "./Bio.module.scss";
 
 function Bio() {
 
@@ -11,21 +11,19 @@ function Bio() {
 
   return (
     <>
-      <div className={styles.lowerWrapper}>
-        <p className={`${styles.bioStyle} ${styles.bio}`}>{bio}</p>
-        <motion.div 
-          className={styles.bioImgWrap}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 4 }}
-        >
-          <Canvas>
-            <ambientLight intensity={1.5} />
-            <pointLight intensity={4} position={[5, 5, 0]} />
-            <OvalShape />
-          </Canvas>
-        </motion.div>
-      </div>
+      <p className={styles.bioStyle}>{bio}</p>
+      <motion.div 
+        className={styles.bioImgWrap}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 4 }}
+      >
+        <Canvas>
+          <ambientLight intensity={1.5} />
+          <pointLight intensity={4} position={[5, 5, 0]} />
+          <OvalShape />
+        </Canvas>
+      </motion.div>
     </>
   );
 }
