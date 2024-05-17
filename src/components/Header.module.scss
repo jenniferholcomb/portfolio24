@@ -1,6 +1,6 @@
 .headerWrap {
   width: 45%;
-  flex: 0 1 0;
+  flex: .5 0 0;
   height: auto;
   align-self: center;
   // justify-self: center;
@@ -13,24 +13,26 @@
 }
 
 // mobile landscape
-@media all and (min-width: 480px) {
+@media all and (min-width: 667px) {
   .headerWrap {
     width: 100%;
+    max-width: 200px;
   }
 }
 
 // tablet
 @media all and (min-width: 768px) {
   .headerWrap {
-    // width: 100%;
-    justify-self: center;
+    // justify-self: center;
   }
 }
 
 // desktop
 @media all and (min-width: 1024px) {
   .headerWrap {
-    width: 42%;
+    align-self: flex-start;
+    padding: 0 0 0 19px;
+    width: 43%;
   }
 }
 
