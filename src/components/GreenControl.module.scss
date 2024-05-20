@@ -9,7 +9,8 @@
   box-sizing: border-box;  
 
   display: flex;
-  background: linear-gradient(180deg, #002502 0%, #003d03 100%);
+  // background: linear-gradient(180deg, #002502 100%, #003d03 0%);
+  background-color: #001b08;
   align-items: flex-start;
   flex-direction: column;
   flex: 1 1 0;
@@ -101,7 +102,7 @@
     flex-direction: column;
     align-items: flex-start;
     flex: 6 0 0;
-    // align-self: stretch;
+    align-self: stretch;
     // justify-content: center;
     // min-height: 100%;
     // border: dashed orange;

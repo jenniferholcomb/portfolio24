@@ -21,8 +21,9 @@ function Bio() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           // transition={{ delay: 2, duration: 4 }}
+          className={styles.bioImgWrap}
         >
-          <div className={styles.bioImgWrap}>
+          <div className={styles.bioImg}>
             <MotionCanvas>
               <ambientLight intensity={1.5} /> 
               <pointLight intensity={4} position={[5, 5, 0]} />

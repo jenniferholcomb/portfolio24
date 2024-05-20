@@ -6,22 +6,22 @@
   color: #041328;
   
   font-family: Inconsolata;
-  font-size: .95em;
+  font-size: .9em;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
+  line-height: 1.1;
   letter-spacing: 1.5px;
   margin: 0;
 
-  border: dashed yellow;
+  // border: dashed yellow;
 }
 
-.bioImgWrap {
+.bioImg {
   // justify-self: flex-end;
   min-width: 0;
   width: 155px;
   height: 220px;
-  border: dashed wheat;
+  // border: dashed wheat;
   padding: 0;
 }
 
@@ -34,6 +34,13 @@
   .bioStyle {
     color: #cbdaef;
     font-weight: 400;
+    padding: 20px 0 0 47px;
+    margin: 0 47px 0 0;
+  }
+
+  .bioImgWrap {
+    margin: 0 47px 0 0;
+    align-self: flex-end;
   }
 
   // .bioImgWrapJustify {
