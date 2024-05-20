@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useResize from "./hooks/useResize";
 import { motion } from "framer-motion-3d";
 import { useMemo } from 'react';
 import { Decal, Line, useTexture } from '@react-three/drei';
@@ -52,6 +53,7 @@ const ovalVariants = {
 };
 
 const OvalShape = () => {
+  const [ isMobile, isDesktop ] = useResize();
 
   const texture = useTexture(profileImg);
   const texture2 = useTexture(profileImg2);
@@ -86,7 +88,7 @@ const OvalShape = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 3, ease: [0, 0.71, 0.2, 1.01] }}
       >
-        <Line points={points} color="#e5ddcc" lineWidth={2.5} linecap="square" />
+        <Line points={points} color={`${isDesktop ? "#e5ddcc" : "#78A0DB"}`} lineWidth={2.5} linecap="square" /> 
         <motion.mesh
           variants={ovalVariants}
           scale={1.1}

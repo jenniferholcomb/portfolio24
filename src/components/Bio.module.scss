@@ -29,11 +29,9 @@
   border: dashed darkblue;
 }
 
-// desktop
-@media all and (min-width: 1024px) {
+// tablet
+@media all and (min-width: 768px) {
   .bioStyle {
-    color: #cbdaef;
-    font-weight: 400;
     padding: 20px 0 0 47px;
     margin: 0 47px 0 0;
   }
@@ -42,6 +40,18 @@
     margin: 0 47px 0 0;
     align-self: flex-end;
   }
+
+}
+
+// desktop
+@media all and (min-width: 1024px) {
+  .bioStyle {
+    color: whitesmoke;
+    font-weight: 400;
+
+  }
+
+ 
 
   // .bioImgWrapJustify {
   //   justify-self: center;
