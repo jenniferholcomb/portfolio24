@@ -7,6 +7,7 @@ import { motion } from "framer-motion-3d";
 import useResize from "./hooks/useResize";
 import Header from "./Header";
 import Bio from "./Bio";
+import menuIcon from "./../img/menu_icon.svg";
 
 function GreenControl() {
   const [isMobile, isDesktop] = useResize();
@@ -39,13 +40,14 @@ function GreenControl() {
         {
           isMobile ?
             <div onClick={handleMenuClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
-              <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}`}></i>
+              <object data={menuIcon} type="image/svg+xml" className={styles.icon}></object>
+              {/* <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}`}></i> */}
             </div>
           :
           <Header />
         }
         <div className={`${isMobile ? styles.navContainer : styles.textWrap}`} id={`${showMenu ? styles.menuActive : null}`} >
-          <ul className={styles.menuItems}>
+          <ul className={styles.menuItems} id={`${showMenu ? styles.menuPointerEvents : null}`} >
             <li>
               <Link onClick={handleRoute} to={"/"}>Projects</Link>
             </li>
