@@ -1,8 +1,9 @@
 .headerWrap {
   width: 45%;
+  min-width: 180px;
   flex: .5 0 0;
   height: auto;
-  align-self: center;
+  align-self: flex-start;
   // justify-self: center;
   // align-items: flex-start;
   // border: dashed pink;
@@ -16,6 +17,7 @@
 @media all and (min-width: 667px) {
   .headerWrap {
     width: 100%;
+    min-width: 0;
     max-width: 200px;
   }
 }

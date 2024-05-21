@@ -2,6 +2,10 @@
 
 // smallest iPhone 320 x 480, iPhone 12 390 x 844
 
+:root {
+  --nav_bar_height: 20px;
+}
+
 // mobile/base
 .greenWrapper {
   -webkit-box-sizing: border-box; 
@@ -13,28 +17,34 @@
   background-color: #001b08;
   align-items: flex-start;
   flex-direction: column;
-  flex: 1 1 0;
-  padding: 50px 20px 38px 20px;
   min-height: 100%;
+  width: 45px;
+  min-width: 40px;
   // border: dashed cyan;
+  position: sticky;
+  top: 0;
+  z-index: 999999;
+
+  transition-duration: 0.3s;
+
+  pointer-events: none;
 }
 
 .iconContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  color: white;
-
+  color: #f5f5f5;
 }
 
 .menuRoutes {
-  width: var(--nav_bar_height);
+  width: 100%;
   height: var(--nav_bar_height);
-  position: absolute;
-  left: 0%;
+  // padding: 0 0 0 5px;
+  // position: absolute;
+  // left: 0%;
   z-index: 9999999;
-
+  padding: 35px 0 0 0;
   pointer-events: all;
 }
 
@@ -49,7 +59,7 @@
   position: absolute;
   transition-duration: 0.3s;
   opacity: 0;
-  background-color: #002502;
+  background-color: #001b08;
   border: dashed purple;
 }
 
@@ -93,7 +103,10 @@
   .greenWrapper {
     // max-width: 175px;
     flex: 1 0px;
+    position: relative;
+    top: auto;
     min-width: 150px;
+    padding: 50px 20px 38px 20px;
     gap: 24px;
   }
 
@@ -139,14 +152,14 @@
   }
 
   .menuItems li a {
-    font-size: .9em;
+    font-size: .88em;
   }
 }
 
 // desktop
 @media all and (min-width: 1024px) {
   .greenWrapper {
-    // max-width: 50%;
+    max-width: 50%;
     // padding: 52px 60px;
     flex: 1 100%;
   }
@@ -170,6 +183,8 @@
 #menuActive {
   opacity: 1;
   transform: translate(0%, 0%);
+  width: 175px;
+  padding: 80px 0 0 40px;
 }
 
 

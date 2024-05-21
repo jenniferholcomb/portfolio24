@@ -29,8 +29,8 @@
   border: dashed darkblue;
 }
 
-// tablet
-@media all and (min-width: 768px) {
+// mobile landscape
+@media all and (min-width: 667px) {
   .bioStyle {
     padding: 20px 0 0 47px;
     margin: 0 47px 0 0;
@@ -46,7 +46,7 @@
 // desktop
 @media all and (min-width: 1024px) {
   .bioStyle {
-    color: whitesmoke;
+    color: #f5f5f5;
     font-weight: 400;
 
   }
