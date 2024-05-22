@@ -19,13 +19,14 @@
     width: 100%;
     min-width: 0;
     max-width: 200px;
+    align-self: center;
   }
 }
 
 // tablet
 @media all and (min-width: 768px) {
   .headerWrap {
-    // justify-self: center;
+
   }
 }
 

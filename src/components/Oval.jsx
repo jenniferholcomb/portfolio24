@@ -85,21 +85,21 @@ export default Oval;
 //           onMouseEnter={handleMouseEnter}
 //           onMouseLeave={handleMouseLeave} 
 //         >
-//             <defs>
-//               <pattern
-//                 id="pattern"
-//                 patternUnits="objectBoundingBox"
-//                 width="1"
-//                 height="3">
-//                 <image
-//                   href={imgArr[currentKey]}
-//                   height={222}
-//                   x={-15}
-//                   y={-12}
-//                   alt="profile picture"
-//                 />
-//               </pattern>
-//             </defs>
+            // <defs>
+            //   <pattern
+            //     id="pattern"
+            //     patternUnits="objectBoundingBox"
+            //     width="1"
+            //     height="3">
+            //     <image
+            //       href={imgArr[currentKey]}
+            //       height={222}
+            //       x={-15}
+            //       y={-12}
+            //       alt="profile picture"
+            //     />
+            //   </pattern>
+            // </defs>
 //           <ellipse 
 //             cx="83" 
 //             cy="110.5" 
