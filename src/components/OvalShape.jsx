@@ -5,8 +5,8 @@ import { useMemo } from 'react';
 import { Decal, Line, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import styles from "./Bio.module.scss";
-import profileImg from "./../img/profilepic.png";
-import profileImg2 from "./../img/Isla1.png";
+import profileImg from "./../img/profilepic.webp";
+import profileImg2 from "./../img/Isla1.webp";
 // import { degToRad } from "three/src/math/MathUtils";
 
 function getEllipseShape() {

@@ -42,6 +42,11 @@
   height: auto;
 }
 
+.markX {
+  width: 45%;
+  height: auto;
+}
+
 .menuRoutes {
   width: 100%;
   // height: 100%;
@@ -58,20 +63,13 @@
   pointer-events: none;
 }
 
-// .icon {
-//   display: flex;
-//   align-self: flex-start;
-// }
-
 .navContainer {
   width: 100%;
   height: 100%;
   position: absolute;
   transition-duration: 0.3s;
   opacity: 0;
-
   background-color: #001b08;
-  border: dashed purple;
 }
 
 .menuItems {
@@ -120,6 +118,7 @@
     min-width: 150px;
     padding: 50px 20px 38px 20px;
     gap: 24px;
+    
   }
 
   .textWrap {
@@ -139,7 +138,7 @@
 
   .menuItems li a {
     font-size: .85em;
-  
+    pointer-events: all;
   }
 }
 
@@ -174,6 +173,7 @@
     max-width: 50%;
     // padding: 52px 60px;
     flex: 1 100%;
+    pointer-events: all;
   }
   
   // .textWrap {

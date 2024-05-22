@@ -8,6 +8,7 @@ import useResize from "./hooks/useResize";
 import Header from "./Header";
 import Bio from "./Bio";
 import menuIcon from "./../img/menu_icon.svg";
+import xmarkIcon from "./../img/xmark_icon.svg";
 
 function GreenControl() {
   const [isMobile, isDesktop] = useResize();
@@ -40,7 +41,9 @@ function GreenControl() {
         {
           isMobile ?
             <div onClick={handleMenuClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
-              <object data={menuIcon} type="image/svg+xml" className={styles.icon}></object>
+              <object data={showMenu ? xmarkIcon : menuIcon } type="image/svg+xml" className={showMenu ? styles.markX : styles.icon}>
+                <span className={styles.fallbackInfo}>Your browser does not support SVG</span>
+              </object>
               {/* <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}`}></i> */}
             </div>
           :
