@@ -4,12 +4,12 @@ import useResize from "./hooks/useResize";
 import Header from "./Header";
 import styles from "./PastWork.module.scss";
 
-import acc1 from "./../img/accessory/astor_body.webp";
-import acc2 from "./../img/accessory/wrist_hairy.webp";
-import acc3 from "./../img/accessory/beach.webp";
-import acc4 from "./../img/accessory/black_tote.webp";
-import acc5 from "./../img/accessory/vote_wallet.webp";
-import acc6 from "./../img/accessory/wallet_model.webp";
+import acc5 from "./../img/accessory/astor_body.webp";
+import acc6 from "./../img/accessory/wrist_hairy.webp";
+import acc4 from "./../img/accessory/beach.webp";
+import acc2 from "./../img/accessory/black_tote.webp";
+import acc3 from "./../img/accessory/vote_wallet.webp";
+import acc1 from "./../img/accessory/wallet_model.webp";
 import acc7 from "./../img/accessory/wallace_interior.webp";
 import acc8 from "./../img/accessory/workshop.webp";
 import acc9 from "./../img/accessory/wrist_strap.webp";
@@ -22,16 +22,6 @@ function PastWork() {
     console.log(pic)
   }
 
-            {/* <img src={acc1} alt="tote on model" className={`${"accItem-1"}`}/> */}
-          {/* <img src={acc2} alt="hairy wristlet" className={`${"accItem-2"}`}/>
-          <img src={acc3} alt="bags on beach" className={`${"accItem-3"}`}/>
-          <img src={acc4} alt="black tote cloesup" className={`${"accItem-4"}`}/>
-          <img src={acc5} alt="wallet embossed with vote" className={`${"accItem-5"}`}/>
-          <img src={acc6} alt="wallet with model" className={`${"accItem-6"}`} />
-          <img src={acc7} alt="wallet interior" className={`${"accItem-7"}`} />
-          <img src={acc8} alt="workshop" className={`${"accItem-8"}`}/>
-          <img src={acc9} alt="red bags on table" className={`${"accItem-9"}`} /> */}
-
   const imgArr = [ {pic: acc1, altText: "tote on model"}, 
                    {pic: acc2, altText: "hairy wristlet"}, 
                    {pic: acc3, altText: "bags on beach"}, 
@@ -42,12 +32,6 @@ function PastWork() {
                    {pic: acc8, altText: "workshop"}, 
                    {pic: acc9, altText: "wallets with wrist straps"} ];
 
-  // useEffect(() => {
-  //   imgArr.map((pic, index) => {
-  //     printImg(pic.altText, pic.pic);
-  //   });
-  // }, []);
-
   return (
     <>
       <div className={styles.pastWorkWrapper}>
@@ -56,7 +40,7 @@ function PastWork() {
             <Header />
           : null
         }
-        <hi className={styles.aboutPageTitle}>Past Work</hi>
+        {/* <hi className={styles.aboutPageTitle}>Past Work</hi> */}
         <div className={styles.imgContainer}>
           <div className={styles.cubeWrap}>
             {imgArr.map((img, index) => 
@@ -65,7 +49,8 @@ function PastWork() {
                 width="170" 
                 height="170" 
                 viewBox="0 0 312 312" 
-                className={`accItem-${index + 1}`}
+                // className={`accItem-${index + 1}`}
+                className={styles.accItem}
                 key={index + 1}
               >
                 <defs>
@@ -82,8 +67,6 @@ function PastWork() {
                       opacity={(.88)}
                       alt={`${img.altText}`}
                     />
-                    {/* {console.log(gridImg.pic)}
-                    {console.log(index)} */}
                   </pattern>
                 </defs>
                 <path 
