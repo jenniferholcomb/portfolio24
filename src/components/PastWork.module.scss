@@ -6,18 +6,18 @@
   box-sizing: border-box;    
 
   display: grid;
-  // flex-direction: column;
+  flex-direction: column;
   // font-size: 4em;
 
 
   // background: #e5ddcc;
-  background: #eff2f0;
+  background: #E8ECEA;
   // height: 100%;
   // // width: 67%;
   // flex-direction: column;
   // align-items: flex-start;
-  flex: 1 0 auto;
-  
+  // flex: 1 0 auto;
+   border: dashed orange;
 }
 
 .aboutPageTitle {
@@ -33,6 +33,20 @@
   letter-spacing: 2.5px;
 }
 
+.brandDev {
+  content: "";
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  position: absolute;
+  bottom: 0;
+  width: 150%;
+  height: 800px;
+  background-color: #0f0f10;
+  background-image: url("./../img/chowburgerbundle.png");
+}
+
 .imgContainer {
   justify-self: center;
   align-items: center;
@@ -41,7 +55,7 @@
 
 .cubeWrap {
   display: inline-grid;
-  grid-gap: 10px;
+  grid-gap: 8px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
   // overflow: hidden;
@@ -52,7 +66,7 @@
   margin-bottom: -10px;
 }
 
-[class^='accItem'] {
+.accItem {
   display: grid;
   align-items: center;
   justify-content: center;
@@ -68,7 +82,7 @@
 // mobile landscape
 @media all and (min-width: 667px) {
   .pastWorkWrapper {
-    flex: 3 0px;
+    // flex: 3 0px;
   }
 
 }
@@ -81,7 +95,7 @@
   }
 
   .accItem:nth-last-child(-n+3) {
-    display: grid;
+    display: block;
   }
 
   .accItem:nth-child(1) {

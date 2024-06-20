@@ -41,6 +41,29 @@ function PastWork() {
           : null
         }
         {/* <hi className={styles.aboutPageTitle}>Past Work</hi> */}
+
+        <div className={styles.brandDev}>
+
+        </div>
+       
+        <div className={styles.logoDesign}>
+
+        </div>
+        
+        <div className={styles.accessoryDesign}>
+
+        </div>
+        
+        <div className={styles.patternEngineer}>
+
+        </div>
+        
+        <div className={styles.teaching}>
+
+        </div>
+
+
+
         <div className={styles.imgContainer}>
           <div className={styles.cubeWrap}>
             {imgArr.map((img, index) => 
