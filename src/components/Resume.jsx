@@ -2,23 +2,23 @@ import React from "react";
 
 import useResize from "./hooks/useResize";
 import Header from "./Header";
-import styles from "./GraphicDesign.module.scss";
+import styles from "./Resume.module.scss";
 
-function GraphicDesign() {
+function Resume() {
   const [ isMobile, isDesktop ] = useResize();
   
   return (
     <>
-      <div className={styles.graphicDesignWrapper}>
+      <div className={styles.resumeWrapper}>
         {
           isMobile ?
             <Header />
           : null
         }
-        Graphic Design
+        Resume
       </div>
     </>
   );
 }
 
-export default GraphicDesign;
+export default Resume;

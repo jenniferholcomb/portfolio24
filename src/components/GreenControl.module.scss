@@ -13,20 +13,19 @@
   box-sizing: border-box;  
 
   display: flex;
-  // background: linear-gradient(180deg, #002502 100%, #003d03 0%);
   background-color: #001b08;
   align-items: flex-start;
   flex-direction: column;
   min-width: 100%;
   // width: 100%;
-  // height: 45px;
+  height: 45px;
   max-height: 45px;
-  border: dashed cyan;
+  // border: dashed cyan;
   position: sticky;
   top: 0;
   z-index: 999999;
 
-  transition-duration: 0.3s;
+  // transition-duration: 0.3s;
 
   pointer-events: none;
 }
@@ -89,7 +88,7 @@
   // transform: translate(-50%, -50%);
 
   list-style: none;
-  border: dashed black;
+  // border: dashed black;
 }
 
 .menuItems li {
@@ -118,6 +117,7 @@
     flex: 1 0px;
     position: relative;
     top: auto;
+    min-height: 100%;
     min-width: 150px;
     padding: 50px 20px 38px 20px;
     gap: 24px;
@@ -172,7 +172,7 @@
 
 // desktop
 @media all and (min-width: 1024px) {
-  .greenWrapper {
+  .homeWrapper {
     max-width: 50%;
     // padding: 52px 60px;
   
@@ -199,8 +199,10 @@
 #menuActive {
   opacity: 1;
   transform: translate(0%, 0%);
-  width: 175px;
+  width: 100%;
+  min-height: 100%;
   padding: 80px 0 0 40px;
+     border: dashed orange;
 }
 
 #menuPointerEvents li a {

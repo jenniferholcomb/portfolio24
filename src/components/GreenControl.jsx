@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import styles from "./GreenControl.module.scss";
 import { motion } from "framer-motion-3d";
 // import { Canvas } from '@react-three/fiber';
@@ -11,22 +11,36 @@ import menuIcon from "./../img/menu_icon.svg";
 import xmarkIcon from "./../img/xmark_icon.svg";
 
 function GreenControl() {
+  const location = useLocation();
   const [isMobile, isDesktop] = useResize();
   const [showMenu, setShowMenu] = useState(false);
   const [isAbout, setIsAbout] = useState(false);
+  const [isHome, setIsHome] = useState(null);
 
   const handleRoute = (aboutSwitch) => {
     aboutSwitch === "about" ? setIsAbout(true) : setIsAbout(false);
     isMobile ? setShowMenu(!showMenu) : null;
+    setIsHome(false);
+    console.log(isHome);
   };
 
   const handleMenuClick = () => {
     setShowMenu(!showMenu);
   }
 
+  const handleHomeClick = () => {
+    !isHome ? setIsHome(true) : null;
+    isAbout ? setIsAbout(false) : null;
+    console.log("we got here");
+  }
+
+  useEffect(() => {
+    location.pathname === '/' ? setIsHome(true) : setIsHome(false);
+  }, []);
+
   return (
     <>
-      <motion.div className={styles.greenWrapper}
+      <motion.div className={`${styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`}
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 4 }} 
@@ -47,21 +61,21 @@ function GreenControl() {
               {/* <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}`}></i> */}
             </div>
           :
-          <Header />
+          <Header homeClick={handleHomeClick} />
         }
         <div className={`${isMobile ? styles.navContainer : styles.textWrap}`} id={`${showMenu ? styles.menuActive : null}`} >
           <ul className={styles.menuItems} id={`${showMenu ? styles.menuPointerEvents : null}`} >
             <li>
-              <Link onClick={handleRoute} to={"/"}>Projects</Link>
-            </li>
-            <li>
-              <Link onClick={handleRoute} to={"/graphicdesign"}>Graphic Design</Link>
+              <Link onClick={handleRoute} to={"/projects"}>Projects</Link>
             </li>
             <li>
               <Link onClick={handleRoute} to={"/pastwork"}>Past Work</Link>
             </li>
+            <li>
+              <Link onClick={handleRoute} to={"/resume"}>Resume</Link>
+            </li>
             {
-            !isDesktop ?
+            !isDesktop || (!isHome && !isAbout) ?
               <li>
                 <Link onClick={() => handleRoute("about")} to={"/about"}>About</Link>
               </li>
@@ -69,7 +83,7 @@ function GreenControl() {
             }
           </ul>
           {
-            isDesktop ?
+            (isDesktop && isHome) || (isDesktop && isAbout) ?
             <Bio />
             : null
           }

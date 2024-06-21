@@ -9,7 +9,7 @@
 // }
 
 // mobile/base
-.graphicDesignWrapper {
+.resumeWrapper {
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box;    
   box-sizing: border-box;    
@@ -19,7 +19,7 @@
   // font-size: 4em;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 35px 30px ;
+  padding: 52px 20px;
   background: #e5ddcc;
   // height: 100%;
   // // width: 67%;
@@ -31,8 +31,8 @@
 
 
 // mobile landscape
-@media all and (min-width: 480px) {
-  .graphicDesignWrapper {
+@media all and (min-width: 667px) {
+  .resumeWrapper {
     flex: 3 0px;
   }
 
@@ -47,9 +47,9 @@
 
 // desktop
 @media all and (min-width: 1024px) {
-  .graphicDesignWrapper {
+  .resumeWrapper {
     // max-width: 50%;
-    flex: 1 100%;
+    // flex: 1 100%;
   }
 }
 

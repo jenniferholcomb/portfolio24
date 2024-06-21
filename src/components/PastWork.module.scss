@@ -16,7 +16,7 @@
   // // width: 67%;
   // flex-direction: column;
   // align-items: flex-start;
-  // flex: 1 0 auto;
+  flex: 1 0 auto;
    border: dashed orange;
 }
 
@@ -82,7 +82,7 @@
 // mobile landscape
 @media all and (min-width: 667px) {
   .pastWorkWrapper {
-    // flex: 3 0px;
+    flex: 3 0px;
   }
 
 }
@@ -138,8 +138,8 @@
 // desktop
 @media all and (min-width: 1024px) {
   .pastWorkWrapper {
-    max-width: 50%;
-    flex: 1 100%;
+    // max-width: 50%;
+    // flex: 1 100%;
   }
 }
 
