@@ -1,16 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import styles from "./Header.module.scss";
 import logo from "./../img/logo.svg";
 
 function Header(props) {
   const { homeClick } = props;
+  const location = useLocation();
 
   return (
     <>
-      <div className={styles.headerWrap}>
+      <div className={`${styles.headerWrap} ${(location.pathname === '/') || (location.pathname === '/about') ? styles.header2Wrap : null}`}>
         <Link to={"/"} className={styles.linkStyle}>
           <div className={styles.logo} onClick={homeClick}>
             <object data={logo} className={styles.logoObject} type="image/svg+xml" >

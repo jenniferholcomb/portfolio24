@@ -45,7 +45,7 @@
 
 // desktop
 @media all and (min-width: 1024px) {
-  .headerWrap {
+  .header2Wrap {
     align-self: flex-start;
     padding: 0 0 0 19px;
     width: 43%;
@@ -54,7 +54,7 @@
 
 // desktop wide
 @media all and (min-width: 1200px) {
-  .headerWrap {
+  .header2Wrap {
     max-width: 201px;
   }
 }
