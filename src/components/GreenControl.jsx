@@ -40,6 +40,7 @@ function GreenControl() {
 
   return (
     <>
+    {/* <div></div> */}
       <motion.div className={`${styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`}
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -64,8 +65,8 @@ function GreenControl() {
           <Header homeClick={handleHomeClick} />
         }
         <div className={`${isMobile ? styles.navContainer : styles.textWrap}`} id={`${showMenu ? styles.menuActive : null}`} >
-          <ul className={styles.menuItems} id={`${showMenu ? styles.menuPointerEvents : null}`} >
-            <li>
+          <ul className={`${styles.menuItems} ${(isHome || isAbout) ? styles.menuItems2 : styles.menuItems3}`} id={`${showMenu ? styles.menuPointerEvents : null}`} >
+            <li>        
               <Link onClick={handleRoute} to={"/projects"}>Projects</Link>
             </li>
             <li>

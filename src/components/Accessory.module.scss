@@ -1,0 +1,135 @@
+
+// mobile/base
+.accessoryWrapper {
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;    
+  box-sizing: border-box;    
+
+  display: grid;
+  flex-direction: column;
+  // font-size: 4em;
+
+
+  // background: #e5ddcc;
+  background: #E8ECEA;
+  // height: 100%;
+  // // width: 67%;
+  // flex-direction: column;
+  // align-items: flex-start;
+  flex: 1 0 auto;
+   border: dashed orange;
+}
+
+.aboutPageTitle {
+  position: relative;
+  display: flex;
+
+  top: 0%;
+  color: #78A0DB;
+  font-family: Hind;
+  font-size: 1.35em;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+}
+
+.imgContainer {
+  justify-self: center;
+  align-items: center;
+  // padding: 5px;
+}
+
+.cubeWrap {
+  display: inline-grid;
+  grid-gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+  // overflow: hidden;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-left: -10px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.accItem {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  filter: drop-shadow(-5px 5px 5px #dbdedc);
+}
+
+.accItem:nth-last-child(-n+3) {
+  display: none;
+}
+
+
+// mobile landscape
+@media all and (min-width: 667px) {
+  .pastWorkWrapper {
+    flex: 3 0px;
+  }
+
+}
+
+// tablet
+@media all and (min-width: 768px) {
+  .cubeWrap {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr)
+  }
+
+  .accItem:nth-last-child(-n+3) {
+    display: block;
+  }
+
+  .accItem:nth-child(1) {
+    order: 6;
+  }
+  
+  .accItem:nth-child(2) {
+    order: 4;
+  }
+  
+  .accItem:nth-child(3) {
+    order: 5;
+  }
+  
+  .accItem:nth-child(4) {
+    order: 3;
+  }
+  
+  .accItem:nth-child(5) {
+    order: 1;
+  }
+  
+  .accItem:nth-child(6) {
+    order: 2;
+  }
+  
+  .accItem:nth-child(7) {
+    order: 7;
+  }
+  
+  .accItem:nth-child(8) {
+    order: 8;
+  }
+  
+  .accItem:nth-child(9) {
+    order: 9;
+  }
+}
+
+// desktop
+@media all and (min-width: 1024px) {
+  .pastWorkWrapper {
+    // max-width: 50%;
+    // flex: 1 100%;
+  }
+}
+
+// desktop wide
+@media all and (min-width: 1200px) {
+
+}

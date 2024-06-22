@@ -1,3 +1,10 @@
+body {
+  overflow-x: hidden;  
+  overflow-y: scroll;
+}
+
+
+
 .bodyWrapper {
   // -webkit-box-sizing: border-box; 
   // -moz-box-sizing: border-box;    
@@ -11,8 +18,15 @@
   height: 100%;
   padding: 0;
   // border: dashed magenta;
-
+  
 }
+
+// .green {
+//   position: fixed;
+//   display: flex;
+//   flex-direction: column;
+//   background-color: #001b08;
+// }
 
 // .bodyWrapper > * {
 //   flex: 1 100%;
