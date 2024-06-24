@@ -183,9 +183,11 @@
 @media all and (min-width: 1024px) {
   .homeWrapper {
     max-width: 50%;
+    width: 50vw;
+    // position: inherit;
     // padding: 52px 60px;
   
-    flex: 1 100%;
+    // flex: 1 100%;
     pointer-events: all;
   }
   

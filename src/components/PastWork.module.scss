@@ -16,80 +16,110 @@
   box-sizing: border-box;    
 
   display: flex;
-  flex-direction: column;
-  position: relative;
-  // font-size: 4em;
-  // margin-left: 6rem;
-  align-items: center;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  gap: 80px;
-  left: 6rem;
-  min-height: 100vh;
-  flex: 1 0 auto;
+  flex-direction: column; 
+
+  min-height: 100%;
+  padding-left: 225px;
 }
 
-.pastWorkWrapper section {
-  position: relative;
+.pageHeader {
+  display: flex;
+  color: rgba(187, 203, 192, 0.81);
+  text-align: right;
+  font-family: Hind;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 42px; /* 70% */
+  letter-spacing: 6px;
+  align-self: flex-end;
+  margin: 0;
+  // position: relative;
+}
+
+.bubbles {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 0 40px 0;
+  gap: 3.5em;
+  overflow-x: hidden;
+}
+
+.bubbles section {
+  // position: relative;
   min-height: 700px;
 }
 
-.bubble {
-  content: "";
-  margin: 0 0 0 40px;
-  // justify-items: center;
-  border-top-left-radius: 50% 50%;
-  border-top-right-radius: 50% 50%;
-  border-bottom-left-radius: 50% 50%;
-  border-bottom-right-radius: 50% 50%;
-  position: absolute;
-  bottom: 0;
-  width: 150%;
-  height: 800px;
+.bubbleShape {
+  display: flex;
+  flex-direction: row;
+  gap: 4em;
   background-color: white;
-  background-repeat: no-repeat;
-  background-position: 68%;
-  background-size: 45rem;
-
+  width: 100%;
+  padding: 40px 0 40px 0;
+  clip-path: ellipse(65.58% 49.89% at 50.22% 50.11%);
 }
 
 .bubbleContent {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 57vw;
-  justify-items: center;
-  padding-top: 3rem;
+  justify-content: center;
+  padding-bottom: 2em;
+}
+
+.headerContainer {
+  display: grid;
+  // grid-template-columns: 5em 17.4em;
+  grid-template-columns: auto;
+  align-self:last baseline;
+  width: 100%;
+  // justify-content: end;
+  padding: 40px 0 15px 0;
+}
+
+.number {
+  grid-column: 1;
+  align-self: end;
+  color: rgba(187, 203, 192, 0.81);
+  font-size: 54px;
+  letter-spacing: 4.8px;
+  font-weight: 700;
+  line-height: 1em;
+  padding-left: 10px;
+  padding-bottom: 1.1px;
+  opacity: 90%;
 }
 
 .headers {
-  align-self: flex-end;
-  padding: 40px 0 0 0;
+  align-self: end;
+  grid-column: 2;
   color: #001B08;
   text-align: right;
   font-family: Hind;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 28px; /* 116.667% */
   letter-spacing: 3.6px;
   text-transform: capitalize;
+  margin: 0;
 }
 
-.headers span {
+.headers .blocked {
   display: block;
 }
 
 .bubbleContent svg {
-  // stroke-width: 2px;
-  // stroke: #001B08;
   align-self: flex-end;
 }
 
 .blurb {
   align-self: flex-end;
   width: 301px;
-  padding-top: 12px;
+  padding-top: 30px;
 }
 
 .bubbleContent p {
@@ -100,40 +130,22 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 1.5px;
+  margin: 0;
 }
 
-.cbLogo {
-  background: url("./../img/chowburgerlogo.svg") white 0px 0px / 100% 100% no-repeat;
-  width: 170px;
-  height: 83px;
-  position: relative;
-  left: 18vw;
-  padding-top: 46px;
-}
-
-.bsLogo {
-  background: url("./../img/bellysanlogo.svg") white 0px 0px / 100% 100% no-repeat;
-  width: 270px;
-  height: 72px;
-  position: relative;
-  left: 18vw;
-  padding-top: 46px;
-}
-
-.okLogo {
-  width: 270px;
-  height: 72px;
-  position: relative;
-  left: 21vw;
-  padding-top: 10px;
-}
-
-.brandDev {
-  background-image: url("./../img/chowburgerbundle.png");
+.imgStyle {
+  display: flex;
+  height: 45rem;
+  align-self: center;
+  padding-top: .75em;
 }
 
 .logoDesign {
   background-image: url("./../img/bellysanbundle.png");
+}
+
+.accessory {
+  background-image: url("./../img/accessorybundle.png");
 }
 
 .patternEngineer {
@@ -147,7 +159,7 @@
 // mobile landscape
 @media all and (min-width: 667px) {
   .pastWorkWrapper {
-    flex: 3 0px;
+    // flex: 3 0px;
   }
 
 }
@@ -169,8 +181,8 @@
 
 // desktop wide
 @media all and (min-width: 1200px) {
-  .bubble {
-    background-position: 55rem;
-    background-size: 50rem;
-  }
+  // .bubble {
+  //   // background-position: 55rem;
+  //   // background-size: 50rem;
+  // }
 }

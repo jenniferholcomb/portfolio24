@@ -4,15 +4,15 @@ import useResize from "./hooks/useResize";
 import Header from "./Header";
 import styles from "./PastWork.module.scss";
 
-import acc5 from "./../img/accessory/astor_body.webp";
-import acc6 from "./../img/accessory/wrist_hairy.webp";
-import acc4 from "./../img/accessory/beach.webp";
-import acc2 from "./../img/accessory/black_tote.webp";
-import acc3 from "./../img/accessory/vote_wallet.webp";
-import acc1 from "./../img/accessory/wallet_model.webp";
-import acc7 from "./../img/accessory/wallace_interior.webp";
-import acc8 from "./../img/accessory/workshop.webp";
-import acc9 from "./../img/accessory/wrist_strap.webp";
+// import acc5 from "./../img/accessory/astor_body.webp";
+// import acc6 from "./../img/accessory/wrist_hairy.webp";
+// import acc4 from "./../img/accessory/beach.webp";
+// import acc2 from "./../img/accessory/black_tote.webp";
+// import acc3 from "./../img/accessory/vote_wallet.webp";
+// import acc1 from "./../img/accessory/wallet_model.webp";
+// import acc7 from "./../img/accessory/wallace_interior.webp";
+// import acc8 from "./../img/accessory/workshop.webp";
+// import acc9 from "./../img/accessory/wrist_strap.webp";
 
 function Accessory() {
   const [ isMobile, isDesktop ] = useResize();
