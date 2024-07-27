@@ -21,7 +21,7 @@ function PastWork() {
             <Header />
           : null
         }
-        <h1 className={styles.pageHeader}>Past Work</h1>
+        <h1 className={styles.pageHeader}>PAST WORK</h1>
         <div className={styles.bubbles}>
           <section className={styles.bubbleShape}>
             <div className={styles.bubbleContent}>

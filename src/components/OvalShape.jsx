@@ -6,7 +6,7 @@ import { Decal, Line, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import styles from "./Bio.module.scss";
 import profileImg from "./../img/profilepic.webp";
-import profileImg2 from "./../img/Isla1.webp";
+import profileImg2 from "./../img/windyjen.webp";
 // import { degToRad } from "three/src/math/MathUtils";
 
 function getEllipseShape() {
@@ -111,7 +111,7 @@ const OvalShape = () => {
             ref={Decal}
             position={[0, 0, 0]} 
             rotation={[0, 0, 0]} 
-            scale={[5, 6.4, 5]} 
+            scale={[4.2, 6.2, 5]} 
             map={texture2} >
             <meshStandardMaterial map={texture2} polygonOffset
             polygonOffsetFactor={-1} side={THREE.BackSide}/>
