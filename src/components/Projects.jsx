@@ -15,7 +15,10 @@ function Projects() {
             <Header />
           : null
         }
-        Projects
+        <h1 className={styles.pageHeader}>PROJECTS</h1>
+        <div className={styles.projectCard}>
+          <h1>Pantry Pro</h1>
+        </div>
       </div>
     </>
   );

@@ -6,7 +6,7 @@ function TanControl() {
     <>
       <div className={styles.tanWrapper}>
         <div className={styles.textWrapper}>
-          {/* <h1>Testing Tan</h1> */}
+          <h1>Testing Tan</h1>
         </div>
       </div>
     </>

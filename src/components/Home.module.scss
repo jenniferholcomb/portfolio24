@@ -1,0 +1,22 @@
+.homeWrapper {
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;    
+  box-sizing: border-box;    
+
+  display: flex;
+  flex-direction: column; 
+
+  min-height: 100%;
+  // padding-left: 600px;
+  min-width: 50%;
+  align-self: flex-end;
+  align-items: center;
+  margin: 55px 0 55px 0;
+  gap: 55px;
+}
+
+.projectCard {
+  width: 411px;
+  min-height: 263px;
+  background-color: pink;
+}
