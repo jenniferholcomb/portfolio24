@@ -56,8 +56,18 @@
   display: grid;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
+  max-width: 170px;
+  min-height: 170px;
   filter: drop-shadow(-5px 5px 5px #dbdedc);
+}
+.imageContainer {
+  border: aqua;
+}
+
+
+#clippedImg {
+  clip-path: url(#clipping);
+  width: 500px;
 }
 
 .accItem:nth-last-child(-n+3) {

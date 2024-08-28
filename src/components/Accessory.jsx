@@ -4,8 +4,8 @@ import useResize from "./hooks/useResize";
 import Header from "./Header";
 import styles from "./PastWork.module.scss";
 
-// import acc5 from "./../img/accessory/astor_body.webp";
-// import acc6 from "./../img/accessory/wrist_hairy.webp";
+import acc5 from "./../img/astor_body.webp";
+import acc6 from "./../img/wrist_hairy.webp";
 // import acc4 from "./../img/accessory/beach.webp";
 // import acc2 from "./../img/accessory/black_tote.webp";
 // import acc3 from "./../img/accessory/vote_wallet.webp";
@@ -22,15 +22,15 @@ function Accessory() {
     console.log(pic)
   }
 
-  const imgArr = [ {pic: acc1, altText: "tote on model"}, 
-                   {pic: acc2, altText: "hairy wristlet"}, 
-                   {pic: acc3, altText: "bags on beach"}, 
-                   {pic: acc4, altText: "black tote closeup"}, 
-                   {pic: acc5, altText: "wallet embossed with vote"}, 
-                   {pic: acc6, altText: "wallet with model"},
-                   {pic: acc7, altText: "wallet interior"}, 
-                   {pic: acc8, altText: "workshop"}, 
-                   {pic: acc9, altText: "wallets with wrist straps"} ];
+  // const imgArr = [ {pic: acc1, altText: "tote on model"}, 
+  //                  {pic: acc2, altText: "hairy wristlet"}, 
+  //                  {pic: acc3, altText: "bags on beach"}, 
+  //                  {pic: acc4, altText: "black tote closeup"}, 
+  const imgArr = [  {pic: acc5, altText: "wallet embossed with vote"}, 
+                   {pic: acc6, altText: "wallet with model"}];
+                  //  {pic: acc7, altText: "wallet interior"}, 
+                  //  {pic: acc8, altText: "workshop"}, 
+                  //  {pic: acc9, altText: "wallets with wrist straps"} 
 
   return (
     <>

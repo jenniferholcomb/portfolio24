@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./Home";
 import Projects from "./Projects";
+import PantryPro from "./PantryPro";
 import PastWork from "./PastWork";
 import Resume from "./Resume";
 import About from "./About";
@@ -19,6 +20,7 @@ function App(){
         <Routes>
           <Route exact path="/" Component={Home} />
           <Route exact path="/projects" Component={Projects} />
+          <Route exact path="/projects/pantrypro" Component={PantryPro} />
           <Route exact path="/pastwork" Component={PastWork} />
           <Route exact path="/resume" Component={Resume} />
           <Route exact path="/about" Component={About} />
