@@ -19,19 +19,6 @@ function Home() {
             <Header />
           : null
         }
-
-        {/* <div className={styles.picture}>
-          <Link to={"/projects/pantrypro"} className={styles.linkCardStyle} onClick={handleHomeSwitch}>
-            <img className={styles.imgMask} src={ppCard} />
-          </Link>
-        </div>
-  
-        {cardArr.map((entry, index) => 
-        <div className={styles.projectCard}>
-          <h1>{entry}</h1>
-          <h2>{index}</h2>
-        </div>
-        )} */}
  
     </>
   );

@@ -69,7 +69,7 @@ function PastWork() {
             <div className={styles.bubbleContent}>
               <div className={styles.headerContainer}>  
                 <div className={styles.number}>04.</div>
-                <h2 className={styles.headers}><span className={styles.blocked}>Pattern Engineering</span><span className={styles.blocked}>+ Tech Sketching</span></h2>
+                <h2 className={styles.headers}><span className={styles.blocked}>Pattern Engineering</span><span className={styles.blocked}>+ Tech Packages</span></h2>
               </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="361" height="2" viewBox="0 0 361 2" fill="none">
                   <path d="M360 2C360.552 2 361 1.55228 361 1C361 0.447715 360.552 0 360 0V2ZM0 2H360V0H0V2Z" fill="#001B08"/>

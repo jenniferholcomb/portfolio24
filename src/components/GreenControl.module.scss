@@ -13,7 +13,6 @@
   -moz-box-sizing: border-box;    
   box-sizing: border-box;  
 
-
   display: flex;
   background-color: #001b08;
   align-items: flex-start;
@@ -32,6 +31,12 @@
   pointer-events: none;
 }
 
+.greenCollapse {
+  background-color: none;
+  width: 40px;
+  align-items: flex-start;
+}
+
 // .greenContent {
 
 // }
@@ -40,10 +45,12 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  position: fixed;
   color: #f5f5f5;
 }
 
 .icon {
+  
   width: 60%;
   height: auto;
 }
@@ -162,9 +169,9 @@
     flex: 1 0px;
   }
 
-  .textWrap {
+  // .textWrap {
 
-  }  
+  // }  
 
   .menuItems {
     padding: 15px 20px 0 22px;
@@ -208,9 +215,9 @@
 
 // desktop wide
 @media all and (min-width: 1200px) {
-  .textWrap {
-    // padding: 0px 30px;
-  }
+  // .textWrap {
+  //   // padding: 0px 30px;
+  // }
 }
 
 #menuActive {

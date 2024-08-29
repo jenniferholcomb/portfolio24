@@ -2,18 +2,21 @@ import React, { useState, useEffect } from "react";
 import { Link, Navigate, useLocation } from "react-router-dom";
 import styles from "./GreenControl.module.scss";
 import { motion } from "framer-motion-3d";
-// import { Canvas } from '@react-three/fiber';
 
 import useResize from "./hooks/useResize";
+import useCollapseGreen from "./hooks/useCollapseGreen";
 import Header from "./Header";
 import Bio from "./Bio";
 import HomeProject from "./HomeProject";
 import menuIcon from "./../img/menu_icon.svg";
+import menuIconProj from "./../img/menu_icon_project.svg";
 import xmarkIcon from "./../img/xmark_icon.svg";
 
 function GreenControl() {
   const location = useLocation();
+  const page = location.pathname;
   const [isMobile, isDesktop] = useResize();
+  const [isProjectScreen, setIsProjectScreen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [isAbout, setIsAbout] = useState(false);
   const [isHome, setIsHome] = useState(null);
@@ -22,36 +25,33 @@ function GreenControl() {
     aboutSwitch === "about" ? setIsAbout(true) : setIsAbout(false);
     isMobile ? setShowMenu(!showMenu) : null;
     setIsHome(false);
-    console.log(isHome);
   };
 
   const handleMenuClick = () => {
     setShowMenu(!showMenu);
+    console.log("menu click")
   }
 
   const handleHomeClick = () => {
     !isHome ? setIsHome(true) : null;
     isAbout ? setIsAbout(false) : null;
-    console.log("we got here");
   }
 
-  const handleBackAction = () => {}
-
   useEffect(() => {
-    location.pathname === '/' ? setIsHome(true) : setIsHome(false);
+    page === '/' ? setIsHome(true) : setIsHome(false);
   }, []);
 
-  console.log("at green control")
-  const checkBackAction = handleBackAction();
+  useEffect(() => {
+    page === '/projects/pantrypro' ? setIsProjectScreen(true) : setIsProjectScreen(false);
+  }, [page]);
 
   window.onpopstate = () => {
-    location.pathname !== '/projects' ? handleHomeClick() : null;
+    page !== '/projects' ? setIsHome(true) : null;
   }
 
   return (
     <>
-    {/* <div></div> */}
-      <motion.div className={`${styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`}
+      <motion.div className={`${isProjectScreen ? styles.greenCollapse : styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`}
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 4 }} 
@@ -64,9 +64,9 @@ function GreenControl() {
           : null
         }
         {
-          isMobile ?
+          isProjectScreen || isMobile ? 
             <div onClick={handleMenuClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
-              <object data={showMenu ? xmarkIcon : menuIcon } type="image/svg+xml" className={showMenu ? styles.markX : styles.icon}>
+              <object data={showMenu ? xmarkIcon : isProjectScreen ? menuIconProj : menuIcon } type="image/svg+xml" className={showMenu ? styles.markX : styles.icon}>
                 <span className={styles.fallbackInfo}>Your browser does not support SVG</span>
               </object>
               {/* <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}`}></i> */}
@@ -74,13 +74,13 @@ function GreenControl() {
           :
           <Header homeClick={handleHomeClick} />
         }
-        <div className={`${isMobile ? styles.navContainer : styles.textWrap}`} id={`${showMenu ? styles.menuActive : null}`} >
+        <div className={`${isProjectScreen || isMobile ? styles.navContainer : styles.textWrap}`} id={`${showMenu ? styles.menuActive : null}`} >
           <ul className={`${styles.menuItems} ${(isHome || isAbout) ? styles.menuItems2 : styles.menuItems3}`} id={`${showMenu ? styles.menuPointerEvents : null}`} >
             <li>        
               <Link onClick={handleRoute} to={"/projects"}>Projects</Link>
             </li>
             <li>
-              <Link onClick={handleRoute} to={"/pastwork"}>Past Work</Link>
+              <Link onClick={handleRoute} to={"/pastwork"}>Past Gigs</Link>
             </li>
             <li>
               <Link onClick={handleRoute} to={"/resume"}>Resume</Link>

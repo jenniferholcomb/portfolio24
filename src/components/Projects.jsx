@@ -1,20 +1,14 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import useResize from "./hooks/useResize";
-import useBackButton from "./hooks/useBackButton";
 import Header from "./Header";
 import styles from "./Projects.module.scss";
 import ppCard from "./../img/pantryProCard.webp";
 
 function Projects() {
   const [ isMobile, isDesktop ] = useResize();
-  const isBackPressed = useBackButton();
-  const cardArr = ["one", "two", "three"];
 
-  // useEffect(() => {
-  //   isBackPressed();
-  // }, []);
-  console.log("at projects")
+  const cardArr = ["one", "two", "three"];
 
   return (
     <>
@@ -26,9 +20,6 @@ function Projects() {
         }
         <h1 className={styles.pageHeader}>PROJECTS</h1>
 
-       
-          
-  
               <div className={styles.picture}>
                 <Link to={"/projects/pantrypro"} className={styles.linkCardStyle}>
                   <img className={styles.imgMask} src={ppCard} />
