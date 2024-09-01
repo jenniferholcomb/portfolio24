@@ -13,6 +13,10 @@ import hm1 from "./../img/Homepage1.webp";
 import hm2 from "./../img/Homepage2.webp";
 import hm3 from "./../img/Homepage3.webp";
 import hm4 from "./../img/Homepage4.webp";
+import des1 from "./../img/Details1.webp";
+import des2 from "./../img/Details2.webp";
+import desKitImg from "./../img/stickerSheet.webp";
+import allInv from "./../img/allInv.webp";
 
 function PantryPro() {
   const [ isMobile, isDesktop ] = useResize();
@@ -122,8 +126,34 @@ function PantryPro() {
         </svg>
         <div className={styles.section5}>
           <p id={styles.blurb1}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
+          <div className={styles.detailsImg}>
+            <img src={des1} alt="design details example 1" />
+            <img src={des2} alt="design details example 2" />
+          </div>
+        </div>
+        <div className={styles.section5B}>
+          <img className={styles.bImg} src={desKitImg} alt="screenshot of design kit" />
         </div>
 
+        <img className={styles.finalSection} src={allInv} alt="screenshot of all pages in app" />
+
+        <div className={`${styles.section1} ${styles.problem}`}>
+          <div className={styles.oneInfo}>
+            <div className={styles.numberInv}>03.</div>
+            <h2 className={styles.headersInv} id={styles.headers}>Solution</h2>
+          </div>
+          <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
+            <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08"/>
+          </svg>
+        </div>
+        <p id={styles.blurb1} className={styles.finalOne}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
+        
+        <div className={styles.addInfo}>
+          <h2 className={styles.headersInv} id={styles.desDetails}>Additional Projects</h2>
+          <svg className={styles.line} id={styles.lineDes} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
+            <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08"/>
+          </svg>
+        </div>
       </div>
 
 
@@ -131,7 +161,7 @@ function PantryPro() {
       <div className={styles.bubbles}>
         <div className={styles.bubble1}></div>
         <div className={styles.bubble2}></div>
-        <div className={styles.bubble2}></div>
+        <div className={styles.bubble3}></div>
         
       </div>        
     </>
