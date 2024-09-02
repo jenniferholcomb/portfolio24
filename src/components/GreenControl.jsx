@@ -4,13 +4,12 @@ import styles from "./GreenControl.module.scss";
 import { motion } from "framer-motion-3d";
 
 import useResize from "./hooks/useResize";
-import useCollapseGreen from "./hooks/useCollapseGreen";
 import Header from "./Header";
 import Bio from "./Bio";
 import HomeProject from "./HomeProject";
-import menuIcon from "./../img/menu_icon.svg";
-import menuIconProj from "./../img/menu_icon_project.svg";
-import xmarkIcon from "./../img/xmark_icon.svg";
+import menuIcon from "./../img/menuIcon.svg";
+import menuIconProj from "./../img/menuIconProject.svg";
+import xmarkIcon from "./../img/closeIcon.svg";
 
 function GreenControl() {
   const location = useLocation();

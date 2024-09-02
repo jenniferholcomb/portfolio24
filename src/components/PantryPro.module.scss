@@ -42,10 +42,10 @@
 }
 
 .intro {
-  padding: 80px 0 20px 42px;
+  padding: 80px 33px 20px 42px;
   overflow-x: hidden;
   color: black;
-  text-align: left;
+  text-align: right;
   font-family: Hind;
   font-size: 18px;
   font-style: normal;
@@ -60,7 +60,6 @@
   flex-direction: row;
   max-width: 480px;
   padding: 30px 0 0 43px;
-  
 }
 
 .infoYear {
@@ -70,10 +69,16 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
-  line-height: 28px; /* 116.667% */
-  letter-spacing: 3.6px;
+  line-height: 20px; /* 116.667% */
+  letter-spacing: 3px;
   padding: 0 0 0 50px;
   margin: 0;
+  white-space: pre-wrap;
+}
+
+.year {
+  line-height: 40px;
+  letter-spacing: 3.6px;
 }
 
 .infoBlurb {
@@ -190,6 +195,179 @@
   border-radius: 10px;
   border: 17px solid #B9A99D;
   background: #FFF;
+  display: flex;
+  flex-direction: column;
+}
+
+.carouselHead {
+  color: #A29286;
+  text-align: center;
+  font-family: Hind;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px; /* 104.167% */
+  letter-spacing: 14.4px;
+  text-transform: uppercase;
+  margin: 0;
+  padding-top: 13px;
+}
+
+.painPoints {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  padding: 5px 0px 0 45px;
+}
+
+.ppColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.ppNum {
+  width: 144px;
+  height: 97px;
+  color: rgba(185, 169, 157, 0.30);
+  font-family: Hind;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 600;
+  // line-height: 28px; /* 37.333% */
+  letter-spacing: 11.25px;
+  text-transform: uppercase;
+}
+
+.ppHeader {
+  width: 130px;
+  height: 59px;
+  flex-shrink: 0;
+  color: #F45429;
+  font-family: Hind;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 127.273% */
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+
+.ppParagraph {
+  width: 166px;
+  color: #001B08;
+  font-family: Inconsolata;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  text-indent: 15px;
+}
+
+.persona {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  padding: 5px 30px 0 30px;
+}
+
+.personaColumn {
+  width: 100%;
+  height: 100%;
+  grid-row: 1 / span 3;
+}
+
+.personaName {
+  color: #F45429;
+  text-align: center;
+  font-family: Hind;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 87.5% */
+  letter-spacing: 9.6px;
+  text-transform: uppercase;
+}
+
+.demographics {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.demo1 {
+  color: #202020;
+  text-align: right;
+  font-family: Inconsolata;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+  margin: 0;
+}
+
+.demo2 {
+  color: #232323;
+  font-family: Inconsolata;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.7px;
+}
+
+.quote {
+  color: #98897E;
+  text-align: center;
+  font-family: Hind;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
+
+.probState {
+  grid-row: 1;
+  grid-column: 2 / span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.probStateHeader {
+  color: #00224A;
+  font-family: Hind;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px; /* 122.222% */
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.probStatePara {
+
+}
+
+.circleGroup {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  padding-bottom: 13px;
+}
+
+.clickableCircle {
+  width: 12px;
+  height: 12px;
+  border-radius: 16px;
+  border: 1px solid #000;
+  background: #FFF;
+  pointer-events: all;
+}
+
+.clickedCircle {
+  background: black;
 }
 
 .twoBlurb {
@@ -222,6 +400,7 @@
   width: 100vw;
   height: 814px;
   clip-path: ellipse(65.58% 50.01% at 49.33% 49.99%);
+  -webkit-clip-path: ellipse(65.58% 50.01% at 49.33% 49.99%);
   background-color: white;
   display: flex;
   gap: 5rem;
@@ -341,8 +520,8 @@
 }
 
 .bubble1 {
-  clip-path: ellipse(48.76% 65.22% at 21.63% 4.43%);
-  // -webkit-clip-path: ellipse(50.24% 85.49% at 22.18% 14.11%);
+  clip-path: ellipse(48.76% 65.22% at 21.21% -2.53%);
+  -webkit-clip-path: ellipse(50.24% 85.49% at 22.18% 14.11%);
   background-color: white;
   width: 100%;
   height: 100vh;
@@ -350,6 +529,7 @@
 
 .bubble2 {
   clip-path: ellipse(46.79% 35.61% at 81.63% 52.27%);
+  -webkit-clip-path: ellipse(46.79% 35.61% at 81.63% 52.27%);
   background-color: white;
   width: 100%;
   min-height: 100%;
@@ -359,6 +539,7 @@
 
 .bubble3 {
   clip-path: ellipse(41.22% 34.32% at 81.56% 44.43%);  
+  -webkit-clip-path: ellipse(41.22% 34.32% at 81.56% 44.43%);  
   background-color: white;
   width: 100%;
   min-height: 100%;

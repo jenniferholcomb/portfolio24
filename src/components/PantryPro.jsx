@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import useResize from "./hooks/useResize";
 import Header from "./Header";
@@ -8,6 +8,7 @@ import bannerTop from "./../img/bannerImageWide.webp";
 import ex1 from "./../img/InvEx1.webp";
 import ex2 from "./../img/InvEx2.webp";
 import ex3 from "./../img/InvEx3.webp";
+import personaPic from "./../img/personaImg.webp";
 import stMp from "./../img/InventorySitemap.svg";
 import hm1 from "./../img/Homepage1.webp";
 import hm2 from "./../img/Homepage2.webp";
@@ -20,6 +21,30 @@ import allInv from "./../img/allInv.webp";
 
 function PantryPro() {
   const [ isMobile, isDesktop ] = useResize();
+  const [ carouselIndex, setCarouselIndex ] = useState(0);
+
+  const carouselHeader = [ "pain points", "persona", "user journey" ];
+  const painPointsInfo = [{ 
+                          header: "human error", 
+                          par1: "Two areas subject to human error; inventory miscounts and invoice data entry.",
+                          par2: "A counting system with visual cues or prompts, synchronized with counted goods, could eliminate incorrect counts. Or, for invoice uploads, a setup that completely eliminates human line entry."
+                        },{
+                          header: "time consuming", 
+                          par1: "Both tasks, invoice entry and inventory counts, are time consuming responsibilities for business owners.",
+                          par2: "All application design decisions should focus on ways to expedite these processes; through user flows, goods organization, or using advantageous modern technologies to complete tasks."
+                        }, {
+                          header: "task fatigue", 
+                          par1: "Invoice data entry and inventory counting is monotonous, can cause fatigue.",
+                          par2: "Finding methods to keep the user focused on the task is essential for a successful application. Asset design could cater to multiple senses, or break a task into smaller segments, or simply eliminate the task all together."
+                        }, {
+                          header: "cluttered interface", 
+                          par1: "Overwhelmingly, an application redesign of a traditional inventory management system was requested through user research.",
+                          par2: "An interface that prioritizes essential information, and makes secondary information easily accessible, but out of view, not overly crowding the screen."
+                        }];
+
+  const handleCircleClick = (index) => {
+    setCarouselIndex(index);
+  }
   
   return (
     <>
@@ -31,7 +56,7 @@ function PantryPro() {
         }
         <div className={styles.topBar}>
         <div className={styles.logo}>
-          <img src={invLogo} alt="top banner, graphic with food" />
+          <img src={invLogo} alt="app logo" />
         </div>
         <div className={styles.banner}>
           <img src={bannerTop} alt="top banner, graphic with food" />  
@@ -44,7 +69,12 @@ function PantryPro() {
             <path d="M531 2C531.552 2 532 1.55228 532 1C532 0.447715 531.552 0 531 0V2ZM0 2H531V0H0V2Z" fill="#001B08"/>
           </svg>
           <div className={styles.info}>
-            <h3 className={styles.infoYear}>2024</h3>                
+            <h3 className={styles.infoYear}>
+              Case 
+              Study 
+              <br />
+              <span className={styles.year}>2024</span>
+            </h3>                
             <p className={styles.infoBlurb}>Two challenges in the realm of restaurant inventory management; the slow process of entering new invoice data, and the tedious job of counting goods. This app is conceptualized to give the user power to upload invoices using AI technology, and a design to prevent task fatigue while counting items. In addition to being a streamlined application for managing and categorizing inventory.</p>
           </div>
         </div>
@@ -68,9 +98,66 @@ function PantryPro() {
         <p id={styles.blurb1} className={styles.blOne}>How to address these two challenges?</p>
         <p id={styles.blurb1} className={styles.blTwo}>1. With modern technology, users no longer need to manually enter line items from invoices. AI can facilitate managers with scanning and categorizing data into fields that can be edited and cataloged. Based on interviews with restaurant managers, invoice data entry is time consuming and suspect of human error. A system to alleviate these pain points is valid in creating trusted and productive inventory management. </p>
         <p id={styles.blurb1} className={styles.blThree}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>         
+  
         <div className={styles.oneCarousel}>
           <div className={styles.carouselContent}>
-        </div>
+            <h2 className={styles.carouselHead}>{carouselHeader[carouselIndex]}</h2>
+            { carouselIndex === 0 ?
+              <div className={styles.painPoints}>
+                {painPointsInfo.map((info, index) =>
+                  <div className={styles.ppColumn}>
+                    <div className={styles.ppNum}>{index + 1}</div>
+                    <h3 className={styles.ppHeader}>{info.header}</h3>
+                    <p className={styles.ppParagraph}>{info.par1}</p>
+                    <p className={styles.ppParagraph}>{info.par2}</p>
+                  </div>
+                )}  
+              </div>
+              : carouselIndex === 1 ?
+                <div className={styles.persona}>
+                  <div className={styles.personaColumn1}>
+                    <img src={personaPic} alt="business owner standing by food cart" />
+                    <div className={styles.personaName}>
+                      Cheri
+                    </div>
+                    <div className={styles.demographics}>
+                      <h5 className={styles.demo1}>
+                        age:<br />
+                        education:<br />
+                        hometown:<br />
+                        family:<br />
+                        occupation:<br />
+                      </h5>
+                      <div className={styles.demo2}>
+                      53<br />
+                      culinary degree<br />
+                      Seattle, WA<br />
+                      partner, 2 kids<br />
+                      food truck owner<br />
+                      </div>
+                    </div>
+                    <p className={styles.quote}>“Food is more than just sustenance; it&apos;s a way to connect, to share, and to savor life&apos;s flavors together”</p>
+                  </div>
+                  <div className={styles.probState}>
+                    <h2 className={styles.probStateHeader}>
+                      problem statement
+                    </h2>
+                    <p className={styles. probStatepara}>
+
+                    </p>
+                  </div>
+                </div>
+                :
+                <div className={styles.userJourney}>
+                
+                </div>
+            }
+            <div className={styles.circleGroup}>
+              {carouselHeader.map((page, index) =>
+              <div className={`${styles.clickableCircle} ${(carouselIndex === index) ? styles.clickedCircle : null}`} onClick={() => handleCircleClick(index)}></div>
+              )}
+            </div>
+          </div>
         </div>
         <div className={styles.twoBlurb}>
           <h2 className={styles.headersInv} id={styles.userResHead}>User Research</h2>
