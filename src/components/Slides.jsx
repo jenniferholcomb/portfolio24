@@ -9,6 +9,7 @@ function Slides(props) {
   console.log('prop',slideIndex)
 
   const carouselHeader = [ "pain points", "persona", "user journey" ];
+
   const painPointsInfo = [{ 
                           header: "human error", 
                           par1: "Two areas subject to human error; inventory miscounts and invoice data entry.",
@@ -26,6 +27,37 @@ function Slides(props) {
                           par1: "Overwhelmingly, an application redesign of a traditional inventory management system was requested through user research.",
                           par2: "An interface that prioritizes essential information, and makes secondary information easily accessible, but out of view, not overly crowding the screen."
                         }];
+  
+  const jmCategory = [ "action", "task list", "emotions", "improvement opportunities"];
+
+  const journeyMapText = [[
+                            "Organize materials to count inventory",
+                            "Open inventory app, start new counting session",
+                            "Count goods and record",
+                            "Repeat counting till all goods inventoried",
+                            "Complete inventory",
+                          ],
+                          [
+                            [ "Organize & straighten food and paper goods", "Clean surfaces" ],
+                            [ "Open app", "Select language", "Start new inventory session - enter date, name, time" ],
+                            [ "Select category, then item to count", "Count item, record count number, review & submit" ],
+                            [ "Select next item in category, enter count for item", "Repeat till all items counted in category", "Select next category" ],
+                            [ "Click 'Finish' to complete inventory", "Review final inventory", "Click 'Submit' to finish inventory" ],
+                          ],
+                          [
+                            [ "Apprehension for task at hand", "Hope for efficiency while counting goods" ],
+                            [ "Readying environment so no distractions", "Grateful for ability to complete task in home language" ],
+                            [ "Focused on counting, recording count correctly in app", "Images help with quick recognition of item to count" ],
+                            [ "Established good rhythm for counting goods", "Starting to feel fatigued" ],
+                            [ "Feeling relieved that task is complete" ],
+                          ],
+                          [
+                            [ "Clean or minimal UI; try to alleviate task anxiety", "Bright high contrast colors; easily navigate site" ],
+                            [ "Date and time auto-filled", "Dropdown menu to add employee names to inventory" ],
+                            [ "When invoices inputted in system, goods updated with new quantity" ],
+                            [ "Ability to organize list of goods as organized in food cart/restaurant" ],
+                            [ "App is connected to POS - estimate of good quantity calculated based on sales & invoice ordering" ]
+                          ]];
   
   return (
     <>
@@ -103,8 +135,33 @@ function Slides(props) {
                 </div>
               </div>
               :
-              <div className={styles.userJourney}>
-              
+              <div className={styles.userJourney}> 
+                       
+                {jmCategory.map((cell, index) =>
+                <>
+                  <div className={styles.ujCol1}>
+                    <h2 className={styles.ujCol1Header}>{cell}</h2>
+                  </div>
+                  
+                    {journeyMapText[index].map((info, index2) => 
+                      index === 0 ?
+                        <div className={styles.row1Head}>
+                          <h2 className={styles.actionHeader}>{info}</h2>
+                        </div>
+                      :
+                      <div className={styles.ujInfo}>
+                        <ul className={styles.ujInfoList}>
+                          {journeyMapText[index][index2].map((list) =>
+                            <li>{list}</li>
+                          )}
+                        </ul>
+                      </div>
+                    )}
+                  
+                
+                  </>
+                )}
+                
               </div>
           }
           <div className={styles.circleGroup}>
@@ -119,3 +176,4 @@ function Slides(props) {
 }
 
 export default Slides;
+

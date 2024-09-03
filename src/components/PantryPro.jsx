@@ -81,7 +81,7 @@ function PantryPro() {
         <p id={styles.blurb1} className={styles.blTwo}>1. With modern technology, users no longer need to manually enter line items from invoices. AI can facilitate managers with scanning and categorizing data into fields that can be edited and cataloged. Based on interviews with restaurant managers, invoice data entry is time consuming and suspect of human error. A system to alleviate these pain points is valid in creating trusted and productive inventory management. </p>
         <p id={styles.blurb1} className={styles.blThree}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>         
   
-        <Slides slideIndex={carouselIndex} handleCircleClick={() => handleCircleClick()}/>
+        <Slides slideIndex={carouselIndex} handleCircleClick={handleCircleClick}/>
        
         <div className={styles.twoBlurb}>
           <h2 className={styles.headersInv} id={styles.userResHead}>User Research</h2>

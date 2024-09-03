@@ -30,6 +30,8 @@
   padding-top: 13px;
 }
 
+//////// pain points ////////
+
 .painPoints {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
@@ -80,10 +82,12 @@
   text-indent: 15px;
 }
 
+//////// persona ////////
+
 .persona {
   display: grid;
   grid-template-columns: minmax(0, 203px) minmax(0, 1fr) minmax(0, 1fr);
-  padding: 5px 30px 0 30px;
+  padding: 10px 30px 0 30px;
 }
 
 .personaColumn {
@@ -102,6 +106,7 @@
   line-height: 28px; /* 87.5% */
   letter-spacing: 9.6px;
   text-transform: uppercase;
+  padding: 15px 0 15px 0;
 }
 
 .demographics {
@@ -149,7 +154,7 @@
   flex-direction: column;
   align-content: last baseline;
   min-width: 100%;
-  padding: 0 30px 0 25px;
+  padding: 0 30px 15px 25px;
 }
 
 .slideHeader {
@@ -169,7 +174,7 @@
 
 .probStatePara {
   width: 580px;
-  height: 114px;
+  height: auto;
   // flex-shrink: 0;
   color: #000;
   font-family: Inconsolata;
@@ -211,7 +216,7 @@
   height: 135px;
   // flex-shrink: 0;
   
-  padding: 0 25px 0 25px;
+  padding: 15px 25px 0 25px;
   grid-column: 2 / span 2;
   display: flex;
 }
@@ -226,6 +231,65 @@
   width: 90%;
   padding: 10px 28px 10px 20px;
 }
+
+//////// persona ////////
+
+.userJourney {
+  display: grid;
+  grid-template-columns: minmax(0, 121px) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  padding: 15px 5px 0 5px;
+  gap: 8px;
+}
+
+.ujCol1 {
+  border: 2px solid #F45429;
+}
+
+.ujCol1Header {
+  color: #F45429;
+  text-align: center;
+  font-family: Hind;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 123.077% */
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.row1Head {
+  border: 2px solid #B9A99D;
+}
+
+.actionHeader {
+  color: #000;
+  text-align: center;
+  font-family: Inconsolata;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 13px; /* 92.857% */
+  letter-spacing: 1.4px;
+  margin: 0;
+}
+
+.ujInfo {
+  background: #F5EFEB;;
+}
+
+.ujInfoList {
+  color: #000;
+  font-family: Inconsolata;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 135.714% */
+  margin: 0;
+  padding: 5px 5px 5px 17px;
+}
+
+
+//////// clickable circles ////////
 
 .circleGroup {
   height: 100%;
