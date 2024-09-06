@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import useResize from "./hooks/useResize";
 import Header from "./Header";
 import Slides from "./Slides";
+import VideoPlay from "./VideoPlay";
 import styles from "./PantryPro.module.scss";
 import invLogo from "./../img/ppLogo.svg"
 import bannerTop from "./../img/bannerImageWide.webp";
@@ -10,6 +11,7 @@ import ex1 from "./../img/InvEx1.webp";
 import ex2 from "./../img/InvEx2.webp";
 import ex3 from "./../img/InvEx3.webp";
 import stMp from "./../img/InventorySitemap.svg";
+import vid from "./../img/pracprac.mp4";
 import hm1 from "./../img/Homepage1.webp";
 import hm2 from "./../img/Homepage2.webp";
 import hm3 from "./../img/Homepage3.webp";
@@ -22,11 +24,24 @@ import allInv from "./../img/allInv.webp";
 function PantryPro() {
   const [ isMobile, isDesktop ] = useResize();
   const [ carouselIndex, setCarouselIndex ] = useState(0);
+  const videoEl = useRef(null);
 
   const handleCircleClick = (index) => {
     console.log('here', index)
     setCarouselIndex(index);
   }
+
+  const attemptPlay = () => {
+    videoEl &&
+      videoEl.current &&
+      videoEl.current.play().catch(error => {
+        console.error("Error attempting to play", error);
+      });
+  };
+
+  useEffect(() => {
+    attemptPlay();
+  }, []);
   
   return (
     <>
@@ -38,10 +53,10 @@ function PantryPro() {
         }
         <div className={styles.topBar}>
         <div className={styles.logo}>
-          <img src={invLogo} alt="app logo" />
+          <img loading="lazy" src={invLogo} alt="app logo" />
         </div>
         <div className={styles.banner}>
-          <img src={bannerTop} alt="top banner, graphic with food" />  
+          <img loading="lazy" src={bannerTop} alt="top banner, graphic with food" />  
         </div>
 
         </div>        
@@ -52,8 +67,7 @@ function PantryPro() {
           </svg>
           <div className={styles.info}>
             <h3 className={styles.infoYear}>
-              Case 
-              Study 
+              Case Study 
               <br />
               <span className={styles.year}>2024</span>
             </h3>                
@@ -61,9 +75,9 @@ function PantryPro() {
           </div>
         </div>
         <div className={styles.exShotInv}>
-          <img className={styles.imgInv} src={ex1} alt="app landing page" />
-          <img className={styles.imgInv} src={ex2} alt="app inventory listing page" />
-          <img className={styles.imgInv} src={ex3} alt="app product counting page" />
+          <img loading="lazy" className={styles.imgInv} src={ex1} alt="app landing page" />
+          <img loading="lazy" className={styles.imgInv} src={ex2} alt="app inventory listing page" />
+          <img loading="lazy" className={styles.imgInv} src={ex3} alt="app product counting page" />
         </div>
 
         <div className={styles.section1}>
@@ -102,19 +116,20 @@ function PantryPro() {
         </div>
         <p id={styles.blurb1} className={styles.blOne}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
         <div className={styles.site}>
-          <img className={styles.siteMap} src={stMp} alt="sitemap illustration" />
+          <img loading="lazy" className={styles.siteMap} src={stMp} alt="sitemap illustration" />
         </div>
 
-        <div className={styles.section3}>
+        <div className={styles.section3}>       
           <img className={styles.img3} src={ex1} alt="app landing page"  />
-          <img className={styles.img3} src={ex2} alt="app inventory listing page" />
+          <VideoPlay />
+          {/* <img className={styles.img3} src={ex2} alt="app inventory listing page" /> */}
         </div>
 
         <div className={`${styles.section4Img} ${styles.section4}`}>
-          <img src={hm1} alt="landing page iteration 1" />
-          <img src={hm2} alt="landing page iteration 2" />
-          <img src={hm3} alt="landing page iteration 3" />
-          <img src={hm4} alt="landing page iteration 4" />
+          <img loading="lazy" src={hm1} alt="landing page iteration 1" />
+          <img loading="lazy" src={hm2} alt="landing page iteration 2" />
+          <img loading="lazy" src={hm3} alt="landing page iteration 3" />
+          <img loading="lazy" src={hm4} alt="landing page iteration 4" />
         </div>
         <div className={styles.twoBlurb}>
           <h2 className={styles.headersInv} id={styles.usaStdy}>Usability Study</h2>
@@ -124,9 +139,9 @@ function PantryPro() {
           <p id={styles.blurb1} >2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
         </div>
         <div className={`${styles.section4Img} ${styles.section4B}`}>
-          <img src={hm1} alt="landing page iteration 1" />
-          <img src={hm2} alt="landing page iteration 2" />
-          <img src={hm3} alt="landing page iteration 3" />
+          <img loading="lazy" src={hm1} alt="landing page iteration 1" />
+          <img loading="lazy" src={hm2} alt="landing page iteration 2" />
+          <img loading="lazy" src={hm3} alt="landing page iteration 3" />
         </div>
         <img className={`${styles.sec4LastImg} ${styles.section4B}`} src={hm4} alt="landing page iteration 4" />
 
@@ -138,15 +153,16 @@ function PantryPro() {
         <div className={styles.section5}>
           <p id={styles.blurb1}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
           <div className={styles.detailsImg}>
-            <img src={des1} alt="design details example 1" />
-            <img src={des2} alt="design details example 2" />
+            <img loading="lazy" src={des1} alt="design details example 1" />
+            <img loading="lazy" src={des2} alt="design details example 2" />
           </div>
         </div>
         <div className={styles.section5B}>
-          <img className={styles.bImg} src={desKitImg} alt="screenshot of design kit" />
+          <img loading="lazy" className={styles.bImg} src={desKitImg} alt="screenshot of design kit" />
         </div>
 
         <img className={styles.finalSection} src={allInv} alt="screenshot of all pages in app" />
+        <iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FRu2A0JM3KAsndEESFDJ5ID%2FInventory-app%3Fnode-id%3D1429-4746%26node-type%3DFRAME%26t%3DVDWd9J0xfe4sHeRp-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D8%253A85%26starting-point-node-id%3D1429%253A4746" allowFullScreen></iframe>
 
         <div className={`${styles.section1} ${styles.problem}`}>
           <div className={styles.oneInfo}>

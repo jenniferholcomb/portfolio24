@@ -8,7 +8,7 @@ function Slides(props) {
 
   console.log('prop',slideIndex)
 
-  const carouselHeader = [ "pain points", "persona", "user journey" ];
+  const carouselHeader = [ "pain points", "persona", "user journey map" ];
 
   const painPointsInfo = [{ 
                           header: "human error", 
@@ -136,12 +136,11 @@ function Slides(props) {
               </div>
               :
               <div className={styles.userJourney}> 
-                       
                 {jmCategory.map((cell, index) =>
-                <>
-                  <div className={styles.ujCol1}>
-                    <h2 className={styles.ujCol1Header}>{cell}</h2>
-                  </div>
+                  <>
+                    <div className={styles.ujCol1}>
+                      <h2 className={styles.ujCol1Header}>{cell}</h2>
+                    </div>
                   
                     {journeyMapText[index].map((info, index2) => 
                       index === 0 ?
@@ -157,8 +156,7 @@ function Slides(props) {
                         </ul>
                       </div>
                     )}
-                  
-                
+
                   </>
                 )}
                 
