@@ -11,7 +11,6 @@ import ex1 from "./../img/InvEx1.webp";
 import ex2 from "./../img/InvEx2.webp";
 import ex3 from "./../img/InvEx3.webp";
 import stMp from "./../img/InventorySitemap.svg";
-import vid from "./../img/pracprac.mp4";
 import hm1 from "./../img/Homepage1.webp";
 import hm2 from "./../img/Homepage2.webp";
 import hm3 from "./../img/Homepage3.webp";
@@ -120,7 +119,7 @@ function PantryPro() {
         </div>
 
         <div className={styles.section3}>       
-          <img className={styles.img3} src={ex1} alt="app landing page"  />
+          {/* <img className={styles.img3} src={ex1} alt="app landing page"  /> */}
           <VideoPlay />
           {/* <img className={styles.img3} src={ex2} alt="app inventory listing page" /> */}
         </div>
