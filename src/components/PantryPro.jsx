@@ -11,10 +11,12 @@ import ex1 from "./../img/InvEx1.webp";
 import ex2 from "./../img/InvEx2.webp";
 import ex3 from "./../img/InvEx3.webp";
 import stMp from "./../img/InventorySitemap.svg";
-import hm1 from "./../img/Homepage1.webp";
+import hm1 from "./../img/quickSketch.webp";
 import hm2 from "./../img/Homepage2.webp";
 import hm3 from "./../img/Homepage3.webp";
 import hm4 from "./../img/Homepage4.webp";
+import hm5 from "./../img/redesign1.webp";
+import hm6 from "./../img/redesign2.webp";
 import des1 from "./../img/Details1.webp";
 import des2 from "./../img/Details2.webp";
 import desKitImg from "./../img/stickerSheet.webp";
@@ -118,31 +120,38 @@ function PantryPro() {
           <img loading="lazy" className={styles.siteMap} src={stMp} alt="sitemap illustration" />
         </div>
 
-        <div className={styles.section3}>       
-          {/* <img className={styles.img3} src={ex1} alt="app landing page"  /> */}
-          <VideoPlay />
-          {/* <img className={styles.img3} src={ex2} alt="app inventory listing page" /> */}
+        <div className={styles.section3}>  
+          <div className={styles.threeBlurb}>  
+            <div className={styles.oneInfo}>
+              <div className={styles.numberInv} id={styles.hide}>03.</div>
+              <h2 className={styles.headersInv} id={styles.headers}>Usability Study</h2>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="532" height="2" viewBox="0 0 532 2" fill="none">
+              <path d="M531 2C531.552 2 532 1.55228 532 1C532 0.447715 531.552 0 531 0V2ZM0 2H531V0H0V2Z" fill="#001B08"/>
+            </svg>
+            <p className={styles.blurbP} id={styles.blurb1}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
+          </div>
+          <div className={styles.section3b}>
+            <VideoPlay />
+            <h3 className={styles.videoCaption}>Flow - Inventory count</h3>
+          </div>        
         </div>
 
-        <div className={`${styles.section4Img} ${styles.section4}`}>
-          <img loading="lazy" src={hm1} alt="landing page iteration 1" />
-          <img loading="lazy" src={hm2} alt="landing page iteration 2" />
-          <img loading="lazy" src={hm3} alt="landing page iteration 3" />
-          <img loading="lazy" src={hm4} alt="landing page iteration 4" />
-        </div>
-        <div className={styles.twoBlurb}>
-          <h2 className={styles.headersInv} id={styles.usaStdy}>Usability Study</h2>
-          <svg xmlns="http://www.w3.org/2000/svg" width="677" height="2" viewBox="0 0 677 2" fill="none">
-            <path d="M697 2.00006C697.552 2.00006 698 1.55235 698 1.00006C698 0.447776 697.552 6.0982e-05 697 6.09337e-05L697 2.00006ZM-8.74228e-08 2L697 2.00006L697 6.09337e-05L8.74228e-08 0L-8.74228e-08 2Z" fill="#001B08"/>
-          </svg>
-          <p id={styles.blurb1} >2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
-        </div>
-        <div className={`${styles.section4Img} ${styles.section4B}`}>
-          <img loading="lazy" src={hm1} alt="landing page iteration 1" />
-          <img loading="lazy" src={hm2} alt="landing page iteration 2" />
-          <img loading="lazy" src={hm3} alt="landing page iteration 3" />
-        </div>
-        <img className={`${styles.sec4LastImg} ${styles.section4B}`} src={hm4} alt="landing page iteration 4" />
+        {/* <div className={styles.iterations}> */}
+          <div className={`${styles.section4Img}`}>
+            <div className={styles.section4}>
+              <img loading="lazy" src={hm1} alt="landing page iteration 1" />
+              <img loading="lazy" src={hm2} alt="landing page iteration 2" />
+              <img loading="lazy" src={hm4} alt="landing page iteration 4" />
+            </div>
+            <div className={styles.section4B}>
+              <img loading="lazy" src={hm5} alt="landing page iteration 1" />
+              <img loading="lazy" src={hm6} alt="landing page iteration 2" />
+            </div>
+          </div>
+          <h3 className={styles.section4Caption}>Design Iterations - Landing page</h3>
+          
+        {/* </div> */}
 
         <h2 className={styles.headersInv} id={styles.desDetails}>Design Details</h2>
         <h2 className={styles.headersInv} id={styles.desKit}>Design Kit</h2>

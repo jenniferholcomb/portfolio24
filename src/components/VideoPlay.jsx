@@ -4,7 +4,7 @@ import { useInView, InView } from "react-intersection-observer";
 import vid from "./../img/mockVid.mp4";
 import vid2 from "./../img/wireVid.mp4";
 
-import styles from "./Resume.module.scss";
+import styles from "./PantryPro.module.scss";
 
 function VideoPlay() {
 
@@ -47,7 +47,7 @@ function VideoPlay() {
   
   return (
     <>
-      <div id="section-wrapper" ref={ref}>
+      <div id={styles.sectionWrapper} ref={ref}>
         <InView onChange={setInView} threshold={0.8} key={1}>
           <video 
             src={vid} 
@@ -56,11 +56,9 @@ function VideoPlay() {
             className={styles.vid} 
             playsInline 
             onEnded={() => handleVideoPlaying(2)}
-            
             muted 
             preload="auto" 
             ref={videoRef}
-            
           ></video>
           <video 
             src={vid2} 

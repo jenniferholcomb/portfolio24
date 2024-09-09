@@ -212,60 +212,99 @@
 .section3 {
   width: 100vw;
   height: 814px;
-  clip-path: ellipse(65.58% 50.01% at 49.33% 49.99%);
   -webkit-clip-path: ellipse(65.58% 50.01% at 49.33% 49.99%);
+  clip-path: ellipse(65.58% 50.01% at 49.33% 49.99%);
   background-color: white;
   display: flex;
   flex-direction: row;
+  // padding-top: 10rem;
   gap: 5rem;
+  // justify-content: center;
+  // align-items: center;
+  // padding: 0 200px 0 200px;
+}
+
+.threeBlurb {
+  padding-top: 13rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#hide {
+  color: white;
+}
+
+.blurbP {
+  padding-left: 200px;
+  max-width: 350px;
+}
+
+.section3b {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .img3 {
   max-height: 35rem;
 }
 
+// .usaBlurb {
+  
+// }
+
+// #sectionWrapper {
+//   align-self: center;
+//   justify-self: end;
+// }
+
 .vid {
-  max-width: 50%;
+  border: white;
 }
 
-.section4 {
-  padding-top: 5rem;
+.videoCaption, .section4Caption {
+  color: #001B08;
+  text-align: center;
+  font-family: Inconsolata;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 147.368% */
+  text-transform: capitalize;
+  color: #001B08;
+  height: 34px;
+  margin: 0;
 }
 
 .section4Img {
-  grid-column: 1/ span 2;
+  grid-column: 1/ span 3;
   display: flex;
   gap: 2rem;
-  justify-content: flex-end;
-  padding-right: 2rem;
+  justify-content: center;
+  padding-top: 5rem;
+  // padding-right: 2rem;
 }
 
 .section4Img img, .sec4LastImg, .detailsImg img  {
-  max-width: 13rem;
+  max-width: 12rem;
   height: auto;
 }
 
-#usaStdy {
-  padding-top: 10rem;
-}
-
-.section4ImgB {
-  grid-column: 1/ span 2;
+.section4, .section4B {
   display: flex;
   gap: 2rem;
-  justify-content: flex-end;
-  padding-right: 2rem;
 }
 
-.section4B {
-  padding-top: 2rem;
+.section4Caption {
+  grid-column: 1 / span 3;
+  justify-self: center;
+  padding-top: 1.5rem;
 }
 
 #desDetails {
   padding: 7rem 0 0 95px;
   z-index: 99999;
+  grid-column: 1;
 }
 
 #desKit {
@@ -338,16 +377,16 @@
 }
 
 .bubble1 {
-  clip-path: ellipse(48.76% 65.22% at 21.21% -2.53%);
   -webkit-clip-path: ellipse(48.76% 65.22% at 21.21% -2.53%);
+  clip-path: ellipse(48.76% 65.22% at 21.21% -2.53%);
   background-color: white;
   width: 100%;
   height: 100vh;
 }
 
 .bubble2 {
-  clip-path: ellipse(46.79% 35.61% at 81.63% 52.27%);
   -webkit-clip-path: ellipse(46.79% 35.61% at 81.63% 52.27%);
+  clip-path: ellipse(46.79% 35.61% at 81.63% 52.27%);
   background-color: white;
   width: 100%;
   min-height: 100%;
@@ -356,11 +395,11 @@
 }
 
 .bubble3 {
-  clip-path: ellipse(41.22% 34.32% at 81.56% 44.43%);  
   -webkit-clip-path: ellipse(41.22% 34.32% at 81.56% 44.43%);  
+  clip-path: ellipse(39.53% 34.32% at 80.26% 34.25%); 
   background-color: white;
   width: 100%;
   min-height: 100%;
   position: absolute;
-  transform: translateY(195%);
+  transform: translateY(175%);
 }
