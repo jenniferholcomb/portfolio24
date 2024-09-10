@@ -13,14 +13,15 @@ import ex3 from "./../img/InvEx3.webp";
 import stMp from "./../img/InventorySitemap.svg";
 import hm1 from "./../img/quickSketch.webp";
 import hm2 from "./../img/Homepage2.webp";
-import hm3 from "./../img/Homepage3.webp";
 import hm4 from "./../img/Homepage4.webp";
 import hm5 from "./../img/redesign1.webp";
 import hm6 from "./../img/redesign2.webp";
-import des1 from "./../img/Details1.webp";
-import des2 from "./../img/Details2.webp";
+import invoiceLnd from "./../img/InvoiceEx.webp";
 import desKitImg from "./../img/stickerSheet.webp";
 import allInv from "./../img/allInv.webp";
+import vid from "./../img/mockVid.mp4";
+import vid2 from "./../img/wireVid.mp4";
+import vid3 from "./../img/invoiceFlow.mp4";
 
 function PantryPro() {
   const [ isMobile, isDesktop ] = useResize();
@@ -132,26 +133,23 @@ function PantryPro() {
             <p className={styles.blurbP} id={styles.blurb1}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
           </div>
           <div className={styles.section3b}>
-            <VideoPlay />
+            <VideoPlay video1={vid} video2={vid2} />
             <h3 className={styles.videoCaption}>Flow - Inventory count</h3>
           </div>        
         </div>
 
-        {/* <div className={styles.iterations}> */}
-          <div className={`${styles.section4Img}`}>
-            <div className={styles.section4}>
-              <img loading="lazy" src={hm1} alt="landing page iteration 1" />
-              <img loading="lazy" src={hm2} alt="landing page iteration 2" />
-              <img loading="lazy" src={hm4} alt="landing page iteration 4" />
-            </div>
-            <div className={styles.section4B}>
-              <img loading="lazy" src={hm5} alt="landing page iteration 1" />
-              <img loading="lazy" src={hm6} alt="landing page iteration 2" />
-            </div>
+        <div className={`${styles.section4Img}`}>
+          <div className={styles.section4}>
+            <img loading="lazy" src={hm1} alt="landing page iteration 1" />
+            <img loading="lazy" src={hm2} alt="landing page iteration 2" />
+            <img loading="lazy" src={hm4} alt="landing page iteration 4" />
           </div>
-          <h3 className={styles.section4Caption}>Design Iterations - Landing page</h3>
-          
-        {/* </div> */}
+          <div className={styles.section4B}>
+            <img loading="lazy" src={hm5} alt="landing page iteration 1" />
+            <img loading="lazy" src={hm6} alt="landing page iteration 2" />
+          </div>
+        </div>
+        <h3 className={styles.section4Caption}>Design Iterations - Landing page</h3>
 
         <h2 className={styles.headersInv} id={styles.desDetails}>Design Details</h2>
         <h2 className={styles.headersInv} id={styles.desKit}>Design Kit</h2>
@@ -160,10 +158,12 @@ function PantryPro() {
         </svg>
         <div className={styles.section5}>
           <p id={styles.blurb1}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
-          <div className={styles.detailsImg}>
+          <VideoPlay video1={vid3} />
+          <img loading="lazy" src={invoiceLnd} alt="design details example 1" />
+          {/* <div className={styles.detailsImg}>
             <img loading="lazy" src={des1} alt="design details example 1" />
             <img loading="lazy" src={des2} alt="design details example 2" />
-          </div>
+          </div> */}
         </div>
         <div className={styles.section5B}>
           <img loading="lazy" className={styles.bImg} src={desKitImg} alt="screenshot of design kit" />
