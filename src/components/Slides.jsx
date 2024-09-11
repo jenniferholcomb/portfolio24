@@ -6,8 +6,6 @@ import personaPic from "./../img/personaImg.webp";
 function Slides(props) {
   const { slideIndex, handleCircleClick } = props;
 
-  console.log('prop',slideIndex)
-
   const carouselHeader = [ "pain points", "persona", "user journey map" ];
 
   const painPointsInfo = [{ 

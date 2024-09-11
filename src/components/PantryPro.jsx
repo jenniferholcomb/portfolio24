@@ -8,7 +8,7 @@ import styles from "./PantryPro.module.scss";
 import invLogo from "./../img/ppLogo.svg"
 import bannerTop from "./../img/bannerImageWide.webp";
 import ex1 from "./../img/InvEx1.webp";
-import ex2 from "./../img/InvEx2.webp";
+import ex2 from "./../img/goods1.webp";
 import ex3 from "./../img/InvEx3.webp";
 import stMp from "./../img/InventorySitemap.svg";
 import hm1 from "./../img/quickSketch.webp";
@@ -17,7 +17,14 @@ import hm4 from "./../img/Homepage4.webp";
 import hm5 from "./../img/redesign1.webp";
 import hm6 from "./../img/redesign2.webp";
 import invoiceLnd from "./../img/InvoiceEx.webp";
-import desKitImg from "./../img/stickerSheet.webp";
+import kitImg1 from "./../img/desKit1.webp";
+import kitImg2 from "./../img/desKit2.webp";
+import kitImg3 from "./../img/desKit3.webp";
+import kitImg4 from "./../img/desKit4.webp";
+import kitImg5 from "./../img/desKit5.webp";
+import kitImg6 from "./../img/desKit6.webp";
+import kitImg7 from "./../img/desKit7.webp";
+import kitImg8 from "./../img/desKit8.webp";
 import allInv from "./../img/allInv.webp";
 import vid from "./../img/mockVid.mp4";
 import vid2 from "./../img/wireVid.mp4";
@@ -26,24 +33,10 @@ import vid3 from "./../img/invoiceFlow.mp4";
 function PantryPro() {
   const [ isMobile, isDesktop ] = useResize();
   const [ carouselIndex, setCarouselIndex ] = useState(0);
-  const videoEl = useRef(null);
 
   const handleCircleClick = (index) => {
-    console.log('here', index)
     setCarouselIndex(index);
   }
-
-  const attemptPlay = () => {
-    videoEl &&
-      videoEl.current &&
-      videoEl.current.play().catch(error => {
-        console.error("Error attempting to play", error);
-      });
-  };
-
-  useEffect(() => {
-    attemptPlay();
-  }, []);
   
   return (
     <>
@@ -151,22 +144,39 @@ function PantryPro() {
         </div>
         <h3 className={styles.section4Caption}>Design Iterations - Landing page</h3>
 
-        <h2 className={styles.headersInv} id={styles.desDetails}>Design Details</h2>
-        <h2 className={styles.headersInv} id={styles.desKit}>Design Kit</h2>
+        <h2 className={styles.headersInv} id={styles.desDetails}>Design Detail - Invoice Reader</h2>
+        <h2 className={styles.headersInv} id={styles.desKit}>UI Kit</h2>
         <svg className={styles.line} id={styles.lineDes} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
           <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08"/>
         </svg>
         <div className={styles.section5}>
           <p id={styles.blurb1}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
-          <VideoPlay video1={vid3} />
-          <img loading="lazy" src={invoiceLnd} alt="design details example 1" />
-          {/* <div className={styles.detailsImg}>
-            <img loading="lazy" src={des1} alt="design details example 1" />
-            <img loading="lazy" src={des2} alt="design details example 2" />
-          </div> */}
+          <div className={styles.invoiceContent}>
+            <div className={styles.invVidCap}>
+              <VideoPlay video1={vid3} />
+              <h3 className={styles.videoCaption}>Flow - AI Invoice Reader</h3>
+            </div>
+            <img loading="lazy" src={invoiceLnd} id={styles.invImg} alt="design details example 1" />
+
+          </div>
         </div>
         <div className={styles.section5B}>
-          <img loading="lazy" className={styles.bImg} src={desKitImg} alt="screenshot of design kit" />
+          <div className={styles.kitGrp1}>
+            <img loading="lazy" className={styles.uiImg} id={styles.kit1} src={kitImg1} alt="screenshot of UI kit" />
+            <img loading="lazy" className={styles.uiImg} id={styles.kit3} src={kitImg2} alt="screenshot of UI kit" />
+            <img loading="lazy" className={styles.uiImg} id={styles.kit4} src={kitImg3} alt="screenshot of UI kit" />
+          </div>
+          <div className={styles.kitGrp2}>
+            <img loading="lazy" className={styles.uiImg} id={styles.kit2} src={kitImg8} alt="screenshot of UI kit" />
+            <img loading="lazy" className={styles.uiImg} id={styles.kit7} src={kitImg6} alt="screenshot of UI kit" />
+          </div>
+          <div className={styles.kitGrp3}>
+            <img loading="lazy" className={styles.uiImg} id={styles.kit5} src={kitImg4} alt="screenshot of UI kit" />
+          </div>
+          <div className={styles.kitGrp4}>
+            <img loading="lazy" className={styles.uiImg} id={styles.kit6} src={kitImg5} alt="screenshot of UI kit" />
+            <img loading="lazy" className={styles.uiImg} id={styles.kit8} src={kitImg7} alt="screenshot of UI kit" />
+          </div>
         </div>
 
         <img className={styles.finalSection} src={allInv} alt="screenshot of all pages in app" />
@@ -190,7 +200,6 @@ function PantryPro() {
           </svg>
         </div>
       </div>
-
 
 
       <div className={styles.bubbles}>
