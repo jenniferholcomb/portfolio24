@@ -7,7 +7,7 @@ import VideoPlay from "./VideoPlay";
 import styles from "./PantryPro.module.scss";
 import invLogo from "./../img/ppLogo.svg"
 import bannerTop from "./../img/bannerImageWide.webp";
-import ex1 from "./../img/InvEx1.webp";
+import ex1 from "./../img/landPg.webp";
 import ex2 from "./../img/goods1.webp";
 import ex3 from "./../img/InvEx3.webp";
 import stMp from "./../img/InventorySitemap.svg";
@@ -25,10 +25,10 @@ import kitImg5 from "./../img/desKit5.webp";
 import kitImg6 from "./../img/desKit6.webp";
 import kitImg7 from "./../img/desKit7.webp";
 import kitImg8 from "./../img/desKit8.webp";
-import allInv from "./../img/allInv.webp";
+import allInv from "./../img/allFrames.webp";
 import vid from "./../img/mockVid.mp4";
 import vid2 from "./../img/wireVid.mp4";
-import vid3 from "./../img/invoiceFlow.mp4";
+import vid3 from "./../img/invoiceFlow2.mp4";
 
 function PantryPro() {
   const [ isMobile, isDesktop ] = useResize();
@@ -180,7 +180,6 @@ function PantryPro() {
         </div>
 
         <img className={styles.finalSection} src={allInv} alt="screenshot of all pages in app" />
-        <iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FRu2A0JM3KAsndEESFDJ5ID%2FInventory-app%3Fnode-id%3D1429-4746%26node-type%3DFRAME%26t%3DVDWd9J0xfe4sHeRp-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D8%253A85%26starting-point-node-id%3D1429%253A4746" allowFullScreen></iframe>
 
         <div className={`${styles.section1} ${styles.problem}`}>
           <div className={styles.oneInfo}>
@@ -206,7 +205,6 @@ function PantryPro() {
         <div className={styles.bubble1}></div>
         <div className={styles.bubble2}></div>
         <div className={styles.bubble3}></div>
-        
       </div>        
     </>
   );
