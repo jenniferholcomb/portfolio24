@@ -38,50 +38,29 @@
   display: flex;
   flex-direction: column;
   z-index: 999;
-}
-
-.intro {
-  padding: 80px 33px 20px 42px;
-  overflow-x: hidden;
-  color: black;
-  text-align: right;
-  font-family: Hind;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 28px; /* 140% */
-  letter-spacing: 3px;
-  margin: 0;
+  padding-top: 30px;
 }
 
 .info {
   display: flex;
-  flex-direction: row;
-  max-width: 480px;
-  padding: 30px 0 0 43px;
+  flex-direction: column;
+  padding: 30px 0 0 200px;
 }
 
 .infoYear {
   color: #001B08;
-  text-align: right;
   font-family: Hind;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 116.667% */
-  letter-spacing: 3px;
-  padding: 0 0 0 50px;
+  font-weight: 600;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 2.1px;
+  text-transform: capitalize;
   margin: 0;
 }
 
-.year {
-  font-weight: 600;
-  line-height: 42px;
-  letter-spacing: 3.6px;
-}
-
 .infoBlurb {
-  width: auto;
+  max-width: 90%;
   color: #001B08;
   font-family: Inconsolata;
   font-size: 15px;
@@ -89,8 +68,11 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 1.5px;
-  padding: 0 0 0 53px;
   margin: 0;
+}
+
+#summary {
+  padding-bottom: 30px;
 }
 
 .exShotInv {
@@ -110,6 +92,7 @@
 .section1 {
   grid-column: 1 / span 3;
   z-index: 9999;
+  padding-top: 10px;
 }
 
 .oneInfo {
@@ -195,16 +178,15 @@
 
 .site {
   grid-column: 2 / span 2;
-  max-width: 50rem;
-  max-height: 35rem;
-  height: auto;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
   z-index: 9999;
-  padding: 30px 0 60px 30px;
+  padding: 30px 30px 60px 30px;
 }
 
 .siteMap {
-  min-width: 100%;
-  min-height: 100%;
+  max-width: 48rem;
 }
 
 .section3 {
@@ -242,11 +224,6 @@
 .img3 {
   max-height: 35rem;
 }
-
-// #sectionWrapper {
-//   align-self: center;
-//   justify-self: end;
-// }
 
 .vid {
   border: white;
@@ -420,7 +397,7 @@
   padding-bottom: 10rem;
 }
 
-// --- Bubbles ---
+/////  Bubbles  /////
 
 .bubbles {
   position: relative;
@@ -428,16 +405,16 @@
 }
 
 .bubble1 {
-  -webkit-clip-path: ellipse(48.76% 65.22% at 21.21% -2.53%);
-  clip-path: ellipse(48.76% 65.22% at 21.21% -2.53%);
+  -webkit-clip-path: ellipse(48.76% 65.22% at 21.21% 0.89%);
+  clip-path: ellipse(48.76% 65.22% at 21.21% 0.89%);
   background-color: white;
   width: 100%;
   height: 100vh;
 }
 
 .bubble2 {
-  -webkit-clip-path: ellipse(46.79% 35.61% at 81.63% 52.27%);
-  clip-path: ellipse(46.79% 35.61% at 81.63% 52.27%);
+  -webkit-clip-path: ellipse(46.79% 37.73% at 85.10% 48.52%);
+  clip-path: ellipse(46.79% 37.73% at 85.10% 48.52%);
   background-color: white;
   width: 100%;
   min-height: 100%;
