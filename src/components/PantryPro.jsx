@@ -150,13 +150,13 @@ function PantryPro() {
         </div>
         <h3 className={styles.section4Caption}>Design Iterations - Landing page</h3>
 
-        <h2 className={styles.headersInv} id={styles.desDetails}>Design Detail - Invoice Reader</h2>
+        <h2 className={styles.headersInv} id={styles.desDetails}>Design Ideation - Invoice Reader</h2>
         <h2 className={styles.headersInv} id={styles.desKit}>UI Kit</h2>
         <svg className={styles.line} id={styles.lineDes} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
           <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08"/>
         </svg>
         <div className={styles.section5}>
-          <p id={styles.blurb1}>Competitive analysis for this project surmised that ability to scan or upload invoices was not a standard feature amongst competitors. Though, other types of apps utilize the technology. I studied recipe box interfaces that allow users to upload printed copies, or photos, of personal recipes. In addition, probed how ChapGPT would analyze an invoice. In conclusion, the process to translate an invoice from paper to digital is simple; ask AI to analyze document, request how you would like information in return, then fill data into editable text fields for user to scan for errors.</p>
+          <p id={styles.blurb1}>Competitive analysis for this project concluded that the ability to scan or upload invoices was not a standard feature amongst competitors. Though, other types of apps utilize the technology. I studied recipe box interfaces that allow users to upload printed copies, or photos, of personal recipes, that are then converted into a digital recipe. In addition, I probed how ChapGPT would analyze an invoice. The process to translate an invoice from paper to digital seems simple enough; ask AI to analyze document, detail how you would like information in return, then fill data into editable text fields for user to scan for errors.</p>
           <div className={styles.invoiceContent}>
             <div className={styles.invVidCap}>
               <VideoPlay video1={vid3} />
@@ -190,13 +190,14 @@ function PantryPro() {
         <div className={`${styles.section1} ${styles.problem}`}>
           <div className={styles.oneInfo}>
             <div className={styles.numberInv}>03.</div>
-            <h2 className={styles.headersInv} id={styles.headers}>Solution</h2>
+            <h2 className={styles.headersInv} id={styles.headers}>Reflection</h2>
           </div>
           <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
             <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08"/>
           </svg>
         </div>
-        <p id={styles.blurb1} className={styles.finalOne}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
+        <p id={styles.blurb1} className={styles.finalOne}>What has so far been ideated for this project is just a shell of what an inventory management application could encompass.<br /><br />Further exploration might include developing a POS system that automates inventory quantity counts based on items sold, or including menu prep lists that predict what goods need to be ordered. Highlighting products that have increased in price, while simultaneously recommending menu items to push that cost less to make.</p>
+        <p id={styles.blurb1} className={styles.finalTwo}>A fully automated inventory management system that would benefit restaurant and food cart owners, saving them both time and money.<br /><br />Designing for the user, researching what tools can enhance their day to day, features they want or ones they don&apos;t yet realize, is my constant source to inspiring new ideas.</p>
         
         <div className={styles.addInfo}>
           <h2 className={styles.headersInv} id={styles.desDetails}>Additional Projects</h2>
