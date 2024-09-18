@@ -129,7 +129,7 @@ function PantryPro() {
             <svg xmlns="http://www.w3.org/2000/svg" width="532" height="2" viewBox="0 0 532 2" fill="none">
               <path d="M531 2C531.552 2 532 1.55228 532 1C532 0.447715 531.552 0 531 0V2ZM0 2H531V0H0V2Z" fill="#001B08"/>
             </svg>
-            <p className={styles.blurbP} id={styles.blurb1}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
+            <p className={styles.blurbP} id={styles.blurb1}>Original ideation focused on a broader set of users; including employees in addition to managers. With a restaurant&ndash;wide user base, a message board containing shop to&ndash;do&apos;s and reminders was designed into the landing page. It was also conceived a POS system would be incorporated into the interface &mdash; a feature necessary for auto&ndash;updating product quantities. As these both would be beneficial, it was decided collectively these features are beyond the current scope of this project. Therefore, the user was reevaluated and focused solely on individuals who manage inventory, the owners and operators.<br /><br />Conducting new research with a singular user, interface flow took precedence.  Landing page would now prioritize color coded call-to-action buttons, in addition to drop down menus for quick access to all inventory and recent invoice uploads. A shopping list feature was also added to help with product ordering.</p>
           </div>
           <div className={styles.section3b}>
             <VideoPlay video1={vid} video2={vid2} />
@@ -156,7 +156,7 @@ function PantryPro() {
           <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08"/>
         </svg>
         <div className={styles.section5}>
-          <p id={styles.blurb1}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a necessary part of weekly costing. For small restaurants, and food carts, profits can drastically swing from week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
+          <p id={styles.blurb1}>Competitive analysis for this project surmised that ability to scan or upload invoices was not a standard feature amongst competitors. Though, other types of apps utilize the technology. I studied recipe box interfaces that allow users to upload printed copies, or photos, of personal recipes. In addition, probed how ChapGPT would analyze an invoice. In conclusion, the process to translate an invoice from paper to digital is simple; ask AI to analyze document, request how you would like information in return, then fill data into editable text fields for user to scan for errors.</p>
           <div className={styles.invoiceContent}>
             <div className={styles.invVidCap}>
               <VideoPlay video1={vid3} />
