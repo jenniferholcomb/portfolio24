@@ -11,11 +11,12 @@ import styles from "./Bio.module.scss";
 function Bio() {
   useMemo(() => extend(THREE), []);
 
-  const bio= "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas Letraset, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus.";
-
   return (
     <>
-      <p className={styles.bioStyle}>{bio}</p>
+      <p className={styles.bioStyle}>I&apos;m a problem solver, a builder, a thinker, and a maker. All attributes that have carried me through many creative endeavors &mdash; graphic and logo design, building brand identities, accessory design and accessory pattern engineering, and now UX/UI design and front end web development. I look for problems in our communities, and innovate creative solutions. I focus on a user, listen to their needs, and design around their preferences. I help others by developing a product that improves or enhances their day. 
+      <br /><br />
+      If not at home in Portland, you&apos;ll find me at the coast. All that the ocean offers; clamming, crabbing, sunsets, beach fires, seafood. I also love a good mountain lake, hiking, foraging, cooking, gardening, and of course hanging with my family and dogs.
+      </p>
       <MotionConfig>
         <motion.div 
           initial={{ opacity: 0 }}

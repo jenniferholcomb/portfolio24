@@ -16,7 +16,6 @@ function About() {
             <Header />
           : null
         }
-        About hello
         <Bio />
       </div>
     </>
