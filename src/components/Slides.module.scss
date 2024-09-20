@@ -1,14 +1,14 @@
 .oneCarousel {
   grid-column: 1 / span 2;
   justify-self: center;
-  max-width: 100vw;
+  max-width: 90%;
   z-index: 9999;
-  padding: 30px 0 0 15px;
+  padding: 30px 15px 0 0;
 }
 
 .carouselContent {
-  width: 866px;
-  height: 568px;
+  width: 53rem;
+  height: 37rem;
   border-radius: 10px;
   border: 17px solid #B9A99D;
   background: #FFF;
@@ -35,7 +35,7 @@
 .painPoints {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-  padding: 5px 0px 0 45px;
+  padding: 30px 0px 0 45px;
 }
 
 .ppColumn {
@@ -87,7 +87,7 @@
 .persona {
   display: grid;
   grid-template-columns: minmax(0, 203px) minmax(0, 1fr) minmax(0, 1fr);
-  padding: 10px 30px 0 30px;
+  padding: 30px 30px 0 30px;
 }
 
 .personaColumn {
@@ -237,7 +237,7 @@
 .userJourney {
   display: grid;
   grid-template-columns: minmax(0, 121px) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-  padding: 15px 5px 0 5px;
+  padding: 20px 5px 0 5px;
   gap: 8px;
 }
 
