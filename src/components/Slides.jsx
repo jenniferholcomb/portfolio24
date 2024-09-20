@@ -66,8 +66,11 @@ function Slides(props) {
             <div className={styles.painPoints}>
               {painPointsInfo.map((info, index) =>
                 <div className={styles.ppColumn}>
-                  <div className={styles.ppNum}>{index + 1}</div>
-                  <h3 className={styles.ppHeader}>{info.header}</h3>
+                  <div className={styles.ppNarrowRow}>
+                    <div className={styles.ppNum}>{index + 1}</div>
+                    <h3 className={styles.ppHeader}>{info.header}</h3>
+                    {/* <h3 className={`${styles.ppHeader} ${ppwideHeader}`}>{info.header}</h3> */}
+                  </div>
                   <p className={styles.ppParagraph}>{info.par1}</p>
                   <p className={styles.ppParagraph}>{info.par2}</p>
                 </div>
@@ -76,7 +79,7 @@ function Slides(props) {
             : slideIndex === 1 ?
               <div className={styles.persona}>
                 <div className={styles.personaColumn}>
-                  <img src={personaPic} alt="business owner standing by food cart" />
+                  <img className={styles.perPic} src={personaPic} alt="business owner standing by food cart" />
                   <div className={styles.personaName}>
                     Cheri
                   </div>
@@ -116,7 +119,7 @@ function Slides(props) {
                     <li>Grow business; open brick-&-mortar restaurant while preserving successful food trucks</li>
                   </ul>
                 </div>
-                <div>
+                <div className={styles.frustration}>
                   <div className={`${styles.slideHeader} ${styles.frustrationsHeader}`}>
                     frustrations
                   </div>
