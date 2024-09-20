@@ -85,13 +85,13 @@ function VideoPlay(props) {
             </InView>
           </div>
         :
-          <div className={styles.vidInv} ref={ref}>
+          <div ref={ref}>
             <InView onChange={setInViewInvoice} threshold={0.8} key={2}>
               <video 
                   src={video1} 
-                  width="324" 
-                  height="576" 
-                  
+                  width="300rem" 
+                  height="" 
+                  className={styles.vidInv}
                   playsInline 
                   loop
                   muted 
