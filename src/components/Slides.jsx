@@ -156,7 +156,7 @@ function Slides(props) {
                         :
                         <div className={styles.ujInfo}>
                           <ul className={styles.ujInfoList}>
-                            {journeyMapText[index2][index2].map((list) =>
+                            {info.map((list) =>
                               <li>{list}</li>
                             )}
                           </ul>
@@ -180,32 +180,39 @@ function Slides(props) {
                     {journeyMapText.map((cell3, index3) =>
                       index3 === 0 ?
                       <div className={styles.row1Head}>
-                        <h2 className={styles.actionHeader}>{cell2[index3]}</h2>
+                        <h2 className={styles.actionHeader}>{cell3[index2]}</h2>
                       </div>
                       :
                       <div className={styles.ujInfo}>
                         <ul className={styles.ujInfoList}>
-                          {journeyMapText.map((list, index4) =>
-                            <li>{list[index2][index4]}</li>
+                          {journeyMapText[index3][index2].map((list, index4) =>
+                            <li>{list}</li>
                           )}
                         </ul>
                       </div>
-                      
                     )}
                     </>
                   )
-                  // joureyMapText.map((info, index) => {
-
-                  //   journeyMapText.map((info2, index2) => {
-                  //     index2 === 0 ?
-                  //       print caption
-                  //       info2[index2][index]
-                  //     : 
-                  //       print list
-                  //       info2[index2][index]
                 : null
                 }
-                
+                {
+                !isWdDesktop ?
+                  journeyMapText.map((cell, index) =>
+                    index === 0 ? 
+                    <div className={styles.row1Head}>
+                      <h2 className={styles.actionHeader}>{cell[4]}</h2>
+                    </div>
+                    :
+                    <div className={styles.ujInfo}>
+                      <ul className={styles.ujInfoList}>
+                        {cell[4].map((list, index2) => 
+                          <li>{list}</li>
+                        )}
+                      </ul>
+                    </div>
+                  )
+                  : null
+                }
               </div>
           }
           <div className={styles.circleGroup}>

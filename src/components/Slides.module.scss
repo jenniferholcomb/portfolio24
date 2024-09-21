@@ -8,7 +8,7 @@
 
 .carouselContent {
   width: 37rem;
-  height: 40rem;
+  height: 41.5rem;
   border-radius: 10px;
   border: 17px solid #B9A99D;
   background: #FFF;
@@ -35,9 +35,9 @@
 .painPoints {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  padding: .5rem 2rem 0 2rem;
+  padding: 1rem 2rem 0 2rem;
   column-gap: 2rem;
-  row-gap: .5rem;
+  row-gap: 1rem;
 }
 
 .ppColumn {
@@ -108,7 +108,7 @@
 .persona {
   display: grid;
   grid-template-columns: 11rem auto;
-  padding: 8px 20px 0 20px;
+  padding: 15px 20px 0 20px;
 
   // padding: 15px 30px 0 30px;
   // grid-template-columns: minmax(0, 203px) minmax(0, 1fr) minmax(0, 1fr);
@@ -138,7 +138,7 @@
   line-height: 28px; /* 87.5% */
   letter-spacing: 9.6px;
   text-transform: uppercase;
-  padding: 10px 0 5px 0;
+  padding: 10px 0 10px 0;
   max-width: 100%;
 
   // padding: 15px 0 15px 0;
@@ -179,14 +179,14 @@
 
 .quote {
   margin: 0;
-  margin-top: 8px;
+  margin-top: 15px;
   color: #98897E;
   text-align: center;
   font-family: Hind;
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
-  line-height: 18px; /* 128.571% */
+  line-height: 16px; /* 128.571% */
   letter-spacing: 3.5px;
   text-transform: uppercase;
 
@@ -243,7 +243,7 @@
 .goals {
   display: flex;
   flex-direction: column;
-  padding: 0 0 0 15px;
+  padding: 10px 0 0 15px;
 
   // padding: 0 0 0 25px;
 }
@@ -266,7 +266,7 @@
 }
 
 .frustration {
-  padding: 8px 0 0 15px;
+  padding: 10px 0 0 15px;
 }
 
 .frustrationsHeader {
@@ -294,8 +294,8 @@
 
 .userJourney {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 20px 5px 0 5px;
+  grid-template-columns: 6rem 1fr 1fr 1fr;
+  padding: 10px 5px 0 5px;
   gap: 8px;
 }
 
@@ -305,6 +305,7 @@
 }
 
 .ujCol1Header {
+  margin: 0;
   color: #F45429;
   text-align: center;
   font-family: Hind;
@@ -319,18 +320,19 @@
 
 .row1Head {
   border: 2px solid #B9A99D;
+  display: grid;
 }
 
 .actionHeader {
   color: #000;
-  text-align: center;
+  // text-align: center;
   font-family: Inconsolata;
-  font-size: 14px;
+  font-size: 11px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 800;
   line-height: 13px; /* 92.857% */
   letter-spacing: 1.4px;
-  margin: 0;
+  margin: 5px 0 0 6px;
 }
 
 .ujInfo {
@@ -340,7 +342,7 @@
 .ujInfoList {
   color: #000;
   font-family: Inconsolata;
-  font-size: 13px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 16px; /* 135.714% */
@@ -477,6 +479,20 @@
   .userJourney {
     grid-template-columns: minmax(0, 115px) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     padding: 20px 5px 0 5px;
-    gap: 8px;
+  }
+  
+  .ujCol1Header {
+    margin: auto;
+  }
+  
+  .actionHeader {
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+    align-content: center;
+  }
+  
+  .ujInfoList {
+    font-size: 13px;
   }
 }
