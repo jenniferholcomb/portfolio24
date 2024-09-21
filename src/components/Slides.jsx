@@ -1,10 +1,12 @@
 import React from "react";
 
+import useResize from "./hooks/useResize";
 import styles from "./Slides.module.scss";
 import personaPic from "./../img/personaImg.webp";
 
 function Slides(props) {
   const { slideIndex, handleCircleClick } = props;
+  const [isMobile, isDesktop, isWdDesktop] = useResize();
 
   const carouselHeader = [ "pain points", "persona", "user journey map" ];
 
@@ -57,6 +59,7 @@ function Slides(props) {
                             [ "App is connected to POS - estimate of good quantity calculated based on sales & invoice ordering" ]
                           ]];
   
+  console.log(isWdDesktop);
   return (
     <>
       <div className={styles.oneCarousel}>
@@ -137,29 +140,71 @@ function Slides(props) {
               </div>
               :
               <div className={styles.userJourney}> 
-                {jmCategory.map((cell, index) =>
-                  <>
-                    <div className={styles.ujCol1}>
-                      <h2 className={styles.ujCol1Header}>{cell}</h2>
-                    </div>
-                  
-                    {journeyMapText[index].map((info, index2) => 
-                      index === 0 ?
-                        <div className={styles.row1Head}>
-                          <h2 className={styles.actionHeader}>{info}</h2>
+                {
+                isWdDesktop ?
+                  jmCategory.map((cell, index) =>
+                    <>
+                      <div className={styles.ujCol1}>
+                        <h2 className={styles.ujCol1Header}>{cell}</h2>
+                      </div>
+                    
+                      {journeyMapText[index].map((info, index2) => 
+                        index === 0 ?
+                          <div className={styles.row1Head}>
+                            <h2 className={styles.actionHeader}>{info}</h2>
+                          </div>
+                        :
+                        <div className={styles.ujInfo}>
+                          <ul className={styles.ujInfoList}>
+                            {journeyMapText[index2][index2].map((list) =>
+                              <li>{list}</li>
+                            )}
+                          </ul>
                         </div>
+                      )}
+                    </>
+                  )
+                :
+                  jmCategory.map((cell, index) =>
+                    <>
+                      <div className={styles.ujCol1}>
+                        <h2 className={styles.ujCol1Header}>{cell}</h2>
+                      </div>
+                    </>
+                  )
+                }
+                {
+                !isWdDesktop ?
+                  journeyMapText.map((cell2, index2) => 
+                    <>
+                    {journeyMapText.map((cell3, index3) =>
+                      index3 === 0 ?
+                      <div className={styles.row1Head}>
+                        <h2 className={styles.actionHeader}>{cell2[index3]}</h2>
+                      </div>
                       :
                       <div className={styles.ujInfo}>
                         <ul className={styles.ujInfoList}>
-                          {journeyMapText[index][index2].map((list) =>
-                            <li>{list}</li>
+                          {journeyMapText.map((list, index4) =>
+                            <li>{list[index2][index4]}</li>
                           )}
                         </ul>
                       </div>
+                      
                     )}
+                    </>
+                  )
+                  // joureyMapText.map((info, index) => {
 
-                  </>
-                )}
+                  //   journeyMapText.map((info2, index2) => {
+                  //     index2 === 0 ?
+                  //       print caption
+                  //       info2[index2][index]
+                  //     : 
+                  //       print list
+                  //       info2[index2][index]
+                : null
+                }
                 
               </div>
           }

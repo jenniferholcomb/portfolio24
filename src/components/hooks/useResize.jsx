@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 function useResize() {
   const [isMobile, setIsMobile] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [isWdDesktop, setIsWdDesktop] = useState(false);
 
   const handleResize = () => {
     window.innerWidth < 667 ?
@@ -12,6 +13,10 @@ function useResize() {
     window.innerWidth < 1024 ?
       setIsDesktop(false)
       : setIsDesktop(true);
+
+    window.innerWidth < 1400 ?
+      setIsWdDesktop(false)
+      : setIsWdDesktop(true);
   };
 
   useEffect(() => {
@@ -26,7 +31,7 @@ function useResize() {
     }
   });
 
-  return [isMobile, isDesktop];
+  return [isMobile, isDesktop, isWdDesktop];
 };
 
 export default useResize;

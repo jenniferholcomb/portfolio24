@@ -271,21 +271,12 @@
 
 .frustrationsHeader {
   color: #35AFB8;
-
 }
 
 .personaBio {
-
-  // flex-shrink: 0;
-  
   padding: 10px 0 0 0;
   grid-column: 1 / span 2;
   display: flex;
-
-  // padding: 15px 25px 0 25px;
-  // width: 95%;
-  // height: 135px;
-  // grid-column: 2 / span 2;
 }
 
 .bioBox {
@@ -297,16 +288,13 @@
 .bioPara {
   width: 90%;
   padding: 8px 10px 8px 25px;
-
-  // width: 90%;
-  // padding: 10px 28px 10px 20px;
 }
 
 //////// user journey ////////
 
 .userJourney {
   display: grid;
-  grid-template-columns: minmax(0, 115px) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 20px 5px 0 5px;
   gap: 8px;
 }
@@ -484,5 +472,11 @@
   .bioPara {
     width: 90%;
     padding: 10px 28px 10px 20px;
+  }
+
+  .userJourney {
+    grid-template-columns: minmax(0, 115px) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    padding: 20px 5px 0 5px;
+    gap: 8px;
   }
 }
