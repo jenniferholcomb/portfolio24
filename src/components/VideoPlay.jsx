@@ -61,8 +61,8 @@ function VideoPlay(props) {
             <InView onChange={setInView} threshold={0.8} key={1}>
               <video 
                 src={video1} 
-                width="324" 
-                height="576" 
+                width="300rem" 
+                height="" 
                 className={styles.vid} 
                 playsInline 
                 onEnded={() => handleVideoPlaying(2)}
@@ -72,8 +72,8 @@ function VideoPlay(props) {
               ></video>
               <video 
                 src={video2} 
-                width="324" 
-                height="576" 
+                width="300rem" 
+                height="" 
                 className={styles.vid} 
                 playsInline 
                 
