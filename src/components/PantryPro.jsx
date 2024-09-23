@@ -172,13 +172,17 @@ function PantryPro() {
             <img className={styles.fourImg} loading="lazy" src={hm6} alt="landing page iteration 2" />
         </div>
         <h3 className={styles.section4Caption}>Design Iterations - Landing page</h3>
-
-        <div className={styles.section5}>
-          <h2 className={styles.headersInv} id={styles.desDetails}>Invoice Reader Details</h2>
+        
+        <div className={styles.section5HeaderContainer}>
+          <div className={styles.sec5HeadRow}>
+            <h2 className={styles.headersInv} id={styles.desDetails}>AI Invoice Reader Details</h2>
+            <h2 className={styles.headersInv} id={styles.desKitB}>UI Kit</h2>            
+          </div>
           <svg className={`${styles.line} ${styles.sec5Line}`} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
             <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
           </svg>
-
+        </div>
+        <div className={styles.section5}>
           <div className={styles.invImgSec}>
             <div className={styles.invVidCap}>
               <VideoPlay video1={vid3} />
@@ -194,10 +198,12 @@ function PantryPro() {
         </div>
 
         <div className={styles.secUiKit}>
-          <h2 className={styles.headersInv} id={styles.desKit}>UI Kit</h2>
-          <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
-            <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
-          </svg>
+          <div className={styles.kitHeaderContainer}>
+            <h2 className={styles.headersInv} id={styles.desKit}>UI Kit</h2>
+            <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
+              <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
+            </svg>
+          </div>
           <div className={styles.uiKitContainer}>
             <img loading="lazy" className={styles.uiImg} id={styles.kit1} src={kitImg1} alt="screenshot of UI kit" />
             <img loading="lazy" className={styles.uiImg} id={styles.kit4} src={kitImg3} alt="screenshot of UI kit" />
@@ -210,14 +216,12 @@ function PantryPro() {
         </div>
         
         <img className={styles.finalSectionImg} src={allInv} alt="screenshot of all pages in app" />
-        
-
-
+  
 
         <div className={`${styles.section1}`}>
           <div className={styles.refInfo}>
             <div className={styles.numberInv}>03.</div>
-            <h2 className={styles.headersInv} id={styles.headers}>Reflection</h2>
+            <h2 className={styles.headersInv} id={styles.headers}>Conclusion</h2>
           </div>
           <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
             <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
