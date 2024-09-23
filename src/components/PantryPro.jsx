@@ -17,13 +17,17 @@ import hm4 from "./../img/Homepage4.webp";
 import hm5 from "./../img/redesign1.webp";
 import hm6 from "./../img/redesign2.webp";
 import invoiceLnd from "./../img/InvoiceEx.webp";
+import invoiceDet from "./../img/InvoiceEx2.webp";
 import kitImg1 from "./../img/desKit1.webp";
 import kitImg2 from "./../img/desKit2.webp";
 import kitImg3 from "./../img/desKit3.webp";
 import kitImg4 from "./../img/desKit4.webp";
+import kitImg4A from "./../img/desKit4A.webp";
+import kitImg4B from "./../img/desKit4B.webp";
 import kitImg5 from "./../img/desKit5.webp";
+import kitImg5A from "./../img/desKit5A.webp";
+import kitImg5B from "./../img/desKit5B.webp";
 import kitImg6 from "./../img/desKit6.webp";
-import kitImg7 from "./../img/desKit7.webp";
 import kitImg8 from "./../img/desKit8.webp";
 import allInv from "./../img/allFrames.webp";
 import vid from "./../img/mockVid.mp4";
@@ -171,43 +175,42 @@ function PantryPro() {
 
         <div className={styles.section5}>
           <h2 className={styles.headersInv} id={styles.desDetails}>Invoice Reader Details</h2>
-          <h2 className={styles.headersInv} id={styles.desKit}>UI Kit</h2>
           <svg className={`${styles.line} ${styles.sec5Line}`} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
             <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
           </svg>
-        {/* </div>
-        <div className={styles.section5P}> */}
-          <p className={styles.sec5P} id={styles.blurb1}>Competitive analysis for this project concluded that the ability to scan or upload invoices was not a standard feature amongst competitors. Though, other types of apps utilize the technology. I studied recipe box interfaces that allow users to upload printed copies, or photos, of personal recipes, that are then converted into a digital recipe. In addition, I probed how ChapGPT would analyze an invoice. The process to translate an invoice from paper to digital seems simple enough; ask AI to analyze document, detail how you would like information in return, then fill data into editable text fields for user to scan for errors.</p>
-          {/* <div className={styles.invoiceContent}> */}
+
+          <div className={styles.invImgSec}>
             <div className={styles.invVidCap}>
               <VideoPlay video1={vid3} />
               <h3 className={styles.videoCaption}>Flow - AI Invoice Reader</h3>
             </div>
-            <img loading="lazy" src={invoiceLnd} className={styles.invImg} alt="design details example 1" />
-          {/* </div> */}
-        {/* </div>
-        <div className={styles.section5B}> */}
-          <div className={styles.kitGrp1}>
-            <img loading="lazy" className={styles.uiImg} id={styles.kit1} src={kitImg1} alt="screenshot of UI kit" />
-            <img loading="lazy" className={styles.uiImg} id={styles.kit3} src={kitImg2} alt="screenshot of UI kit" />
-            <img loading="lazy" className={styles.uiImg} id={styles.kit4} src={kitImg3} alt="screenshot of UI kit" />
           </div>
-          <div className={styles.kitGrp2}>
+
+          <p className={styles.sec5P} id={styles.blurb1}>Competitive analysis for this project concluded that the ability to scan or upload invoices was not a standard feature amongst competitors. Though, other types of apps utilize the technology. I studied recipe box interfaces that allow users to upload printed copies, or photos, of personal recipes, that are then converted into a digital recipe. In addition, I probed how ChapGPT would analyze an invoice. The process to translate an invoice from paper to digital seems simple enough; ask AI to analyze document, detail how you would like information in return, then fill data into editable text fields for user to scan for errors.</p>
+          <div className={styles.invImgContainer}>
+            <img loading="lazy" src={invoiceLnd} className={styles.invImg} alt="design details example 1" />
+            <img loading="lazy" src={invoiceDet} className={styles.invImg} alt="design details example 1" />
+          </div>
+        </div>
+
+        <div className={styles.secUiKit}>
+          <h2 className={styles.headersInv} id={styles.desKit}>UI Kit</h2>
+          <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
+            <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
+          </svg>
+          <div className={styles.uiKitContainer}>
+            <img loading="lazy" className={styles.uiImg} id={styles.kit1} src={kitImg1} alt="screenshot of UI kit" />
+            <img loading="lazy" className={styles.uiImg} id={styles.kit4} src={kitImg3} alt="screenshot of UI kit" />
+            <img loading="lazy" className={styles.uiImg} id={styles.kit5} src={kitImg5B} alt="screenshot of UI kit" />
             <img loading="lazy" className={styles.uiImg} id={styles.kit2} src={kitImg8} alt="screenshot of UI kit" />
             <img loading="lazy" className={styles.uiImg} id={styles.kit7} src={kitImg6} alt="screenshot of UI kit" />
+            <img loading="lazy" className={styles.uiImg} id={styles.kit3} src={kitImg4B} alt="screenshot of UI kit" />
+            <img loading="lazy" className={styles.uiImg} id={styles.kit6} src={kitImg5A} alt="screenshot of UI kit" />
           </div>
-          <div className={styles.kitGrp3}>
-            <img loading="lazy" className={styles.uiImg} id={styles.kit5} src={kitImg4} alt="screenshot of UI kit" />
-          </div>
-          <div className={styles.kitGrp4}>
-            <img loading="lazy" className={styles.uiImg} id={styles.kit6} src={kitImg5} alt="screenshot of UI kit" />
-
-          </div>
-        <img className={styles.finalSectionImg} src={allInv} alt="screenshot of all pages in app" />
-        <svg className={`${styles.line} ${styles.secKitLine}`} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
-          <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
-        </svg>
         </div>
+        
+        <img className={styles.finalSectionImg} src={allInv} alt="screenshot of all pages in app" />
+        
 
 
 

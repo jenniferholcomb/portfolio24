@@ -449,7 +449,7 @@
   flex-wrap: wrap;
   gap: 3%;
   justify-content: center;
-  padding: 0 .5rem 0 .5rem;
+  padding: 2rem .5rem 0 .5rem;
 }
 
 .fourImg {
@@ -477,13 +477,13 @@
   padding-top: 1.5rem;
 }
 
-//// Invoice / UI Kit ////
+///// Invoice ////
 
 .section5 {
   grid-column: 1 / span 2;
   z-index: 9999;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 #desDetails {
@@ -493,171 +493,141 @@
   padding: 50px 0 22px 10%;
 }
 
-#desKit {
-  grid-row: 6;
+.invImgSec {
   grid-column: 1;
-  text-align: start;
-  padding: 50px 20% 22px 0;
+  grid-row: 3 / span 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  // align-items: end;
+  // justify-content:  end;
+  gap: .7rem;
+  padding: 25px 0 0 0;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.sec5Line {
-  grid-column: 1 / span 2;
-  grid-row: 2;
+.invVidCap {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
 }
-
-// .sec5P {
-//   grid-column: 2;
-//   grid-row: 3;
-//   max-width: 100%;
-// }
-
-///// Invoice ////
-
-#lineDes {
-  z-index: 99999;
-}
-
-// .section5P {
-//   grid-column: 1;
-//   padding-left: 10%;
-//   display: flex;
-//   flex-direction: column;
-//   z-index: 99999;
-// }
 
 .sec5P {
   grid-column: 2;
   grid-row: 3;
+  padding: 30px 10% 0 0; 
 }
 
-.invoiceContent {
+.invImgContainer {
+  grid-column: 2;
+  grid-row: 4;
   display: flex;
   flex-direction: row;
-  gap: 2rem;
-  padding-top: 30px;
-  transform: translateX(-7%);
-}
-
-.invVidCap {
-  grid-column: 1;
-  grid-row: 3 / span 2;
-  display: flex;
-  flex-direction: column;
-  gap: .7rem;
+  gap: .5rem;
+  max-width: 100%;
+  justify-content: center;
+  align-content: center;
+  padding-top: 15px;
 }
 
 .invImg {
-  grid-column: 2;
-  grid-row: 4;
-  max-width: 75%;
-  max-height: 75%;
-  transform: translate(-10%, -11%);
-  align-self: flex-end;
+  max-width: 35%;
+  max-height: 100%;
+  align-self: start;
+  justify-self: start;
+  padding: 5px 5% 0 0;
 }
 
 //// UI Kit ////
 
-.section5B {
-  grid-column: 2;
-  z-index: 99999;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1.2fr .9fr .9fr;
-  grid-template-rows: auto minmax(0, 1fr) auto;
-  padding: 30px 5% 0 0;
-
-  gap: .5rem;
-  column-gap: 2rem;
-  justify-self: end;
-  transform: translateX(-2.5%);
+.secUiKit {
+  grid-column: 1 / span 2;
 }
 
-.kitGrp1 {
-  grid-column: 1;
-  grid-row: 8;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  gap: 1rem;
-  max-height: 100%;
-  // width: 90%;
-  // transform: translateX(10%);
+#desKit {
+  text-align: start;
+  padding: 60px 0 10px 5%;
+  // padding: 50px 20% 22px 0;
+}
+
+.uiKitContainer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  align-content: center;
+  justify-items: center;
+  padding: 25px 5% 0 5%;
 }
 
 .uiImg {
-  max-width: 100%;
+  max-width: 95%;
+  height: auto;
+  align-self: center;
 }
 
-// #kit1,
-// #kit5 {
-//   max-width: 18rem;
-// }
+#kit1 {
+  max-width: 85%;
+  align-self: end;
+  justify-self: end;
+  // transform: translateY(30%);
+  padding-right: 5%;
+}
 
-// #kit2,
-// #kit7,
-// #kit6 {
-//   max-width: 18rem;
-// }
-
-// #kit3,
-// #kit4 {
-//   max-width: 18rem;
-// }
-
-.kitGrp2 {
+#kit2 {
   grid-column: 2;
-  grid-row: 8;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  grid-row: 1 / span 2;
+  align-self: start;
+  
+}
 
-  align-items: end;
-  // width: 90%;
+#kit7 {
+  grid-column: 2;
+  grid-row: 3;
 }
 
 #kit4 {
-  transform: translateY(-1%);
-}
-
-.kitGrp3 {
-  display: flex;
-  justify-content: end;
-  align-self: start;
   grid-column: 1;
-  grid-row: 9;
-  // width: 90%;
-  // transform: translateX(10%);
+  grid-row: 2;
+  align-self: end;
+  max-width: 95%;
 }
 
 #kit5 {
-  justify-self: end;
+  grid-column: 3;
+  grid-row: 3;
+  max-width: 90%;
+  align-self: start;
+  justify-self: center;
+  transform: translateY(-28%);
 }
 
-.kitGrp4 {
-  grid-column: 2;
-  grid-row: 9;
-  display: flex;
-  flex-direction: column;
-  padding: 10px 0 0 0;
-  align-items: end;
-  // width: 90%;
+#kit3 {
+  grid-column: 1;
+  grid-row: 3;
+  padding-bottom: 9px;
+  max-width: 90%;
 }
 
-.secKitLine {
-  grid-column: 1 / span 2;
-  grid-row: 7;
+#kit6 {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  align-self: start;
+  max-width: 100%;
+  padding-top: 13px;
+  transform: translateY(18%);
 }
 
 //// All Frames ////
 
 .finalSectionImg {
   grid-column: 1 / span 2;
-  grid-row: 5;
   justify-self: center;
   max-width: 95%;
   max-height: auto;
-  padding-top: 2rem;
+  padding-top: 4rem;
   z-index: 99999;
 }
 
@@ -676,6 +646,10 @@
   padding: 50px 0 10rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+#lineDes {
+  z-index: 99999;
 }
 
 .addInfoColContainer {
@@ -716,6 +690,10 @@
   min-height: 100%;
   position: absolute;
   transform: translateY(170%);
+}
+
+@media all and (min-width: 768px) {
+
 }
 
 @media all and (min-width: 840px) {
