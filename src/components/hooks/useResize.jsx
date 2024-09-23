@@ -2,16 +2,17 @@ import { useState, useEffect } from "react";
 
 function useResize() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const [isWdDesktop, setIsWdDesktop] = useState(false);
 
   const handleResize = () => {
     window.innerWidth < 667 ?
     setIsMobile(true) 
-    : setIsMobile(false);
+    : (setIsMobile(false), setIsTablet(false));
   
     window.innerWidth < 1024 ?
-      setIsDesktop(false)
+      (setIsDesktop(false), setIsTablet(true))
       : setIsDesktop(true);
 
     window.innerWidth < 1400 ?
@@ -31,7 +32,7 @@ function useResize() {
     }
   });
 
-  return [isMobile, isDesktop, isWdDesktop];
+  return [isMobile, isDesktop, isWdDesktop, isTablet];
 };
 
 export default useResize;

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useInView, InView } from "react-intersection-observer";
 
+import useResize from "./hooks/useResize";
 import styles from "./PantryPro.module.scss";
 
 function VideoPlay(props) {
@@ -14,6 +15,7 @@ function VideoPlay(props) {
   const { ref, inView } = useInView({
     threshold: 0.2,
   });
+  const [isMobile, isDesktop] = useResize();
 
   const setInView = (inView, entry) => {
     if (inView) {
@@ -61,7 +63,7 @@ function VideoPlay(props) {
             <InView onChange={setInView} threshold={0.8} key={1}>
               <video 
                 src={video1} 
-                width="300rem" 
+                width={isDesktop ? "300rem" : "275rem"} 
                 height="" 
                 className={styles.vid} 
                 playsInline 
@@ -72,7 +74,7 @@ function VideoPlay(props) {
               ></video>
               <video 
                 src={video2} 
-                width="300rem" 
+                width={isDesktop ? "300rem" : "275rem"}  
                 height="" 
                 className={styles.vid} 
                 playsInline 
@@ -89,7 +91,7 @@ function VideoPlay(props) {
             <InView onChange={setInViewInvoice} threshold={0.8} key={2}>
               <video 
                   src={video1} 
-                  width="300rem" 
+                  width={isDesktop ? "300rem" : "275rem"} 
                   height="" 
                   className={styles.vidInv}
                   playsInline 

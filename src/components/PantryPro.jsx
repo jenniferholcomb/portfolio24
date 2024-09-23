@@ -66,7 +66,7 @@ function PantryPro() {
             </h3>
           </div>
           <p className={`${styles.infoBlurb} ${styles.info}`} id={styles.summary}>Improving inventory and invoice management for restaurant owners and operators.</p>
-          <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="532" height="2" viewBox="0 0 532 2" fill="none">
+          <svg className={`${styles.line} ${styles.introLine}`} xmlns="http://www.w3.org/2000/svg" width="532" height="2" viewBox="0 0 532 2" fill="none">
             <path d="M531 2C531.552 2 532 1.55228 532 1C532 0.447715 531.552 0 531 0V2ZM0 2H531V0H0V2Z" fill="#001B08" />
           </svg>
           <div className={styles.info}>
@@ -161,36 +161,32 @@ function PantryPro() {
         </div>
 
         <div className={`${styles.section4Img}`}>
-          <div className={styles.section4}>
             <img className={styles.fourImg} loading="lazy" src={hm1} alt="landing page iteration 1" />
             <img className={styles.fourImg} loading="lazy" src={hm2} alt="landing page iteration 2" />
             <img className={styles.fourImg} loading="lazy" src={hm4} alt="landing page iteration 4" />
-          {/* </div>
-          <div className={styles.section4B}> */}
             <img className={styles.fourImg} loading="lazy" src={hm5} alt="landing page iteration 1" />
             <img className={styles.fourImg} loading="lazy" src={hm6} alt="landing page iteration 2" />
-          </div>
         </div>
         <h3 className={styles.section4Caption}>Design Iterations - Landing page</h3>
 
         <div className={styles.section5}>
           <h2 className={styles.headersInv} id={styles.desDetails}>Invoice Reader Details</h2>
           <h2 className={styles.headersInv} id={styles.desKit}>UI Kit</h2>
-          <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
+          <svg className={`${styles.line} ${styles.sec5Line}`} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
             <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
           </svg>
-        </div>
-        <div className={styles.section5P}>
-          <p id={styles.blurb1}>Competitive analysis for this project concluded that the ability to scan or upload invoices was not a standard feature amongst competitors. Though, other types of apps utilize the technology. I studied recipe box interfaces that allow users to upload printed copies, or photos, of personal recipes, that are then converted into a digital recipe. In addition, I probed how ChapGPT would analyze an invoice. The process to translate an invoice from paper to digital seems simple enough; ask AI to analyze document, detail how you would like information in return, then fill data into editable text fields for user to scan for errors.</p>
-          <div className={styles.invoiceContent}>
+        {/* </div>
+        <div className={styles.section5P}> */}
+          <p className={styles.sec5P} id={styles.blurb1}>Competitive analysis for this project concluded that the ability to scan or upload invoices was not a standard feature amongst competitors. Though, other types of apps utilize the technology. I studied recipe box interfaces that allow users to upload printed copies, or photos, of personal recipes, that are then converted into a digital recipe. In addition, I probed how ChapGPT would analyze an invoice. The process to translate an invoice from paper to digital seems simple enough; ask AI to analyze document, detail how you would like information in return, then fill data into editable text fields for user to scan for errors.</p>
+          {/* <div className={styles.invoiceContent}> */}
             <div className={styles.invVidCap}>
               <VideoPlay video1={vid3} />
               <h3 className={styles.videoCaption}>Flow - AI Invoice Reader</h3>
             </div>
             <img loading="lazy" src={invoiceLnd} className={styles.invImg} alt="design details example 1" />
-          </div>
-        </div>
-        <div className={styles.section5B}>
+          {/* </div> */}
+        {/* </div>
+        <div className={styles.section5B}> */}
           <div className={styles.kitGrp1}>
             <img loading="lazy" className={styles.uiImg} id={styles.kit1} src={kitImg1} alt="screenshot of UI kit" />
             <img loading="lazy" className={styles.uiImg} id={styles.kit3} src={kitImg2} alt="screenshot of UI kit" />
@@ -207,9 +203,13 @@ function PantryPro() {
             <img loading="lazy" className={styles.uiImg} id={styles.kit6} src={kitImg5} alt="screenshot of UI kit" />
 
           </div>
+        <img className={styles.finalSectionImg} src={allInv} alt="screenshot of all pages in app" />
+        <svg className={`${styles.line} ${styles.secKitLine}`} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
+          <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
+        </svg>
         </div>
 
-        <img className={styles.finalSectionImg} src={allInv} alt="screenshot of all pages in app" />
+
 
         <div className={`${styles.section1}`}>
           <div className={styles.refInfo}>
