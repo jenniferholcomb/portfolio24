@@ -7,6 +7,7 @@ import VideoPlay from "./VideoPlay";
 import styles from "./PantryPro.module.scss";
 import invLogo from "./../img/ppLogo.svg"
 import bannerTop from "./../img/bannerImageWide.webp";
+import mobileBanner from "./../img/bannerImageLogo.webp";
 import ex1 from "./../img/landPg.webp";
 import ex2 from "./../img/goods1.webp";
 import ex3 from "./../img/InvEx3.webp";
@@ -55,6 +56,7 @@ function PantryPro() {
             <img loading="lazy" src={invLogo} alt="app logo" />
           </div>
           <div className={styles.banner}>
+            <img className={styles.mobileLogoArt} loading="lazy" src={mobileBanner} alt="top banner, graphic with food" />
             <img className={styles.logoArt} loading="lazy" src={bannerTop} alt="top banner, graphic with food" />
           </div>
 

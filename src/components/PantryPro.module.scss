@@ -35,7 +35,7 @@
   letter-spacing: 7.5px;
   text-transform: capitalize;
   align-self: end;
-  padding-bottom: 6px;
+  padding-bottom: 5px;
 }
 
 .headersInv {
@@ -100,17 +100,15 @@
 }
 
 .logo {
-  position: absolute;
-  width: 8rem;
-  // width: 200px;
-  align-self: center;
-  padding: 5px 0 0 50px;
-  z-index: 9999;
+  display: none;
+}
+
+.mobileLogoArt {
+  max-width: 100%;
 }
 
 .logoArt {
-  max-height: auto;
-  max-width: 170%;
+  display: none;
 }
 
 .banner {
@@ -269,6 +267,7 @@
 
 #userResHead {
   padding-top: 5rem;
+  padding-bottom: 10px;
 }
 
 .usResBlurb, .usResBlurbB{
@@ -500,6 +499,8 @@
 #desDetails {
   max-width: 100%;
   padding: 50px 0 12px 5%;
+  position: relative;
+  z-index: 9999;
 }
 
 .sec5Line {
@@ -648,6 +649,7 @@
 //// All Frames ////
 
 .finalSectionImg {
+  display: flex;
   align-self: center;
   max-width: 100%;
   padding-top: 3rem;
@@ -711,6 +713,29 @@
   transform: translateY(170%);
 }
 
+@media all and (min-width: 435px) {
+
+  .logo {
+    display: unset;
+    position: absolute;
+    width: 8rem;
+    // width: 200px;
+    align-self: center;
+    padding: 5px 0 0 50px;
+    z-index: 9999;
+  }
+
+  .mobileLogoArt {
+    display: none;
+  }
+
+  .logoArt {
+    display: unset;
+    max-width: 75rem;
+    // overflow-x: hidden;
+  }
+}
+
 @media all and (min-width: 667px) {
   .pantryProWrapper {
     display: grid;
@@ -739,7 +764,7 @@
     /* 56% */
     letter-spacing: 7.5px;
     text-transform: capitalize;
-    padding-bottom: 0px;
+    padding-bottom: 5px;
   }
   
   .headersInv {
@@ -795,17 +820,16 @@
     z-index: 9999;
   }
   
-  .logoArt {
-    max-height: auto;
-    max-width: 170%;
-  }
-  
   .banner {
     display: flex;
     justify-content: end;
     align-self: flex-start;
     overflow-x: hidden;
     z-index: 999;
+  }
+
+  .logoArt {
+    max-width: 85rem;
   }
   
   //// Intro ////
@@ -920,7 +944,7 @@
   }
 
   .siteMap {
-    max-width: 78%;
+    max-width: 90%;
   }
 
   .sitePA {
@@ -941,7 +965,8 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-  
+    padding-bottom: 50px;
+    z-index: 99999;
     
     // grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     // gap: 5rem;
@@ -950,7 +975,7 @@
   .usaInfo {
     display: grid;
     grid-template-columns: 1fr 1fr;
-  
+    padding-top: 90px;
   }
 
   .usaPContainer {
@@ -976,7 +1001,7 @@
   }
   
   .siteUSB {
-    grid-column: 1;
+    grid-column: 2;
     padding: 15px 10% 5px 5%;
   }
 
@@ -1010,7 +1035,6 @@
 
   .section4Img {
     grid-column: 1/ span 2;
-    padding-top: 3.5rem;
     z-index: 9999;
     display: flex;
     flex-wrap: wrap;
@@ -1142,9 +1166,7 @@
     grid-column: 1 / span 2;
     justify-self: center;
     max-width: 95%;
-    max-height: auto;
     padding-top: 4rem;
-    z-index: 99999;
   }
 
   .refInfo {
@@ -1168,13 +1190,13 @@
   .addInfo {
     grid-column: 1 / span 2;
     padding: 50px 0 10rem 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
   }
 
   .addInfoColContainer {
-    grid-column: 1;
-    padding: 40px 0 22px 10%;
+    max-width: 100%;
+    padding: 40px 0 12px 5%;
   }
 }
 
@@ -1183,14 +1205,17 @@
   .logo {
     width: 15%;
   }
-  
-  .logoArt {
-    max-height: auto;
-    max-width: auto;
-  }
 
   .exShotInv {
     gap: 4%;
+  }
+
+  .siteMap {
+    max-width: 78%;
+  }
+
+  .section4Img {
+    padding: 3rem .5rem 0 .5rem;
   }
 
   .imgInv {  
@@ -1203,6 +1228,10 @@
 
   .logo {
     max-width: 175px;
+  }
+
+  .logoArt {
+    max-width: 170%;
   }
 
   .pantryProWrapper {
@@ -1257,7 +1286,7 @@
   }
 
   .prob1 {
-    padding-left: 5%;
+    padding: 0 0 0 20%;
   }
 
   .blOneB {
@@ -1267,7 +1296,7 @@
   .prob2 {
     display: unset;
     grid-column: 2;
-    padding: 0 42px 0 43px;
+    padding: 0 8% 0 7%;
     z-index: 9999;
   }
 
@@ -1277,7 +1306,7 @@
   
   .prob3 {
     grid-column: 3;
-    padding-right: 20%;
+    padding: 0 20% 0 0%;
   }
   
   //// User Research ////
@@ -1294,15 +1323,9 @@
     display: unset;
   }
 
-  .twoSection {
-    grid-column: 1 / span 2;
-    z-index: 99999;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
   .usResBlurb, .usResBlurbB {
     padding: 0 20% 0 0;
+    grid-column: 3;
   }
 
   .siteSection {
@@ -1345,7 +1368,7 @@
   //// usability study ////
 
   .section3 {
-    height: 55rem;
+    max-height: 48rem;
     -webkit-clip-path: ellipse(78.01% 45.01% at 49.43% 50.09%);
     clip-path: ellipse(86.34% 48.01% at 49.91% 50.09%);
     display: grid;
@@ -1354,6 +1377,7 @@
 
   .threeBlurb {
     padding-top: 60px;
+    justify-content: start;
   }
 
   .threeBlurb {
@@ -1411,6 +1435,7 @@
 
   .section3b {
     grid-column: 2 / span 2;
+    padding-top: 30px;
   }
 
   .section4Img {
@@ -1588,7 +1613,6 @@
   .finalSectionImg {
     grid-column: 1 / span 3;
     max-width: 80%;
-    max-height: auto;
     padding-top: 5rem;
   }
 
@@ -1600,10 +1624,13 @@
 
   .addInfo {
     grid-column: 1 / span 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .addInfoColContainer {
-    padding: 40px 0 22px 20%;
+    grid-column:  1 / span 2;
+    padding: 40px 0 22px 10%;
   }
 } 
 
@@ -1754,7 +1781,6 @@
   .finalSectionImg {
     grid-column: 1 / span 3;
     max-width: 65rem;
-    max-height: auto;
     padding-top: 5rem;
   }
 } 
