@@ -59,13 +59,13 @@ function VideoPlay(props) {
     <>
       {
         video2 !== undefined ?
-          <div id={styles.sectionWrapper} ref={ref}>
+          <div className={styles.sectionWrapperVideo} ref={ref}>
             <InView onChange={setInView} threshold={0.8} key={1}>
               <video 
                 src={video1} 
-                width={isDesktop ? "300rem" : "275rem"} 
+                className={styles.vid}
+                width={isDesktop ? "300rem" : (isMobile ? "240rem" : "275rem")} 
                 height="" 
-                className={styles.vid} 
                 playsInline 
                 onEnded={() => handleVideoPlaying(2)}
                 muted 
@@ -74,9 +74,8 @@ function VideoPlay(props) {
               ></video>
               <video 
                 src={video2} 
-                width={isDesktop ? "300rem" : "275rem"}  
+                width={isDesktop ? "300rem" : (isMobile ? "240rem" : "275rem")} 
                 height="" 
-                className={styles.vid} 
                 playsInline 
                 
                 muted 
@@ -91,7 +90,8 @@ function VideoPlay(props) {
             <InView onChange={setInViewInvoice} threshold={0.8} key={2}>
               <video 
                   src={video1} 
-                  width={isDesktop ? "300rem" : "275rem"} 
+                  className={styles.vid3} 
+                  width={isDesktop ? "300rem" : (isMobile ? "240rem" : "275rem")} 
                   height="" 
                   playsInline 
                   loop

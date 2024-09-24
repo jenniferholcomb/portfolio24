@@ -64,7 +64,7 @@ function PantryPro() {
             <h3 className={styles.infoYear}>
               Pantry Pro
               <br />
-              Conceptual Mobile App
+              Mobile App
               <br />
               2024
             </h3>
@@ -136,11 +136,12 @@ function PantryPro() {
           </svg>
         </div>
         <div className={styles.siteSection}>
-          <p id={styles.blurb1} className={`${styles.sitePA}`}>How to address the challenges of task fatigue when entering invoice data or counting inventory?<br /><br />1. With modern technology, manual data entry can be eliminated. AI can facilitate managers with scanning invoices and categorizing data into fields that can be edited and cataloged. This removes chance for human error, and frees up valuable time. An app invoice reader is necessary for establishing trusted inventory data.<span className={styles.sitePAHide}><br /><br />2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a requirement of weekly costing. For small restaurants, and food carts, profits can drastically change week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</span></p>
-          <p id={styles.blurbPadAdj} className={`${styles.sitePB}`}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a requirement of weekly costing. For small restaurants, and food carts, profits can drastically change week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
           <div className={styles.site}>
             <img loading="lazy" className={styles.siteMap} src={stMp} alt="sitemap illustration" />
           </div>
+          <p id={styles.blurb1} className={`${styles.sitePA}`}>How to address the challenges of task fatigue when entering invoice data or counting inventory?<br /><br />1. With modern technology, manual data entry can be eliminated. AI can facilitate managers with scanning invoices and categorizing data into fields that can be edited and cataloged. This removes chance for human error, and frees up valuable time. An app invoice reader is necessary for establishing trusted inventory data.<span className={styles.sitePAHide}><br /><br />2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a requirement of weekly costing. For small restaurants, and food carts, profits can drastically change week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</span></p>
+          <p id={styles.blurbPadAdj} className={`${styles.sitePB}`}>2. Who likes counting, over and over again? Keeping accurate counts of inventory on hand is a requirement of weekly costing. For small restaurants, and food carts, profits can drastically change week to week. A system designed to aid managers in quick counting of goods, and reports itemizing what needs a restock, are both tools that could ease the daily rigor of owning or operating a small restaurant.</p>
+          
         </div>
 
         <div className={styles.section3}>

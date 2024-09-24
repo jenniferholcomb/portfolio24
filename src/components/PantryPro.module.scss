@@ -81,12 +81,12 @@
 
 .columnOneParagraph {
   grid-column: 1;
-  padding: 0 5% 0 10%;
+  padding: 0 5% 0 5%;
 }
 
 .columnTwoParagraph {
   grid-column: 2;
-  padding: 0 10% 0 5%;
+  padding: 0 5% 0 5%;
 }
 
 //// Banner ////
@@ -149,9 +149,7 @@
 }
 
 .introLine {
-  padding-right: 10%;
-  max-width: 85%;
-
+  max-width: 100%;
 }
 
 .infoBlurb {
@@ -203,7 +201,7 @@
 }
 
 .problemHeader:after {
-  content:"The \A Problem ";
+  content:"The Problem ";
   white-space: pre; /* or pre-wrap */
 }
 
@@ -248,7 +246,9 @@
 }
 
 .useResInfo {
-  padding: 0px 0 12px 10%;
+  max-width: 100%;
+  grid-column: 1 / span 2;
+  padding: 0px 0 12px 5%;
 }
 
 .twoSection {
@@ -282,14 +282,13 @@
 }
 
 .siteSection {
-  grid-column: 1 / span 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
 }
 
 .sitePA {
   grid-column: 1;
-  padding: 0 5% 10px 10%;
+  padding: 0 5% 10px 5%;
 }
 
 #blurbPadAdj {
@@ -312,7 +311,7 @@
 
 .sitePB {
   grid-column: 2;
-  padding: 15px 10% 0 5%;
+  padding: 15px 5% 0 5%;
 }
 
 .site {
@@ -323,26 +322,26 @@
   justify-content: center;
 
   z-index: 9999;
-  padding: 30px 30px 0 30px;
+  padding: 15px 30px 0 30px;
 
   // padding: 30px 30px 60px 30px;
 }
 
 .siteMap {
   align-self: center;
-  max-width: 78%;
+  max-width: 100%;
 }
 
 //// Usability Study ////
 
 .section3 {
   width: 100vw;
-  height: 67rem;
-  -webkit-clip-path: ellipse(91.21% 46.49% at 49.96% 51.31%);
-  clip-path: ellipse(91.21% 46.49% at 49.96% 51.31%);
+  max-height: 100%;
+  // -webkit-clip-path: ellipse(91.21% 48.98% at 50.74% 51.02%);
+  // clip-path: ellipse(91.21% 46.49% at 49.96% 51.31%);
   // -webkit-clip-path: ellipse(65.58% 50.01% at 49.33% 49.99%);
   // clip-path: ellipse(65.58% 50.01% at 49.33% 49.99%);
-  background-color: white;
+
   display: flex;
   flex-direction: column;
 
@@ -356,25 +355,25 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 110px;
+  padding-top: 0px;
 
   // transform: translateY(-3%);
 }
 
 .usaInfo {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 
 }
 
 .usaHeader {
   grid-column: 1;
-  padding: 50px 0 22px 10%;
+  padding: 50px 0 12px 5%;
 }
 
 .usaPContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 .usaLineB {
@@ -382,16 +381,20 @@
 }
 
 .siteUSA {
-  padding: 15px 5% 5px 10%;
+  padding: 15px 5% 5px 5%;
 }
 
 .siteUSSpanA {
-  display: none;
+  display: unset;
 }
 
 .siteUSB {
-  grid-column: 2;
-  padding: 15px 10% 5px 5%;
+  grid-column: 1;
+  padding: 15px 5% 5px 5%;
+}
+
+.siteUSSpanB {
+  display: none;
 }
 
 #usaBlurbWide {
@@ -414,9 +417,15 @@
 
 .section3b {
   max-width: 100%;
-  grid-column: 2;
+  max-height: 100%;
+  padding-bottom: 30px;
+}
+
+.sectionWrapperVideo div {
+  padding-top: 5%;
+  align-items: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
@@ -446,7 +455,6 @@
 //// Landing Page Iterations ////
 
 .section4Img {
-  grid-column: 1/ span 2;
   padding-top: 3.5rem;
   z-index: 9999;
   display: flex;
@@ -457,9 +465,10 @@
 }
 
 .fourImg {
-  max-width: 16%;
+  max-width: 6.5rem;
   max-height: auto;
   align-self: center;
+  padding-bottom: 10px;
 }
 
 
@@ -478,22 +487,19 @@
 .section4Caption {
   grid-column: 1 / span 2;
   justify-self: center;
-  padding-top: 1.5rem;
 }
 
 ///// Invoice ////
 
 .section5HeaderContainer {
-  grid-column: 1 / span 2;
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
 }
 
 #desDetails {
   max-width: 100%;
-  padding: 50px 0 22px 5%;
+  padding: 50px 0 12px 5%;
 }
 
 .sec5Line {
@@ -502,10 +508,7 @@
 }
 
 .section5 {
-  grid-column: 1 / span 2;
   z-index: 9999;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 .invImgSec {
@@ -527,19 +530,16 @@
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  max-width: 100%;
+  // max-width: 100%;
   max-height: 100%;
+  align-self: center;
 }
 
 .sec5P {
-  grid-column: 1;
-  grid-row: 3;
-  padding: 30px 0 0 10%; 
+  padding: 30px 5% 0 5%; 
 }
 
 .invImgContainer {
-  grid-column: 1;
-  grid-row: 4;
   display: flex;
   flex-direction: row;
   gap: .5rem;
@@ -550,7 +550,7 @@
 }
 
 .invImg {
-  max-width: 35%;
+  max-width: 10rem;
   max-height: 100%;
   padding: 5px 0 0 0;
 }
@@ -562,31 +562,35 @@
 }
 
 .secUiKit {
-  grid-column: 1 / span 2;
-  z-index: 9999;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #desKit {
   text-align: start;
-  padding: 60px 0 10px 5%;
-  // padding: 50px 20% 22px 0;
+  padding: 50px 0 2px 5%;
 }
 
 .uiKitContainer {
+  align-self: center;
+  max-width: 100%;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-content: center;
   justify-items: center;
-  padding: 25px 5% 0 5%;
+  padding: 15px 5% 0 5%;
 }
 
 .uiImg {
-  max-width: 95%;
+  max-width: 100%;
   height: auto;
   align-self: center;
 }
 
 #kit1 {
+  grid-column: 1;
+  grid-row: 1;
   max-width: 85%;
   align-self: end;
   justify-self: end;
@@ -598,12 +602,15 @@
   grid-column: 2;
   grid-row: 1 / span 2;
   align-self: start;
-  
+  max-height: 100%;
+  max-width: 90%;
 }
 
 #kit7 {
   grid-column: 2;
   grid-row: 3;
+  max-width: 90%;
+  transform: translateY(-20%);
 }
 
 #kit4 {
@@ -614,38 +621,36 @@
 }
 
 #kit5 {
-  grid-column: 3;
-  grid-row: 3;
+  grid-column: 2;
+  grid-row: 4;
   max-width: 90%;
   align-self: start;
   justify-self: center;
-  transform: translateY(-28%);
+  transform: translateY(-30%);
 }
 
 #kit3 {
   grid-column: 1;
-  grid-row: 3;
+  grid-row: 4;
   padding-bottom: 9px;
   max-width: 90%;
 }
 
 #kit6 {
-  grid-column: 3;
-  grid-row: 1 / span 2;
+  grid-column: 1;
+  grid-row: 3;
   align-self: start;
   max-width: 100%;
-  padding-top: 13px;
-  transform: translateY(18%);
+  padding-top: 10px;
+  transform: translateY(0%);
 }
 
 //// All Frames ////
 
 .finalSectionImg {
-  grid-column: 1 / span 2;
-  justify-self: center;
-  max-width: 95%;
-  max-height: auto;
-  padding-top: 4rem;
+  align-self: center;
+  max-width: 100%;
+  padding-top: 3rem;
   z-index: 99999;
 }
 
@@ -654,16 +659,13 @@
 .refInfo {
   display: flex;
   flex-direction: row;
-  padding: 50px 0 22px 10%;
+  padding: 50px 0 12px 10%;
 }
 
 //// Additional Info ////
 
 .addInfo {
-  grid-column: 1 / span 2;
-  padding: 50px 0 10rem 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 0 10rem 0;
 }
 
 #lineDes {
@@ -671,8 +673,7 @@
 }
 
 .addInfoColContainer {
-  grid-column: 1;
-  padding: 40px 0 22px 10%;
+  padding: 50px 5% 12px 5%;
 }
 
 /////  Bubbles  /////
@@ -767,28 +768,12 @@
     grid-column: 1 / span 3;
   }
   
-  #blurb1 {
-    color: #001B08;
-    font-family: Inconsolata;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 1.5px;
-    // width: 22rem;
-    margin: 0;
-    padding-top: 30px;
-    z-index: 9999;
-  }
-  
   .columnOneParagraph {
-    grid-column: 1;
-    padding: 0 5% 0 10%;
+    padding: 0 5% 0 5%;
   }
   
   .columnTwoParagraph {
-    grid-column: 2;
-    padding: 0 10% 0 5%;
+    padding: 0 5% 0 5%;
   }
   
   //// Banner ////
@@ -853,7 +838,6 @@
   .introLine {
     padding-right: 10%;
     max-width: 85%;
-  
   }
   
   .infoBlurb {
@@ -904,7 +888,14 @@
   }
 
   .useResInfo {
-    padding: 0px 0 22px 10%;
+    padding: 0px 0 22px 5%;
+  }
+
+  .twoSection {
+    grid-column: 1 / span 2;
+    z-index: 99999;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .usResBlurb {
@@ -918,6 +909,273 @@
     padding: 0 10% 0 5%;
   }
 
+  .site {
+    padding: 30px 30px 0 30px;
+  }
+  
+  .siteSection {
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .siteMap {
+    max-width: 78%;
+  }
+
+  .sitePA {
+  grid-column: 1;
+  padding: 0 5% 10px 10%;
+  }
+
+  .sitePB {
+    grid-column: 2;
+    padding: 15px 10% 0 5%;
+  }
+
+  .section3 {
+    width: 100vw;
+    max-height: 100%;
+    -webkit-clip-path: ellipse(91.21% 46.49% at 49.96% 51.31%);
+    clip-path: ellipse(91.21% 46.49% at 49.96% 51.31%);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+  
+    
+    // grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    // gap: 5rem;
+  }
+
+  .usaInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  
+  }
+
+  .usaPContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .usaHeader {
+    grid-column: 1;
+    padding: 50px 0 22px 10%;
+  }
+
+  .usaLineB {
+    display: none;
+  }
+  
+  .siteUSA {
+    padding: 15px 5% 5px 10%;
+  }
+  
+  .siteUSSpanA {
+    display: none;
+  }
+  
+  .siteUSB {
+    grid-column: 1;
+    padding: 15px 10% 5px 5%;
+  }
+
+  .section3b {
+    max-width: 100%;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+
+  //// Landing Page Iterations ////
+
+  .section5HeaderContainer {
+    grid-column: 1 / span 2;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+  }
+
+  #desDetails {
+    padding: 50px 0 22px 5%;
+  }
+  
+  .invImgSec {
+    padding: 15px 0 0 0;
+  }
+
+  .section4Img {
+    grid-column: 1/ span 2;
+    padding-top: 3.5rem;
+    z-index: 9999;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    justify-content: center;
+    padding: 2rem .5rem 0 .5rem;
+  }
+  
+  .section4Caption {
+    padding-top: 1.5rem;
+  }
+
+  .fourImg {
+    max-width: 16%;
+    max-height: auto;
+    align-self: center;
+    padding-bottom: 0;
+  }
+
+  .section5 {
+    grid-column: 1 / span 2;
+    z-index: 9999;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .sec5P {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 30px 0 0 10%; 
+  }
+
+  .invImgContainer {
+    grid-column: 1;
+    grid-row: 4;
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    max-width: 100%;
+    justify-content: center;
+    align-content: center;
+    padding-top: 15px;
+  }
+  
+  .invImg {
+    max-width: 35%;
+    max-height: 100%;
+    padding: 5px 0 0 0;
+  }
+
+  .secUiKit {
+    grid-column: 1 / span 2;
+    z-index: 9999;
+  }
+  
+  #desKit {
+    text-align: start;
+    padding: 60px 0 10px 5%;
+    // padding: 50px 20% 22px 0;
+  }
+  
+  .uiKitContainer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    align-content: center;
+    justify-items: center;
+    padding: 25px 5% 0 5%;
+  }
+  
+  .uiImg {
+    max-width: 95%;
+    height: auto;
+    align-self: center;
+  }
+  
+  #kit1 {
+    max-width: 85%;
+    align-self: end;
+    justify-self: end;
+    // transform: translateY(30%);
+    padding-right: 5%;
+  }
+  
+  #kit2 {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: start;
+    
+  }
+  
+  #kit7 {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  
+  #kit4 {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+    max-width: 95%;
+  }
+  
+  #kit5 {
+    grid-column: 3;
+    grid-row: 3;
+    max-width: 90%;
+    align-self: start;
+    justify-self: center;
+    transform: translateY(-28%);
+  }
+  
+  #kit3 {
+    grid-column: 1;
+    grid-row: 3;
+    padding-bottom: 9px;
+    max-width: 90%;
+  }
+  
+  #kit6 {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    align-self: start;
+    max-width: 100%;
+    padding-top: 13px;
+    transform: translateY(18%);
+  }
+
+  .finalSectionImg {
+    grid-column: 1 / span 2;
+    justify-self: center;
+    max-width: 95%;
+    max-height: auto;
+    padding-top: 4rem;
+    z-index: 99999;
+  }
+
+  .refInfo {
+    padding: 50px 0 22px 10%;
+  }
+    
+  #blurb1 {
+    padding-top: 30px;
+  }
+
+  .columnOneParagraph {
+    grid-column: 1;
+    padding: 0 5% 0 10%;
+  }
+  
+  .columnTwoParagraph {
+    grid-column: 2;
+    padding: 0 10% 0 5%;
+  }
+
+  .addInfo {
+    grid-column: 1 / span 2;
+    padding: 50px 0 10rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .addInfoColContainer {
+    grid-column: 1;
+    padding: 40px 0 22px 10%;
+  }
 }
 
 @media all and (min-width: 840px) {
