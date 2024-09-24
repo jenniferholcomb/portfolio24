@@ -55,7 +55,7 @@ function PantryPro() {
             <img loading="lazy" src={invLogo} alt="app logo" />
           </div>
           <div className={styles.banner}>
-            <img loading="lazy" src={bannerTop} alt="top banner, graphic with food" />
+            <img className={styles.logoArt} loading="lazy" src={bannerTop} alt="top banner, graphic with food" />
           </div>
 
         </div>
@@ -86,7 +86,8 @@ function PantryPro() {
         <div className={styles.section1}>
           <div className={styles.oneInfo}>
             <div className={styles.numberInv}>01.</div>
-            <h2 className={styles.headersInv} id={styles.headers}>The Problem</h2>
+            <h2 className={`${styles.headersInv} ${styles.problemHeader}`} id={styles.headers}></h2>
+            {/* <h2 className={`${styles.headersInv}`} id={styles.headers}>The Problem</h2> */}
           </div>
           <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
             <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
