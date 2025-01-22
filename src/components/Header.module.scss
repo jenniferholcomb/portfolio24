@@ -3,13 +3,11 @@
 .headerWrap {
   width: 45%;
   min-width: 180px;
-  flex: .5 0 0;
+  // flex: .5 0 0;
   height: auto;
   align-self: flex-start;
   // justify-self: center;
   // align-items: flex-start;
-  border: dashed pink;
-
   pointer-events: all;
   position: fixed;
 }
@@ -59,7 +57,7 @@
   .logoObject {
     // width: 200px;
     pointer-events: none;
-    width: 100%;
+    width: 70%;
   }
 }
 

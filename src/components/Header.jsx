@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 
 import styles from "./Header.module.scss";
-import logo from "./../img/logo.svg";
+import logo from "./../img/logoName.svg";
 
 function Header(props) {
   const { homeClick } = props;

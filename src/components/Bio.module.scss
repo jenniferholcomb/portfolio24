@@ -1,10 +1,18 @@
+.bioContainer {
+  flex: 1.5 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .bioStyle {
+  align-self: flex-end;
   min-width: 215px;
-  max-width: 450px;
-  flex: 1 0 0;
+  max-width: 30rem;
+
   gap: 10px;
   color: #041328;
-  
+  text-align: justify;
   font-family: Inconsolata;
   font-size: .9em;
   font-style: normal;
@@ -32,15 +40,14 @@
 // mobile landscape
 @media all and (min-width: 667px) {
   .bioStyle {
-    padding: 20px 0 0 47px;
-    margin: 0 47px 0 0;
+    padding: 3.5vh 0 0 47px;
+    margin: 0 6rem 1.5rem 0;
   }
 
   .bioImgWrap {
-    margin: 0 47px 0 0;
+    margin: 0 6rem 0 0;
     align-self: flex-end;
   }
-
 }
 
 // desktop

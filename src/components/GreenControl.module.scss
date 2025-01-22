@@ -21,14 +21,12 @@
   // width: 100%;
   height: 100%;
   max-height: 45px;
-  // border: dashed cyan;
   position: fixed;
   top: 0;
   z-index: 999999;
-
   // transition-duration: 0.3s;
-
   pointer-events: none;
+  box-shadow: 6px 0px 12px 0px rgba(0, 27, 8, 0.45);
 }
 
 .greenCollapse {
@@ -89,7 +87,7 @@
 
 .menuItems {
   margin: 0;
-  padding: 33px 0 0 0;
+  padding: 50px 0 0 0;
   display: flex;
   flex-direction: column;
   // justify-content: center;
@@ -105,7 +103,7 @@
 }
 
 .menuItems li {
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
   line-height: .75em;
 }
 
@@ -133,8 +131,8 @@
     min-height: 100%;
     min-width: 150px;
     width: 30vw;
-    padding: 50px 20px 38px 20px;
-    gap: 24px;
+    padding: 50px 0px 50px 20px;
+    // gap: 24px;
     height: -webkit-fill-available;
   }
 
@@ -151,7 +149,7 @@
 
   .menuItems {
     top: 8rem;
-    padding: 15px 20px 0 20px;
+    padding: 31px 20px 0 20px;
   }
 
   .menuItems li a {
@@ -174,7 +172,7 @@
   // }  
 
   .menuItems {
-    padding: 15px 20px 0 22px;
+    padding: 31px 20px 0 22px;
   }
 
   .menuItems li {
@@ -203,7 +201,7 @@
   // }
 
   .menuItems2 {
-    padding: 15px 24px 0 47px;
+    padding: 50px 24px 0 34px;
     position: relative;
     top: 0;
   }
