@@ -13,6 +13,9 @@ function HomeProject(props) {
   
   return (
     <>
+      {/* <div className={styles.tanWrapper}> */}
+
+
       <div className={styles.homeWrapper}>
         <div className={styles.homeProjectHeader}>
           <object data={logo} className={styles.logoObject} type="image/svg+xml" >
@@ -89,22 +92,12 @@ function HomeProject(props) {
             </div>
           </section>
         </div>
-  
-        {/* <div className={styles.vertLine}>
-          {/* <div className={styles.line3}></div> */}
-          {/* <div className={styles.line1}></div>
-          <div className={styles.line1}></div>
-        </div> */}
-        {/* <div className={styles.vertLine2}>
-          <div className={styles.line1}></div>
-        </div>  */}
-        {/* {cardArr.map((entry, index) => 
-        <div className={styles.projectCard}>
-          <h1>{entry}</h1>
-          <h2>{index}</h2>
-        </div>
-        )} */}
       </div>
+        {/* 
+        <div className={styles.vertLine2}>
+          <div className={styles.line1}></div>
+        </div>   */}
+      {/* </div> */}
     </>
   );
 }
