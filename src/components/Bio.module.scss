@@ -12,7 +12,7 @@
 
   gap: 10px;
   color: #041328;
-  text-align: justify;
+  // text-align: justify;
   font-family: Inconsolata;
   font-size: .9em;
   font-style: normal;
@@ -41,11 +41,11 @@
 @media all and (min-width: 667px) {
   .bioStyle {
     padding: 3.5vh 0 0 47px;
-    margin: 0 6rem 1.5rem 0;
+    margin: 0 5.5rem 1rem 0;
   }
 
   .bioImgWrap {
-    margin: 0 6rem 0 0;
+    margin: 0 5.5rem 0 0;
     align-self: flex-end;
   }
 }
@@ -53,8 +53,8 @@
 // desktop
 @media all and (min-width: 1024px) {
   .bioStyle {
-    color: #f5f5f5;
-    font-weight: 400;
+    color: #ffffff;
+    font-weight: 300;
 
   }
 
