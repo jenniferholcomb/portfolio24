@@ -32,7 +32,7 @@
   align-items: center;
   // gap: 4em;
   // background-color: #ffffff;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.68) 45.76%, rgba(255, 255, 255, 0.85) 58.56%);  
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.68) 50.76%, rgba(255, 255, 255, 0.80) 58.56%);  
   // width: 50vw;
   margin-bottom: 1rem;
   padding: 20px 0 20px 0;
@@ -66,10 +66,10 @@
 .bubbleTop {
   min-height: 50%;
   max-width: 100%;
-  border-bottom: 1px solid #001B08;
+  // border-bottom: 3px solid rgba(187, 203, 192, 0.337);
   display: flex;
   justify-content: flex-end;
-  padding-bottom: 8px;
+  // padding-bottom: 8px;
   margin-top: 33px;
   padding-left: 47px;
   // padding-right: 50px;
@@ -130,7 +130,7 @@
 }
 
 .bubbleBottom h4 {
-  color: #001B08;
+  color: #1b1b1be2;
   font-family: Hind;
   font-size: .9em;
   font-style: normal;

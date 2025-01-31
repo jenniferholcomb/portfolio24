@@ -36,7 +36,7 @@ function HomeProject(props) {
               </div>
               <div className={styles.bubbleBottom}>
                 <h4 className={styles.jobTag}>Full Stack Development</h4>
-                <h4 className={styles.jobTag}>UX Design</h4>
+                <h4 className={styles.jobTag}>UI Design</h4>
               </div>
             </div>
             <div className={styles.picture}>
@@ -58,7 +58,7 @@ function HomeProject(props) {
                 </div> */}
               </div>
               <div className={styles.bubbleBottom}>
-                <h4 className={styles.jobTag}>UX Design</h4>
+                <h4 className={styles.jobTag}>UX/UI Design</h4>
                 <h4 className={styles.noStyle}>.</h4>
               </div>
             </div>
@@ -82,7 +82,7 @@ function HomeProject(props) {
               </div>
               <div className={styles.bubbleBottom}>
                 <h4 className={styles.jobTag}>Front End Development</h4>
-                <h4 className={styles.jobTag}>UX Design</h4>
+                <h4 className={styles.jobTag}>UI Design</h4>
               </div>
             </div>
             <div className={styles.picture}>

@@ -88,7 +88,7 @@ const OvalShape = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 3, ease: [0, 0.71, 0.2, 1.01] }}
       >
-        <Line points={points} color={`${isDesktop ? "#e5ddcc" : "#78A0DB"}`} lineWidth={1} linecap="square" /> 
+        <Line points={points} color={`${isDesktop ? "#e5ddcc" : "#78A0DB"}`} lineWidth={2} linecap="square" /> 
         <motion.mesh
           variants={ovalVariants}
           scale={1.1}

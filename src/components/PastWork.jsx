@@ -4,11 +4,11 @@ import useResize from "./hooks/useResize";
 import Header from "./Header";
 import styles from "./PastWork.module.scss";
 
-import cbBundle from "./../img/chowburgerbundle.png";
-import bsBundle from "./../img/bellysanbundle.png";
-import okBundle from "./../img/accessorybundle.png";
-import techBundle from "./../img/patterntechbundle.png";
-import teachBundle from "./../img/teachingbundle.png";
+import cbBundle from "./../img/chowburgerbundle.webp";
+import bsBundle from "./../img/bellysanbundle.webp";
+import okBundle from "./../img/accessorybundle.webp";
+import techBundle from "./../img/patterntechbundle.webp";
+import teachBundle from "./../img/teachingbundle.webp";
 
 function PastWork() {
   const [ isMobile, isDesktop ] = useResize();
@@ -48,7 +48,7 @@ function PastWork() {
                 </svg>
                 <p className={styles.blurb}>Creating custom logo designs is a collaborative effort with the client.  Mashing multiple points of inspiration, colors, font styles, or geographical location; all are factors contributing to the unique artwork. Starting with process sketches, then iterating multiple times over design, before digitizing final art. Continuing to work with the client, a series of color studies is presented to ensure final design is aligned with their brand.  </p>
               </div>
-              <img src={bsBundle} alt="Logo design examples with sketches and inspiration" className={styles.imgStyle} />
+              <img src={bsBundle} alt="Logo design examples with sketches and inspiration" className={styles.imgStyle} id={styles.bsStyle} />
           </section>
           
           <section className={styles.bubbleShape}>

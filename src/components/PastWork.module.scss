@@ -13,7 +13,6 @@
 }
 
 .pageHeader {
-  display: flex;
   color: rgba(187, 203, 192, 0.81);
   text-align: right;
   font-family: Hind;
@@ -23,9 +22,10 @@
   line-height: 42px; /* 70% */
   letter-spacing: 7px;
   opacity: 75%;
-  align-self: flex-end;
   margin: 0;
-  // position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
 
 .bubbles {
@@ -33,10 +33,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 25px 0 40px 0;
-  gap: 3.5em;
   overflow-x: hidden;
-  position: absolute;
 }
 
 .bubbles section {
@@ -48,10 +45,16 @@
   display: flex;
   flex-direction: row;
   gap: 4em;
-  background-color: white;
+  // background-color: white;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.68) 45.76%, rgba(255, 255, 255, 0.85) 65.56%);  
   width: 100%;
   padding: 60px 0 60px 0;
-  clip-path: ellipse(65.58% 50.01% at 42.23% 50.11%);
+  clip-path: ellipse(75% 50% at 50% 50%);
+  margin-bottom: 3rem;
+}
+
+.bubbleShape:first-child {
+  margin-top: 6rem;
 }
 
 .bubbleContent {
@@ -130,6 +133,11 @@
   height: 45rem;
   align-self: center;
   padding-top: .75em;
+}
+
+#bsStyle {
+  height: 43rem;
+  transform: translateX(.25rem);
 }
 
 .logoDesign {
