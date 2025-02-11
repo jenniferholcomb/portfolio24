@@ -50,20 +50,28 @@
   overflow-y: scroll;
 }
 
-.bubbleCard {
+.bubbleSelect, .bubbleCard {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   height: 100%;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.68) 45.76%, rgba(255, 255, 255, 0.85) 58.56%);  
-  // width: 50vw;
   margin-bottom: 3rem;
-  padding: 65px 0 65px 0;
   clip-path: ellipse(75% 50% at 50% 50%);
   // clip-path: ellipse(65.58% 50.01% at 42.23% 50.11%);
   pointer-events: all;
   cursor: pointer;
+}
+
+.bubbleSelect {
+  margin-top: 6rem;
+  padding: 0 0 3rem 0;
+  background: linear-gradient(45deg, rgba(246, 244, 244, 0.85) 45.76%, rgba(246, 244, 244, 0.95) 58.56%);  
+}
+
+.bubbleCard {
+  padding: 65px 0 65px 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.68) 45.76%, rgba(255, 255, 255, 0.85) 58.56%);  
 }
 
 .bubbleCard:first-child {
@@ -111,7 +119,7 @@ h2.header {
 }
 
 h4.bubbleHeader2 {
-  color: rgba(187, 203, 192, 0.81);
+  color: rgba(162, 174, 166, 0.97);
   // opacity: 95%;
   text-align: left;
   font-family: Hind;

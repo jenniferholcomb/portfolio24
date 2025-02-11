@@ -4,9 +4,14 @@ import styles from "./GreenControl.module.scss";
 import { motion } from "framer-motion-3d";
 
 import useResize from "./hooks/useResize";
+
 import Header from "./Header";
 import Bio from "./Bio";
 import HomeProject from "./HomeProject";
+import ProjectIntro from "./ProjectIntro.jsx";
+
+import projects from "./../data/projectData.jsx";
+
 import menuIcon from "./../img/menuIcon.svg";
 import menuIconProj from "./../img/menuIconProject.svg";
 import xmarkIcon from "./../img/closeIcon.svg";
@@ -19,6 +24,7 @@ function GreenControl() {
   const [showMenu, setShowMenu] = useState(false);
   const [isAbout, setIsAbout] = useState(false);
   const [isHome, setIsHome] = useState(null);
+  const [projectSelected, setIsProjectSelected] = useState(null);
 
   const handleRoute = (aboutSwitch) => {
     aboutSwitch === "about" ? setIsAbout(true) : setIsAbout(false);
@@ -34,6 +40,15 @@ function GreenControl() {
   const handleHomeClick = () => {
     !isHome ? setIsHome(true) : null;
     isAbout ? setIsAbout(false) : null;
+  }
+
+  const handleProjectClick = (id) => {
+    setIsProjectSelected(id);
+    console.log(id);
+  }
+
+  const handleClosingProjectIntro = () => {
+    setIsProjectSelected(null);
   }
 
   useEffect(() => {
@@ -101,9 +116,26 @@ function GreenControl() {
       </motion.div>
       {
         isHome || (isDesktop && isAbout) ?
-        <HomeProject projectClick={handleRoute} />
+        <HomeProject projectData={projects}
+                     onInternalProjectClick={handleRoute} 
+                     onExternalProjectClick={handleProjectClick} />
         : null
       }
+
+      { projectSelected && (
+        <>
+          <div className={styles.projectPopup}>
+            {/* <div className={styles.popupContainer}> */}
+              <ProjectIntro project={projects[projectSelected - 1]} 
+                            projectClick={handleProjectClick} 
+                            onProjectSelect={true} />
+            {/* </div> */}
+            <svg className={styles.closeIcon} onClick={handleClosingProjectIntro} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 21 21" fill="none">
+              <path d="M2.1 21L0 18.9L8.4 10.5L0 2.1L2.1 0L10.5 8.4L18.9 0L21 2.1L12.6 10.5L21 18.9L18.9 21L10.5 12.6L2.1 21Z" fill="white"/>
+            </svg>
+          </div>
+        </>
+      )}
     </>
   );
 }

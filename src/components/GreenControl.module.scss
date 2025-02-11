@@ -23,7 +23,7 @@
   max-height: 45px;
   position: fixed;
   top: 0;
-  z-index: 999999;
+  z-index: 99999;
   // transition-duration: 0.3s;
   pointer-events: none;
   box-shadow: 6px 0px 12px 0px rgba(0, 27, 8, 0.45);
@@ -118,6 +118,31 @@
   // margin: 0;
   text-decoration: none;
   pointer-events: none;
+}
+
+.projectPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(34, 34, 34, 0.85);
+  z-index: 999999;
+  
+}
+
+.popupContainer {
+  display: grid;
+  align-items: center;
+  height: 100vh;
+  transform: translateY(-1.5rem);
+}
+
+.closeIcon {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  z-index: 9999999;
 }
 
 

@@ -15,7 +15,6 @@ function App(){
   return ( 
     <BrowserRouter>
       <div className={styles.bodyWrapper}>
-        {/* <div className={styles.green}></div> */}
         <GreenControl />
         <Routes>
           <Route exact path="/" Component={Home} />
