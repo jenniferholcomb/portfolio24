@@ -1,13 +1,3 @@
-// .projectStyle {
-//   width: 100vw;
-//   height: 100vh;
-//   font-size: 4em;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   color: white;
-// }
-
 
 // mobile/base
 .projectsWrapper {
@@ -59,8 +49,6 @@
   margin-bottom: 3rem;
   clip-path: ellipse(75% 50% at 50% 50%);
   // clip-path: ellipse(65.58% 50.01% at 42.23% 50.11%);
-  pointer-events: all;
-  cursor: pointer;
 }
 
 .bubbleSelect {
@@ -220,10 +208,25 @@ p.blurb {
   mask-size: contain;
 }
 
+.imgMask:hover {
+  transform: scale(1.02);
+  transition: all 0.25s ease;
+}
+
 .arrowContainer {
   margin-left: auto;
   margin-right: 50px;
   justify-items: flex-end;
+}
+
+.arrowContainer:hover {
+  transform: scale(1.2);
+  transition: all 0.35s ease;
+}
+
+.arrowContainer svg {
+  pointer-events: all;
+  cursor: pointer;
 }
 
 // mobile landscape

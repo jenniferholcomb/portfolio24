@@ -59,7 +59,6 @@ function Slides(props) {
                             [ "App is connected to POS - estimate of good quantity calculated based on sales & invoice ordering" ]
                           ]];
   
-  console.log(isWdDesktop);
   return (
     <>
       <div className={styles.oneCarousel}>

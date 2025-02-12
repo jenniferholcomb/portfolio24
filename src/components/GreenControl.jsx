@@ -28,13 +28,12 @@ function GreenControl() {
 
   const handleRoute = (aboutSwitch) => {
     aboutSwitch === "about" ? setIsAbout(true) : setIsAbout(false);
-    isMobile ? setShowMenu(!showMenu) : null;
+    isMobile || isProjectScreen ? setShowMenu(!showMenu) : null;
     setIsHome(false);
   };
 
   const handleMenuClick = () => {
     setShowMenu(!showMenu);
-    console.log("menu click")
   }
 
   const handleHomeClick = () => {
@@ -65,7 +64,8 @@ function GreenControl() {
 
   return (
     <>
-      <motion.div className={`${isProjectScreen ? styles.greenCollapse : styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`}
+      {/* <motion.div className={`${isProjectScreen ? styles.greenCollapse : styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`} */}
+      <motion.div className={`${showMenu && isProjectScreen ? styles.greenWrapper : isProjectScreen ? styles.greenCollapse : styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`}
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 4 }} 
@@ -80,16 +80,16 @@ function GreenControl() {
         {
           isProjectScreen || isMobile ? 
             <div onClick={handleMenuClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
-              <object data={showMenu ? xmarkIcon : isProjectScreen ? menuIconProj : menuIcon } type="image/svg+xml" className={showMenu ? styles.markX : styles.icon}>
+              <object data={showMenu ? xmarkIcon : isProjectScreen ? menuIconProj : menuIcon } type="image/svg+xml" className={showMenu && isMobile ? styles.markX : styles.icon}>
                 <span className={styles.fallbackInfo}>Your browser does not support SVG</span>
               </object>
-              {/* <i className={`${showMenu ? "fa-solid fa-xmark" : "fa-solid fa-bars"}`}></i> */}
             </div>
           :
           <Header homeClick={handleHomeClick} />
         }
-        <div className={`${isProjectScreen || isMobile ? styles.navContainer : styles.textWrap}`} id={`${showMenu ? styles.menuActive : null}`} >
-          <ul className={`${styles.menuItems} ${(isHome || isAbout) ? styles.menuItems2 : styles.menuItems3}`} id={`${showMenu ? styles.menuPointerEvents : null}`} >
+        {/* <div className={isProjectScreen || isMobile ? styles.navContainer : styles.textWrap} id={showMenu ? styles.menuActive : null} > */}
+        <div className={isMobile ? styles.navContainer : isProjectScreen && showMenu ? styles.textWrap : isProjectScreen ? styles.noTextWrap : styles.textWrap} id={showMenu ? styles.menuActive : null} >
+          <ul className={`${styles.menuItems} ${(isHome || isAbout) ? styles.menuItems2 : styles.menuItems3}`} id={showMenu ? styles.menuPointerEvents : null} >
             <li>        
               <Link onClick={handleRoute} to={"/projects"}>Projects</Link>
             </li>

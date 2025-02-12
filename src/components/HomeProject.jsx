@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import styles from "./Home.module.scss";
+import styles from "./HomeProject.module.scss";
 import logo from "./../img/logoInitials.svg";
 
 function HomeProject({ projectData, onInternalProjectClick, onExternalProjectClick }) {
@@ -16,8 +16,8 @@ function HomeProject({ projectData, onInternalProjectClick, onExternalProjectCli
         </div>
         <div className={styles.cardContainer}>
 
-          {projectData.map((project) => (
-            <section className={styles.bubbleCard} key={project.id}>
+          {projectData.map((project, index) => (
+            <section className={styles.bubbleCard} key={index}>
               <div className={styles.bubbleContent}>
                 <div className={styles.bubbleTop}>
                   <h3 className={styles.project}>{project.projectSubhead[0]}</h3>
@@ -30,7 +30,7 @@ function HomeProject({ projectData, onInternalProjectClick, onExternalProjectCli
                     </>
                   :
                     project.disciplines.map((item) => 
-                      <h4 className={styles.jobTag}>{item}</h4>
+                      <h4 className={styles.jobTag} key={item}>{item}</h4>
                     )
                   };
                 </div>

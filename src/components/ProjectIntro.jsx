@@ -14,7 +14,7 @@ function ProjectIntro({project, projectClick, onProjectSelect}) {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.linkCardStyle}
-            onClick={() => console.log(`Opening external project: ${project.name}`)}
+            onClick={() => projectClick(project.id)}
           >
             <img className={styles.imgMask} src={project.imgCard} alt={project.name} />
           </a>
@@ -28,9 +28,24 @@ function ProjectIntro({project, projectClick, onProjectSelect}) {
         <div className={styles.bubbleHeader}>
           <h2 className={styles.header}>{project.projectName}</h2>
           <div className={styles.arrowContainer}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 10 16" fill="none">
-              <path d="M6.21622 8L0 1.86667L1.89189 0L10 8L1.89189 16L0 14.1333L6.21622 8Z" fill="#1B1B1B" fillOpacity="0.886275"/>
-            </svg>
+            {project.externalLink ?
+              <a
+                key={project.id}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 10 16" fill="none">
+                  <path d="M6.21622 8L0 1.86667L1.89189 0L10 8L1.89189 16L0 14.1333L6.21622 8Z" fill="#1B1B1B" fillOpacity="0.886275"/>
+                </svg>
+              </a>
+            :
+              <Link to={project.link} onClick={projectClick}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 10 16" fill="none">
+                  <path d="M6.21622 8L0 1.86667L1.89189 0L10 8L1.89189 16L0 14.1333L6.21622 8Z" fill="#1B1B1B" fillOpacity="0.886275"/>
+                </svg>
+              </Link>
+            }
           </div>
         </div>
         <div className={styles.projectDescription}>

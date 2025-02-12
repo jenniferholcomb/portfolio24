@@ -1,5 +1,5 @@
 
-const ProjectData = [
+const projectData = [
 
   {
     projectName: "Bend In Spoon",
@@ -43,4 +43,4 @@ const ProjectData = [
 
 ];
 
-export default ProjectData;
+export default projectData;
