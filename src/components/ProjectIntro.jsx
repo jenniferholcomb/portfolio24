@@ -2,14 +2,14 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Projects.module.scss";
 
-function ProjectIntro({project, projectClick, onProjectSelect}) {
+function ProjectIntro({id, project, projectClick, onProjectSelect}) {
 
   return (
-    <section className={onProjectSelect ? styles.bubbleSelect : styles.bubbleCard} key={project.projectName}>
+    <section className={onProjectSelect ? styles.bubbleSelect : styles.bubbleCard}>
       <div className={styles.picture}>
         {project.externalLink ?
           <a
-            key={project.id}
+            key={id}
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"

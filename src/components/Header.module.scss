@@ -1,15 +1,12 @@
 
 
 .headerWrap {
-  width: 45%;
+
   min-width: 180px;
   // flex: .5 0 0;
-  height: auto;
+  height: 55px;
   align-self: flex-start;
-  // justify-self: center;
-  // align-items: flex-start;
   pointer-events: all;
-  position: fixed;
 }
 
 .logo {
@@ -49,8 +46,6 @@
 @media all and (min-width: 1024px) {
   .header2Wrap {
     align-self: flex-start;
-    // padding: 0 0 0 19px;
-    width: 43%;
     position: relative;
   }
 
@@ -64,6 +59,6 @@
 // desktop wide
 @media all and (min-width: 1200px) {
   .header2Wrap {
-    max-width: 201px;
+    max-width: 200px;
   }
 }

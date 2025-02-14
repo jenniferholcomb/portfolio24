@@ -6,6 +6,8 @@ import styles from "./PantryPro.module.scss";
 
 function VideoPlay(props) {
 
+  console.log('video', props)
+
   const { video1, video2 } = props;
 
   const videoRef = useRef(null);

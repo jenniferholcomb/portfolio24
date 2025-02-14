@@ -8,13 +8,13 @@ import useResize from "./hooks/useResize";
 import Header from "./Header";
 import Bio from "./Bio";
 import HomeProject from "./HomeProject";
-import ProjectIntro from "./ProjectIntro.jsx";
+import ProjectIntro from "./ProjectIntro";
 
-import projects from "./../data/projectData.jsx";
+import projects from "./../data/projectData";
 
-import menuIcon from "./../img/menuIcon.svg";
-import menuIconProj from "./../img/menuIconProject.svg";
-import xmarkIcon from "./../img/closeIcon.svg";
+import menuIcon from "/img/menuIcon.svg";
+import menuIconProj from "/img/menuIconProject.svg";
+import xmarkIcon from "/img/closeIcon.svg";
 
 function GreenControl() {
   const location = useLocation();
@@ -39,6 +39,8 @@ function GreenControl() {
   const handleHomeClick = () => {
     !isHome ? setIsHome(true) : null;
     isAbout ? setIsAbout(false) : null;
+    isProjectScreen ? setIsProjectScreen(false) : null;
+    showMenu ? setShowMenu(false): null;
   }
 
   const handleProjectClick = (id) => {
@@ -90,6 +92,11 @@ function GreenControl() {
         {/* <div className={isProjectScreen || isMobile ? styles.navContainer : styles.textWrap} id={showMenu ? styles.menuActive : null} > */}
         <div className={isMobile ? styles.navContainer : isProjectScreen && showMenu ? styles.textWrap : isProjectScreen ? styles.noTextWrap : styles.textWrap} id={showMenu ? styles.menuActive : null} >
           <ul className={`${styles.menuItems} ${(isHome || isAbout) ? styles.menuItems2 : styles.menuItems3}`} id={showMenu ? styles.menuPointerEvents : null} >
+            {isProjectScreen && showMenu && (
+              <li>        
+                <Link onClick={handleHomeClick} to={"/"}>Home</Link>
+              </li>
+            )}
             <li>        
               <Link onClick={handleRoute} to={"/projects"}>Projects</Link>
             </li>
@@ -99,13 +106,13 @@ function GreenControl() {
             <li>
               <Link onClick={handleRoute} to={"/resume"}>Resume</Link>
             </li>
-            {
+            {/* {
             !isDesktop || (!isHome && !isAbout) ?
               <li>
                 <Link onClick={() => handleRoute("about")} to={"/about"}>About</Link>
               </li>
               : null
-            }
+            } */}
           </ul>
           {
             (isDesktop && isHome) || (isDesktop && isAbout) ?
@@ -126,7 +133,8 @@ function GreenControl() {
         <>
           <div className={styles.projectPopup}>
             {/* <div className={styles.popupContainer}> */}
-              <ProjectIntro project={projects[projectSelected - 1]} 
+              <ProjectIntro id={projects[projectSelected - 1].id}
+                            project={projects[projectSelected - 1]} 
                             projectClick={handleProjectClick} 
                             onProjectSelect={true} />
             {/* </div> */}

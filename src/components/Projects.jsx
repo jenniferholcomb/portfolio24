@@ -20,7 +20,8 @@ function Projects({projectClick}) {
         <h1 className={styles.pageHeader}>PROJECTS</h1>
           <div className={styles.cardContainer}>
             {projectData.map((project) => (
-              <ProjectIntro project={project} 
+              <ProjectIntro key={project.id}
+                            project={project} 
                             projectClick={projectClick} />
             ))}
           </div>

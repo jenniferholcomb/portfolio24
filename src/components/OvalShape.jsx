@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import useResize from "./hooks/useResize";
-import { motion } from "framer-motion-3d";
+import { motion } from "framer-motion";
 import { useMemo } from 'react';
 import { Decal, Line, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
@@ -57,6 +57,7 @@ const OvalShape = () => {
 
   const texture = useTexture(profileImg);
   const texture2 = useTexture(profileImg2);
+  const decalRef = useRef();
 
   const points = useMemo(() => {
     const points = [];
@@ -82,13 +83,16 @@ const OvalShape = () => {
   return (
     <>
       <motion.mesh
+        onUpdate={undefined}
         position-x={0}
         scale={1}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 3, ease: [0, 0.71, 0.2, 1.01] }}
       >
+
         <Line points={points} color={`${isDesktop ? "#e5ddcc" : "#78A0DB"}`} lineWidth={2} linecap="square" /> 
+        
         <motion.mesh
           variants={ovalVariants}
           scale={1.1}
@@ -99,7 +103,7 @@ const OvalShape = () => {
           <shapeGeometry args={[getEllipseShape(), 128]}/>
           <meshNormalMaterial />
           <Decal 
-            ref={Decal}
+            ref={decalRef}
             position={[0, 0, 0]} 
             rotation={[0, 0, 0]} 
             scale={[5, 6.4, 5]} 
@@ -108,7 +112,7 @@ const OvalShape = () => {
             polygonOffsetFactor={-1} side={THREE.FrontSide} />
           </Decal>
           <Decal 
-            ref={Decal}
+            ref={decalRef}
             position={[0, 0, 0]} 
             rotation={[0, 0, 0]} 
             scale={[4.2, 6.2, 5]} 

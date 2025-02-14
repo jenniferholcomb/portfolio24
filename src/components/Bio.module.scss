@@ -9,10 +9,8 @@
   align-self: flex-end;
   min-width: 215px;
   max-width: 30rem;
-
   gap: 10px;
   color: #041328;
-  // text-align: justify;
   font-family: Inconsolata;
   font-size: .9em;
   font-style: normal;
@@ -20,22 +18,15 @@
   line-height: 1.1;
   letter-spacing: 1.5px;
   margin: 0;
-
-  // border: dashed yellow;
 }
 
 .bioImg {
-  // justify-self: flex-end;
   min-width: 0;
   width: 155px;
   height: 220px;
-  // border: dashed wheat;
   padding: 0;
 }
 
-.meshWrap {
-  border: dashed darkblue;
-}
 
 // mobile landscape
 @media all and (min-width: 667px) {
@@ -55,12 +46,5 @@
   .bioStyle {
     color: #ffffff;
     font-weight: 300;
-
   }
-
- 
-
-  // .bioImgWrapJustify {
-  //   justify-self: center;
-  // }
 }
