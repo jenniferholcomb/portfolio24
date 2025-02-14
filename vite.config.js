@@ -7,6 +7,13 @@ import fixReactRefresh from 'fix-react-refresh-plugin';
 //   plugins: [react()],
 // })
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler' // or "modern"
+      }
+    }
+  },
   plugins: [
     {
       ...fixReactRefresh(),

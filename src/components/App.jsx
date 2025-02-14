@@ -13,7 +13,12 @@ import styles from "./App.module.scss";
 
 function App(){
   return ( 
-    <BrowserRouter>
+    <BrowserRouter
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
       <div className={styles.bodyWrapper}>
         <GreenControl />
         <Routes>

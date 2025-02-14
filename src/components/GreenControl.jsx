@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate, useLocation } from "react-router-dom";
 import styles from "./GreenControl.module.scss";
-import { motion } from "framer-motion-3d";
+import { motion } from "framer-motion";
 
 import useResize from "./hooks/useResize";
 

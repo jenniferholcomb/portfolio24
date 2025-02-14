@@ -83,7 +83,6 @@ const OvalShape = () => {
   return (
     <>
       <motion.mesh
-        onUpdate={undefined}
         position-x={0}
         scale={1}
         initial={{ opacity: 0 }}
