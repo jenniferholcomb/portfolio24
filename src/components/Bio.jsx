@@ -29,8 +29,10 @@ function Bio() {
         >
           <div className={styles.bioImg}>
             <MotionCanvas>
-              <ambientLight intensity={1.5} /> 
-              <pointLight intensity={4} position={[5, 5, 0]} />
+              <ambientLight intensity={1.6} /> 
+              {/* <pointLight intensity={5} position={[5, 5, 5]} /> */}
+              <directionalLight intensity={.2} position={[5, 5, 0]} />
+
               <OvalShape />
             </MotionCanvas>
           </div>

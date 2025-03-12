@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate, useLocation } from "react-router-dom";
 import styles from "./GreenControl.module.scss";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion-3d";
 
 import useResize from "./hooks/useResize";
 
@@ -68,8 +68,8 @@ function GreenControl() {
     <>
       {/* <motion.div className={`${isProjectScreen ? styles.greenCollapse : styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`} */}
       <motion.div className={`${showMenu && isProjectScreen ? styles.greenWrapper : isProjectScreen ? styles.greenCollapse : styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`}
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
+        // initial={{ opacity: 0, scale: 1 }}
+        // animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 4 }} 
       >
         {
