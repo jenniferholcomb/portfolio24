@@ -18,13 +18,13 @@ function Projects({projectClick}) {
           : null
         }
         <h1 className={styles.pageHeader}>PROJECTS</h1>
-          <div className={styles.cardContainer}>
-            {projectData.map((project) => (
-              <ProjectIntro key={project.id}
-                            project={project} 
-                            projectClick={projectClick} />
-            ))}
-          </div>
+        <div className={styles.cardContainer}>
+          {projectData.map((project) => (
+            <ProjectIntro key={project.id}
+                          project={project} 
+                          projectClick={projectClick} />
+          ))}
+        </div>
       </div>
     </>
   );

@@ -4,6 +4,8 @@ import useResize from "./hooks/useResize";
 import Header from "./Header";
 import styles from "./Resume.module.scss";
 
+import resume from "/img/resume.webp";
+
 function Resume() {
   const [ isMobile, isDesktop ] = useResize();
   
@@ -15,7 +17,10 @@ function Resume() {
             <Header />
           : null
         }
-        Resume
+        <h1 className={styles.pageHeader}>RESUME</h1>
+        <div className={styles.resumeContainer}>
+          <img src={resume} alt="resume" />
+        </div>
       </div>
     </>
   );

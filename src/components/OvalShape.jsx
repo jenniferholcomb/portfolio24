@@ -6,8 +6,9 @@ import { Decal, Line, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import { useThree } from '@react-three/fiber';
 import styles from "./Bio.module.scss";
-import profileImg from "./../img/profilepic.webp";
-import profileImg2 from "./../img/windyjen.webp";
+import profileImg from "/img/profilepic.webp";
+import profileImg2 from "/img/coastJen.webp";
+import profileImg3 from "/img/piper.webp";
 // import { degToRad } from "three/src/math/MathUtils";
 
 function getEllipseShape() {
@@ -53,25 +54,30 @@ const ovalVariants = {
   }
 };
 
-const OvalShape = () => {
+const OvalShape = ({ flipPhoto }) => {
   const [ isMobile, isDesktop ] = useResize();
+
+  const [action, setAction] = useState(false);
 
   const { gl } = useThree(); // Get the WebGL renderer
 
   const texture = useTexture(profileImg);
   const texture2 = useTexture(profileImg2);
+  const texture3 = useTexture(profileImg3);
 
   const maxAnisotropy = gl.capabilities.getMaxAnisotropy();
 
   useMemo(() => {
-    if (texture && texture2) {
+    if (texture && texture2 && texture3) {
       const maxAnisotropy = gl.capabilities.getMaxAnisotropy();
       texture.anisotropy = maxAnisotropy;
       texture2.anisotropy = maxAnisotropy;
+      texture3.anisotropy = maxAnisotropy;
   
       // Enable mipmaps for better quality
       texture.generateMipmaps = true;
       texture2.generateMipmaps = true;
+      texture3.generateMipmaps = true;
   
       // Use Trilinear Filtering
       texture.minFilter = THREE.LinearMipmapLinearFilter;
@@ -79,15 +85,17 @@ const OvalShape = () => {
       
       texture2.minFilter = THREE.LinearMipmapLinearFilter;
       texture2.magFilter = THREE.LinearFilter;
+
+      texture3.minFilter = THREE.LinearMipMapLinearFilter;
+      texture3.magFilter = THREE.LinearFilter;
   
       // Ensure correct color space
       texture.colorSpace = THREE.SRGBColorSpace;
       texture2.colorSpace = THREE.SRGBColorSpace;
+      texture3.colorSpace = THREE.SRGBColorSpace;
     }
-  }, [texture, texture2, gl]);
+  }, [texture, texture2, texture3, gl]);
   
-  
-
   const points = useMemo(() => {
     const points = [];
     const curve = new THREE.EllipseCurve(0, 0, 2.6, 3.7, 0, 2 * Math.PI, false, 0).getPoints(128);
@@ -100,8 +108,6 @@ const OvalShape = () => {
     }
     return points;
   }, [])
-
-  const [action, setAction] = useState(false);
 
   useEffect(() => {
     setTimeout(()=>{
@@ -149,7 +155,7 @@ const OvalShape = () => {
             position={[0, 0, 0]} 
             rotation={[0, 0, 0]} 
             scale={[4.2, 6.2, 5]} 
-            map={texture2} >
+            map={flipPhoto ? texture2 : texture3} >
             <meshStandardMaterial map={texture2} polygonOffset
             polygonOffsetFactor={-1} side={THREE.BackSide}/>
           </Decal>

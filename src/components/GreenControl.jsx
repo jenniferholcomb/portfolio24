@@ -87,7 +87,8 @@ function GreenControl() {
               </object>
             </div>
           :
-          <Header homeClick={handleHomeClick} />
+          <Header homeClick={handleHomeClick} 
+                  isHome={isHome} />
         }
         {/* <div className={isProjectScreen || isMobile ? styles.navContainer : styles.textWrap} id={showMenu ? styles.menuActive : null} > */}
         <div className={isMobile ? styles.navContainer : isProjectScreen && showMenu ? styles.textWrap : isProjectScreen ? styles.noTextWrap : styles.textWrap} id={showMenu ? styles.menuActive : null} >

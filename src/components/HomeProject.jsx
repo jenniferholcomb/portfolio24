@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import styles from "./HomeProject.module.scss";
-import logo from "./../img/logoInitials.svg";
+import logo from "/logoInitials.svg";
 
 function HomeProject({ projectData, onInternalProjectClick, onExternalProjectClick }) {
   

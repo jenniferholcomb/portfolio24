@@ -15,7 +15,7 @@
   justify-content: center;
 }
 
-.logoObject {
+.logoObject, .logoLongObject {
   // width: 200px;
   pointer-events: none;
   width: 93%;
@@ -50,10 +50,9 @@
   }
 
   .logoObject {
-    // width: 200px;
-    pointer-events: none;
     width: 70%;
   }
+
 }
 
 // desktop wide

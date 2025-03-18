@@ -32,7 +32,7 @@ const projectData = [
     id: 3,
     externalLink: true,
     link: "https://terrabeancoffee.netlify.app",
-    imgCard: "/img/pantryPro_previewIMG.webp", 
+    imgCard: "/img/terraBean_previewIMG.webp", 
     smCard: "/img/terraBeanThumbnailNoClip.webp",
     projectSubhead: ["ecommerce website"], 
     projectYear: "2024", 
