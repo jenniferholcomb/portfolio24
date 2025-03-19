@@ -12,8 +12,8 @@ const projectData = [
     projectSubhead: ["dashboard"], 
     projectYear: "2024", 
     disciplines: ["Full Stack Development", "UI Design"], 
-    technologies: ["React.js", "CSS", "Javascript", "Firestore", "API's", "Figma"], 
-    description: "Bend In Spoon is a dashboard forecasting tool for small restaurants. It tracks occupancy rates for local short-term rentals, cost of goods fluctuations, and provides a weekly breakdown of labor estimates, past sales, weather, events, holidays, and tourism. The app utilizes APIs for short-term rental availability, holidays, weather, and local events, and uses Firestore for data storage and Netlify's serverless functions. Designed in Figma and built in React with vanilla CSS, the project originated as my capstone project for Epicodus."
+    technologies: ["React.js", "CSS", "JavaScript", "Firestore", "API's", "Figma"], 
+    description: "Bend In Spoon is a dashboard forecasting tool for small restaurants. It tracks occupancy rates for local short-term rentals, cost of goods fluctuations, and provides a weekly breakdown of labor estimates, past sales, weather, events, holidays, and tourism. The app utilizes APIs for short-term rental availability, holidays, weather, and local events. Designed in Figma and built in React, styled with vanilla CSS, and uses Firestore for data storage. The project originated as my capstone project for Epicodus."
   },
   {
     projectName: "Pantry Pro",
@@ -39,7 +39,7 @@ const projectData = [
     projectSubhead: ["ecommerce website"], 
     projectYear: "2024", 
     disciplines: ["Front End Development", "UI Design"], 
-    technologies: ["React.js", "CSS", "Javascript", "Figma"], 
+    technologies: ["React.js", "CSS", "JavaScript", "Figma"], 
     description: "A conceptual coffee bean roasters ecommerce website, this project was a practice in design, as well as front end programming. Application has full CRUD capability, a shopping cart, navigation bar, and explores movement of UI elements with scrolling. Designed in Figma, with AI images, graphics, and logo manipulated in Photoshop. The origins of this project are from an application prompt for tracking inventory for a small online retailer. This functionality, as well as admin duties, are displayed on index cards."
   },
   {
@@ -51,8 +51,8 @@ const projectData = [
     projectSubhead: ["portfolio"], 
     projectYear: "2025", 
     disciplines: ["Front End Development", "UI Design"], 
-    technologies: ["React.js", "CSS", "Javascript", "Framer Motion", "Figma", "Illustrator", "Photoshop"], 
-    description: "This ever-evolving site is a portfolio of some of my mostly completed work: past and present. Did you see my dog, Piper? Swipe my profile pic if you missed her."
+    technologies: ["React.js", "CSS", "JavaScript", "Framer Motion", "Figma", "Illustrator", "Photoshop"], 
+    description: "This ever-evolving site is a portfolio of some of my (mostly) completed work: past and present."
   },
 
 ];

@@ -29,22 +29,36 @@
 
 
 // mobile landscape
-@media all and (min-width: 667px) {
+@media all and (min-width: 700px) {
   .bioStyle {
+    color: #ffffff;
+    font-weight: 300;
     padding: 3.5vh 0 0 34px;
-    margin: 0 5.5rem 1rem 0;
+    margin: 0 34px 1rem 0;
+    max-width: 100%;
   }
 
   .bioImgWrap {
-    margin: 0 5.5rem 0 0;
-    align-self: flex-end;
+    margin: 0;
+    align-self: center;
   }
 }
 
 // desktop
 @media all and (min-width: 1024px) {
+  .bioImgWrap {
+    margin: 0 34px 0 0;
+    align-self: flex-end;
+  }
+}
+
+@media all and (min-width: 1270px) {
   .bioStyle {
-    color: #ffffff;
-    font-weight: 300;
+    margin: 0 5.5rem 1rem 0;
+    max-width: 30rem;
+  }
+
+  .bioImgWrap {
+    margin: 0 5.5rem 0 0;
   }
 }

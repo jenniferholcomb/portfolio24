@@ -9,10 +9,15 @@
   pointer-events: all;
 }
 
+.headerHidden {
+  display: none;
+}
+
 .logo {
   // height: 100%;
   display: flex;
   justify-content: center;
+  padding-top: 15px;
 }
 
 .logoObject, .logoLongObject {
@@ -21,17 +26,36 @@
   width: 93%;
 }
 
+.mobileLongLogoObject {
+  width: 12.5625rem;
+}
+
 .fallbackInfo {
   background-image: url('./../img/LogoName.png');
 }
 
+@media all and (min-width: 500px) {
+  .logo {
+    padding-top: 0;
+  }
+}
+
 // mobile landscape
-@media all and (min-width: 667px) {
+@media all and (min-width: 700px) {
   .headerWrap {
     // width: 100%;
     min-width: 0;
     max-width: 200px;
     align-self: center;
+  }
+
+  .header2Wrap {
+    align-self: flex-start;
+    position: relative;
+  }
+
+  .logoObject {
+    width: 70%;
   }
 }
 
@@ -44,14 +68,7 @@
 
 // desktop
 @media all and (min-width: 1024px) {
-  .header2Wrap {
-    align-self: flex-start;
-    position: relative;
-  }
-
-  .logoObject {
-    width: 70%;
-  }
+ 
 
 }
 

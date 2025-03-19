@@ -19,7 +19,7 @@ import xmarkIcon from "/img/closeIcon.svg";
 function GreenControl({ onExternalProjectClick }) {
   const location = useLocation();
   const page = location.pathname;
-  const [isMobile, isDesktop] = useResize();
+  const [isMobile, isDesktop, isWdDesktop, isTablet] = useResize();
   const [isProjectScreen, setIsProjectScreen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [isAbout, setIsAbout] = useState(false);
@@ -72,9 +72,7 @@ function GreenControl({ onExternalProjectClick }) {
   return (
     <>
       {/* <motion.div className={`${isProjectScreen ? styles.greenCollapse : styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`} */}
-      <motion.div className={`${showMenu && isProjectScreen ? styles.greenWrapper : isProjectScreen ? styles.greenCollapse : styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`}
-        // initial={{ opacity: 0, scale: 1 }}
-        // animate={{ opacity: 1, scale: 1 }}
+      <motion.div className={`${showMenu && isProjectScreen ? styles.greenWrapper : isProjectScreen ? styles.greenCollapse : isHome ? styles.greenWrapper : styles.greenWrapperTab} ${isHome || isAbout ? styles.homeWrapper : null}`}
         transition={{ duration: 4 }} 
       >
         {
@@ -85,7 +83,7 @@ function GreenControl({ onExternalProjectClick }) {
           : null
         }
         {
-          (isProjectScreen && projectSelected === null) || isMobile ? 
+          (isProjectScreen && projectSelected === null) || (isMobile && !isHome) ? 
             <div onClick={handleMenuClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
               <object data={showMenu ? xmarkIcon : isProjectScreen ? menuIconProj : menuIcon } type="image/svg+xml" className={showMenu && isMobile ? styles.markX : styles.icon}>
                 <span className={styles.fallbackInfo}>Your browser does not support SVG</span>
@@ -93,10 +91,12 @@ function GreenControl({ onExternalProjectClick }) {
             </div>
           :
           <Header homeClick={handleHomeClick} 
-                  isHome={isHome} />
+                  isHome={isHome} 
+                  isMobile={isMobile} /> 
         }
         {/* <div className={isProjectScreen || isMobile ? styles.navContainer : styles.textWrap} id={showMenu ? styles.menuActive : null} > */}
-        <div className={isMobile ? styles.navContainer : isProjectScreen && showMenu ? styles.textWrap : isProjectScreen ? styles.noTextWrap : styles.textWrap} id={showMenu ? styles.menuActive : null} >
+
+        <div className={isMobile && !isHome ? styles.navContainer : isProjectScreen && showMenu ? styles.textWrap : isProjectScreen ? styles.noTextWrap : styles.textWrap} id={showMenu ? styles.menuActive : null} >
           <ul className={`${styles.menuItems} ${(isHome || isAbout) ? styles.menuItems2 : styles.menuItems3}`} id={showMenu ? styles.menuPointerEvents : null} >
             {isProjectScreen && showMenu && (
               <li>        
@@ -112,17 +112,17 @@ function GreenControl({ onExternalProjectClick }) {
             <li>
               <Link onClick={handleRoute} to={"/resume"}>Resume</Link>
             </li>
-            {/* {
-            !isDesktop || (!isHome && !isAbout) ?
+            {
+            isMobile ?
               <li>
                 <Link onClick={() => handleRoute("about")} to={"/about"}>About</Link>
               </li>
               : null
-            } */}
+            }
           </ul>
           {
-            (isDesktop && isHome) || (isDesktop && isAbout) ?
-            <Bio />
+            (!isMobile && isHome) ?            
+              <Bio />
             : null
           }
         </div>

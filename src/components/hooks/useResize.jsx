@@ -7,7 +7,7 @@ function useResize() {
   const [isWdDesktop, setIsWdDesktop] = useState(false);
 
   const handleResize = () => {
-    window.innerWidth < 667 ?
+    window.innerWidth < 700 ?
     setIsMobile(true) 
     : (setIsMobile(false), setIsTablet(false));
   

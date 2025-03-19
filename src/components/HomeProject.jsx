@@ -47,7 +47,7 @@ function HomeProject({ projectData, onInternalProjectClick, onExternalProjectCli
                 </div>
               </section>
             )
-          ))};
+          ))}
 
         </div>
       </div>

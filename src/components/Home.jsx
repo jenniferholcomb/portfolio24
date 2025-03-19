@@ -10,7 +10,7 @@ function Home() {
     <>
       {
         isMobile ?
-          <Header />
+          <Header isMobile={isMobile} />
         : null
       }
     </>
