@@ -16,7 +16,7 @@ import menuIcon from "/img/menuIcon.svg";
 import menuIconProj from "/img/menuIconProject.svg";
 import xmarkIcon from "/img/closeIcon.svg";
 
-function GreenControl() {
+function GreenControl({ onExternalProjectClick }) {
   const location = useLocation();
   const page = location.pathname;
   const [isMobile, isDesktop] = useResize();
@@ -45,7 +45,6 @@ function GreenControl() {
 
   const handleProjectClick = (id) => {
     setIsProjectSelected(id);
-    console.log(id);
   }
 
   const handleClosingProjectIntro = () => {
@@ -59,6 +58,12 @@ function GreenControl() {
   useEffect(() => {
     page === '/projects/pantrypro' ? setIsProjectScreen(true) : setIsProjectScreen(false);
   }, [page]);
+
+  useEffect(() => {
+    if (onExternalProjectClick !== null) {
+      handleProjectClick(onExternalProjectClick);
+    }
+  }, [onExternalProjectClick]);
 
   window.onpopstate = () => {
     page !== '/projects' ? setIsHome(true) : null;
@@ -80,7 +85,7 @@ function GreenControl() {
           : null
         }
         {
-          isProjectScreen || isMobile ? 
+          (isProjectScreen && projectSelected === null) || isMobile ? 
             <div onClick={handleMenuClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
               <object data={showMenu ? xmarkIcon : isProjectScreen ? menuIconProj : menuIcon } type="image/svg+xml" className={showMenu && isMobile ? styles.markX : styles.icon}>
                 <span className={styles.fallbackInfo}>Your browser does not support SVG</span>
@@ -133,12 +138,10 @@ function GreenControl() {
       { projectSelected && (
         <>
           <div className={styles.projectPopup}>
-            {/* <div className={styles.popupContainer}> */}
-              <ProjectIntro id={projects[projectSelected - 1].id}
-                            project={projects[projectSelected - 1]} 
-                            projectClick={handleProjectClick} 
-                            onProjectSelect={true} />
-            {/* </div> */}
+            <ProjectIntro id={projects[projectSelected - 1].id}
+                          project={projects[projectSelected - 1]} 
+                          projectClick={handleProjectClick} 
+                          onProjectSelect={true} />
             <svg className={styles.closeIcon} onClick={handleClosingProjectIntro} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 21 21" fill="none">
               <path d="M2.1 21L0 18.9L8.4 10.5L0 2.1L2.1 0L10.5 8.4L18.9 0L21 2.1L12.6 10.5L21 18.9L18.9 21L10.5 12.6L2.1 21Z" fill="white"/>
             </svg>
@@ -150,12 +153,3 @@ function GreenControl() {
 }
 
 export default GreenControl;
-
-// Navigate to={"/about"} state={{ blurb: `${bio}` }} />
-// -- inside component --
-// import { useLocation } from "react-router-dom";
-
-// function Projects(size) {
-//   const location = useLocation();
-//   const { size } = location.state;
-// ...

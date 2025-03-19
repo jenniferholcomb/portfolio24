@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
+import { useExternalProject } from "./ExternalProjectContext";
 import useResize from "./hooks/useResize";
 import Header from "./Header";
 import Slides from "./Slides";
@@ -35,9 +36,12 @@ import vid from "./../img/mockVid.mp4";
 import vid2 from "./../img/wireVid.mp4";
 import vid3 from "./../img/invoiceFlow2.mp4";
 
+import projects from "./../data/projectData";
+
 function PantryPro() {
   const [isMobile, isDesktop] = useResize();
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const { onExternalProjectClick } = useExternalProject();
 
   const handleCircleClick = (index) => {
     setCarouselIndex(index);
@@ -76,7 +80,7 @@ function PantryPro() {
             <path d="M531 2C531.552 2 532 1.55228 532 1C532 0.447715 531.552 0 531 0V2ZM0 2H531V0H0V2Z" fill="#001B08" />
           </svg>
           <div className={styles.info}>
-            <p className={styles.infoBlurb}>Two challenges in the realm of restaurant inventory management; the slow process of entering new invoice data, and the tedious job of counting goods. This app is conceptualized to give the user power to upload invoices using AI technology, and a design to prevent task fatigue while counting items. In addition to being a streamlined application for managing and categorizing inventory.</p>
+            <p className={styles.infoBlurb}>Two challenges in the realm of restaurant inventory management &mdash; the slow process of entering new invoice data, and the tedious job of counting goods. This app is conceptualized to give the user power to upload invoices using AI technology, and a design to prevent task fatigue while counting items. In addition to being a streamlined application for managing and categorizing inventory.</p>
           </div>
         </div>
         <div className={styles.exShotInv}>
@@ -239,6 +243,14 @@ function PantryPro() {
           <svg className={styles.line} id={styles.lineDes} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
             <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
           </svg>
+          <div className={styles.projectCardContainer}>
+            {projects.map((project, index) => (
+              project.externalLink && 
+                <div className={styles.projectCards}>
+                  <img src={project.smCard} className={styles.imgMask} alt={project.projectName} onClick={() => onExternalProjectClick(project.id)} />
+                </div>
+            ))}
+          </div>
         </div>
       </div>
 

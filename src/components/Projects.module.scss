@@ -120,6 +120,22 @@ h4.bubbleHeader2 {
   padding-left: 50px;
 }
 
+a.github {
+  color: #52a3da;
+  // opacity: 95%;
+  text-align: left;
+  font-family: Hind;
+  font-size: 0.9em;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 175% */
+  letter-spacing: 2.4px;
+  margin: 0;
+  padding: 15px 0 0 50px;
+  pointer-events: all;
+  text-decoration: none;
+}
+
 p.bubbleSubHead {
   color: #1b1b1be2;
   font-family: Hind;
@@ -145,6 +161,8 @@ p.bubbleSubHead {
 .descCol2 {
   width: 25rem;
   padding-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 p.blurb {
@@ -195,7 +213,7 @@ p.blurb {
 }
 
 
-.imgMask {
+.imgMask, .imgMaskPort {
   object-fit: contain;
   min-width: 100%;
   height: 100%;
