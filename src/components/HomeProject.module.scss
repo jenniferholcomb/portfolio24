@@ -19,7 +19,7 @@
 .cardContainer {
   width: 100%;
   align-content: center;
-  margin: 1.62rem 0;
+  padding: 1.62rem 0;
 }
 
 .bubbleCard {
@@ -41,11 +41,6 @@
   aspect-ratio: 1/1;
   filter: drop-shadow(-3px 6px 12px rgba(0, 27, 8, 0.45));
   z-index: 9999;
-}
-
-.picture:hover {
-  transform: scale(1.03);
-  transition: all 0.25s ease;
 }
 
 .bubbleContent {
@@ -223,6 +218,11 @@ h4.noStyle {
 
   .picture {
     margin-right: 46px;
+  }
+
+  .picture:hover {
+    transform: scale(1.03);
+    transition: all 0.25s ease;
   }
 }
 
