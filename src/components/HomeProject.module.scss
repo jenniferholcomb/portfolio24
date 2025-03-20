@@ -7,6 +7,7 @@
   flex-direction: column; 
   min-width: auto;
   width: 100vw;
+  height: 100%;
   align-self: flex-end;
   align-items: center;
 }
@@ -154,7 +155,7 @@ h4.noStyle {
 
 @media all and (min-width: 700px) {
   .homeWrapper {
-    min-height: 100%;
+    // min-height: 100%;
     width: 34vw;
   }
 

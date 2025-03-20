@@ -24,21 +24,20 @@
   -moz-box-sizing: border-box;    
   box-sizing: border-box;  
   display: flex;
+  flex-direction: column;
   background-color: #222222;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   min-width: 100%;
   height: 100%;
-  // min-height: 20.375rem;
   z-index: 999999;
   pointer-events: none;
   box-shadow: 6px 0px 12px 0px rgba(0, 27, 8, 0.45);
 }
 
 .greenWrapper {
-  padding: 40px 40px 25px 40px;
-  // gap: 2.5rem;
+  padding: 55px 0 35px 0;
+  gap: 2.5rem;
 }
 
 .greenCollapse {
@@ -168,7 +167,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     padding: 46px 46px 31px 40px;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     min-height: fit-content;
   }
@@ -199,12 +198,9 @@
 // tablet
 @media (min-height: 700px) and (min-width: 700px) {
   .greenWrapper, .greenWrapperTab {
+    grid-column: 1;
     flex: 1 0px;
-    // top: auto;
-    position: fixed;
-    top: 0;
-    height: 1vh;
-    min-height: 100%;
+    height: 100%;
     min-width: 150px;
     flex-direction: column;
     align-items: flex-start;
@@ -253,16 +249,14 @@
 @media all and (min-width: 775px) {
   .greenWrapper {
     width: 512px;
-    height: 1vh;
   }
 }
 
 // desktop
 @media all and (min-width: 1024px) {
-  .homeWrapper {
-    max-width: 50%;
+  .greenWrapper {
     width: 50vw;
-    pointer-events: all;
+    height: 100%;
   }
 
   .menuItems2 {
