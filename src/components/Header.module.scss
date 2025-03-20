@@ -40,8 +40,16 @@
 }
 
 @media all and (min-width: 500px) {
+  .headerMobile {
+    height: 44px;
+  }
+
   .logo {
     padding-top: 0;
+  }
+
+  .mobileLongLogoObject {
+    width: 12.275rem;
   }
 }
 

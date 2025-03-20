@@ -197,7 +197,7 @@
 }
 
 // tablet
-@media (min-height: 700px) and (min-width: 700px) {
+@media all and (min-width: 700px) {
   .greenWrapper, .greenWrapperTab {
     grid-column: 1;
     flex: 1 0px;
