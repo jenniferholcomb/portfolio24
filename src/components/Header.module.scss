@@ -1,7 +1,6 @@
 
 
 .headerWrap {
-
   min-width: 180px;
   // flex: .5 0 0;
   height: 55px;
@@ -14,13 +13,13 @@
 }
 
 .headerMobile {
-  height: 44px;
+  height: 53px;
   max-height: 100%;
 }
 
 .logo {
   height: 100%;
-  width: 12.5rem;
+  width: 100%;
   display: flex;
   justify-content: center;
   // padding-top: 15px;
@@ -33,7 +32,7 @@
 }
 
 .mobileLongLogoObject {
-  width: 12.5625rem;
+  width: 15rem;
 }
 
 .fallbackInfo {
