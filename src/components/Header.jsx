@@ -13,7 +13,7 @@ function Header(props) {
   return (
     <>
       {/* <div className={`${styles.headerWrap} ${(location.pathname === '/') || (location.pathname === '/about') ? styles.header2Wrap : null}`}> */}
-      <div className={`${ !isMobile ? styles.headerWrap : !isHome ? styles.headerHidden : null} ${ (isHome && !isMobile) || (location.pathname === '/about') ? styles.header2Wrap : null}`}>
+      <div className={`${ !isMobile ? styles.headerWrap : !isHome ? styles.headerHidden : styles.headerMobile } ${ (isHome && !isMobile) || (location.pathname === '/about') ? styles.header2Wrap : null}`}>
         <Link to={"/"} className={styles.linkStyle}>
           <div className={styles.logo} onClick={homeClick}>
             <object data={isHome && !isMobile ? logo : logoLong} className={isHome && !isMobile ? styles.logoObject : isHome && isMobile ? styles.mobileLongLogoObject : styles.logoLongObject} type="image/svg+xml" >

@@ -37,7 +37,7 @@
 }
 
 .greenWrapper {
-  padding: 40px;
+  padding: 40px 40px 25px 40px;
   gap: 2.5rem;
 }
 
@@ -197,7 +197,7 @@
 }
 
 // tablet
-@media all and (min-width: 700px) {
+@media (min-height: 700px) and (min-width: 700px) {
   .greenWrapper, .greenWrapperTab {
     flex: 1 0px;
     // top: auto;

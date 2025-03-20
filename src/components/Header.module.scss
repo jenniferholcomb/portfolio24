@@ -13,12 +13,16 @@
   display: none;
 }
 
+.headerMobile {
+  height: 100%;
+}
+
 .logo {
   height: 100%;
   width: 12.5rem;
   display: flex;
   justify-content: center;
-  padding-top: 15px;
+  // padding-top: 15px;
 }
 
 .logoObject, .logoLongObject {
