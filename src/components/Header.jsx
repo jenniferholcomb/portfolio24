@@ -9,7 +9,7 @@ import logoLong from "/img/logo.svg";
 function Header(props) {
   const { homeClick, isHome, isMobile } = props;
   const location = useLocation();
-  console.log(isHome)
+
   return (
     <>
       {/* <div className={`${styles.headerWrap} ${(location.pathname === '/') || (location.pathname === '/about') ? styles.header2Wrap : null}`}> */}

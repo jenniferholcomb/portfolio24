@@ -29,7 +29,7 @@
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 50.76%, rgba(255, 255, 255, 0.35) 58.56%);  
   margin-bottom: 0.5rem;
   padding: 20px 0 20px 0;
-  clip-path: ellipse(50% 50% at 50% 50%);
+  clip-path: ellipse(70% 50% at 50% 50%);
   pointer-events: all;
   cursor: pointer;
 }
@@ -133,7 +133,7 @@ h4.noStyle {
   .bubbleCard {
     justify-content: flex-end;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.68) 50.76%, rgba(255, 255, 255, 0.80) 58.56%);  
-    clip-path: ellipse(70% 50% at 50% 50%);
+    clip-path: ellipse(78% 50% at 50% 50%);
   }
 
   .bubbleContent {
