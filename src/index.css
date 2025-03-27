@@ -10,7 +10,7 @@
   background-color: #E8ECEA;
   /* border: dashed cyan; */
   font-synthesis: none;
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

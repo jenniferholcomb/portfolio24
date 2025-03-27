@@ -206,15 +206,17 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 50px 20px 50px 20px;
+    gap: 5vh;
+  }
+
+  .greenWrapperTab {
+    padding: 50px 0;
+    width: 12vw;
   }
 
   .greenWrapper {
     width: 66vw;
-  }
-
-  .greenWrapperTab {
-    width: 225px;
+    padding: 50px 20px;
   }
 
   .textWrap {
@@ -234,7 +236,9 @@
     align-self: flex-start;
     align-items: flex-start;
     margin-left: 0;
-    padding: 0 24px 0 34px;
+    width: auto;
+    // padding: 0 24px 0 34px;
+    padding: 0 24px 0 38px;
   }
 
   .menuItems li {
@@ -260,6 +264,14 @@
     height: 100%;
   }
 
+  .greenWrapperTab {
+    width: 12vw;
+  }
+
+  .menuItems {
+    width: auto;
+  }
+
   .menuItems2 {
     padding: 0 24px 0 34px;
     position: relative;
@@ -269,8 +281,11 @@
 }
 
 // desktop wide
-@media all and (min-width: 1200px) {
-
+@media all and (min-width: 1270px) {
+  .greenWrapperTab {
+    width: 225px;
+    padding: 50px 20px;
+  }
 }
 
 #menuPointerEvents li a {

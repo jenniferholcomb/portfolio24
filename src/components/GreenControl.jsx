@@ -19,7 +19,7 @@ import xmarkIcon from "/img/closeIcon.svg";
 function GreenControl({ onExternalProjectClick }) {
   const location = useLocation();
   const page = location.pathname;
-  const [isMobile, isDesktop, isWdDesktop, isTablet] = useResize();
+  const [isMobile, isDesktop, isWdDesktop, isTablet, isMdDesktop] = useResize();
   const [isProjectScreen, setIsProjectScreen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [isAbout, setIsAbout] = useState(false);
@@ -92,7 +92,9 @@ function GreenControl({ onExternalProjectClick }) {
           :
           <Header homeClick={handleHomeClick} 
                   isHome={isHome} 
-                  isMobile={isMobile} /> 
+                  isMobile={isMobile} 
+                  isMdDesktop={isMdDesktop} 
+                  isWdDesktop={isWdDesktop} /> 
         }
         {/* <div className={isProjectScreen || isMobile ? styles.navContainer : styles.textWrap} id={showMenu ? styles.menuActive : null} > */}
 

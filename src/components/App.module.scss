@@ -20,7 +20,7 @@ body {
 @media all and (min-width: 700px) {
   .bodyWrapper {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: min-content auto;
     overflow-y: scroll;
   }
 }
