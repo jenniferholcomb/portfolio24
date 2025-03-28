@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column; 
   height: 100%;
-  width: 100%;
+  width: 100vw;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -51,11 +51,11 @@
 
 .bubbleCard {
   display: grid;
-  // grid-template-columns: auto 0.764fr 1.236fr;
   height: 100%;
+  justify-content: center;
   margin-bottom: 3rem;
-  clip-path: ellipse(85% 50% at 50% 50%);
-  padding: 65px 0 65px 0;
+  clip-path: ellipse(135% 50% at 50% 50%);
+  padding: 85px 0;
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.68) 45.76%, rgba(255, 255, 255, 0.85) 58.56%);  
 }
 
@@ -80,7 +80,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
+  padding: 0 30px;
   gap: 2rem;
 }
 
@@ -107,18 +107,17 @@ h2.header {
 .descCol1, .descCol1B {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-top: 20px;
-  // width: 15.7rem;;
 }
 
 .descCol1 {
   grid-row: 3;
-  grid-column: 1;
 }
 
 .descCol1B {
   grid-row: 4;
-  grid-column: 2;
+  padding-top: 30px;
 }
 
 h4.bubbleHeader2 {
@@ -146,9 +145,10 @@ a.github {
   line-height: 28px; /* 175% */
   letter-spacing: 2.4px;
   margin: 0;
-  padding: 18px 0 0 0;
+  padding: 40px 0 0 0;
   pointer-events: all;
   text-decoration: none;
+  align-self: center;
 }
 
 p.bubbleSubHead {
@@ -161,13 +161,13 @@ p.bubbleSubHead {
   letter-spacing: 2.4px;
   margin: 0;
   white-space: nowrap;
+  padding-top: 10px;
+  text-align: center;
 }
 
 .descCol2 {
-  grid-column: 1 / span 2;
   grid-row: 5;
-  width: 25rem;
-  padding-top: 20px;
+  padding: 30px 30px 0 30px;
   display: flex;
   flex-direction: column;
 }
@@ -185,14 +185,11 @@ p.blurb {
 }
 
 .picture {
-  // width: 445px;
-  // min-height: 445px;
-  // aspect-ratio: 1/1;
   grid-row: 2;
-  grid-column: 1 / span 2;
   filter: drop-shadow(-3px 6px 12px rgba(0, 27, 8, 0.45));
   z-index: 9999;
   padding-top: 20px;
+  margin-bottom: 20px;
 }
 
 .picture a, .picture {
@@ -230,7 +227,7 @@ p.blurb {
 
 .imgMask, .imgMaskPort {
   object-fit: contain;
-  width: 445px;
+  width: 85vw;
   // min-height: 445px;
   aspect-ratio: 1/1;
   // min-width: 100%;
@@ -262,10 +259,58 @@ p.blurb {
   cursor: pointer;
 }
 
+@media all and (min-width: 500px) {
+  .bubbleCard {
+    grid-template-columns: 50vw 50vw;
+    clip-path: ellipse(115% 50% at 50% 50%);
+  }
+
+  .picture {
+    grid-column: 1 / span 2;
+  }
+
+  .imgMask, .imgMaskPort {
+    width: 80vw;
+  }
+
+  .descCol1 {
+    grid-column: 1;
+    width: 39vw;
+    justify-self: end;
+    align-items: start;
+    padding-left: 15vw;
+  }
+
+  .descCol1B {
+    grid-column: 2;
+    grid-row: 3;
+    width: 31vw;
+    align-items: start;
+    padding-right: 10vw;
+    padding-left: 6vw;
+    padding-top: 20px;
+  }
+
+  .descCol2 {
+    grid-column: 1 / span 2;
+    grid-row: 4;
+    width: 80vw;
+    padding: 20px 0 0 0;
+    justify-self: center;
+  }
+
+  p.bubbleSubHead {
+    text-align: left;
+    padding-top: 15px;
+  }
+}
+
 // mobile landscape
 @media all and (min-width: 700px) {
   .projectsWrapper {
     flex: 3 0px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .bubbleCard {
@@ -281,7 +326,10 @@ p.blurb {
     grid-column: 1 / span 2;
     grid-row: 2;
     width: 100%;
-    margin-bottom: 20px;
+  }
+
+  .imgMask, .imgMaskPort {
+    width: 445px;
   }
 
   .descCol1 {
@@ -297,20 +345,7 @@ p.blurb {
   }
 
   .descCol2 {
-    grid-column: 1 / span 2;
-    grid-row: 4;
     width: 445px;
-    padding: 20px 0 0 0;
-    justify-self: center;
-  }
-
-  p.bubbleSubHead {
-    padding-top: 15px;
-  }
-
-  a.github {
-    align-self: center;
-    padding-top: 40px;
   }
 
 }
@@ -349,6 +384,7 @@ p.blurb {
   .bubbleHeader {
     grid-column: 2;
     border-bottom: 1px solid #1b1b1bae;
+    width: 100%;
     padding: 0 0 0 30px;
     align-items: flex-end;
     transform: translateX(-10px);

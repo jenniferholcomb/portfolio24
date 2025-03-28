@@ -12,11 +12,6 @@ function Projects({projectClick}) {
   return (
     <>
       <div className={styles.projectsWrapper}>
-        {
-          isMobile ?
-            <Header />
-          : null
-        }
         <h1 className={styles.pageHeader}>PROJECTS</h1>
         <div className={styles.cardContainer}>
           {projectData.map((project) => (

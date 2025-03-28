@@ -43,17 +43,15 @@ function useResize() {
 
   useEffect(() => {
     handleResize();
-  }, []);
 
-  useEffect(() => {
     window.addEventListener('resize', handleResize);
 
-    return _ => {
+    return () => {
       window.removeEventListener('resize', handleResize);
-    }
-  });
+    };
+  }, []);
 
-  return [isMobile, isDesktop, isWdDesktop, isTablet, isMdDesktop];
+  return [ isMobile, isDesktop, isWdDesktop, isTablet, isMdDesktop ];
 };
 
 export default useResize;

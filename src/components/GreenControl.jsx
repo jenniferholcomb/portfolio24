@@ -28,7 +28,8 @@ function GreenControl({ onExternalProjectClick }) {
 
   const handleRoute = (aboutSwitch) => {
     aboutSwitch === "about" ? setIsAbout(true) : setIsAbout(false);
-    isMobile || isProjectScreen ? setShowMenu(!showMenu) : null;
+    // isMobile || isProjectScreen ? setShowMenu(!showMenu) : null;
+
     setIsHome(false);
   };
 
@@ -65,14 +66,23 @@ function GreenControl({ onExternalProjectClick }) {
     }
   }, [onExternalProjectClick]);
 
-  window.onpopstate = () => {
-    page !== '/projects' ? setIsHome(true) : null;
-  }
+  // window.onpopstate = () => {
+  //   page !== '/projects' ? setIsHome(true) : null;
+  // }
 
   return (
     <>
       {/* <motion.div className={`${isProjectScreen ? styles.greenCollapse : styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`} */}
-      <motion.div className={`${showMenu && isProjectScreen ? styles.greenWrapper : isProjectScreen ? styles.greenCollapse : isHome ? styles.greenWrapper : styles.greenWrapperTab} ${isHome || isAbout ? styles.homeWrapper : null}`}
+      <motion.div 
+        className={`${
+                      showMenu && isProjectScreen ? styles.greenWrapper : 
+                      isProjectScreen || (!isHome && isMobile) ? styles.greenCollapse : 
+                      isHome ? styles.greenWrapper : styles.greenWrapperTab
+                    } 
+                    ${
+                      isHome || isAbout ? styles.homeWrapper : null
+                    }`
+                  }
         transition={{ duration: 4 }} 
       >
         {
@@ -85,7 +95,7 @@ function GreenControl({ onExternalProjectClick }) {
         {
           (isProjectScreen && projectSelected === null) || (isMobile && !isHome) ? 
             <div onClick={handleMenuClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
-              <object data={showMenu ? xmarkIcon : isProjectScreen ? menuIconProj : menuIcon } type="image/svg+xml" className={showMenu && isMobile ? styles.markX : styles.icon}>
+              <object data={showMenu ? xmarkIcon : menuIconProj } type="image/svg+xml" className={showMenu && isMobile ? styles.markX : styles.icon}>
                 <span className={styles.fallbackInfo}>Your browser does not support SVG</span>
               </object>
             </div>
@@ -99,8 +109,15 @@ function GreenControl({ onExternalProjectClick }) {
         {/* <div className={isProjectScreen || isMobile ? styles.navContainer : styles.textWrap} id={showMenu ? styles.menuActive : null} > */}
 
         <div className={isMobile && !isHome ? styles.navContainer : isProjectScreen && showMenu ? styles.textWrap : isProjectScreen ? styles.noTextWrap : styles.textWrap} id={showMenu ? styles.menuActive : null} >
-          <ul className={`${styles.menuItems} ${(isHome || isAbout) ? styles.menuItems2 : styles.menuItems3}`} id={showMenu ? styles.menuPointerEvents : null} >
-            {isProjectScreen && showMenu && (
+          <ul className={`
+                ${styles.menuItems} 
+                ${
+                  (isHome || isAbout) ? styles.menuItems2 : 
+                  styles.menuItems3
+                }`} 
+              // id={showMenu ? styles.menuPointerEvents : null} 
+          >
+            { showMenu && (
               <li>        
                 <Link onClick={handleHomeClick} to={"/"}>Home</Link>
               </li>

@@ -42,8 +42,7 @@
 }
 
 .greenCollapse {
-  background-color: none;
-  width: 40px;
+  background-color: transparent;
   align-items: flex-start;
 }
 
@@ -64,7 +63,7 @@
 }
 
 .markX {
-  width: 45%;
+  width: 60%;
   height: auto;
 }
 
@@ -87,18 +86,14 @@
   position: absolute;
   transition-duration: 0.3s;
   opacity: 0;
-  background-color: #001b08;
+  background-color: #222222;
+  display: flex;
+  justify-content: center;
   z-index: 999999;
 }
 
-// .textWrap {
-
-// }
-
 .menuItems {
   margin: 0;
-  // padding: 50px 0 0 0;
-  // padding: 2.5rem 0 0 0;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -121,7 +116,7 @@
   letter-spacing: 2.4px;
   text-transform: capitalize;
   text-decoration: none;
-  pointer-events: none;
+  pointer-events: all;
 }
 
 .projectPopup {
@@ -179,10 +174,13 @@
   }
 
   .menuItems {
-    padding: 0 40px 0 0;
+    width: 100%;
+  }
+
+  .menuItems2 {
     align-self: flex-end;
     align-items: flex-end;
-    width: 100%;
+    padding: 0 40px 0 0;
     margin-left: auto;
   }
 
