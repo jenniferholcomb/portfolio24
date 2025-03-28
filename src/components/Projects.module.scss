@@ -26,7 +26,7 @@
   margin: 0;
   position: fixed;
   right: -4px;
-  top: -4px;
+  top: -2px;
 }
 
 .cardContainer {
@@ -37,14 +37,19 @@
 }
 
 .bubbleSelect {
-  display: flex;
-  flex-direction: row;
+  display: grid;
   align-items: center;
   justify-content: center;
   height: 100%;
   margin-bottom: 3rem;
-  clip-path: ellipse(75% 50% at 50% 50%);
-  // clip-path: ellipse(65.58% 50.01% at 42.23% 50.11%);
+  clip-path: ellipse(135% 50% at 50% 50%);
+  padding: 95px 0 3rem 0;
+  margin-top: 6rem;
+  background: linear-gradient(45deg, rgba(246, 244, 244, 0.85) 45.76%, rgba(246, 244, 244, 0.95) 58.56%);  
+  overflow-y: scroll;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(5, max-content) 300px;
+  // padding: 75px 8vw 85px 8vw;
 }
 
 .bubbleCard {
@@ -57,12 +62,6 @@
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.68) 45.76%, rgba(255, 255, 255, 0.85) 58.56%);  
 }
 
-.bubbleSelect {
-  margin-top: 6rem;
-  padding: 0 0 3rem 0;
-  background: linear-gradient(45deg, rgba(246, 244, 244, 0.85) 45.76%, rgba(246, 244, 244, 0.95) 58.56%);  
-}
-
 .bubbleCard:first-child {
   margin-top: 6rem;
 }
@@ -72,7 +71,7 @@
   flex-direction: column;
 }
 
-.bubbleHeader {
+.bubbleHeader, .bubbleHeaderSelect {
   grid-row: 1;
   grid-column: 1 / span 2;
   display: flex;
@@ -220,13 +219,10 @@ p.blurb {
   background-color: pink;
 }
 
-.imgMask, .imgMaskPort {
+.imgMask, .imgMaskPort, .imgMaskSelect {
   object-fit: contain;
   width: 85vw;
-  // min-height: 445px;
   aspect-ratio: 1/1;
-  // min-width: 100%;
-  // height: 100%;
   mask-image: url("data:image/svg+xml,%3Csvg width='252' height='251' viewBox='0 0 252 251' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' %3E%3Cpath fill='%23474bff' d='M251.33 145.23C251.19 162.78 250.66 182.1 249.11 205.9C246.96 238.92 235.41 250.25 212.37 250.25C200.68 250.25 191.19 250.25 157.56 250.25H129.45H122.37H39.45C16.41 250.25 4.85999 238.93 2.70999 205.9C1.15999 182.09 0.62999 162.78 0.48999 145.23V105.51C0.62999 87.96 1.15999 68.64 2.70999 44.84C4.85999 11.82 16.41 0.5 39.45 0.5H129.45H157.56C191.19 0.5 200.68 0.5 212.37 0.5C235.41 0.5 246.96 11.82 249.11 44.85C250.66 68.66 251.19 87.97 251.33 105.52V145.24V145.23Z' /%3E%3C/svg%3E");
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='252' height='251' viewBox='0 0 252 251' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' %3E%3Cpath fill='%23474bff' d='M251.33 145.23C251.19 162.78 250.66 182.1 249.11 205.9C246.96 238.92 235.41 250.25 212.37 250.25C200.68 250.25 191.19 250.25 157.56 250.25H129.45H122.37H39.45C16.41 250.25 4.85999 238.93 2.70999 205.9C1.15999 182.09 0.62999 162.78 0.48999 145.23V105.51C0.62999 87.96 1.15999 68.64 2.70999 44.84C4.85999 11.82 16.41 0.5 39.45 0.5H129.45H157.56C191.19 0.5 200.68 0.5 212.37 0.5C235.41 0.5 246.96 11.82 249.11 44.85C250.66 68.66 251.19 87.97 251.33 105.52V145.24V145.23Z' /%3E%3C/svg%3E");
   -webkit-mask-repeat: no-repeat;
@@ -235,7 +231,7 @@ p.blurb {
   mask-size: contain;
 }
 
-.imgMask:hover {
+.imgMask:hover, .imgMaskSelect:hover {
   transform: scale(1.02);
   transition: all 0.25s ease;
 }
@@ -266,8 +262,18 @@ p.blurb {
     clip-path: ellipse(115% 50% at 50% 50%);
   }
 
+  .bubbleSelect {
+    grid-template-columns: 50% 50%;
+    clip-path: ellipse(115% 50% at 50% 50%);
+  }
+
   .bubbleHeader {
     width: 80vw;
+    justify-self: center;
+  }
+
+  .bubbleHeaderSelect {
+    width: 425px;
     justify-self: center;
   }
 
@@ -279,11 +285,16 @@ p.blurb {
     width: 80vw;
   }
 
+  .imgMaskSelect {
+    width: 400px;
+  }
+
   .descCol1 {
     grid-column: 1;
     width: 39vw;
     justify-self: end;
     align-items: start;
+    align-self: start;
     padding: 20px 0 0 15vw;
   }
 
@@ -323,10 +334,20 @@ p.blurb {
     grid-template-columns: auto auto;
   }
 
+  .bubbleSelect {
+    grid-template-rows: repeat(4, max-content) 300px;
+    padding: 75px 8vw 85px 8vw;
+  }
+
   .bubbleHeader {
     grid-column: 1 / span 2;
     grid-row: 1;
     width: 445px;
+  }
+
+  .bubbleHeaderSelect {
+    grid-column: 1 / span 2;
+    grid-row: 1;
   }
 
   .picture {
@@ -339,9 +360,17 @@ p.blurb {
     width: 445px;
   }
 
+  .imgMaskSelect {
+    width: 420px;
+  }
+
   .descCol1 {
     width: 222.5px;
     justify-self: end;
+  }
+
+  .descCol1Select{
+    width: 220px;
   }
 
   .descCol1B {
@@ -349,6 +378,11 @@ p.blurb {
     grid-row: 3;
     width: 222.5px;
     transform: translateX(25px);
+  }
+
+  .descCol1BSelect {
+    width: 200px;
+    transform: translateX(0px);
   }
 
   .descCol2 {
@@ -370,6 +404,13 @@ p.blurb {
     padding: 85px 6vw 85px 6vw;
   }
 
+  .bubbleSelect {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(4, max-content) 300px;
+    clip-path: ellipse(105% 50% at 50% 50%);
+    padding: 95px 8vw 300px 8vw;
+  }
+
   .picture {
     grid-row: 1 / span 3;
     grid-column: 1;
@@ -383,12 +424,11 @@ p.blurb {
     justify-content: flex-end;
   }
 
-  .picture a img, .picture img {
-    // width: 400px;
-    // height: 400px;
+  .imgMaskSelect {
+    width: 445px;
   }
 
-  .bubbleHeader {
+  .bubbleHeader, .bubbleHeaderSelect {
     grid-column: 2;
     border-bottom: 1px solid #1b1b1bae;
     width: 100%;
@@ -456,9 +496,14 @@ p.blurb {
 
 // desktop mid
 @media all and (min-width: 1200px) {
-  .bubbleCard {
+  .bubbleCard, .bubbleSelect {
     grid-template-columns: auto 0.764fr 1.236fr;
     padding: 85px 35px 85px 35px;
+  }
+
+  .bubbleSelect {
+    grid-template-rows: repeat(3, max-content);
+    padding: 200px 8vw 85px 8vw;
   }
 
   .picture {
@@ -469,7 +514,7 @@ p.blurb {
     align-self: center;
   }
 
-  .bubbleHeader {
+  .bubbleHeader, .bubbleHeaderSelect {
     grid-column: 2 / span 2;
     grid-row: 1;
     padding: 0 0 0 16px;
@@ -504,6 +549,7 @@ p.blurb {
     grid-column: 3;
     grid-row: 2 / span 2;
     padding: 20px 0 0 25px;
+    align-self: start;
   }
 
   p.blurb {
@@ -515,6 +561,10 @@ p.blurb {
 @media all and (min-width: 1400px) {
   .bubbleCard {
     padding: 85px 60px;
+  }
+
+  .bubbleSelect {
+    padding: 200px 10vw 85px 10vw;
   }
   
   .picture {

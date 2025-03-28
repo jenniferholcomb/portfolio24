@@ -17,17 +17,17 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
               className={styles.linkCardStyle}
               onClick={() => projectClick(project.id)}
             >
-              <img className={styles.imgMask} src={project.imgCard} alt={project.name} />
+              <img className={onProjectSelect ? styles.imgMaskSelect : styles.imgMask} src={project.imgCard} alt={project.name} />
             </a>
           : project.link ?
             <Link to={project.link} className={styles.linkCardStyle} onClick={projectClick}>
-              <img className={styles.imgMask} src={project.imgCard} />
+              <img className={onProjectSelect ? styles.imgMaskSelect : styles.imgMask} src={project.imgCard} />
             </Link>
           : 
-            <img className={styles.imgMaskPort} src={project.imgCard} alt={project.name} />
+            <img className={onProjectSelect ? styles.imgMaskSelect : styles.imgMaskPort} src={project.imgCard} alt={project.name} />
           }
         </div>
-        <div className={styles.bubbleHeader}>
+        <div className={onProjectSelect ? styles.bubbleHeaderSelect : styles.bubbleHeader}>
           <h2 className={styles.header}>{project.projectName}</h2>
           <div className={styles.arrowContainer}>
             {project.externalLink ?
@@ -50,7 +50,7 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
             )}
           </div>
         </div>
-        <div className={styles.descCol1}>
+        <div className={`${styles.descCol1} ${onProjectSelect ? styles.descCol1Select : null}`}>
           <h4 className={styles.bubbleHeader2}>{project.projectSubhead}</h4>
           <h4 className={styles.bubbleHeader2}>{project.projectYear}</h4>
           <p className={styles.bubbleSubHead} id={styles.ux}>
@@ -62,7 +62,7 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
             ))}
           </p>
         </div>
-        <div className={styles.descCol1B}>
+        <div className={`${styles.descCol1B} ${onProjectSelect ? styles.descCol1BSelect : null}`}>
           <h4 className={styles.bubbleHeader2} id={styles.tech}>technologies</h4>
           <p className={styles.bubbleSubHead}>
             {project.technologies.map((item, index) => (
