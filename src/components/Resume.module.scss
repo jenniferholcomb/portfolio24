@@ -37,7 +37,7 @@
   margin: 0;
   position: fixed;
   right: -4px;
-  top: -2px;
+  top: -4px;
 }
 
 .resumeContainer {
@@ -54,6 +54,7 @@
 .resumeContainer img {
   height: fit-content;
   width: 90vw;
+  aspect-ratio: auto / 1;
 }
 
 @media all and (min-width: 667px) {
