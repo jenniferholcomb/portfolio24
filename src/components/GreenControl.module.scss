@@ -200,7 +200,7 @@
     grid-column: 1;
     flex: 1 0px;
     height: 100%;
-    min-width: 150px;
+    width: 150px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -209,7 +209,7 @@
 
   .greenWrapperTab {
     padding: 50px 0;
-    width: 12vw;
+    // width: 12vw;
   }
 
   .greenWrapper {
@@ -263,7 +263,7 @@
   }
 
   .greenWrapperTab {
-    width: 12vw;
+
   }
 
   .menuItems {

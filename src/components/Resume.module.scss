@@ -20,8 +20,6 @@
   align-items: flex-start;
   width: 100%;
   background: #E8ECEA;
-  flex: 1 0 auto;
-  
 }
 
 .pageHeader {
@@ -52,7 +50,7 @@
 }
 
 .resumeContainer img {
-  height: fit-content;
+  // height: fit-content;
   width: 90vw;
   aspect-ratio: .77 / 1;
 }
@@ -68,7 +66,7 @@
 // mobile landscape
 @media all and (min-width: 667px) {
   .resumeWrapper {
-    flex: 3 0px;
+    width: calc(100vw - 150px);
   }
 }
 
@@ -89,8 +87,7 @@
 
 // desktop wide
 @media all and (min-width: 1270px) {
-  // .resumeContainer img {
-  //   height: auto;
-  //   width: 55vw;
-  // }
+  .resumeWrapper {
+    width: calc(100vw - 225px);
+  }
 }

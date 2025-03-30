@@ -20,12 +20,14 @@ body {
 @media all and (min-width: 700px) {
   .bodyWrapper {
     display: grid;
-    grid-template-columns: min-content auto;
+    grid-template-columns: 150px 1fr;
     overflow-y: scroll;
   }
 }
 
 // desktop
 @media all and (min-width: 1024px) {
-
+  .bodyWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
 }
