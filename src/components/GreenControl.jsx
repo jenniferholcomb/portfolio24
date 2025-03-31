@@ -28,7 +28,7 @@ function GreenControl({ onExternalProjectClick }) {
 
   const handleRoute = (aboutSwitch) => {
     aboutSwitch === "about" ? setIsAbout(true) : setIsAbout(false);
-    // isMobile || isProjectScreen ? setShowMenu(!showMenu) : null;
+    (isMobile || isProjectScreen) ? showMenu === true ? setShowMenu(false) : isHome ? null : setShowMenu(true) : null;
 
     setIsHome(false);
   };
@@ -41,7 +41,7 @@ function GreenControl({ onExternalProjectClick }) {
     !isHome ? setIsHome(true) : null;
     isAbout ? setIsAbout(false) : null;
     isProjectScreen ? setIsProjectScreen(false) : null;
-    showMenu ? setShowMenu(false): null;
+    isMobile || isProjectScreen ? setShowMenu(false): null;
   }
 
   const handleProjectClick = (id) => {

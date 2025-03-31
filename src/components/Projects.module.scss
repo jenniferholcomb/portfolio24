@@ -42,7 +42,7 @@
   justify-content: center;
   height: 100%;
   margin-bottom: 3rem;
-  clip-path: ellipse(135% 50% at 50% 50%);
+  clip-path: ellipse(145% 50% at 50% 50%);
   padding: 95px 0 3rem 0;
   margin-top: 6rem;
   background: linear-gradient(45deg, rgba(246, 244, 244, 0.93) 45.76%, rgba(246, 244, 244, .98) 58.56%);  
@@ -57,7 +57,7 @@
   height: 100%;
   justify-content: center;
   margin-bottom: 3rem;
-  clip-path: ellipse(135% 50% at 50% 50%);
+  clip-path: ellipse(145% 50% at 50% 50%);
   padding: 85px 0;
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.68) 45.76%, rgba(255, 255, 255, 0.85) 58.56%);  
 }
@@ -77,7 +77,12 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 0 30px;
+  margin: 0 30px;
+  border-bottom: 1px solid #1b1b1bae;
+}
+
+.portfolioHeader {
+  margin: 0;
 }
 
 .header {
@@ -146,6 +151,10 @@ a.github {
   align-self: last baseline;
 }
 
+a.copyrightGithub {
+  padding-top: 20px;
+}
+
 p.bubbleSubHead {
   color: #1b1b1be2;
   font-family: Hind;
@@ -166,7 +175,7 @@ p.bubbleSubHead {
   flex-direction: column;
 }
 
-p.blurb {
+p.blurb, p.copyright {
   color: #001B08;
   font-family: Inconsolata;
   font-size: 15px;
@@ -178,11 +187,17 @@ p.blurb {
   padding: 0;
 }
 
+p.copyright {
+  align-self: end;
+  padding-top: 20px;
+  line-height: 1.7;
+}
+
 .picture {
   grid-row: 2;
   filter: drop-shadow(-3px 6px 12px rgba(0, 27, 8, 0.45));
   z-index: 9999;
-  padding-top: 20px;
+  padding-top: 25px;
   margin-bottom: 20px;
 }
 
@@ -258,13 +273,13 @@ p.blurb {
   }
 
   .bubbleCard {
-    grid-template-columns: 50vw 50vw;
-    clip-path: ellipse(115% 50% at 50% 50%);
+    grid-template-columns: 40vw 40vw;
+    clip-path: ellipse(125% 50% at 50% 50%);
   }
 
   .bubbleSelect {
     grid-template-columns: 50% 50%;
-    clip-path: ellipse(115% 50% at 50% 50%);
+    clip-path: ellipse(125% 50% at 50% 50%);
   }
 
   .bubbleHeader {
@@ -291,20 +306,12 @@ p.blurb {
 
   .descCol1 {
     grid-column: 1;
-    width: 39vw;
-    justify-self: end;
-    align-items: start;
-    align-self: start;
-    padding: 20px 0 0 15vw;
+    padding: 20px 0 0 0;
   }
 
   .descCol1B {
     grid-column: 2;
     grid-row: 3;
-    width: 31vw;
-    align-items: start;
-    padding-right: 10vw;
-    padding-left: 6vw;
     padding-top: 20px;
   }
 
@@ -313,7 +320,7 @@ p.blurb {
     grid-row: 4;
     width: 80vw;
     padding: 20px 0 0 0;
-    justify-self: center;
+    justify-self: end;
   }
 
   p.bubbleSubHead {
@@ -326,12 +333,12 @@ p.blurb {
 @media all and (min-width: 700px) {
   .projectsWrapper {
     flex: 3 0px;
-    width: 100%;
+    width: calc(100vw - 150px);
     max-width: 100%;
   }
 
   .bubbleCard {
-    grid-template-columns: auto auto;
+    grid-template-columns: 15.5rem 15.5rem;
   }
 
   .bubbleSelect {
@@ -342,7 +349,7 @@ p.blurb {
   .bubbleHeader {
     grid-column: 1 / span 2;
     grid-row: 1;
-    width: 445px;
+    width: 31rem;
     border-bottom: 1px solid #1b1b1bae;
   }
 
@@ -366,8 +373,7 @@ p.blurb {
   }
 
   .descCol1 {
-    width: 222.5px;
-    justify-self: end;
+
   }
 
   .descCol1Select{
@@ -375,10 +381,7 @@ p.blurb {
   }
 
   .descCol1B {
-    grid-column: 2;
-    grid-row: 3;
-    width: 222.5px;
-    transform: translateX(25px);
+    padding: 20px 0 0 15px;
   }
 
   .descCol1BSelect {
@@ -387,13 +390,16 @@ p.blurb {
   }
 
   .descCol2 {
-    width: 445px;
+    width: 31rem;
   }
 
-}
+  a.github {
+    padding: 30px 0 0 0;
+  }
 
-// tablet
-@media all and (min-width: 775px) {
+  a.copyrightGithub {
+    padding: 10px 0 0 0;
+  }
 
 }
 
@@ -551,10 +557,22 @@ p.blurb {
     grid-row: 2 / span 2;
     padding: 20px 0 0 25px;
     align-self: start;
+    height: 100%;
   }
 
   p.blurb {
     padding: 0;
+  }
+
+  p.copyright {
+    padding-top: 0;
+  }
+  
+}
+
+@media all and (min-width: 1270px) {
+  .projectsWrapper {
+    width: calc(100vw - 225px);
   }
 }
 

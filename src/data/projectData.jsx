@@ -52,7 +52,7 @@ const projectData = [
     projectYear: "2025", 
     disciplines: ["Front End Development", "UI Design"], 
     technologies: ["React.js", "CSS", "JavaScript", "Framer Motion", "Figma", "Illustrator", "Photoshop"], 
-    description: "This ever-evolving site is a portfolio of some of my (mostly) completed work: past and present."
+    description: "copyright © 2025 Jennifer Holcomb"
   },
 
 ];

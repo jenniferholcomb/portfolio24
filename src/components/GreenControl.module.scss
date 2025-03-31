@@ -102,6 +102,11 @@
   padding: 0;
 }
 
+.menuItems3 {
+  padding: 31vh 0 0 0;
+  align-self: start;
+}
+
 .menuItems li {
   margin: 0 0 15px 0;
   line-height: 1.25em;
@@ -182,6 +187,11 @@
     align-items: flex-end;
     padding: 0 40px 0 0;
     margin-left: auto;
+  }
+
+  .menuItems3 {
+    padding: 0;
+    align-self: center;
   }
 
   .menuItems li {

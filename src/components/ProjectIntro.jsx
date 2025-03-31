@@ -27,7 +27,7 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
             <img className={onProjectSelect ? styles.imgMaskSelect : styles.imgMaskPort} src={project.imgCard} alt={project.name} />
           }
         </div>
-        <div className={onProjectSelect ? styles.bubbleHeaderSelect : styles.bubbleHeader}>
+        <div className={`${onProjectSelect ? styles.bubbleHeaderSelect : styles.bubbleHeader} ${project.id === 4 ? styles.portfolioHeader : null}`}>
           <h2 className={styles.header}>{project.projectName}</h2>
           <div className={styles.arrowContainer}>
             {project.externalLink ?
@@ -74,14 +74,18 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
           </p>
         </div>
         <div className={styles.descCol2}>
-          <p className={styles.blurb}>{project.description}</p>
+          { project.id === 4 ?
+            <p className={styles.copyright}>Site developed and designed by me.<br/>copyright © 2025 Jennifer Holcomb</p>
+          :            
+            <p className={styles.blurb}>{project.description}</p>
+          }
           { (project.externalLink || project.projectName === "Personal Website") && (
             <a 
               key={project.id}
               href={project.githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.github}
+              className={`${styles.github} ${project.id === 4 ? styles.copyrightGithub : null}`}
             >
               Github
             </a>
