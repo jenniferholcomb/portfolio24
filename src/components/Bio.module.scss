@@ -1,14 +1,14 @@
 .bioContainer {
-  flex: 1.5 0 0;
+  flex: .8 0 0;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  margin-top: 3rem;
 }
 
 .bioStyle {
   align-self: flex-end;
-  min-width: 215px;
-  max-width: 30rem;
+  width: 86vw;
   gap: 10px;
   color: #041328;
   font-family: Inconsolata;
@@ -20,28 +20,48 @@
   margin: 0;
 }
 
+.bioImgWrap {
+  margin: 0;
+  align-self: center;
+  padding-top: 2rem;
+}
+
 .bioImg {
   min-width: 0;
   width: 155px;
   height: 220px;
   padding: 0;
+  pointer-events: all;
 }
 
+@media all and (min-width: 500px) {
+  .bioStyle {
+    align-self: flex-end;
+    width: 80vw;
+  }
+}
 
 // mobile landscape
 @media all and (min-width: 700px) {
+  .bioContainer {
+    flex: 1.5 0 0;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+
   .bioStyle {
     color: #ffffff;
     font-weight: 300;
     padding: 3.5vh 0 0 34px;
     margin: 0 34px 1rem 0;
+    min-width: 215px;
     max-width: 100%;
   }
 
   .bioImgWrap {
     margin: 0;
-    // align-self: center;
-    padding-left: 60px;
+    align-self: center;
+    // padding-left: 60px;
   }
 }
 

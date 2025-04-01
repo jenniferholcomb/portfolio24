@@ -11,11 +11,7 @@ function About() {
   return (
     <>
       <div className={styles.aboutWrapper}>
-        {
-          isMobile ?
-            <Header />
-          : null
-        }
+        <h1 className={styles.pageHeader}>ABOUT</h1>
         <Bio />
       </div>
     </>

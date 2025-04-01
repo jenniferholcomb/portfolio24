@@ -121,7 +121,15 @@
   letter-spacing: 2.4px;
   text-transform: capitalize;
   text-decoration: none;
+  // pointer-events: all;
+}
+
+.menuPointerEvents li a {
   pointer-events: all;
+}
+
+.menuPointerEventsOff li a {
+  pointer-events: none;
 }
 
 .projectPopup {
@@ -227,6 +235,12 @@
     padding: 50px 20px;
   }
 
+  .navContainer {
+    position: fixed;
+    height: 100vh;
+    overflow-y: hidden;
+  }
+
   .textWrap {
     display: flex;
     flex-direction: column;
@@ -238,6 +252,11 @@
 
   .noTextWrap {
     display: none;
+  }
+
+  #menuActive {
+    width: 150px;
+    padding-top: 9.5rem;
   }
 
   .menuItems {
@@ -294,9 +313,23 @@
     width: 225px;
     padding: 50px 20px;
   }
+
+  .navContainer {
+    justify-content: start;
+  }
+
+  #menuActive {
+    width: 225px;
+  }
+
+  .menuItemsProject {
+    padding-left: 58px;
+  }
 }
 
 #menuPointerEvents li a {
   pointer-events: all;
 }
+
+
 

@@ -20,6 +20,8 @@
   align-items: flex-start;
   width: 100%;
   background: #E8ECEA;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .pageHeader {
@@ -39,14 +41,12 @@
 }
 
 .resumeContainer {
-  height: 100%;
   width: 100%;
   margin: 6rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  overflow-y: scroll;
 }
 
 .resumeContainer img {
@@ -72,6 +72,7 @@
 
 // tablet
 @media all and (min-width: 700px) {
+  
   .resumeContainer img {
     width: 75vw;
   }

@@ -9,7 +9,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-
+  grid-column: 1;
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -91,13 +91,12 @@
 
 //// Banner ////
 
-.topBar {
-  display: flex;
-  align-items: end;
-  grid-column: 1 / span 2;
-  width: 100vw;
-  // max-height: 50%;
-}
+// .topBar {
+//   display: flex;
+//   align-items: end;
+//   grid-column: 1 / span 2;
+//   width: 100vw;
+// }
 
 .logo {
   display: none;
@@ -107,15 +106,19 @@
   max-width: 100%;
 }
 
-.logoArt {
+.logo {
   display: none;
 }
 
 .banner {
   display: flex;
-  justify-content: end;
-  align-self: flex-start;
   overflow-x: hidden;
+  background-image: url('./../img/bannerImageLogo.webp');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 15rem;
+  width: 100%;
   z-index: 999;
 }
 
@@ -148,6 +151,7 @@
 
 .introLine {
   max-width: 100%;
+  width: 100vw;
 }
 
 .infoBlurb {
@@ -160,6 +164,10 @@
   line-height: normal;
   letter-spacing: 1.5px;
   margin: 0;
+}
+
+.infoLine {
+  border-bottom: 1px solid #1b1b1bae;
 }
 
 #summary {
@@ -196,6 +204,7 @@
   z-index: 9999;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid #1b1b1bae;
 }
 
 .problemHeader:after {
@@ -362,7 +371,7 @@
 .usaInfo {
   display: grid;
   grid-template-columns: 1fr;
-
+  border-bottom: 1px solid #1b1b1bae;
 }
 
 .usaHeader {
@@ -494,6 +503,7 @@
   max-width: 100%;
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid #1b1b1bae;
 }
 
 #desDetails {
@@ -678,12 +688,20 @@
   padding: 50px 5% 12px 5%;
 }
 
+.addInfoLine {
+  grid-column: 1 / span 3;
+  width: 100vw;
+  height: auto;
+  border-bottom: 1px solid #1b1b1bae;
+}
+
 .projectCardContainer {
   grid-row: 3;
   grid-column: 1 / span 3;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding-top: 30px;
   gap: 3rem;
 }
@@ -720,6 +738,7 @@
 /////  Bubbles  /////
 
 .bubbles {
+  grid-column: 1;
   position: relative;
   min-height: 100rem;
 }
@@ -754,24 +773,24 @@
 
 @media all and (min-width: 435px) {
 
+  .banner {
+    justify-content: start;
+    overflow-x: hidden;
+    background-image: url('./../img/bannerImageWide.webp');
+    background-position: right;
+    background-size: cover;
+    height: 10rem;
+    width: 100%;
+    z-index: 999;
+  }
+
   .logo {
     display: unset;
-    position: absolute;
-    width: 8rem;
-    // width: 200px;
+    width: 9rem;
     align-self: center;
-    padding: 5px 0 0 50px;
+    justify-items: start;
+    padding: 5px 0 0 11vw;
     z-index: 9999;
-  }
-
-  .mobileLogoArt {
-    display: none;
-  }
-
-  .logoArt {
-    display: unset;
-    max-width: 75rem;
-    // overflow-x: hidden;
   }
 }
 
@@ -782,7 +801,7 @@
     grid-auto-rows: auto;
     grid-auto-flow: row;
     width: 100vw;
-    min-height: 200px;
+    min-height: 155px;
   }
   
   .oneInfo {
@@ -842,33 +861,18 @@
   
   //// Banner ////
   
-  .topBar {
-    display: flex;
-    align-items: end;
-    grid-column: 1 / span 2;
-    width: 100vw;
-    // max-height: 50%;
-  }
-  
-  .logo {
-    position: absolute;
-    width: 8rem;
-    // width: 200px;
-    align-self: center;
-    padding: 5px 0 0 50px;
-    z-index: 9999;
-  }
-  
   .banner {
+    grid-column: 1 / span 2;
     display: flex;
-    justify-content: end;
+    justify-content: start;
     align-self: flex-start;
     overflow-x: hidden;
     z-index: 999;
   }
 
-  .logoArt {
-    max-width: 85rem;
+  .logo {
+    align-self: center;
+    z-index: 9999;
   }
   
   //// Intro ////
@@ -876,13 +880,14 @@
   .sectionIntro {
     display: flex;
     flex-direction: column;
+    margin-right: 2vw;
     z-index: 999;
   }
   
   .info {
     display: flex;
     flex-direction: column;
-    padding: 30px 5% 0 10%;
+    padding: 30px 0 0 10%;
   }
   
   .infoYear {
@@ -899,8 +904,7 @@
   }
   
   .introLine {
-    padding-right: 10%;
-    max-width: 85%;
+    max-width: 100%;
   }
   
   .infoBlurb {
@@ -1237,14 +1241,23 @@
     max-width: 100%;
     padding: 40px 0 12px 5%;
   }
+
+  .projectCardContainer {
+    flex-direction: row;
+  }
 }
 
 @media all and (min-width: 840px) {
-
-  .logo {
-    width: 15%;
+  .pantryProWrapper {
+    grid-column: 1 / span 2;
   }
 
+  .bubbles {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media all and (min-width: 840px) {
   .exShotInv {
     gap: 4%;
   }
@@ -1264,17 +1277,18 @@
 }
 
 @media all and (min-width: 1024px) {
-
-  .logo {
-    max-width: 175px;
+  .banner {
+    grid-column: 1 / span 3;
+    height: 13rem;
   }
 
-  .logoArt {
-    max-width: 170%;
+  .logo {
+    width: 12rem;
   }
 
   .pantryProWrapper {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    min-height: 200px;
   }
 
   .sectionIntro {
@@ -1291,10 +1305,6 @@
 
   .columnOneParagraph {
     padding: 0 0 0 20%;
-  }
-
-  .topBar {
-    grid-column: 1 / span 3;
   }
 
   .info {
@@ -1359,7 +1369,15 @@
   }
 
   .twoSectionHide {
-    display: unset;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid #1b1b1bae;
+  }
+
+  .twoSectionHide svg {
+    max-width: 100%;
+    width: 100%;
   }
 
   .usResBlurb, .usResBlurbB {

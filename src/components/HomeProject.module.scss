@@ -150,8 +150,7 @@ h4.noStyle {
 
 @media all and (min-width: 700px) {
   .homeWrapper {
-    // min-height: 100%;
-    width: 34vw;
+    width: auto;
   }
 
   .homeProjectHeader {
@@ -179,12 +178,15 @@ h4.noStyle {
 
   .picture {
     margin-right: 0;
+    width: 160px;
+    min-height: 160px;
   }
 }
 
-@media all and (min-width: 775px) {
-  .homeWrapper {
-    width: calc(100vw - 511px);
+@media all and (min-width: 750px) {
+  .picture {
+    width: 195px;
+    min-height: 195px;
   }
 }
 

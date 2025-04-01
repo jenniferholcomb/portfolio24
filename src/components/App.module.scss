@@ -4,7 +4,7 @@ body {
   overscroll-behavior-y: none;
 }
 
-.bodyWrapper {
+.bodyWrapper, .bodyWrapperHome, .projectWrapper {
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box;    
   box-sizing: border-box;  
@@ -18,16 +18,27 @@ body {
 
 // mobile landscape
 @media all and (min-width: 700px) {
-  .bodyWrapper {
+  .bodyWrapper, .bodyWrapperHome {
     display: grid;
-    grid-template-columns: 150px 1fr;
     overflow-y: scroll;
+  }
+
+  .bodyWrapper {
+    grid-template-columns: 150px 1fr;
+  }
+
+  .bodyWrapperHome {
+    grid-template-columns: 512px 1fr;
+  }
+
+  .projectWrapper {
+    // grid-template-columns: 1fr 1fr;
   }
 }
 
 // desktop
 @media all and (min-width: 1024px) {
-  .bodyWrapper {
+  .bodyWrapper, .bodyWrapperHome {
     grid-template-columns: 1fr 1fr;
   }
 }

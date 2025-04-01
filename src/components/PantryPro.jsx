@@ -50,20 +50,8 @@ function PantryPro() {
   return (
     <>
       <div className={styles.pantryProWrapper}>
-        {/* {
-          isMobile ?
-            <Header />
-            : null
-        } */}
-        <div className={styles.topBar}>
-          <div className={styles.logo}>
-            <img loading="lazy" src={invLogo} alt="app logo" />
-          </div>
-          <div className={styles.banner}>
-            <img className={styles.mobileLogoArt} loading="lazy" src={mobileBanner} alt="top banner, graphic with food" />
-            <img className={styles.logoArt} loading="lazy" src={bannerTop} alt="top banner, graphic with food" />
-          </div>
-
+        <div className={styles.banner}>
+          <img className={styles.logo} loading="lazy" src={invLogo} alt="app logo" />
         </div>
         <div className={styles.sectionIntro}>
           <div className={styles.info}>
@@ -75,10 +63,7 @@ function PantryPro() {
               2024
             </h3>
           </div>
-          <p className={`${styles.infoBlurb} ${styles.info}`} id={styles.summary}>Improving inventory and invoice management for restaurant owners and operators.</p>
-          <svg className={`${styles.line} ${styles.introLine}`} xmlns="http://www.w3.org/2000/svg" width="532" height="2" viewBox="0 0 532 2" fill="none">
-            <path d="M531 2C531.552 2 532 1.55228 532 1C532 0.447715 531.552 0 531 0V2ZM0 2H531V0H0V2Z" fill="#001B08" />
-          </svg>
+          <p className={`${styles.infoBlurb} ${styles.info} ${styles.infoLine}`} id={styles.summary}>Improving inventory and invoice management for restaurant owners and operators.</p>
           <div className={styles.info}>
             <p className={styles.infoBlurb}>Two challenges in the realm of restaurant inventory management &mdash; the slow process of entering new invoice data, and the tedious job of counting goods. This app is conceptualized to give the user power to upload invoices using AI technology, and a design to prevent task fatigue while counting items. In addition to being a streamlined application for managing and categorizing inventory.</p>
           </div>
@@ -95,9 +80,6 @@ function PantryPro() {
             <h2 className={`${styles.headersInv} ${styles.problemHeader}`} id={styles.headers}></h2>
             {/* <h2 className={`${styles.headersInv}`} id={styles.headers}>The Problem</h2> */}
           </div>
-          <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
-            <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
-          </svg>
         </div>
 
         <div className={styles.prob1}>
@@ -114,9 +96,6 @@ function PantryPro() {
           <div className={styles.useResInfo}>
             <h2 className={styles.headersInv} id={styles.useResDetails}>User Research</h2>
           </div>
-          <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
-            <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
-          </svg>
         </div>
 
         <Slides slideIndex={carouselIndex} handleCircleClick={handleCircleClick} />
@@ -124,9 +103,6 @@ function PantryPro() {
         <div className={styles.twoSection}>
           <div className={styles.twoSectionHide}>
             <h2 className={styles.headersInv} id={styles.userResHead}>User Research</h2>
-            <svg xmlns="http://www.w3.org/2000/svg" width="677" height="2" viewBox="0 0 677 2" fill="none">
-              <path d="M697 2.00006C697.552 2.00006 698 1.55235 698 1.00006C698 0.447776 697.552 6.0982e-05 697 6.09337e-05L697 2.00006ZM-8.74228e-08 2L697 2.00006L697 6.09337e-05L8.74228e-08 0L-8.74228e-08 2Z" fill="#001B08" />
-            </svg>
           </div>
           <p className={styles.usResBlurb} id={styles.blurb1}>The user for this project consists of restaurant, and food truck, owners and operators. They require an app that simplifies how data updates are made when receiving inventory, as well as managing accurate counts of inventory on hand. Additionally, desire for an interface that is easy to navigate, and streamlines product information.</p>
           <p className={styles.usResBlurbB} id={styles.blurb1}>A monthly inventory count helper, ability to upload invoices from photo or pdf, easy access to past reports, auto updates to product quantities, and auto reminders for products needing to be replenished &mdash; all features recommended for this app to be successful.</p>
@@ -137,9 +113,6 @@ function PantryPro() {
             <div className={styles.numberInv}>02.</div>
             <h2 className={styles.headersInv} id={styles.headers}>Solution</h2>
           </div>
-          <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
-            <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
-          </svg>
         </div>
         <div className={styles.siteSection}>
           <div className={styles.site}>
@@ -155,12 +128,6 @@ function PantryPro() {
             <div className={styles.usaInfo}>
               <h2 className={`${styles.headersInv} ${styles.usaHeader}`} >Usability Study</h2>
             </div>
-            <svg className={`${styles.line} ${styles.usaLineA}`} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
-              <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
-            </svg>
-            <svg className={`${styles.line} ${styles.usaLineB}`} xmlns="http://www.w3.org/2000/svg" width="532" height="2" viewBox="0 0 532 2" fill="none">
-              <path d="M531 2C531.552 2 532 1.55228 532 1C532 0.447715 531.552 0 531 0V2ZM0 2H531V0H0V2Z" fill="#001B08" />
-            </svg>
             <div className={styles.usaPContainer}>
               <p className={styles.siteUSA} id={styles.blurb1}>Original ideation focused on a broader set of users; including employees in addition to managers. With a restaurant&ndash;wide user base, a message board containing shop to&ndash;do&apos;s and reminders was designed into the landing page. It was also conceived a POS system would be incorporated into the interface &mdash; a feature necessary for auto&ndash;updating product quantities. As these both would be beneficial, it was decided collectively these features are beyond the current scope of this project. <span className={styles.siteUSSpanA}>Therefore, the user was reevaluated and focused solely on individuals who manage inventory, the owners and operators.</span></p>
               <p className={styles.siteUSB} id={`${styles.usaBlurbWide}`}><span className={styles.siteUSSpanB}>Therefore, the user was reevaluated and focused solely on individuals who manage inventory, the owners and operators.<br /><br /></span>Conducting new research with a singular user, interface flow took precedence.  Landing page would now prioritize color coded call-to-action buttons, in addition to drop down menus for quick access to all inventory and recent invoice uploads. A shopping list feature was also added to help with product ordering.</p>
@@ -186,9 +153,6 @@ function PantryPro() {
             <h2 className={styles.headersInv} id={styles.desDetails}>AI Invoice Reader Details</h2>
             <h2 className={styles.headersInv} id={styles.desKitB}>UI Kit</h2>            
           </div>
-          <svg className={`${styles.line} ${styles.sec5Line}`} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
-            <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
-          </svg>
         </div>
         <div className={styles.section5}>
           <div className={styles.invImgSec}>
@@ -208,9 +172,6 @@ function PantryPro() {
         <div className={styles.secUiKit}>
           <div className={styles.kitHeaderContainer}>
             <h2 className={styles.headersInv} id={styles.desKit}>UI Kit</h2>
-            <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
-              <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
-            </svg>
           </div>
           <div className={styles.uiKitContainer}>
             <img loading="lazy" className={styles.uiImg} id={styles.kit1} src={kitImg1} alt="screenshot of UI kit" />
@@ -231,18 +192,13 @@ function PantryPro() {
             <div className={styles.numberInv}>03.</div>
             <h2 className={styles.headersInv} id={styles.headers}>Conclusion</h2>
           </div>
-          <svg className={styles.line} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
-            <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
-          </svg>
         </div>
         <p id={styles.blurb1} className={styles.columnOneParagraph}>What has so far been ideated for this project is just a shell of what an inventory management application could encompass.<br /><br />Further exploration might include developing a POS system that automates inventory quantity counts based on items sold, or including menu prep lists that predict what goods need to be ordered. Highlighting products that have increased in price, while simultaneously recommending menu items to push that cost less to make.</p>
         <p id={styles.blurb1} className={styles.columnTwoParagraph}>A fully automated inventory management system that would benefit restaurant and food cart owners, saving them both time and money.<br /><br />Designing for the user, researching what tools can enhance their day to day, features they want or ones they don&apos;t yet realize, is my constant source for inspiring new ideas.</p>
 
         <div className={styles.addInfo}>
           <h2 className={`${styles.addInfoColContainer} ${styles.headersInv}`} id={styles.addDetails}>Additional Projects</h2>
-          <svg className={styles.line} id={styles.lineDes} xmlns="http://www.w3.org/2000/svg" width="1728" height="2" viewBox="0 0 1728 2" fill="none">
-            <path d="M1743 2C1743.55 2 1744 1.55228 1744 1C1744 0.447715 1743.55 0 1743 0V2ZM-18 2H1743V0H-18V2Z" fill="#001B08" />
-          </svg>
+          <div className={styles.addInfoLine}></div>
           <div className={styles.projectCardContainer}>
             {projects.map((project, index) => (
               project.externalLink && 

@@ -22,9 +22,9 @@ function Bio() {
   return (
     <>
       <div className={styles.bioContainer}>
-        <p className={styles.bioStyle}>I&apos;m a problem solver, a builder, a thinker, and a maker. All attributes that have carried me through many creative endeavors &mdash; graphic and logo design, building brand identities, accessory design and accessory pattern engineering, and now UX/UI design and front end web development. I look for problems in our communities, and innovate creative solutions. I focus on a user, listen to their needs, and design around their preferences. I help others by developing a product that improves or enhances their day. 
+        <p className={styles.bioStyle}>I&apos;m a problem solver, a builder, a thinker, and a maker. All attributes that have carried me through many creative endeavors &mdash; graphic and logo design, building brand identities, accessory design and accessory pattern engineering, and now front end web development and UX/UI design. My ___ ethos - I look for problems in our communities, and innovate creative solutions. I focus on a user, listen to their needs, and design around their preferences. I help others by developing a product that improves or enhances their day. 
         <br /><br />
-        If not at home in Portland, you&apos;ll find me at the coast. All that the ocean offers; clamming, crabbing, sunsets, beach fires, seafood, sand, and windswept hair. I'm also partial to mountain lake swims, hiking, foraging, cooking, gardening, and of course hanging with my family and dogs.
+        If not at home in Portland, you&apos;ll find me at the coast. All that the ocean offers; clamming, crabbing, sunsets, beach fires, seafood, sand, and windswept hair. I'm also a fan of hiking, foraging, cooking, gardening, mountain lake swims, and hanging with my dogs and family.
         </p>
       </div>
       

@@ -55,7 +55,7 @@ const ovalVariants = {
 };
 
 const OvalShape = ({ flipPhoto }) => {
-  const [ isMobile, isDesktop, isWdDesktop, isTablet ] = useResize();
+  const [ isMobile, isDesktop, isWdDesktop, isTablet, isMdDesktop ] = useResize();
 
   const [action, setAction] = useState(false);
 
@@ -124,7 +124,7 @@ const OvalShape = ({ flipPhoto }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 3, ease: [0, 0.71, 0.2, 1.01] }}
       >
-        <Line points={points} color={`${isTablet || isDesktop ? "#e5ddcc" : "#78A0DB"}`} lineWidth={2} linecap="square" /> 
+        <Line points={points} color={`${!isMobile ? "#e5ddcc" : "#ADBEB2"}`} lineWidth={2} linecap="square" /> 
         <motion.mesh
           variants={ovalVariants}
           scale={1.1}

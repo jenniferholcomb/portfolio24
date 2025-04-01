@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ExternalProjectProvider } from "./ExternalProjectContext";
 
@@ -14,9 +14,15 @@ import styles from "./App.module.scss";
 
 function App(){
   const [externalProject, setExternalProject] = useState(null);
+  const [isHome, setIsHome] = useState(true);
+  const [isProjectScreen, setIsProjectScreen] = useState(false);
 
   const onExternalProjectClick = (id) => {
     setExternalProject(id);
+  };
+
+  const onHomeClick = (home) => {
+    setIsHome(home);
   };
 
   return ( 
@@ -27,8 +33,11 @@ function App(){
       }}
     >
       <ExternalProjectProvider onExternalProjectClick={onExternalProjectClick}>
-        <div className={styles.bodyWrapper}>
-          <GreenControl onExternalProjectClick={externalProject} />
+        <div className={isHome ? styles.bodyWrapperHome : isProjectScreen ? styles.projectWrapper : styles.bodyWrapper}>
+          <GreenControl onExternalProjectClick={externalProject} 
+                        onHomeClick={onHomeClick} 
+                        isProjectScreen={isProjectScreen}
+                        setIsProjectScreen={setIsProjectScreen} />
           <Routes>
             <Route exact path="/" Component={Home} />
             <Route exact path="/projects" Component={Projects} />

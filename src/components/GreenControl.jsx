@@ -16,11 +16,11 @@ import menuIcon from "/img/menuIcon.svg";
 import menuIconProj from "/img/menuIconProject.svg";
 import xmarkIcon from "/img/closeIcon.svg";
 
-function GreenControl({ onExternalProjectClick }) {
+function GreenControl({ onExternalProjectClick, onHomeClick, isProjectScreen, setIsProjectScreen }) {
   const location = useLocation();
   const page = location.pathname;
   const [isMobile, isDesktop, isWdDesktop, isTablet, isMdDesktop] = useResize();
-  const [isProjectScreen, setIsProjectScreen] = useState(false);
+  // const [isProjectScreen, setIsProjectScreen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [isAbout, setIsAbout] = useState(false);
   const [isHome, setIsHome] = useState(null);
@@ -31,6 +31,7 @@ function GreenControl({ onExternalProjectClick }) {
     (isMobile || isProjectScreen) ? showMenu === true ? setShowMenu(false) : isHome ? null : setShowMenu(true) : null;
 
     setIsHome(false);
+    onHomeClick(false);
   };
 
   const handleMenuClick = () => {
@@ -42,6 +43,8 @@ function GreenControl({ onExternalProjectClick }) {
     isAbout ? setIsAbout(false) : null;
     isProjectScreen ? setIsProjectScreen(false) : null;
     isMobile || isProjectScreen ? setShowMenu(false): null;
+
+    onHomeClick(true);
   }
 
   const handleProjectClick = (id) => {
@@ -51,6 +54,12 @@ function GreenControl({ onExternalProjectClick }) {
   const handleClosingProjectIntro = () => {
     setIsProjectSelected(null);
   }
+
+  const onAboutSwitch = () => {
+    setIsHome(true);
+    setIsAbout(false);
+    onHomeClick(true);
+  };
 
   useEffect(() => {
     page === '/' ? setIsHome(true) : setIsHome(false);
@@ -66,16 +75,21 @@ function GreenControl({ onExternalProjectClick }) {
     }
   }, [onExternalProjectClick]);
 
-  // window.onpopstate = () => {
-  //   page !== '/projects' ? setIsHome(true) : null;
-  // }
+  useEffect(() => {
+    if (isAbout && !isMobile) {
+      onAboutSwitch();
+    }
+  }, [isMobile, isAbout])
+
+  window.onpopstate = () => {
+    page !== '/projects' ? setIsHome(true) : null;
+  }
 
   return (
     <>
-      {/* <motion.div className={`${isProjectScreen ? styles.greenCollapse : styles.greenWrapper} ${isHome || isAbout ? styles.homeWrapper : null}`} */}
       <motion.div 
         className={`${
-                      showMenu && isProjectScreen ? styles.greenWrapper : 
+                      showMenu && isProjectScreen ? (isMobile ? styles.greenCollapse : styles.greenProjectWrapper) :
                       isProjectScreen || (!isHome && isMobile) ? styles.greenCollapse : 
                       isHome ? styles.greenWrapper : styles.greenWrapperTab
                     } 
@@ -86,11 +100,9 @@ function GreenControl({ onExternalProjectClick }) {
         transition={{ duration: 4 }} 
       >
         {
-          isAbout ?
-            isDesktop ?
-            <Navigate to={"/"} /> 
-            : <Navigate to={"/about"} />
-          : null
+          (isAbout && !isMobile) && (
+            <Navigate to={"/"} />
+          )
         }
         {
           (isProjectScreen && projectSelected === null) || (isMobile && !isHome) ? 
@@ -106,16 +118,22 @@ function GreenControl({ onExternalProjectClick }) {
                   isMdDesktop={isMdDesktop} 
                   isWdDesktop={isWdDesktop} /> 
         }
-        {/* <div className={isProjectScreen || isMobile ? styles.navContainer : styles.textWrap} id={showMenu ? styles.menuActive : null} > */}
 
-        <div className={isMobile && !isHome ? styles.navContainer : isProjectScreen && showMenu ? styles.textWrap : isProjectScreen ? styles.noTextWrap : styles.textWrap} id={showMenu ? styles.menuActive : null} >
+        <div className={(isMobile && !isHome) || isProjectScreen ? styles.navContainer : styles.textWrap} id={showMenu ? styles.menuActive : null} >
           <ul className={`
                 ${styles.menuItems} 
                 ${
-                  (isHome || isAbout) ? styles.menuItems2 : 
-                  styles.menuItems3
-                }`} 
-              // id={showMenu ? styles.menuPointerEvents : null} 
+                  isHome ? 
+                  styles.menuItems2 : styles.menuItems3
+                }
+                ${
+                  isHome || (showMenu && isMobile) || !isMobile ?
+                  styles.menuPointerEvents : styles.menuPointerEventsOff
+                }
+                ${
+                  isProjectScreen ? styles.menuItemsProject : null
+                }
+              `} 
           >
             { showMenu && (
               <li>        
