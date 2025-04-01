@@ -18,20 +18,31 @@ function VideoPlay(props) {
   const [isMobile, isDesktop] = useResize();
 
   const setInView = (inView, entry) => {
+    // if (inView) {
+    //   if (vidPlaying === 1){
+    //     videoRef.current.play();
+    //   } else {
+    //     videoRef2.current.play();
+    //   }     
+    // } else {
+    //   if (videoRef.current.play || videoRef2.current.play) {
+    //     if (vidPlaying === 1){
+    //       videoRef.current.pause();
+    //     } else {
+    //       videoRef2.current.pause();
+    //     } 
+    //   }
+    // }
+
     if (inView) {
-      if (vidPlaying === 1){
-        videoRef.current.play();
+      if (vidPlaying === 1) {
+        videoRef.current?.play();
       } else {
-        videoRef2.current.play();
+        videoRef2.current?.play();
       }     
     } else {
-      if (videoRef.current.play || videoRef2.current.play) {
-        if (vidPlaying === 1){
-          videoRef.current.pause();
-        } else {
-          videoRef2.current.pause();
-        } 
-      }
+      videoRef.current?.pause();
+      videoRef2.current?.pause();
     }
   };
 
@@ -67,8 +78,8 @@ function VideoPlay(props) {
                 width={isDesktop ? "300rem" : (isMobile ? "240rem" : "275rem")} 
                 height="" 
                 playsInline 
-                onEnded={() => handleVideoPlaying(2)}
                 muted 
+                onEnded={() => handleVideoPlaying(2)}
                 preload="auto" 
                 ref={videoRef}
               ></video>
@@ -77,9 +88,8 @@ function VideoPlay(props) {
                 width={isDesktop ? "300rem" : (isMobile ? "240rem" : "275rem")} 
                 height="" 
                 playsInline 
-                
                 muted 
-                preload="auto" 
+                preload="metadata" 
                 ref={videoRef2}
                 onEnded={() => handleVideoPlaying(1)}
               ></video>

@@ -2,13 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 
 import { useExternalProject } from "./ExternalProjectContext";
 import useResize from "./hooks/useResize";
-import Header from "./Header";
 import Slides from "./Slides";
 import VideoPlay from "./VideoPlay";
 import styles from "./PantryPro.module.scss";
 import invLogo from "./../img/ppLogo.svg"
-import bannerTop from "./../img/bannerImageWide.webp";
-import mobileBanner from "./../img/bannerImageLogo.webp";
 import ex1 from "./../img/landPg.webp";
 import ex2 from "./../img/goods1.webp";
 import ex3 from "./../img/InvEx3.webp";
@@ -21,12 +18,8 @@ import hm6 from "./../img/redesign2.webp";
 import invoiceLnd from "./../img/InvoiceEx.webp";
 import invoiceDet from "./../img/InvoiceEx2.webp";
 import kitImg1 from "./../img/desKit1.webp";
-import kitImg2 from "./../img/desKit2.webp";
 import kitImg3 from "./../img/desKit3.webp";
-import kitImg4 from "./../img/desKit4.webp";
-import kitImg4A from "./../img/desKit4A.webp";
 import kitImg4B from "./../img/desKit4B.webp";
-import kitImg5 from "./../img/desKit5.webp";
 import kitImg5A from "./../img/desKit5A.webp";
 import kitImg5B from "./../img/desKit5B.webp";
 import kitImg6 from "./../img/desKit6.webp";
@@ -78,7 +71,6 @@ function PantryPro() {
           <div className={styles.oneInfo}>
             <div className={styles.numberInv}>01.</div>
             <h2 className={`${styles.headersInv} ${styles.problemHeader}`} id={styles.headers}></h2>
-            {/* <h2 className={`${styles.headersInv}`} id={styles.headers}>The Problem</h2> */}
           </div>
         </div>
 
@@ -209,7 +201,6 @@ function PantryPro() {
           </div>
         </div>
       </div>
-
 
       <div className={styles.bubbles}>
         <div className={styles.bubble1}></div>

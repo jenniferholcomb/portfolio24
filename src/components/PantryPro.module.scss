@@ -91,35 +91,20 @@
 
 //// Banner ////
 
-// .topBar {
-//   display: flex;
-//   align-items: end;
-//   grid-column: 1 / span 2;
-//   width: 100vw;
-// }
-
-.logo {
-  display: none;
-}
-
-.mobileLogoArt {
-  max-width: 100%;
-}
-
-.logo {
-  display: none;
-}
-
 .banner {
   display: flex;
   overflow-x: hidden;
   background-image: url('./../img/bannerImageLogo.webp');
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 15rem;
+  height: 14rem;
   width: 100%;
   z-index: 999;
+}
+
+.logo {
+  display: none;
 }
 
 //// Intro ////
@@ -738,9 +723,7 @@
 /////  Bubbles  /////
 
 .bubbles {
-  grid-column: 1;
-  position: relative;
-  min-height: 100rem;
+  display: none;
 }
 
 .bubble1 {
@@ -1244,6 +1227,12 @@
 
   .projectCardContainer {
     flex-direction: row;
+  }
+
+  .bubbles {
+    grid-column: 1;
+    position: relative;
+    min-height: 100rem;
   }
 }
 
