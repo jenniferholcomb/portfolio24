@@ -47,7 +47,7 @@ const projectData = [
     id: 4,
     externalLink: false,
     githubLink: "https://github.com/jenniferholcomb/portfolio24",
-    imgCard: "/img/terraBean_previewIMG.webp", 
+    imgCard: "/img/portfolio_previewIMG.webp", 
     projectSubhead: ["portfolio"], 
     projectYear: "2025", 
     disciplines: ["Front End Development", "UI Design"], 

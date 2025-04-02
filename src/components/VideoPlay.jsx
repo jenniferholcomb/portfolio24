@@ -11,42 +11,29 @@ function VideoPlay(props) {
   const videoRef = useRef(null);
   const videoRef2 = useRef(null);
   const videoRef3 = useRef(null);
-  const [ vidPlaying, setVidPlaying ] = useState(1);
+  const [vidPlaying, setVidPlaying] = useState(1);
   const { ref, inView } = useInView({
     threshold: 0.2,
   });
   const [isMobile, isDesktop] = useResize();
 
   const setInView = (inView, entry) => {
-    // if (inView) {
-    //   if (vidPlaying === 1){
-    //     videoRef.current.play();
-    //   } else {
-    //     videoRef2.current.play();
-    //   }     
-    // } else {
-    //   if (videoRef.current.play || videoRef2.current.play) {
-    //     if (vidPlaying === 1){
-    //       videoRef.current.pause();
-    //     } else {
-    //       videoRef2.current.pause();
-    //     } 
-    //   }
-    // }
-
     if (inView) {
-      if (vidPlaying === 1) {
-        videoRef.current?.play();
+      if (isMobile) {
+        videoRef.current.play();
+        videoRef2.current.play();
+      } else if (vidPlaying === 1) {
+        videoRef.current.play();
       } else {
-        videoRef2.current?.play();
+        videoRef2.current.play();
       }     
     } else {
-      videoRef.current?.pause();
-      videoRef2.current?.pause();
+      videoRef.current.pause();
+      videoRef2.current.pause();
     }
   };
 
-  const setInViewInvoice = (inView, entry) => {
+  const setInViewInvoice = (inView) => {
     if (inView) {
       videoRef3.current.play();
     } else {
@@ -71,33 +58,39 @@ function VideoPlay(props) {
       {
         video2 !== undefined ?
           <div className={styles.sectionWrapperVideo} ref={ref}>
-            <InView onChange={setInView} threshold={0.8} key={1}>
-              <video 
-                src={video1} 
-                className={styles.vid}
-                width={isDesktop ? "300rem" : (isMobile ? "240rem" : "275rem")} 
-                height="" 
-                playsInline 
-                muted 
-                onEnded={() => handleVideoPlaying(2)}
-                preload="auto" 
-                ref={videoRef}
-              ></video>
-              <video 
-                src={video2} 
-                width={isDesktop ? "300rem" : (isMobile ? "240rem" : "275rem")} 
-                height="" 
-                playsInline 
-                muted 
-                preload="metadata" 
-                ref={videoRef2}
-                onEnded={() => handleVideoPlaying(1)}
-              ></video>
-            </InView>
+            <>
+              <InView onChange={setInView} threshold={0.8} key={1}>
+                <video 
+                  src={video1} 
+                  className={styles.vid}
+                  width={isDesktop ? "300rem" : (isMobile ? "240rem" : "275rem")} 
+                  height="" 
+                  playsInline 
+                  muted 
+                  preload="auto" 
+                  ref={videoRef}
+                  onEnded={() => handleVideoPlaying(2)}
+                ></video>
+              </InView>
+              <InView onChange={setInView} threshold={0.8} key={2}>
+                <video 
+                  src={video2} 
+                  className={styles.vid}
+                  width={isDesktop ? "300rem" : (isMobile ? "240rem" : "275rem")} 
+                  height="" 
+                  playsInline 
+                  muted 
+                  preload="auto" 
+                  ref={videoRef2}
+                  onEnded={() => handleVideoPlaying(1)}
+                ></video>
+              </InView>
+            </>
+
           </div>
         :
           <div className={styles.invVidContainer} ref={ref}>
-            <InView onChange={setInViewInvoice} threshold={0.8} key={2}>
+            <InView onChange={setInViewInvoice} threshold={0.8} key={3}>
               <video 
                   src={video1} 
                   className={styles.vid3} 

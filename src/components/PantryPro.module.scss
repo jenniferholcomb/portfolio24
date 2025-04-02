@@ -5,14 +5,61 @@
 // @media all and (min-width: 1200px) {} wide
 // @media all and (min-width: 1440px) {} extra wide
 
+.pantryProContainer {
+  grid-column: 1 / span 2;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/////  Bubbles  /////
+
+.bubbles {
+  position: absolute;
+  // overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  // width: 100vw;
+}
+
+.bubble1 {
+  -webkit-clip-path: ellipse(190% 90% at 0% 0%);
+  clip-path: ellipse(190% 90% at 0% 0%);
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 45.76%, rgba(255, 255, 255, 0.95) 65.56%);
+  width: 100vw;
+  height: 57rem;
+}
+
+.bubble2 {
+  -webkit-clip-path: ellipse(95% 49% at 65% 50%);
+  clip-path: ellipse(95% 49% at 65% 50%);
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 45.76%, rgba(255, 255, 255, 0.95) 65.56%);
+  width: 100vw;
+  height: 50rem;
+  transform: translateY(-6rem);
+}
+
+.bubble4 {
+  -webkit-clip-path: ellipse(120% 43% at 65% 44%);
+  clip-path: ellipse(120% 43% at 65% 44%);
+  height: 80rem;
+  margin-top: 425rem;
+  width: 100vw;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 45.76%, rgba(255, 255, 255, 0.95) 65.56%);
+}
+
 .pantryProWrapper {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   grid-column: 1;
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  z-index: 1;
+  // width: 100vw;
   // min-height: 200px;
 }
 
@@ -233,10 +280,6 @@
 
 //// User Research ////
 
-.useResHide {
-  padding-bottom: 5px;
-}
-
 .useResInfo {
   max-width: 100%;
   grid-column: 1 / span 2;
@@ -271,7 +314,7 @@
 //// Solution ////
 
 .solution {
-  // padding-top: 30px;
+  border-bottom: none;
 }
 
 .siteSection {
@@ -330,17 +373,13 @@
 .section3 {
   width: 100vw;
   max-height: 100%;
-  // -webkit-clip-path: ellipse(91.21% 48.98% at 50.74% 51.02%);
-  // clip-path: ellipse(91.21% 46.49% at 49.96% 51.31%);
-  // -webkit-clip-path: ellipse(65.58% 50.01% at 49.33% 49.99%);
-  // clip-path: ellipse(65.58% 50.01% at 49.33% 49.99%);
-
+  -webkit-clip-path: ellipse(140% 50% at 50% 50%);
+  clip-path: ellipse(140% 50% at 50% 50%);
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 45.76%, rgba(255, 255, 255, 0.95) 65.56%);
   display: flex;
   flex-direction: column;
-
-  
-  // grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-  // gap: 5rem;
+  padding: 30px 0;
+  margin: 30px 0;
 }
 
 .threeBlurb {
@@ -414,6 +453,11 @@
   padding-bottom: 30px;
 }
 
+.sectionWrapperVideo {
+  display: flex;
+  flex-direction: column;
+}
+
 .sectionWrapperVideo div {
   padding-top: 5%;
   align-items: center;
@@ -426,6 +470,12 @@
 
 .img3 {
   max-height: 35rem;
+}
+
+.vid3 {
+  visibility: visible;  
+  opacity: 1;           
+  display: block;       
 }
 
 .videoCaption,
@@ -513,10 +563,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  // align-items: end;
-  // justify-content:  end;
   gap: .7rem;
-  padding: 25px 0 0 0;
+  padding: 25px 5vw 0 0;
   max-width: 100%;
   max-height: 100%;
 }
@@ -684,10 +732,12 @@
   grid-row: 3;
   grid-column: 1 / span 3;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding-top: 30px;
+  padding: 30px 15px 0 15px;
   gap: 3rem;
 }
 
@@ -720,41 +770,26 @@
   cursor: pointer;
 }
 
-/////  Bubbles  /////
 
-.bubbles {
-  display: none;
-}
-
-.bubble1 {
-  -webkit-clip-path: ellipse(48.76% 65.22% at 21.21% 0.89%);
-  clip-path: ellipse(48.76% 65.22% at 21.21% 0.89%);
-  background-color: white;
-  width: 100%;
-  height: 100vh;
-}
-
-.bubble2 {
-  -webkit-clip-path: ellipse(46.79% 37.73% at 85.10% 48.52%);
-  clip-path: ellipse(44.08% 37.73% at 80.64% 51.71%);
-  background-color: white;
-  width: 100%;
-  min-height: 100%;
-  position: absolute;
-  transform: translateY(-45%);
-}
-
-.bubble3 {
-  -webkit-clip-path: ellipse(41.22% 34.32% at 81.56% 44.43%);
-  clip-path: ellipse(39.53% 34.32% at 83.45% 34.75%);
-  background-color: white;
-  width: 100%;
-  min-height: 100%;
-  position: absolute;
-  transform: translateY(170%);
-}
 
 @media all and (min-width: 435px) {
+  .bubble1 {
+    -webkit-clip-path: ellipse(140% 75% at 0% 0%);
+    clip-path: ellipse(140% 75% at 0% 0%);
+  }
+
+  .bubble2 {
+    -webkit-clip-path: ellipse(95% 45% at 65% 44%);
+    clip-path: ellipse(95% 45% at 65% 47%);
+    transform: translateY(-16rem);
+  }
+
+  .bubble4 {
+    -webkit-clip-path: ellipse(110% 43% at 65% 44%);
+    clip-path: ellipse(110% 43% at 65% 44%);
+    height: 80rem;
+    margin-top: 420rem;
+  }
 
   .banner {
     justify-content: start;
@@ -778,13 +813,46 @@
 }
 
 @media all and (min-width: 667px) {
+  .solution {
+    border-bottom: 1px solid #1b1b1bae;
+  }
+
+  .useResHide {
+    padding-bottom: 5px;
+  }
+}
+
+@media all and (min-width: 700px) {
+  .bubble2 {
+    -webkit-clip-path: ellipse(75% 35% at 87% 55%);
+    clip-path: ellipse(75% 35% at 87% 55%);
+    height: 95rem;
+    transform: translateY(0rem);
+  }
+
+  .bubble3 {
+    -webkit-clip-path: ellipse(39% 35% at 18% 35%);
+    clip-path: ellipse(39% 35% at 18% 35%);
+    width: 100vw;
+    height: 80rem;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 45.76%, rgba(255, 255, 255, 0.95) 65.56%);
+    margin-top: 125rem;
+  }
+
+  .bubble4 {
+    -webkit-clip-path: ellipse(120% 43% at 65% 44%);
+    clip-path: ellipse(120% 43% at 65% 44%);
+    height: 80rem;
+    margin-top: 161rem;
+    }
+
   .pantryProWrapper {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-auto-rows: auto;
     grid-auto-flow: row;
     width: 100vw;
-    min-height: 155px;
+    // min-height: 155px;
   }
   
   .oneInfo {
@@ -986,9 +1054,8 @@
   .section3 {
     width: 100vw;
     max-height: 100%;
-    -webkit-clip-path: ellipse(91.21% 46.49% at 49.96% 51.31%);
-    clip-path: ellipse(91.21% 46.49% at 49.96% 51.31%);
-    background-color: white;
+    -webkit-clip-path: ellipse(95% 50% at 50% 50%);
+    clip-path: ellipse(95% 50% at 50% 50%);
     display: flex;
     flex-direction: column;
     padding-bottom: 50px;
@@ -1056,7 +1123,7 @@
   }
   
   .invImgSec {
-    padding: 15px 0 0 0;
+    padding: 15px 0 0 5vw;
   }
 
   .section4Img {
@@ -1225,28 +1292,38 @@
     padding: 40px 0 12px 5%;
   }
 
-  .projectCardContainer {
-    flex-direction: row;
+  .bubble1 {
+    -webkit-clip-path: ellipse(79% 97% at 16% 0%);
+    clip-path: ellipse(79% 97% at 16% 0%);
+    width: 52rem;
+    height: 39rem;
   }
 
-  .bubbles {
-    grid-column: 1;
-    position: relative;
-    min-height: 100rem;
+  .sectionWrapperVideo {
+    flex-direction: row;
   }
 }
 
 @media all and (min-width: 840px) {
+  .bubbles {
+    grid-column: 1 / span 2;
+  }
+
+  .bubble2 {
+    -webkit-clip-path: ellipse(55% 35% at 75% 52%);
+    clip-path: ellipse(55% 33% at 75% 52%);
+  }
+
+  .bubble4 {
+    -webkit-clip-path: ellipse(120% 43% at 65% 44%);
+    clip-path: ellipse(65% 43% at 65% 44%);
+    margin-top: 180rem;
+  }
+
   .pantryProWrapper {
     grid-column: 1 / span 2;
   }
 
-  .bubbles {
-    grid-column: 1 / span 2;
-  }
-}
-
-@media all and (min-width: 840px) {
   .exShotInv {
     gap: 4%;
   }
@@ -1265,7 +1342,35 @@
   }
 }
 
+@media all and (min-width: 900px) {
+  .bubble4 {
+    -webkit-clip-path: ellipse(60% 43% at 65% 44%);
+    clip-path: ellipse(60% 43% at 65% 44%);
+    margin-top: 200rem;
+  }
+}
+
 @media all and (min-width: 1024px) {
+  .bubble1 {
+    -webkit-clip-path: ellipse(65% 100% at 16% 0%);
+    clip-path: ellipse(65% 100% at 16% 0%);
+    width: 100vw;
+    height: 47.5rem;
+  }
+
+  .bubble3 {
+    -webkit-clip-path: ellipse(42% 40% at 9% 48%);
+    clip-path: ellipse(42% 40% at 9% 44%);
+    height: 78rem;
+    margin-top: 86rem;
+  }
+
+  .bubble4 {
+    -webkit-clip-path: ellipse(60% 43% at 65% 44%);
+    clip-path: ellipse(58% 43% at 60% 44%);
+    margin-top: 210rem;
+  }
+
   .banner {
     grid-column: 1 / span 3;
     height: 13rem;
@@ -1415,10 +1520,11 @@
 
   .section3 {
     max-height: 48rem;
-    -webkit-clip-path: ellipse(78.01% 45.01% at 49.43% 50.09%);
-    clip-path: ellipse(86.34% 48.01% at 49.91% 50.09%);
+    -webkit-clip-path: ellipse(85% 50% at 50% 50%);
+    clip-path: ellipse(85% 50% at 50% 50%);
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    padding-bottom: 80px;
   }
 
   .threeBlurb {
@@ -1439,7 +1545,6 @@
   .usaInfo {
     display: flex;
     flex-direction: column;
-  
   }
   
   .usaHeader {
@@ -1536,7 +1641,6 @@
     grid-row: 1 / span 2;
     max-width: 100%;
     max-height: 100%;
-    justify-content: center;
   }
 
   .invVidCap {
@@ -1681,7 +1785,25 @@
 } 
 
 @media all and (min-width: 1200px) {
-  
+  .bubble2 {
+    -webkit-clip-path: ellipse(45% 33% at 65% 50%);
+    clip-path: ellipse(45% 33% at 65% 50%);
+  }
+
+  .bubble3 {
+    -webkit-clip-path: ellipse(33% 40% at 5% 38%);
+    clip-path: ellipse(33% 40% at 5% 38%);
+    height: 78rem;
+    margin-top: 86rem;
+  }
+
+  .bubble4 {
+    -webkit-clip-path: ellipse(55% 45% at 58% 46%);
+    clip-path: ellipse(55% 45% at 58% 46%);
+    margin-top: 198rem;
+    height: 85rem;
+  }
+
   .siteMap {
     align-self: center;
     max-width: 48rem;
@@ -1831,22 +1953,37 @@
   }
 } 
 
+@media all and (min-width: 1350px) {
+  .bubble3 {
+    -webkit-clip-path: ellipse(30% 40% at 7% 40%);
+    clip-path: ellipse(30% 40% at 7% 40%);
+  }
+}
+
 @media all and (min-width: 1440px) {
+  .bubble2 {
+    -webkit-clip-path: ellipse(50% 33% at 70% 50%);
+    clip-path: ellipse(38% 30% at 70% 47%);
+  }
+
+  .bubble3 {
+    -webkit-clip-path: ellipse(33% 40% at 4% 45%);
+    clip-path: ellipse(33% 40% at 4% 45%);
+    height: 90rem;
+  }
+
   .section3 {
     height: 60rem;
-    -webkit-clip-path: ellipse(65.58% 50.01% at 49.33% 49.99%);
-    clip-path: ellipse(65.58% 50.01% at 49.33% 49.99%);
+    -webkit-clip-path: ellipse(70% 50% at 50% 50%);
+    clip-path: ellipse(70% 50% at 50% 50%);
   }
 
   .threeBlurb {
     padding-top: 60px;
-  }  
-
-
+  } 
 }
 
 @media all and (min-width: 1800px) {
-
   #kit8,
   #kit6 {
     max-width: 88%;
