@@ -7,7 +7,7 @@ Welcome to my portfolio! This site showcases my work, skills, and projects.
 
 ## 🖼️ Screenshots  
 <p align="center">
-  <img src="./public/img/portfolioScreen1.png" alt="Homepage Screenshot" width="600"/>
+  <img src="./public/img/homepage.png" alt="Homepage Screenshot" width="600"/>
   <img src="./public/img/portfolioScreen3.png" alt="Projects Section" width="600"/>
 </p>
 
