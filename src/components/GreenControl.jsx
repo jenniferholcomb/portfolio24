@@ -25,13 +25,15 @@ function GreenControl({ onExternalProjectClick, onHomeClick, isProjectScreen, se
   const [isAbout, setIsAbout] = useState(false);
   const [isHome, setIsHome] = useState(null);
   const [projectSelected, setIsProjectSelected] = useState(null);
+  const [pageInFocus, setPageInFocus] = useState(null);
 
-  const handleRoute = (aboutSwitch) => {
-    aboutSwitch === "about" ? setIsAbout(true) : setIsAbout(false);
+  const handleRoute = (tabSwitch) => {
+    tabSwitch === "about" ? setIsAbout(true) : setIsAbout(false);
     (isMobile || isProjectScreen) ? showMenu === true ? setShowMenu(false) : isHome ? null : setShowMenu(true) : null;
-
+    setIsProjectScreen(true);
     setIsHome(false);
     onHomeClick(false);
+    setPageInFocus(tabSwitch);
   };
 
   const handleMenuClick = () => {
@@ -45,6 +47,7 @@ function GreenControl({ onExternalProjectClick, onHomeClick, isProjectScreen, se
     isMobile || isProjectScreen ? setShowMenu(false): null;
 
     onHomeClick(true);
+    setPageInFocus(null);
   }
 
   const handleProjectClick = (id) => {
@@ -140,18 +143,18 @@ function GreenControl({ onExternalProjectClick, onHomeClick, isProjectScreen, se
                 <Link onClick={handleHomeClick} to={"/"}>Home</Link>
               </li>
             )}
-            <li>        
-              <Link onClick={handleRoute} to={"/projects"}>Projects</Link>
+            <li className={pageInFocus === "projects" ? styles.pageFocus : null}>        
+              <Link onClick={() => handleRoute("projects")} to={"/projects"}>Projects</Link>
             </li>
-            <li>
-              <Link onClick={handleRoute} to={"/pastwork"}>Past Gigs</Link>
+            <li className={pageInFocus === "pastWork" ? styles.pageFocus : null}>
+              <Link onClick={() => handleRoute("pastWork")} to={"/pastwork"}>Past Gigs</Link>
             </li>
-            <li>
-              <Link onClick={handleRoute} to={"/resume"}>Resume</Link>
+            <li className={pageInFocus === "resume" ? styles.pageFocus : null}>
+              <Link onClick={() => handleRoute("resume")} to={"/resume"}>Resume</Link>
             </li>
             {
             isMobile ?
-              <li>
+              <li className={pageInFocus === "about" ? styles.pageFocus : null}>
                 <Link onClick={() => handleRoute("about")} to={"/about"}>About</Link>
               </li>
               : null

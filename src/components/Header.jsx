@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.scss";
 import logoName from "/img/logoName.svg";
 import logoLong from "/img/logo.svg";
-import logoInitials from "/logoInitials.png";
+import logoInitials from "/img/logoInitials.svg";
 
 function Header(props) {
   const { homeClick, isHome, isMobile, isMdDesktop, isWdDesktop } = props;

@@ -20,13 +20,14 @@ const projectData = [
     id: 2,
     externalLink: false,
     link: "/projects/pantrypro",
+    figma: "https://www.figma.com/design/Ru2A0JM3KAsndEESFDJ5ID/Inventory-app?node-id=8-85&t=k9LhTeT80fABUwXj-1",
     imgCard: "/img/pantryPro_previewIMG.webp", 
     smCard: "/img/pantryProThumbnailNoClip.webp",
     projectSubhead: ["case study"], 
     projectYear: "2024", 
     disciplines: ["UX/UI Design"], 
     technologies: ["Figma", "Illustrator", "Photoshop"], 
-    description: "This case study conceptualizes an app to streamline restaurant inventory management by addressing two key challenges: the time-consuming nature of manual invoice entry and the tediousness of counting stock.  Leveraging AI technology, the app allows for efficient invoice uploads and is designed to minimize task fatigue during item counts.  The app also provides a centralized platform for managing and categorizing inventory."
+    description: "This case study conceptualizes an app to streamline restaurant inventory management by addressing two key challenges: the time-consuming nature of manual invoice entry and the tediousness of counting stock. Leveraging AI technology, the app allows for efficient invoice uploads and is designed to minimize task fatigue during item counts. The app also provides a centralized platform for managing and categorizing inventory."
   },
   {
     projectName: "Terra Bean Coffee Co.",

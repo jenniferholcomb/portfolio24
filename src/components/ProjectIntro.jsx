@@ -28,27 +28,33 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
           }
         </div>
         <div className={`${onProjectSelect ? styles.bubbleHeaderSelect : styles.bubbleHeader} ${project.id === 4 ? styles.portfolioHeader : null}`}>
-          <h2 className={styles.header}>{project.projectName}</h2>
-          <div className={styles.arrowContainer}>
-            {project.externalLink ?
-              <a
-                key={project.id}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+          {project.externalLink ?
+            <a
+              key={project.id}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h2 className={styles.header}>{project.projectName}</h2>
+              <div className={styles.arrowContainer}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 10 16" fill="none">
                   <path d="M6.21622 8L0 1.86667L1.89189 0L10 8L1.89189 16L0 14.1333L6.21622 8Z" fill="#1B1B1B" fillOpacity="0.886275"/>
                 </svg>
-              </a>
-            : project.link && (
-              <Link to={project.link} onClick={projectClick}>
+              </div>
+            </a>
+            
+          : project.link ?
+            <Link to={project.link} onClick={projectClick}>
+              <h2 className={styles.header}>{project.projectName}</h2>
+              <div className={styles.arrowContainer}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 10 16" fill="none">
                   <path d="M6.21622 8L0 1.86667L1.89189 0L10 8L1.89189 16L0 14.1333L6.21622 8Z" fill="#1B1B1B" fillOpacity="0.886275"/>
                 </svg>
-              </Link>
-            )}
-          </div>
+              </div>
+            </Link>
+          :
+            <h2 className={styles.header}>{project.projectName}</h2>
+          }
         </div>
         <div className={`${styles.descCol1} ${onProjectSelect ? styles.descCol1Select : null}`}>
           <h4 className={styles.bubbleHeader2}>{project.projectSubhead}</h4>
@@ -73,22 +79,57 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
             ))}
           </p>
         </div>
-        <div className={styles.descCol2}>
+        <div className={`${styles.descCol2} ${styles.copyrightCol2}`}>
           { project.id === 4 ?
             <p className={styles.copyright}>Site developed and designed by me.<br/>copyright © 2025 Jennifer Holcomb</p>
           :            
             <p className={styles.blurb}>{project.description}</p>
           }
           { (project.externalLink || project.projectName === "Personal Website") && (
-            <a 
+            <>
+              {project.id !== 4 && (
+              <a 
+                key={project.id}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.liveSite}
+              >
+                Live Demo
+              </a>
+              )}
+              <a 
               key={project.id}
               href={project.githubLink}
               target="_blank"
               rel="noopener noreferrer"
               className={`${styles.github} ${project.id === 4 ? styles.copyrightGithub : null}`}
-            >
-              Github
-            </a>
+              >
+                Github
+              </a>
+            </>
+          )}
+          { project.figma && (
+            <>
+              <a 
+                key={project.id}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.liveSite}
+              >
+                Case Study
+              </a>
+              <a 
+              key={project.id}
+              href={project.figma}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.github} ${project.id === 4 ? styles.copyrightGithub : null}`}
+              >
+                Figma
+              </a>
+            </>
           )}
         </div>
       </section>

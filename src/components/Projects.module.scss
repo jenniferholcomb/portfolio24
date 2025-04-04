@@ -74,11 +74,15 @@
 .bubbleHeader, .bubbleHeaderSelect {
   grid-row: 1;
   grid-column: 1 / span 2;
+  margin: 0 30px;
+  border-bottom: 1px solid #1b1b1bae;
+}
+
+.bubbleHeader a, .bubbleHeaderSelect a {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 0 30px;
-  border-bottom: 1px solid #1b1b1bae;
+  text-decoration: none;
 }
 
 .portfolioHeader {
@@ -134,7 +138,7 @@ h4.bubbleHeader2 {
   margin: 0;
 }
 
-a.github {
+a.github, a.liveSite {
   color: #52a3da;
   // opacity: 95%;
   text-align: left;
@@ -145,10 +149,17 @@ a.github {
   line-height: 28px; /* 175% */
   letter-spacing: 2.4px;
   margin: 0;
-  padding: 40px 0 0 0;
   pointer-events: all;
   text-decoration: none;
   align-self: last baseline;
+}
+
+a.liveSite {
+  padding: 30px 0 0 0;
+}
+
+a.github {
+  padding: 10px 0 0 0;
 }
 
 a.copyrightGithub {
@@ -188,7 +199,7 @@ p.blurb, p.copyright {
 }
 
 p.copyright {
-  align-self: end;
+  align-self: center;
   padding-top: 20px;
   line-height: 1.7;
 }
@@ -282,13 +293,8 @@ p.copyright {
     clip-path: ellipse(125% 50% at 50% 50%);
   }
 
-  .bubbleHeader {
+  .bubbleHeader, .bubbleHeaderSelect {
     width: 80vw;
-    justify-self: center;
-  }
-
-  .bubbleHeaderSelect {
-    width: 425px;
     justify-self: center;
   }
 
@@ -306,7 +312,10 @@ p.copyright {
 
   .descCol1 {
     grid-column: 1;
+    width: 40vw;
     padding: 20px 0 0 0;
+    justify-self: flex-end;
+    align-self: flex-start;
   }
 
   .descCol1B {
@@ -320,7 +329,7 @@ p.copyright {
     grid-row: 4;
     width: 80vw;
     padding: 20px 0 0 0;
-    justify-self: end;
+    justify-self: center;
   }
 
   p.bubbleSubHead {
@@ -356,6 +365,7 @@ p.copyright {
   .bubbleHeaderSelect {
     grid-column: 1 / span 2;
     grid-row: 1;
+    width: 31rem;
   }
 
   .picture {
@@ -373,11 +383,13 @@ p.copyright {
   }
 
   .descCol1 {
-
+    width: 15.5rem;
+    padding-right: 0;
   }
 
   .descCol1Select{
-    width: 220px;
+    width: 15.5rem;
+    padding-right: 0;
   }
 
   .descCol1B {
@@ -394,7 +406,7 @@ p.copyright {
   }
 
   a.github {
-    padding: 30px 0 0 0;
+    padding: 10px 0 0 0;
   }
 
   a.copyrightGithub {
@@ -439,18 +451,25 @@ p.copyright {
     grid-column: 2;
     border-bottom: 1px solid #1b1b1bae;
     width: 100%;
-    padding: 0 0 0 20px;
+  }
+
+  .bubbleHeaderSelect {
+    padding: 0 0 15px 19px;
+    transform: translateX(-10px);
+  }
+
+  .bubbleHeader a, .bubbleHeaderSelect a {
+    display: flex;
     align-items: flex-end;
-    // transform: translateX(-10px);
   }
 
   h2.header {
     // margin: 0 25px 15px 0;
-    margin: 0 0 15px 24px;
+    margin: 0 0 3px 31px;
   }
 
   .arrowContainer {
-    margin: 0 10px 18px auto;
+    margin: 0 10px 7px auto;
     justify-items: flex-end;
   }
 
@@ -459,6 +478,7 @@ p.copyright {
     grid-row: 2;
     padding-left: 0;
     justify-self: unset;
+    width: unset;
   }
 
   .descCol1B {
@@ -496,9 +516,13 @@ p.copyright {
     padding: 0;
   }
 
-  a.github {
-    padding-top: 18px;
+  .copyrightCol2 {
+    justify-self: end;
   }
+
+  // a.github {
+  //   padding-top: 18px;
+  // }
 }
 
 // desktop mid
@@ -516,8 +540,6 @@ p.copyright {
   .picture {
     grid-column: 1;
     grid-row: 1 / span 3;
-    // width: 400px;
-    // min-height: 400px;
     align-self: center;
   }
 
@@ -528,12 +550,16 @@ p.copyright {
     align-items: end;
   }
 
+  .bubbleHeaderSelect {
+    padding: 0 0 16px 35px;
+  }
+
   h2.header {
-    margin: 0 0 15px 15px;
+    margin: 0 0 5px 15px;
   }
 
   .arrowContainer {
-    margin: 0 15px 15px auto;
+    margin: 0 15px 7px auto;
   }
 
   .descCol1B {
@@ -600,28 +626,4 @@ p.copyright {
     width: 445px;
     height: 445px;
   }
-
-  // .bubbleHeader {
-  //   padding-left: 54px;
-  // }
-
-  // h4.bubbleHeader2 {
-  //   padding-left: 50px;
-  // }
-
-  // p.bubbleSubHead {
-  //   padding-left: 50px;
-  // }
-
-  // #ux {
-  //   padding: 15px 0 30px 50px;
-  // }
-
-  // .descCol2 {
-  //   width: 25rem;
-  // }
-
-  // p.blurb {
-  //   padding: 0 0 0 50px;
-  // }
 }
