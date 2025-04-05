@@ -124,7 +124,7 @@ function GreenControl({ onExternalProjectClick, onHomeClick, isProjectScreen, se
 
         <div className={(isMobile && !isHome) || isProjectScreen ? styles.navContainer : styles.textWrap} id={showMenu ? styles.menuActive : null} >
           <ul className={`
-                ${isMobile ? showMenu ? styles.menuItems : styles.menuHidden : styles.menuItems} 
+                ${(isMobile && !isHome) ? showMenu ? styles.menuItems : styles.menuHidden : styles.menuItems} 
                 ${
                   isHome ? 
                   styles.menuItems2 : styles.menuItems3
