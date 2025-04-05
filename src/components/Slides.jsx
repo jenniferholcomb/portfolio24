@@ -6,7 +6,7 @@ import personaPic from "./../img/personaImg.webp";
 
 function Slides(props) {
   const { slideIndex, handleCircleClick } = props;
-  const [isMobile, isDesktop, isWdDesktop] = useResize();
+  const [isWdDesktop] = useResize();
 
   const carouselHeader = [ "pain points", "persona", "user journey map" ];
 
@@ -67,7 +67,7 @@ function Slides(props) {
           { slideIndex === 0 ?
             <div className={styles.painPoints}>
               {painPointsInfo.map((info, index) =>
-                <div className={styles.ppColumn}>
+                <div className={styles.ppColumn} key={index+1}>
                   <div className={styles.ppNarrowRow}>
                     <div className={styles.ppNum}>{index + 1}</div>
                     <h3 className={styles.ppHeader}>{info.header}</h3>
@@ -143,20 +143,20 @@ function Slides(props) {
                 isWdDesktop ?
                   jmCategory.map((cell, index) =>
                     <>
-                      <div className={styles.ujCol1}>
+                      <div className={styles.ujCol1} key={index}>
                         <h2 className={styles.ujCol1Header}>{cell}</h2>
                       </div>
                     
                       {journeyMapText[index].map((info, index2) => 
                         index === 0 ?
-                          <div className={styles.row1Head}>
+                          <div className={styles.row1Head} key={index2}>
                             <h2 className={styles.actionHeader}>{info}</h2>
                           </div>
                         :
                         <div className={styles.ujInfo}>
                           <ul className={styles.ujInfoList}>
-                            {info.map((list) =>
-                              <li>{list}</li>
+                            {info.map((list, indexList) =>
+                              <li key={indexList}>{list}</li>
                             )}
                           </ul>
                         </div>
@@ -166,7 +166,7 @@ function Slides(props) {
                 :
                   jmCategory.map((cell, index) =>
                     <>
-                      <div className={styles.ujCol1}>
+                      <div className={styles.ujCol1} key={index}>
                         <h2 className={styles.ujCol1Header}>{cell}</h2>
                       </div>
                     </>
@@ -178,14 +178,14 @@ function Slides(props) {
                     <>
                     {journeyMapText.map((cell3, index3) =>
                       index3 === 0 ?
-                      <div className={styles.row1Head}>
+                      <div className={styles.row1Head} key={index3}>
                         <h2 className={styles.actionHeader}>{cell3[index2]}</h2>
                       </div>
                       :
                       <div className={styles.ujInfo}>
                         <ul className={styles.ujInfoList}>
                           {journeyMapText[index3][index2].map((list, index4) =>
-                            <li>{list}</li>
+                            <li key={index4}>{list}</li>
                           )}
                         </ul>
                       </div>
@@ -198,14 +198,14 @@ function Slides(props) {
                 !isWdDesktop ?
                   journeyMapText.map((cell, index) =>
                     index === 0 ? 
-                    <div className={styles.row1Head}>
+                    <div className={styles.row1Head} key={index}>
                       <h2 className={styles.actionHeader}>{cell[4]}</h2>
                     </div>
                     :
                     <div className={styles.ujInfo}>
                       <ul className={styles.ujInfoList}>
                         {cell[4].map((list, index2) => 
-                          <li>{list}</li>
+                          <li key={index2}>{list}</li>
                         )}
                       </ul>
                     </div>
@@ -216,7 +216,7 @@ function Slides(props) {
           }
           <div className={styles.circleGroup}>
             {carouselHeader.map((page, index) =>
-              <div className={`${styles.clickableCircle} ${(slideIndex === index) ? styles.clickedCircle : null}`} onClick={() => handleCircleClick(index)}></div>
+              <div className={`${styles.clickableCircle} ${(slideIndex === index) ? styles.clickedCircle : null}`} onClick={() => handleCircleClick(index)} key={index}></div>
             )}
           </div>
         </div>

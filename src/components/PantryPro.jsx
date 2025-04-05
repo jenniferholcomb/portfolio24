@@ -1,7 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 
 import { useExternalProject } from "./ExternalProjectContext";
-import useResize from "./hooks/useResize";
 import Slides from "./Slides";
 import VideoPlay from "./VideoPlay";
 import styles from "./PantryPro.module.scss";
@@ -32,7 +31,6 @@ import vid3 from "./../img/invoiceFlow2.mp4";
 import projects from "./../data/projectData";
 
 function PantryPro() {
-  const [isMobile, isDesktop] = useResize();
   const [carouselIndex, setCarouselIndex] = useState(0);
   const { onExternalProjectClick } = useExternalProject();
 
@@ -202,7 +200,7 @@ function PantryPro() {
             <div className={styles.projectCardContainer}>
               {projects.map((project, index) => (
                 project.externalLink && 
-                  <div className={styles.projectCards}>
+                  <div className={styles.projectCards} key={index}>
                     <img src={project.smCard} className={styles.imgMask} alt={project.projectName} onClick={() => onExternalProjectClick(project.id)} />
                   </div>
               ))}
