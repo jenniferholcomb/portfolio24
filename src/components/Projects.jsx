@@ -1,13 +1,10 @@
 import React from "react";
-import useResize from "./hooks/useResize";
-import Header from "./Header";
 import ProjectIntro from "./ProjectIntro.jsx";
 import styles from "./Projects.module.scss";
 
 import projectData from "./../data/projectData.jsx";
 
 function Projects({projectClick}) {
-  const [ isMobile, isDesktop ] = useResize();
 
   return (
     <>

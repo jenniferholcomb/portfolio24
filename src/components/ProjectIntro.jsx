@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Projects.module.scss";
 
 function ProjectIntro({id, project, projectClick, onProjectSelect}) {
