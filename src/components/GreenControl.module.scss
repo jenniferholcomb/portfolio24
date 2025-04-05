@@ -81,8 +81,6 @@
 }
 
 .navContainer {
-  width: 150px;
-  height: 100%;
   position: absolute;
   transition-duration: 0.3s;
   opacity: 0;
@@ -100,6 +98,10 @@
   align-items: center;
   list-style: none;
   padding: 0;
+}
+
+.menuHidden {
+  display: none;
 }
 
 .menuItems3 {

@@ -1,13 +1,11 @@
 import React from "react";
 
 import useResize from "./hooks/useResize";
-import Header from "./Header";
 import styles from "./PastWork.module.scss";
 
 import pastGigs from "./../data/pastGigData.jsx";
 
 function PastWork() {
-  const [ isMobile, isDesktop ] = useResize();
   
   return (
     <>
