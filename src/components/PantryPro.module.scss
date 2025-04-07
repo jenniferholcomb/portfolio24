@@ -356,9 +356,8 @@
 
 .section3 {
   position: relative;
-  width: 100vw;
-  max-height: 100%;
-  -webkit-clip-path: ellipse(140% 50% at 50% 50%);
+  // width: 100vw;
+  height: 100%;
   clip-path: ellipse(140% 50% at 50% 50%);
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 45.76%, rgba(255, 255, 255, 0.95) 65.56%);
   display: flex;
