@@ -299,7 +299,7 @@
 
 //// Solution ////
 
-.solution {
+.useRes {
   border-bottom: none;
 }
 
@@ -355,10 +355,11 @@
 //// Usability Study ////
 
 .section3 {
+  position: relative;
   width: 100vw;
   max-height: 100%;
-  -webkit-clip-path: ellipse(100% 50% at 50% 50%);
-  clip-path: ellipse(100% 50% at 50% 50%);
+  -webkit-clip-path: ellipse(140% 50% at 50% 50%);
+  clip-path: ellipse(140% 50% at 50% 50%);
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 45.76%, rgba(255, 255, 255, 0.95) 65.56%);
   display: flex;
   flex-direction: column;
@@ -789,7 +790,7 @@
 }
 
 @media all and (min-width: 667px) {
-  .solution {
+  .useRes {
     border-bottom: 1px solid #1b1b1bae;
   }
 

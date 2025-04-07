@@ -89,7 +89,7 @@ function PantryPro() {
             <p id={styles.blurb1}><span className={styles.blThreeB}>Small restaurant owners cited the chore as not being a priority, with time better spent on other business dealings.</span><span className={styles.blThree}>Though, a common grievance among business owners is rising cost of goods and labor, both contributing to higher daily operational expenses.  All recognize a necessity for keeping accurate books, and desire for an improved system to manage inventory.</span></p>
           </div>
 
-          <div className={`${styles.section1} ${styles.solution} ${styles.useResHide}`}>
+          <div className={`${styles.section1} ${styles.useRes} ${styles.useResHide}`}>
             <div className={styles.useResInfo}>
               <h2 className={styles.headersInv} id={styles.useResDetails}>User Research</h2>
             </div>
@@ -123,7 +123,7 @@ function PantryPro() {
           <div className={styles.section3}>
             <div className={styles.threeBlurb}>
               <div className={styles.usaInfo}>
-                <h2 className={`${styles.headersInv} ${styles.usaHeader}`} >Usability Study</h2>
+                <h2 className={`${styles.headersInv} ${styles.usaHeader}`}>Usability Study</h2>
               </div>
               <div className={styles.usaPContainer}>
                 <p className={styles.siteUSA} id={styles.blurb1}>Original ideation focused on a broader set of users; including employees in addition to managers. With a restaurant&ndash;wide user base, a message board containing shop to&ndash;do&apos;s and reminders was designed into the landing page. It was also conceived a POS system would be incorporated into the interface &mdash; a feature necessary for auto&ndash;updating product quantities. As these both would be beneficial, it was decided collectively these features are beyond the current scope of this project. <span className={styles.siteUSSpanA}>Therefore, the user was reevaluated and focused solely on individuals who manage inventory, the owners and operators.</span></p>
