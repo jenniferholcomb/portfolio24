@@ -126,7 +126,6 @@ h2.header {
 
 h4.bubbleHeader2 {
   color: rgba(162, 174, 166, 0.97);
-  // opacity: 95%;
   text-align: left;
   font-family: Hind;
   font-size: 20px;
@@ -140,7 +139,6 @@ h4.bubbleHeader2 {
 
 a.github, a.liveSite {
   color: #52a3da;
-  // opacity: 95%;
   text-align: left;
   font-family: Hind;
   font-size: 0.9em;
@@ -255,11 +253,6 @@ p.copyright {
   mask-repeat: no-repeat;
   -webkit-mask-size: contain;
   mask-size: contain;
-}
-
-.imgMask:hover, .imgMaskSelect:hover {
-  transform: scale(1.02);
-  transition: all 0.25s ease;
 }
 
 .arrowContainer {
@@ -447,6 +440,11 @@ p.copyright {
     width: 445px;
   }
 
+  .imgMask:hover, .imgMaskSelect:hover {
+    transform: scale(1.02);
+    transition: all 0.25s ease;
+  }
+
   .bubbleHeader, .bubbleHeaderSelect {
     grid-column: 2;
     border-bottom: 1px solid #1b1b1bae;
@@ -519,10 +517,6 @@ p.copyright {
   .copyrightCol2 {
     justify-self: end;
   }
-
-  // a.github {
-  //   padding-top: 18px;
-  // }
 }
 
 // desktop mid

@@ -10,7 +10,6 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
         <div className={styles.picture}>
           {project.externalLink ?
             <a
-              key={id}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -30,7 +29,6 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
         <div className={`${onProjectSelect ? styles.bubbleHeaderSelect : styles.bubbleHeader} ${project.id === 4 ? styles.portfolioHeader : null}`}>
           {project.externalLink ?
             <a
-              key={project.id}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -89,7 +87,6 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
             <>
               {project.id !== 4 && (
               <a 
-                key={project.id}
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -99,7 +96,6 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
               </a>
               )}
               <a 
-              key={project.id}
               href={project.githubLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -112,7 +108,6 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
           { project.figma && (
             <>
               <a 
-                key={project.id}
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -121,7 +116,6 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
                 Case Study
               </a>
               <a 
-              key={project.id}
               href={project.figma}
               target="_blank"
               rel="noopener noreferrer"

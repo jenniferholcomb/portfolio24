@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { ExternalProjectProvider } from "./ExternalProjectContext";
 
 import Home from "./Home";
@@ -14,42 +14,41 @@ import styles from "./App.module.scss";
 
 function App(){
   const [externalProject, setExternalProject] = useState(null);
-  const [isHome, setIsHome] = useState(true);
-  const [isProjectScreen, setIsProjectScreen] = useState(false);
+  const [isHome, setIsHome] = useState(null);
+  const [isProjectScreen, setIsProjectScreen] = useState(null);
+  const [pageInFocus, setPageInFocus] = useState(null);
+  const [isAbout, setIsAbout] = useState(null);
+  const location = useLocation();
 
   const onExternalProjectClick = (id) => {
     setExternalProject(id);
   };
 
-  const onHomeClick = (home) => {
-    setIsHome(home);
-  };
-
+  useEffect(() => {
+    setIsHome(location.pathname === "/");
+    setIsProjectScreen(location.pathname === "/projects/pantrypro");
+    setPageInFocus(location.pathname);
+    setIsAbout(location.pathname === "/about");
+  }, [location.pathname]);
+  console.log(pageInFocus)
   return ( 
-    <BrowserRouter
-      future={{
-        v7_startTransition: true,
-        v7_relativeSplatPath: true,
-      }}
-    >
-      <ExternalProjectProvider onExternalProjectClick={onExternalProjectClick}>
-        <div className={isHome ? styles.bodyWrapperHome : isProjectScreen ? styles.projectWrapper : styles.bodyWrapper}>
-          <GreenControl onExternalProjectClick={externalProject} 
-                        onHomeClick={onHomeClick} 
-                        isProjectScreen={isProjectScreen}
-                        setIsProjectScreen={setIsProjectScreen} />
-          <Routes>
-            <Route exact path="/" Component={Home} />
-            <Route exact path="/projects" Component={Projects} />
-            <Route exact path="/projects/pantrypro" Component={PantryPro} />
-            <Route exact path="/pastwork" Component={PastWork} />
-            <Route exact path="/resume" Component={Resume} />
-            <Route exact path="/about" Component={About} />
-          </Routes>
-        </div>
-      </ExternalProjectProvider>
-    </BrowserRouter>
-    
+    <ExternalProjectProvider onExternalProjectClick={onExternalProjectClick}>
+      <div className={isHome ? styles.bodyWrapperHome : isProjectScreen ? styles.projectWrapper : styles.bodyWrapper}>
+        <GreenControl onExternalProjectClick={externalProject} 
+                      isHome={isHome}
+                      isProjectScreen={isProjectScreen} 
+                      pageInFocus={pageInFocus} 
+                      isAbout={isAbout} />
+        <Routes>
+          <Route exact path="/" Component={Home} />
+          <Route exact path="/projects" Component={Projects} />
+          <Route exact path="/projects/pantrypro" Component={PantryPro} />
+          <Route exact path="/pastgigs" Component={PastWork} />
+          <Route exact path="/resume" Component={Resume} />
+          <Route exact path="/about" Component={About} />
+        </Routes>
+      </div>
+    </ExternalProjectProvider>
   );
 }
 

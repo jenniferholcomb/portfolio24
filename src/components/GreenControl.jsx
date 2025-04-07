@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Navigate, useLocation } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import styles from "./GreenControl.module.scss";
 import { motion } from "framer-motion-3d";
 
@@ -16,77 +16,28 @@ import menuIcon from "/img/menuIcon.svg";
 import menuIconProj from "/img/menuIconProject.svg";
 import xmarkIcon from "/img/closeIcon.svg";
 
-function GreenControl({ onExternalProjectClick, onHomeClick, isProjectScreen, setIsProjectScreen }) {
-  const location = useLocation();
-  const page = location.pathname;
+function GreenControl({ onExternalProjectClick, isHome, isProjectScreen, pageInFocus, isAbout }) {
   const [isMobile, isDesktop, isWdDesktop, isTablet, isMdDesktop] = useResize();
-  // const [isProjectScreen, setIsProjectScreen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [isAbout, setIsAbout] = useState(false);
-  const [isHome, setIsHome] = useState(null);
   const [projectSelected, setIsProjectSelected] = useState(null);
-  const [pageInFocus, setPageInFocus] = useState(null);
 
-  const handleRoute = (tabSwitch) => {
-    tabSwitch === "about" ? setIsAbout(true) : setIsAbout(false);
+  const handleClick = () => {
     (isMobile || isProjectScreen) ? showMenu === true ? setShowMenu(false) : isHome ? null : setShowMenu(true) : null;
-    setIsProjectScreen(true);
-    setIsHome(false);
-    onHomeClick(false);
-    setPageInFocus(tabSwitch);
   };
-
-  const handleMenuClick = () => {
-    setShowMenu(!showMenu);
-  }
-
-  const handleHomeClick = () => {
-    !isHome ? setIsHome(true) : null;
-    isAbout ? setIsAbout(false) : null;
-    isProjectScreen ? setIsProjectScreen(false) : null;
-    isMobile || isProjectScreen ? setShowMenu(false): null;
-
-    onHomeClick(true);
-    setPageInFocus(null);
-  }
 
   const handleProjectClick = (id) => {
     setIsProjectSelected(id);
-  }
+  };
 
   const handleClosingProjectIntro = () => {
     setIsProjectSelected(null);
-  }
-
-  const onAboutSwitch = () => {
-    setIsHome(true);
-    setIsAbout(false);
-    onHomeClick(true);
   };
-
-  useEffect(() => {
-    page === '/' ? setIsHome(true) : setIsHome(false);
-  }, []);
-
-  useEffect(() => {
-    page === '/projects/pantrypro' ? setIsProjectScreen(true) : setIsProjectScreen(false);
-  }, [page]);
 
   useEffect(() => {
     if (onExternalProjectClick !== null) {
       handleProjectClick(onExternalProjectClick);
     }
   }, [onExternalProjectClick]);
-
-  useEffect(() => {
-    if (isAbout && !isMobile) {
-      onAboutSwitch();
-    }
-  }, [isMobile, isAbout])
-
-  window.onpopstate = () => {
-    page !== '/projects' ? setIsHome(true) : null;
-  }
 
   return (
     <>
@@ -109,13 +60,13 @@ function GreenControl({ onExternalProjectClick, onHomeClick, isProjectScreen, se
         }
         {
           (isProjectScreen && projectSelected === null) || (isMobile && !isHome) ? 
-            <div onClick={handleMenuClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
+            <div onClick={handleClick} className={`${styles.iconContainer} ${styles.menuRoutes}`}>
               <object data={showMenu ? xmarkIcon : menuIconProj } type="image/svg+xml" className={showMenu && isMobile ? styles.markX : styles.icon}>
                 <span className={styles.fallbackInfo}>Your browser does not support SVG</span>
               </object>
             </div>
           :
-          <Header homeClick={handleHomeClick} 
+          <Header homeClick={handleClick} 
                   isHome={isHome} 
                   isMobile={isMobile} 
                   isMdDesktop={isMdDesktop} 
@@ -140,22 +91,22 @@ function GreenControl({ onExternalProjectClick, onHomeClick, isProjectScreen, se
           >
             { showMenu && (
               <li>        
-                <Link onClick={handleHomeClick} to={"/"}>Home</Link>
+                <Link onClick={handleClick} to={"/"}>Home</Link>
               </li>
             )}
-            <li className={pageInFocus === "projects" ? styles.pageFocus : null}>        
-              <Link onClick={() => handleRoute("projects")} to={"/projects"}>Projects</Link>
+            <li className={pageInFocus === "/projects" ? styles.pageFocus : null}>        
+              <Link to={"/projects"} onClick={handleClick}>Projects</Link>
             </li>
-            <li className={pageInFocus === "pastWork" ? styles.pageFocus : null}>
-              <Link onClick={() => handleRoute("pastWork")} to={"/pastwork"}>Past Gigs</Link>
+            <li className={pageInFocus === "/pastWork" ? styles.pageFocus : null}>
+              <Link to={"/pastgigs"}onClick={handleClick}>Past Gigs</Link>
             </li>
-            <li className={pageInFocus === "resume" ? styles.pageFocus : null}>
-              <Link onClick={() => handleRoute("resume")} to={"/resume"}>Resume</Link>
+            <li className={pageInFocus === "/resume" ? styles.pageFocus : null}>
+              <Link to={"/resume"} onClick={handleClick}>Resume</Link>
             </li>
             {
             isMobile ?
-              <li className={pageInFocus === "about" ? styles.pageFocus : null}>
-                <Link onClick={() => handleRoute("about")} to={"/about"}>About</Link>
+              <li className={pageInFocus === "/about" ? styles.pageFocus : null}>
+                <Link to={"/about"} onClick={handleClick}>About</Link>
               </li>
               : null
             }
@@ -170,7 +121,7 @@ function GreenControl({ onExternalProjectClick, onHomeClick, isProjectScreen, se
       {
         isHome || (isDesktop && isAbout) ?
         <HomeProject projectData={projects}
-                     onInternalProjectClick={handleRoute} 
+                     onInternalProjectClick={handleClick} 
                      onExternalProjectClick={handleProjectClick} />
         : null
       }
