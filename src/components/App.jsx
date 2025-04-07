@@ -30,7 +30,7 @@ function App(){
     setPageInFocus(location.pathname);
     setIsAbout(location.pathname === "/about");
   }, [location.pathname]);
-  console.log(pageInFocus)
+
   return ( 
     <ExternalProjectProvider onExternalProjectClick={onExternalProjectClick}>
       <div className={isHome ? styles.bodyWrapperHome : isProjectScreen ? styles.projectWrapper : styles.bodyWrapper}>
