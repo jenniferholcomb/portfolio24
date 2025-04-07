@@ -32,15 +32,6 @@
   height: 57rem;
 }
 
-.bubble2 {
-  -webkit-clip-path: ellipse(95% 49% at 65% 50%);
-  clip-path: ellipse(95% 49% at 65% 50%);
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 45.76%, rgba(255, 255, 255, 0.95) 65.56%);
-  width: 100vw;
-  height: 50rem;
-  transform: translateY(-6rem);
-}
-
 .bubble4 {
   -webkit-clip-path: ellipse(120% 43% at 65% 44%);
   clip-path: ellipse(120% 43% at 65% 44%);
@@ -114,10 +105,10 @@
 
 #blurb1 {
   color: #001B08;
-  font-family: Inconsolata;
-  font-size: 15px;
+  font-family: Hind;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.25;
   margin: 0;
   padding-top: 15px;
@@ -171,9 +162,8 @@
   font-family: Hind;
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 800;
   line-height: 20px;
-  /* 142.857% */
   letter-spacing: 2.1px;
   text-transform: capitalize;
   margin: 0;
@@ -185,10 +175,9 @@
 }
 
 .infoBlurb {
-  // max-width: 90%;
   color: #001B08;
   font-family: Hind;
-  font-size: 15px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 200;
   line-height: 1.25;
@@ -326,10 +315,10 @@
 
 #blurbPadAdj {
   color: #001B08;
-  font-family: Inconsolata;
-  font-size: 15px;
+  font-family: Hind;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.25;
   margin: 0;
   padding-top: 20px;
@@ -368,8 +357,8 @@
 .section3 {
   width: 100vw;
   max-height: 100%;
-  -webkit-clip-path: ellipse(140% 50% at 50% 50%);
-  clip-path: ellipse(140% 50% at 50% 50%);
+  -webkit-clip-path: ellipse(100% 50% at 50% 50%);
+  clip-path: ellipse(100% 50% at 50% 50%);
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 45.76%, rgba(255, 255, 255, 0.95) 65.56%);
   display: flex;
   flex-direction: column;
@@ -426,10 +415,10 @@
 
 #usaBlurbWide {
   color: #001B08;
-  font-family: Inconsolata;
-  font-size: 15px;
+  font-family: Hind;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.25;
   margin: 0;
   padding-top: 30px;
@@ -771,12 +760,6 @@
     clip-path: ellipse(140% 75% at 0% 0%);
   }
 
-  .bubble2 {
-    -webkit-clip-path: ellipse(95% 45% at 65% 44%);
-    clip-path: ellipse(95% 45% at 65% 47%);
-    transform: translateY(-16rem);
-  }
-
   .bubble4 {
     -webkit-clip-path: ellipse(110% 43% at 65% 44%);
     clip-path: ellipse(110% 43% at 65% 44%);
@@ -819,6 +802,8 @@
   .bubble2 {
     -webkit-clip-path: ellipse(75% 35% at 87% 55%);
     clip-path: ellipse(75% 35% at 87% 55%);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 45.76%, rgba(255, 255, 255, 0.95) 65.56%);
+    width: 100vw;
     height: 95rem;
     transform: translateY(0rem);
   }
