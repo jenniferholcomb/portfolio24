@@ -51,6 +51,14 @@ const ovalVariants = {
       type: "tween",
       ease: "easeInOut"
     }
+  },
+  tap: {
+    rotateY: -3.2,
+    transition: {
+      duration: 0.4,
+      type: "tween",
+      ease: "easeInOut"
+    }
   }
 };
 
@@ -69,6 +77,7 @@ const OvalShape = ({ flipPhoto }) => {
   const maxAnisotropy = gl.capabilities.getMaxAnisotropy();
 
   const handleTap = () => {
+    console.log('we here')
     setIsTapped((prev) => !prev);
   };
 
@@ -140,11 +149,11 @@ const OvalShape = ({ flipPhoto }) => {
         <motion.mesh
           variants={ovalVariants}
           scale={1.1}
-          animate={action ? "rest" : "load"}
-          // onAnimationComplete={() => setCompleted()}
+          animate={action ? (isTapped ? "tap" : "rest") : "load"}
           whileHover={"hover"}
-          onTap={handleTap}
-          onPointerDown={handleTap}
+          onTap={() => setIsTapped(true)}
+          onPointerDown={() => setIsTapped(true)}
+          onAnimationComplete={() => setIsTapped(false)}
         >
           <shapeGeometry args={[getEllipseShape(), 128]}/>
           <meshNormalMaterial />
