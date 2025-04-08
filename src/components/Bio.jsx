@@ -16,7 +16,7 @@ function Bio() {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setFlipPhoto((prev) => !prev);
-    }, 500);
+    }, 2000);
   };
 
   return (
