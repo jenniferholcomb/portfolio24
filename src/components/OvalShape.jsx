@@ -150,9 +150,9 @@ const OvalShape = ({ flipPhoto }) => {
           variants={ovalVariants}
           scale={1.1}
           animate={action ? (isTapped ? "tap" : "rest") : "load"}
-          // whileHover={"hover"}
+          whileHover={"hover"}
+          onTap={() => setIsTapped(true)}
           onPointerDown={() => setIsTapped(true)}
-          // onTap={() => setIsTapped(true)}
           // onAnimationComplete={() => setIsTapped(false)}
         >
           <shapeGeometry args={[getEllipseShape(), 128]}/>
