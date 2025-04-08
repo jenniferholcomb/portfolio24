@@ -2,7 +2,6 @@ import React, { useMemo, useState, useRef } from "react";
 import { extend } from '@react-three/fiber';
 import { MotionConfig, motion } from "framer-motion";
 import { motion as motion3d, MotionCanvas  } from "framer-motion-3d";
-import { Canvas } from '@react-three/fiber';
 import * as THREE from 'three';
 
 import OvalShape from "./OvalShape";
@@ -16,7 +15,7 @@ function Bio() {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setFlipPhoto((prev) => !prev);
-    }, 2000);
+    }, 1500);
   };
 
   return (
@@ -32,16 +31,14 @@ function Bio() {
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          // transition={{ delay: 2, duration: 4 }}
           className={styles.bioImgWrap}
           onMouseLeave={handleMouseLeave}
+          onTouchEnd={handleMouseLeave}
         >
           <div className={styles.bioImg}>
             <MotionCanvas>
               <ambientLight intensity={1.6} /> 
-              {/* <pointLight intensity={5} position={[5, 5, 5]} /> */}
               <directionalLight intensity={.2} position={[5, 5, 0]} />
-
               <OvalShape flipPhoto={flipPhoto} />
             </MotionCanvas>
           </div>
