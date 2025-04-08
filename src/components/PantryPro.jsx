@@ -131,11 +131,11 @@ function PantryPro() {
                   <p className={styles.siteUSB} id={`${styles.usaBlurbWide}`}><span className={styles.siteUSSpanB}>Therefore, the user was reevaluated and focused solely on individuals who manage inventory, the owners and operators.<br /><br /></span>Conducting new research with a singular user, interface flow took precedence.  Landing page would now prioritize color coded call-to-action buttons, in addition to drop down menus for quick access to all inventory and recent invoice uploads. A shopping list feature was also added to help with product ordering.</p>
                 </div>
               </div>
-              {/* <div className={styles.section3b}>
+              <div className={styles.section3b}>
                 <VideoPlay video1={vid} 
-                          video2={vid2} />
+                           video2={vid2} />
                 <h3 className={styles.videoCaption}>Flow - Inventory count</h3>
-              </div> */}
+              </div>
             </div>
           </section>
 
