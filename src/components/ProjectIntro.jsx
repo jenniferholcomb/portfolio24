@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Projects.module.scss";
+import useResize from "./hooks/useResize";
 
 function ProjectIntro({id, project, projectClick, onProjectSelect}) {
+  const [ isMobile ] = useResize();
 
   return (
     <>
@@ -68,14 +70,24 @@ function ProjectIntro({id, project, projectClick, onProjectSelect}) {
         </div>
         <div className={`${styles.descCol1B} ${onProjectSelect ? styles.descCol1BSelect : null}`}>
           <h4 className={styles.bubbleHeader2} id={styles.tech}>technologies</h4>
-          <p className={styles.bubbleSubHead}>
-            {project.technologies.map((item, index) => (
-              <React.Fragment key={index}>
-                {item}
-                {index < project.technologies.length - 1 && <br/>}
-              </React.Fragment>
-            ))}
-          </p>
+          { isMobile ? 
+            <div className={styles.mobileTech}>
+              {project.technologies.map((item, index) => (
+                <p className={styles.mobileBubbleSubHead}>
+                  {item}
+                </p>
+              ))}
+            </div>
+          :
+            <p className={styles.bubbleSubHead}>
+              {project.technologies.map((item, index) => (
+                <React.Fragment key={index}>
+                  {item}
+                  {index < project.technologies.length - 1 && <br/>}
+                </React.Fragment>
+              ))}
+            </p>
+          }
         </div>
         <div className={`${styles.descCol2} ${styles.copyrightCol2}`}>
           { project.id === 4 ?

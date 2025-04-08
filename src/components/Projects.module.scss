@@ -58,7 +58,7 @@
   justify-content: center;
   margin-bottom: 3rem;
   clip-path: ellipse(145% 50% at 50% 50%);
-  padding: 85px 0;
+  padding: 85px 0 55px 0;
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.68) 45.76%, rgba(255, 255, 255, 0.85) 58.56%);  
 }
 
@@ -112,7 +112,7 @@ h2.header {
 .descCol1, .descCol1B {
   display: flex;
   flex-direction: column;
-  padding: 20px 30px 0 30px;
+  padding: 10px 30px 0 30px;
 }
 
 .descCol1 {
@@ -153,7 +153,7 @@ a.github, a.liveSite {
 }
 
 a.liveSite {
-  padding: 30px 0 0 0;
+  padding: 20px 0 0 0;
 }
 
 a.github {
@@ -164,7 +164,13 @@ a.copyrightGithub {
   padding-top: 20px;
 }
 
-p.bubbleSubHead {
+.mobileTech {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 10px;
+}
+
+p.bubbleSubHead, p.mobileBubbleSubHead {
   color: #1b1b1be2;
   font-family: Hind;
   font-size: .9em;
@@ -174,6 +180,9 @@ p.bubbleSubHead {
   letter-spacing: 2.4px;
   margin: 0;
   white-space: nowrap;
+}
+
+p.bubbleSubHead {
   padding-top: 10px;
 }
 
@@ -187,11 +196,11 @@ p.bubbleSubHead {
 p.blurb, p.copyright {
   color: #001B08;
   font-family: Inconsolata;
-  font-size: 15px;
+  font-size: .95em;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: 1.5px;
+  line-height: 1.25;
+  letter-spacing: .5px;
   margin: 0;
   padding: 0;
 }
@@ -315,6 +324,10 @@ p.copyright {
     grid-column: 2;
     grid-row: 3;
     padding-top: 20px;
+  }
+
+  .mobileTech {
+    grid-template-columns: 1fr;
   }
 
   .descCol2 {
