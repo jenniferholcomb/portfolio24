@@ -120,22 +120,24 @@ function PantryPro() {
             
           </div>
 
-          <div className={styles.section3}>
-            <div className={styles.threeBlurb}>
-              <div className={styles.usaInfo}>
-                <h2 className={`${styles.headersInv} ${styles.usaHeader}`}>Usability Study</h2>
+          <section className={styles.section3Wrapper}>
+            <div className={styles.section3}>
+              <div className={styles.threeBlurb}>
+                <div className={styles.usaInfo}>
+                  <h2 className={`${styles.headersInv} ${styles.usaHeader}`}>Usability Study</h2>
+                </div>
+                <div className={styles.usaPContainer}>
+                  <p className={styles.siteUSA} id={styles.blurb1}>Original ideation focused on a broader set of users; including employees in addition to managers. With a restaurant&ndash;wide user base, a message board containing shop to&ndash;do&apos;s and reminders was designed into the landing page. It was also conceived a POS system would be incorporated into the interface &mdash; a feature necessary for auto&ndash;updating product quantities. As these both would be beneficial, it was decided collectively these features are beyond the current scope of this project. <span className={styles.siteUSSpanA}>Therefore, the user was reevaluated and focused solely on individuals who manage inventory, the owners and operators.</span></p>
+                  <p className={styles.siteUSB} id={`${styles.usaBlurbWide}`}><span className={styles.siteUSSpanB}>Therefore, the user was reevaluated and focused solely on individuals who manage inventory, the owners and operators.<br /><br /></span>Conducting new research with a singular user, interface flow took precedence.  Landing page would now prioritize color coded call-to-action buttons, in addition to drop down menus for quick access to all inventory and recent invoice uploads. A shopping list feature was also added to help with product ordering.</p>
+                </div>
               </div>
-              <div className={styles.usaPContainer}>
-                <p className={styles.siteUSA} id={styles.blurb1}>Original ideation focused on a broader set of users; including employees in addition to managers. With a restaurant&ndash;wide user base, a message board containing shop to&ndash;do&apos;s and reminders was designed into the landing page. It was also conceived a POS system would be incorporated into the interface &mdash; a feature necessary for auto&ndash;updating product quantities. As these both would be beneficial, it was decided collectively these features are beyond the current scope of this project. <span className={styles.siteUSSpanA}>Therefore, the user was reevaluated and focused solely on individuals who manage inventory, the owners and operators.</span></p>
-                <p className={styles.siteUSB} id={`${styles.usaBlurbWide}`}><span className={styles.siteUSSpanB}>Therefore, the user was reevaluated and focused solely on individuals who manage inventory, the owners and operators.<br /><br /></span>Conducting new research with a singular user, interface flow took precedence.  Landing page would now prioritize color coded call-to-action buttons, in addition to drop down menus for quick access to all inventory and recent invoice uploads. A shopping list feature was also added to help with product ordering.</p>
+              <div className={styles.section3b}>
+                <VideoPlay video1={vid} 
+                          video2={vid2} />
+                <h3 className={styles.videoCaption}>Flow - Inventory count</h3>
               </div>
             </div>
-            <div className={styles.section3b}>
-              <VideoPlay video1={vid} 
-                        video2={vid2} />
-              <h3 className={styles.videoCaption}>Flow - Inventory count</h3>
-            </div>
-          </div>
+          </section>
 
           <div className={`${styles.section4Img}`}>
               <img className={styles.fourImg} loading="lazy" src={hm1} alt="landing page iteration 1" />
