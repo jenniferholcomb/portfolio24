@@ -332,14 +332,14 @@
   // transform: rotate(180deg);
   color: #000;
   font-family: Inconsolata;
-  font-size: 1.5vh;
+  font-size: 1.75vh;
   font-style: normal;
   font-weight: 600;
   line-height: 13px; /* 92.857% */
-  margin: 0;
+  margin: 5px;
   height: 20ch;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
