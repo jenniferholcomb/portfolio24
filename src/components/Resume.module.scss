@@ -36,21 +36,38 @@
   opacity: 75%;
   margin: 0;
   position: fixed;
-  right: -4px;
+  right: -2px;
   top: -4px;
 }
 
 .resumeContainer {
-  width: 100%;
-  margin: 6rem 0;
+  width: auto;
+  margin: 4rem 0 6rem 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-self: center;
   z-index: 9999;
 }
 
+.downloadBtn {
+  align-self: flex-start;
+  display: inline-block;
+  padding: .45rem 1.25rem;
+  background-color: #222222;
+  color: white;
+  font-family: Hind;
+  font-size: 0.9em;
+  letter-spacing: 2.4px;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
 .resumeContainer img {
-  // height: fit-content;
   width: 90vw;
   aspect-ratio: .77 / 1;
 }
@@ -60,13 +77,18 @@
     font-size: 48px;
     letter-spacing: 7px;
     top: -1px;
+    right: -4px;
   }
 }
 
 // mobile landscape
-@media all and (min-width: 667px) {
+@media all and (min-width: 700px) {
   .resumeWrapper {
     width: calc(100vw - 150px);
+  }
+
+  .resumeContainer {
+    margin-top: 3rem;
   }
 }
 

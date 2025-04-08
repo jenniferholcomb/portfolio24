@@ -108,8 +108,9 @@
   // pointer-events: all;
 }
 
-.pageInFocus a {
-  color: #9dd3f7;
+li.pageFocus a {
+  color: #8cc7ef;
+  font-size: 1.2em;
 }
 
 .menuPointerEvents li a {
@@ -266,6 +267,10 @@
   .menuItems li a {
     font-size: .9em;
     pointer-events: all;
+  }
+
+  li.pageFocus a {
+    font-size: 1em;
   }
 }
 

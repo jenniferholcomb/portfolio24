@@ -40,7 +40,7 @@ const projectData = [
     projectSubhead: ["ecommerce website"], 
     projectYear: "2024", 
     disciplines: ["Front End Development", "UI Design"], 
-    technologies: ["React.js", "CSS", "JavaScript", "Figma"], 
+    technologies: ["React.js", "CSS", "JavaScript", "Figma", "Photoshop"], 
     description: "A conceptual coffee bean roasters ecommerce website, this project was a practice in design, as well as front end programming. Application has full CRUD capability, a shopping cart, navigation bar, and explores movement of UI elements with scrolling. Designed in Figma, with AI images, graphics, and logo manipulated in Photoshop. The origins of this project are from an application prompt for tracking inventory for a small online retailer. Inventory functionality, as well as admin duties, are displayed on index cards."
   },
   {

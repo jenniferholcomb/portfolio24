@@ -30,7 +30,7 @@
   min-width: 0;
   width: 155px;
   height: 220px;
-  padding: 0;
+  padding: 1rem 0 0 0;
   pointer-events: all;
 }
 
@@ -61,7 +61,10 @@
   .bioImgWrap {
     margin: 0;
     align-self: center;
-    // padding-left: 60px;
+  }
+
+  .bioImg {
+    padding: 0;
   }
 }
 

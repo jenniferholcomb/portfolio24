@@ -97,7 +97,7 @@ function GreenControl({ onExternalProjectClick, isHome, isProjectScreen, pageInF
             <li className={pageInFocus === "/projects" ? styles.pageFocus : null}>        
               <Link to={"/projects"} onClick={handleClick}>Projects</Link>
             </li>
-            <li className={pageInFocus === "/pastWork" ? styles.pageFocus : null}>
+            <li className={pageInFocus === "/pastgigs" ? styles.pageFocus : null}>
               <Link to={"/pastgigs"}onClick={handleClick}>Past Gigs</Link>
             </li>
             <li className={pageInFocus === "/resume" ? styles.pageFocus : null}>
