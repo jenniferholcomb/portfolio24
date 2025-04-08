@@ -34,7 +34,7 @@
   -webkit-clip-path: ellipse(120% 43% at 65% 44%);
   clip-path: ellipse(120% 43% at 65% 44%);
   height: 80rem;
-  margin-top: 500rem;
+  margin-top: 475rem;
   width: 100vw;
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 45.76%, rgba(255, 255, 255, 0.95) 65.56%);
 }
@@ -357,7 +357,7 @@
 
 .usaHeader {
   grid-column: 1;
-  padding: 50px 0 12px 5%;
+  padding: 10px 0 12px 5%;
 }
 
 .usaPContainer {
@@ -548,6 +548,10 @@
 
 //// UI Kit ////
 
+.kitHeaderContainer {
+  border-bottom: 1px solid #1b1b1bae;
+}
+
 #desKitB {
   display: none;
 }
@@ -560,7 +564,7 @@
 
 #desKit {
   text-align: start;
-  padding: 50px 0 2px 5%;
+  padding: 50px 0 12px 5%;
 }
 
 .uiKitContainer {
@@ -777,7 +781,7 @@
     width: 100vw;
     height: 80rem;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.9) 45.76%, rgba(255, 255, 255, 0.95) 65.56%);
-    margin-top: 125rem;
+    margin-top: 115rem;
   }
 
   .bubble4 {
@@ -988,7 +992,7 @@
   .usaInfo {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 90px;
+    // padding-top: 90px;
   }
 
   .usaPContainer {
