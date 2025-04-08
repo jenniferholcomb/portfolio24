@@ -6,7 +6,7 @@ import personaPic from "./../img/personaImg.webp";
 
 function Slides(props) {
   const { slideIndex, handleCircleClick } = props;
-  const [isWdDesktop] = useResize();
+  const [isMobile, isDesktop, isWdDesktop] = useResize();
 
   const carouselHeader = [ "pain points", "persona", "user journey map" ];
 

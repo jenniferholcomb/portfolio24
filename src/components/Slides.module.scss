@@ -7,22 +7,21 @@
 
 .carouselContent {
   border-radius: 0px;
-  border: 2px solid #B9A99D;
+  outline: 2px solid #B9A99D;
   background: #FFF;
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  max-height: auto;
-  padding-bottom: 5%;
+  max-height: 100%;
+  padding-bottom: 1.2rem;
   align-content: center;
   justify-content: center;
 }
 
 .carouselHead {
   color: #A29286;
-
   font-family: Hind;
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: 25px; /* 104.167% */
@@ -260,11 +259,11 @@
 
 .goalsPara {
   color: #000;
-  font-family: Inconsolata;
-  font-size: 14px;
+  font-family: Hind;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 19px; /* 135.714% */
+  font-weight: 200;
+  line-height: 1;
   padding: 0 0 0 18px;
   margin: 0;
 }
@@ -298,7 +297,7 @@
 
 .userJourney {
   display: grid;
-  grid-template-columns: 6rem 1fr 1fr 1fr;
+  grid-template-columns: 3.5rem 1fr 1fr 1fr;
   padding: 10px 5px 0 5px;
   gap: 8px;
 }
@@ -328,13 +327,20 @@
 }
 
 .actionHeader {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  // transform: rotate(180deg);
   color: #000;
   font-family: Inconsolata;
-  font-size: 11px;
+  font-size: 1.5vh;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 13px; /* 92.857% */
-  margin: 5px 0 0 6px;
+  margin: 0;
+  height: 20ch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ujInfo {
@@ -343,10 +349,10 @@
 
 .ujInfoList {
   color: #000;
-  font-family: Inconsolata;
-  font-size: 12px;
+  font-family: Hind;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.25;
   margin: 0;
   padding: 5px 5px 5px 17px;
@@ -389,13 +395,9 @@
 
   .carouselContent {
     width: 37rem;
-    max-width: auto;
+    max-width: 100%;
     border: 17px solid #B9A99D;
     border-radius: 10px;
-  }
-
-  .carouselHead {
-    font-size: 16px;
   }
 
   //// pain points
@@ -553,30 +555,10 @@
     color: #00224A;
   }
 
-  .probStatePara {
-    // width: 575px;
-    width: 23rem;
-    height: auto;
-    // flex-shrink: 0;
-    color: #000;
-    font-family: Inconsolata;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 18px; /* 135.714% */
-    margin: 0;
-
-    // letter-spacing: 1.4px;
-    // line-height: 19px; /* 135.714% */
-    // font-size: 14px;
-  }
-
   .goals {
     display: flex;
     flex-direction: column;
     padding: 10px 0 0 15px;
-
-    // padding: 0 0 0 25px;
   }
 
   .goalsHeader {
@@ -584,16 +566,7 @@
   }
 
   .goalsPara {
-    color: #000;
-    font-family: Inconsolata;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 19px; /* 135.714% */
-    padding: 0 0 0 18px;
-    margin: 0;
-
-    // font-size: 14px;
+    line-height: 1.5;
   }
 
   .frustration {
@@ -621,6 +594,18 @@
     padding: 8px 10px 8px 25px;
   }
 
+  .userJourney {
+    grid-template-columns: 6rem 1fr 1fr 1fr;
+  }
+
+  .actionHeader {
+    writing-mode: horizontal-tb;
+    font-size: 1.5vh;
+    font-weight: 600;
+    margin: 5px 0 0 5px;
+    align-items: start;
+  }
+
   .circleGroup {
     padding-top: 30px;
   }
@@ -629,8 +614,7 @@
 @media all and (min-width: 1400px) {
   .carouselContent {
     width: 52rem;
-    height: 37rem;
-
+    height: auto;
     flex-direction: column;
   }
 
@@ -742,7 +726,8 @@
   
   .actionHeader {
     font-size: 14px;
-    margin: 0;
+    margin: 5px 0;
+    height: auto;
     text-align: center;
     align-content: center;
   }
