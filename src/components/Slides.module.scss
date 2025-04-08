@@ -118,10 +118,7 @@
 //////// persona ////////
 
 .persona {
-  padding: 15px 5% 0 5%;
-
-  // padding: 15px 30px 0 30px;
-  // grid-template-columns: minmax(0, 203px) minmax(0, 1fr) minmax(0, 1fr);
+  padding: 15px 10px 0 10px;
 }
 
 .personaColumn {
@@ -131,9 +128,6 @@
   max-width: 100%;
   height: 100%;
   justify-content: center;
-
-  // width: 100%;
-  // grid-row: 1 / span 3;
 }
 
 .perPic {
@@ -209,15 +203,11 @@
 }
 
 .probState {
-
   display: flex;
   flex-direction: column;
-
   max-width: 100%;
-  padding: 5% 5% 0 5%;
+  padding: 5% 0 0 0;
   max-height: 100%;
-
-  // grid-column: 2 / span 2;
 }
 
 .slideHeader {
@@ -250,7 +240,7 @@
 .goals {
   display: flex;
   flex-direction: column;
-  padding: 10px 0 0 15px;
+  padding: 10px 0 0 0;
 }
 
 .goalsHeader {
@@ -269,7 +259,7 @@
 }
 
 .frustration {
-  padding: 10px 0 0 15px;
+  padding: 10px 0 0 0;
 }
 
 .frustrationsHeader {
@@ -453,9 +443,7 @@
     min-width: 11rem;
     height: 100%;
     grid-row: 1 / span 3;
-
-    // width: 100%;
-    // grid-row: 1 / span 3;
+    justify-content: flex-start;
   }
 
   .perPic {
@@ -566,7 +554,7 @@
   }
 
   .goalsPara {
-    line-height: 1.5;
+    line-height: 1.25;
   }
 
   .frustration {
@@ -600,6 +588,7 @@
 
   .actionHeader {
     writing-mode: horizontal-tb;
+    height: auto;
     font-size: 1.5vh;
     font-weight: 600;
     margin: 5px 0 0 5px;
