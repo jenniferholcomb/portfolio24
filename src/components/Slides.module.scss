@@ -107,14 +107,13 @@
 .ppParagraph {
   // width: 166px;
   color: #001B08;
-  font-family: Inconsolata;
-  font-size: 12px;
+  font-family: Hind;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: 200;
+  line-height: 1;
   margin: 0;
-  text-indent: 15px;
-  padding: 0 5% 0 5%;
+  padding: 0 5% 10px 5%;
 }
 
 //////// persona ////////
@@ -238,30 +237,21 @@
 }
 
 .probStatePara {
-  // width: 575px;
   max-width: 100%;
   height: auto;
-  // flex-shrink: 0;
   color: #000;
-  font-family: Inconsolata;
-  font-size: 12px;
+  font-family: Hind;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 18px; /* 135.714% */
-  letter-spacing: .5px;
-  margin: 0;
-
-  // letter-spacing: 1.4px;
-  // line-height: 19px; /* 135.714% */
-  // font-size: 14px;
+  font-weight: 200;
+  line-height: 1;
+  margin: .5rem 0;
 }
 
 .goals {
   display: flex;
   flex-direction: column;
   padding: 10px 0 0 15px;
-
-  // padding: 0 0 0 25px;
 }
 
 .goalsHeader {
@@ -271,14 +261,12 @@
 .goalsPara {
   color: #000;
   font-family: Inconsolata;
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 19px; /* 135.714% */
   padding: 0 0 0 18px;
   margin: 0;
-
-  // font-size: 14px;
 }
 
 .frustration {
