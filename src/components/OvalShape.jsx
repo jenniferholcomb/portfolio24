@@ -58,6 +58,7 @@ const OvalShape = ({ flipPhoto }) => {
   const [ isMobile, isDesktop, isWdDesktop, isTablet, isMdDesktop ] = useResize();
 
   const [action, setAction] = useState(false);
+  const [isTapped, setIsTapped] = useState(false);
 
   const { gl } = useThree(); // Get the WebGL renderer
 
@@ -66,6 +67,10 @@ const OvalShape = ({ flipPhoto }) => {
   const texture3 = useTexture(profileImg3);
 
   const maxAnisotropy = gl.capabilities.getMaxAnisotropy();
+
+  const handleTap = () => {
+    setIsTapped((prev) => !prev);
+  };
 
   useMemo(() => {
     if (texture && texture2 && texture3) {
@@ -115,6 +120,13 @@ const OvalShape = ({ flipPhoto }) => {
      }, 7000)
    }, [setAction]);
 
+  useEffect(() => {
+    if (isTapped) {
+      const timeout = setTimeout(() => setIsTapped(false), 2000);
+      return () => clearTimeout(timeout);
+    }
+  }, [isTapped]);
+
   return (
     <>
       <motion.mesh
@@ -131,6 +143,8 @@ const OvalShape = ({ flipPhoto }) => {
           animate={action ? "rest" : "load"}
           // onAnimationComplete={() => setCompleted()}
           whileHover={"hover"}
+          onTap={handleTap}
+          onPointerDown={handleTap}
         >
           <shapeGeometry args={[getEllipseShape(), 128]}/>
           <meshNormalMaterial />
