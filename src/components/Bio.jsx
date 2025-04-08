@@ -12,10 +12,11 @@ function Bio() {
   const [flipPhoto, setFlipPhoto] = useState(true);
   const timeoutRef = useRef(null);
 
-  const handleMouseLeave = () => {
+  const triggerFlip = ( delay = 1000 ) => {
+    clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       setFlipPhoto((prev) => !prev);
-    }, 1500);
+    }, delay);
   };
 
   return (
@@ -32,8 +33,8 @@ function Bio() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className={styles.bioImgWrap}
-          onMouseLeave={handleMouseLeave}
-          onTouchEnd={handleMouseLeave}
+          onMouseLeave={() => triggerFlip(1000)}
+          onTouchEnd={() => triggerFlip(2000)}
         >
           <div className={styles.bioImg}>
             <MotionCanvas>
