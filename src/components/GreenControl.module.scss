@@ -72,7 +72,7 @@
   z-index: 999999;
 }
 
-.menuItems {
+.menuItems, .menuItemsMobile {
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -96,7 +96,16 @@
   line-height: 1.25em;
 }
 
-.menuItems li a {
+.menuItemsMobile li {
+  margin: 0 0 25px 0;
+  line-height: 1.25em;
+}
+
+.shoeMenuGap {
+  margin-bottom: 25px;
+}
+
+.menuItems li a, .menuItemsMobile li a {
   color: #52a3da;
   font-family: Hind;
   font-size: 1em;
@@ -105,7 +114,6 @@
   letter-spacing: 2.4px;
   text-transform: capitalize;
   text-decoration: none;
-  // pointer-events: all;
 }
 
 li.pageFocus a {
@@ -178,7 +186,7 @@ li.pageFocus a {
     margin-left: auto;
   }
 
-  .menuItems {
+  .menuItems, .menuItemsMobile {
     width: 100%;
   }
 
@@ -194,11 +202,11 @@ li.pageFocus a {
     align-self: center;
   }
 
-  .menuItems li {
+  .menuItems li, .menuItemsMobile {
     line-height: .75em;
   }
 
-  .menuItems li a {
+  .menuItems li a, .menuItemsMobile {
     font-size: .9em;
   }
 

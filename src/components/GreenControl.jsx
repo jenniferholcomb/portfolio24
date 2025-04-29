@@ -39,6 +39,12 @@ function GreenControl({ onExternalProjectClick, isHome, isProjectScreen, pageInF
     }
   }, [onExternalProjectClick]);
 
+  // useEffect(() => {
+  //   if (!isMobile) {
+  //     setShowMenu((prev) => !prev);
+  //   }
+  // }, [isMobile]);
+
   return (
     <>
       <motion.div 
@@ -75,7 +81,7 @@ function GreenControl({ onExternalProjectClick, isHome, isProjectScreen, pageInF
 
         <div className={(isMobile && !isHome) || isProjectScreen ? styles.navContainer : styles.textWrap} id={showMenu ? styles.menuActive : null} >
           <ul className={`
-                ${(isMobile && !isHome) ? showMenu ? styles.menuItems : styles.menuHidden : styles.menuItems} 
+                ${(isMobile && !isHome) ? (showMenu ? styles.menuItemsMobile : styles.menuHidden) : styles.menuItems} 
                 ${
                   isHome ? 
                   styles.menuItems2 : styles.menuItems3

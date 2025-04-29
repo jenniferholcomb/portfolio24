@@ -34,7 +34,7 @@ function Bio() {
           animate={{ opacity: 1 }}
           className={styles.bioImgWrap}
           onMouseLeave={() => triggerFlip(1000)}
-          onTouchEnd={() => triggerFlip(2000)}
+          onTouchEnd={() => triggerFlip(3000)}
         >
           <div className={styles.bioImg}>
             <MotionCanvas>
