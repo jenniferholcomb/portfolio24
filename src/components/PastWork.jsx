@@ -10,7 +10,7 @@ function PastWork() {
   return (
     <>
       <div className={styles.pastWorkWrapper}>
-        <h1 className={styles.pageHeader}>PAST GIGS</h1>
+        <h1 className={styles.pageHeader}>DESIGN</h1>
         <div className={styles.bubbles}>
 
           {pastGigs.map((item, index) => (

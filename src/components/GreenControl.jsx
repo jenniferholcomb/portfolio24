@@ -81,7 +81,7 @@ function GreenControl({ onExternalProjectClick, isHome, isProjectScreen, pageInF
 
         <div className={(isMobile && !isHome) || isProjectScreen ? styles.navContainer : styles.textWrap} id={showMenu ? styles.menuActive : null} >
           <ul className={`
-                ${(isMobile && !isHome) ? (showMenu ? styles.menuItemsMobile : styles.menuHidden) : styles.menuItems} 
+                ${(isMobile && !isHome) ? (showMenu ? styles.menuItemsMobile : styles.menuHidden) : pageInFocus === "/" ? styles.menuItemsHome : styles.menuItems} 
                 ${
                   isHome ? 
                   styles.menuItems2 : styles.menuItems3
@@ -101,10 +101,10 @@ function GreenControl({ onExternalProjectClick, isHome, isProjectScreen, pageInF
               </li>
             )}
             <li className={pageInFocus === "/projects" ? styles.pageFocus : null}>        
-              <Link to={"/projects"} onClick={handleClick}>Projects</Link>
+              <Link to={"/projects"} onClick={handleClick}>UI Development</Link>
             </li>
             <li className={pageInFocus === "/pastgigs" ? styles.pageFocus : null}>
-              <Link to={"/pastgigs"}onClick={handleClick}>Past Gigs</Link>
+              <Link to={"/pastgigs"}onClick={handleClick}>Graphic Design +<br/>Product Design</Link>
             </li>
             <li className={pageInFocus === "/resume" ? styles.pageFocus : null}>
               <Link to={"/resume"} onClick={handleClick}>Resume</Link>
