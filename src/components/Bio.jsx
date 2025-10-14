@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useRef } from "react";
+import { useMemo, useState, useRef } from "react";
 import { extend } from '@react-three/fiber';
 import { MotionConfig, motion } from "framer-motion";
 import { motion as motion3d, MotionCanvas  } from "framer-motion-3d";

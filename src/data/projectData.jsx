@@ -20,7 +20,7 @@ const projectData = [
     id: 2,
     externalLink: false,
     link: "/projects/pantrypro",
-    figma: "https://www.figma.com/design/Ru2A0JM3KAsndEESFDJ5ID/Inventory-app?node-id=8-85&t=k9LhTeT80fABUwXj-1",
+    figma: "https://www.figma.com/design/tp203F3NC5942YIytIjYwM/Inventory-App?node-id=0-1&t=cBFKwpQWBxVRPM8F-1",
     imgCard: "/img/pantryPro_previewIMG.webp", 
     smCard: "/img/pantryProThumbnailNoClip.webp",
     projectSubhead: ["case study"], 
